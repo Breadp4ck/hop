@@ -1,3 +1,19 @@
-[gd_scene format=3 uid="uid://bd3b3ca374ji6"]
+[gd_scene load_steps=2 format=3 uid="uid://bd3b3ca374ji6"]
 
-[node name="Player" type="CharacterBody3D"]
+[ext_resource type="Script" path="res://player/player.gd" id="1_khcw2"]
+
+[node name="Player" type="Node3D"]
+script = ExtResource("1_khcw2")
+
+[node name="Head" type="Node3D" parent="."]
+
+[node name="Eye" type="Camera3D" parent="Head"]
+
+[node name="Body" type="Node3D" parent="."]
+
+[node name="ObstacleDetectionRay" type="RayCast3D" parent="Body"]
+target_position = Vector3(0, 0, -2)
+
+[node name="Node" type="Node3D" parent="Body/ObstacleDetectionRay"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Body/ObstacleDetectionRay/Node"]
