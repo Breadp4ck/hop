@@ -10,6 +10,7 @@ const INTERACT_RAY_LENGTH: float = 3.0
 @onready var head: Node3D = $Head
 @onready var body: Node3D = $Body
 @onready var obstacle_ray: RayCast3D = $Body/ObstacleDetectionRay
+@onready var animator: AnimationPlayer = $Head/Eye/AnimationPlayer
 
 enum Movement {
 	ROTATE_LEFT,
@@ -87,6 +88,7 @@ func apply_transition(transition: Movement) -> void:
 			if is_transition_possible(along):
 				smooth_walk(along)
 
+
 func is_transition_possible(along: Vector3) -> bool:
 	obstacle_ray.global_position = body.global_position
 	obstacle_ray.target_position = along * Globals.TILE_LENGTH
@@ -97,12 +99,13 @@ func smooth_walk(direction: Vector3) -> void:
 	transition_tween = create_tween()
 	var new_position = self.global_position + direction * Globals.TILE_LENGTH
 	transition_tween.tween_property(self, "global_position", new_position, walk_time)
+	animator.speed_scale = 1 / walk_time
+	animator.play("Walk")
 
 func smooth_rotate(angle: float) -> void:
 	transition_tween = create_tween()
 	var new_rotation = self.global_rotation.y + deg_to_rad(angle)
 	transition_tween.tween_property(self, "global_rotation:y", new_rotation, rotation_time)
-
 
 # Interaction functions
 # --------------------------------------------------------------------------------------------------
