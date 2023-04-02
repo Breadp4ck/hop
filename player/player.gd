@@ -2,9 +2,9 @@ extends Node3D
 
 const INTERACT_RAY_LENGTH: float = 3.0
 
-@export var rotation_time: float = 0.2 # sec
-@export var walk_time: float = 0.2 # sec
-@export var max_queue_transitions: int = 2 # sec
+@export var rotation_time: float = 0.25 # sec
+@export var walk_time: float = 0.25 # sec
+@export var max_queue_transitions: int = 1 # amount
 
 @onready var eye: Camera3D = $Head/Eye
 @onready var head: Node3D = $Head
@@ -65,28 +65,27 @@ func add_transition(transition: Movement) -> void:
 	if transition_queue.size() < max_queue_transitions:
 		transition_queue.push_back(transition)
 
-func apply_transition(transition: Movement) -> void:	
+func apply_transition(transition: Movement) -> void:
+	var along: Vector3
+
 	match transition:
 		Movement.ROTATE_LEFT:
 			smooth_rotate(90.0)
+			return
 		Movement.ROTATE_RIGHT:
 			smooth_rotate(-90.0)
+			return
 		Movement.MOVE_FORWARD:
-			var along: Vector3 = head.global_transform.basis * Vector3.FORWARD
-			if is_transition_possible(along):
-				smooth_walk(along)
+			along = head.global_transform.basis * Vector3.FORWARD
 		Movement.MOVE_BACK:
-			var along: Vector3 = head.global_transform.basis * Vector3.BACK
-			if is_transition_possible(along):
-				smooth_walk(along)
+			along = head.global_transform.basis * Vector3.BACK
 		Movement.MOVE_LEFT:
-			var along: Vector3 = head.global_transform.basis * Vector3.LEFT
-			if is_transition_possible(along):
-				smooth_walk(along)
+			along = head.global_transform.basis * Vector3.LEFT
 		Movement.MOVE_RIGHT:
-			var along: Vector3 = head.global_transform.basis * Vector3.RIGHT
-			if is_transition_possible(along):
-				smooth_walk(along)
+			along = head.global_transform.basis * Vector3.RIGHT
+
+	if is_transition_possible(along):
+		smooth_walk(along)
 
 
 func is_transition_possible(along: Vector3) -> bool:
@@ -95,17 +94,37 @@ func is_transition_possible(along: Vector3) -> bool:
 	obstacle_ray.force_raycast_update()
 	return obstacle_ray.get_collider() == null
 
+func on_tween_transition_finished():
+	if Input.is_action_pressed("rotate_left"):
+		add_transition(Movement.ROTATE_LEFT)
+	elif Input.is_action_pressed("rotate_right"):
+		add_transition(Movement.ROTATE_RIGHT)
+	
+	if Input.is_action_pressed("move_forward"):
+		add_transition(Movement.MOVE_FORWARD)
+	elif Input.is_action_pressed("move_back"):
+		add_transition(Movement.MOVE_BACK)
+	elif Input.is_action_pressed("move_left"):
+		add_transition(Movement.MOVE_LEFT)
+	elif Input.is_action_pressed("move_right"):
+		add_transition(Movement.MOVE_RIGHT)
+		
+	transition_tween.finished.disconnect(on_tween_transition_finished)
+
 func smooth_walk(direction: Vector3) -> void:
 	transition_tween = create_tween()
 	var new_position = self.global_position + direction * Globals.TILE_LENGTH
 	transition_tween.tween_property(self, "global_position", new_position, walk_time)
 	animator.speed_scale = 1 / walk_time
 	animator.play("Walk")
+	transition_tween.finished.connect(on_tween_transition_finished)
+
 
 func smooth_rotate(angle: float) -> void:
 	transition_tween = create_tween()
 	var new_rotation = self.global_rotation.y + deg_to_rad(angle)
 	transition_tween.tween_property(self, "global_rotation:y", new_rotation, rotation_time)
+	transition_tween.finished.connect(on_tween_transition_finished)
 
 # Interaction functions
 # --------------------------------------------------------------------------------------------------
