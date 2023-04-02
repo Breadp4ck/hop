@@ -8,6 +8,8 @@ const INTERACT_RAY_LENGTH: float = 3.0
 
 @onready var eye: Camera3D = $Head/Eye
 @onready var head: Node3D = $Head
+@onready var body: Node3D = $Body
+@onready var obstacle_ray: RayCast3D = $Body/ObstacleDetectionRay
 
 enum Movement {
 	ROTATE_LEFT,
@@ -58,23 +60,38 @@ func _physics_process(delta: float) -> void:
 # --------------------------------------------------------------------------------------------------
 
 func add_transition(transition: Movement) -> void:
+	
 	if transition_queue.size() < max_queue_transitions:
 		transition_queue.push_back(transition)
 
-func apply_transition(transition: Movement) -> void:
+func apply_transition(transition: Movement) -> void:	
 	match transition:
 		Movement.ROTATE_LEFT:
 			smooth_rotate(90.0)
 		Movement.ROTATE_RIGHT:
 			smooth_rotate(-90.0)
 		Movement.MOVE_FORWARD:
-			smooth_walk(head.global_transform.basis * Vector3.FORWARD)
+			var along: Vector3 = head.global_transform.basis * Vector3.FORWARD
+			if is_transition_possible(along):
+				smooth_walk(along)
 		Movement.MOVE_BACK:
-			smooth_walk(head.global_transform.basis * Vector3.BACK)
+			var along: Vector3 = head.global_transform.basis * Vector3.BACK
+			if is_transition_possible(along):
+				smooth_walk(along)
 		Movement.MOVE_LEFT:
-			smooth_walk(head.global_transform.basis * Vector3.LEFT)
+			var along: Vector3 = head.global_transform.basis * Vector3.LEFT
+			if is_transition_possible(along):
+				smooth_walk(along)
 		Movement.MOVE_RIGHT:
-			smooth_walk(head.global_transform.basis * Vector3.RIGHT)
+			var along: Vector3 = head.global_transform.basis * Vector3.RIGHT
+			if is_transition_possible(along):
+				smooth_walk(along)
+
+func is_transition_possible(along: Vector3) -> bool:
+	obstacle_ray.global_position = body.global_position
+	obstacle_ray.target_position = along * Globals.TILE_LENGTH
+	obstacle_ray.force_raycast_update()
+	return obstacle_ray.get_collider() == null
 
 func smooth_walk(direction: Vector3) -> void:
 	transition_tween = create_tween()
@@ -98,7 +115,7 @@ func interact() -> void:
 	)
 	
 	var intersection := space_state.intersect_ray(query)
-	if intersection != null:
-		intersection.collider.interacted.emit(false)
+#	if intersection != null:
+#		intersection.collider.interacted.emit(false)
 	
 	want_interact = false
