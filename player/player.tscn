@@ -6,6 +6,7 @@
 script = ExtResource("1_khcw2")
 
 [node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.347304, 0)
 
 [node name="Eye" type="Camera3D" parent="Head"]
 

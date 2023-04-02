@@ -7,6 +7,7 @@ const INTERACT_RAY_LENGTH: float = 3.0
 @export var max_queue_transitions: int = 2 # sec
 
 @onready var eye: Camera3D = $Head/Eye
+@onready var head: Node3D = $Head
 
 enum Movement {
 	ROTATE_LEFT,
@@ -67,13 +68,13 @@ func apply_transition(transition: Movement) -> void:
 		Movement.ROTATE_RIGHT:
 			smooth_rotate(-90.0)
 		Movement.MOVE_FORWARD:
-			smooth_walk(eye.global_transform.basis * Vector3.FORWARD)
+			smooth_walk(head.global_transform.basis * Vector3.FORWARD)
 		Movement.MOVE_BACK:
-			smooth_walk(eye.global_transform.basis * Vector3.BACK)
+			smooth_walk(head.global_transform.basis * Vector3.BACK)
 		Movement.MOVE_LEFT:
-			smooth_walk(eye.global_transform.basis * Vector3.LEFT)
+			smooth_walk(head.global_transform.basis * Vector3.LEFT)
 		Movement.MOVE_RIGHT:
-			smooth_walk(eye.global_transform.basis * Vector3.RIGHT)
+			smooth_walk(head.global_transform.basis * Vector3.RIGHT)
 
 func smooth_walk(direction: Vector3) -> void:
 	transition_tween = create_tween()
@@ -97,7 +98,7 @@ func interact() -> void:
 	)
 	
 	var intersection := space_state.intersect_ray(query)
-	if intersection != null and intersection.collider is Item:
+	if intersection != null:
 		intersection.collider.interacted.emit(false)
 	
 	want_interact = false
