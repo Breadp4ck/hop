@@ -30,7 +30,7 @@ var transition_queue: Array = []
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
 		interact_ray_origin = eye.project_ray_origin(event.position)
-		interact_ray_normal = interact_ray_origin + eye.project_ray_normal(event.position)
+		interact_ray_normal = interact_ray_origin + eye.project_ray_normal(event.position) * INTERACT_RAY_LENGTH
 		want_interact = true
 #
 	if event.is_action_pressed("rotate_left"):
@@ -111,11 +111,11 @@ func interact() -> void:
 	var space_state := get_world_3d().direct_space_state
 	var query := PhysicsRayQueryParameters3D.create(
 		interact_ray_origin,
-		interact_ray_normal * INTERACT_RAY_LENGTH
+		interact_ray_normal
 	)
 	
 	var intersection := space_state.intersect_ray(query)
-#	if intersection != null:
-#		intersection.collider.interacted.emit(false)
+	if intersection.has("collider") and intersection.collider is Item and intersection.collider.interactable:
+		intersection.collider.interacted.emit(intersection.collider)
 	
 	want_interact = false
