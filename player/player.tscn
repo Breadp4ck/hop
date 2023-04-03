@@ -88,7 +88,7 @@ shader_parameter/feather = 0.135
 script = ExtResource("1_khcw2")
 
 [node name="Head" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.000203653, 1, 0, -1, -0.000203653, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Eye" type="Camera3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0, 0)
