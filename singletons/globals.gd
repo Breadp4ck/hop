@@ -9,5 +9,4 @@ enum WorldPlane {
 	COGNITIVE,
 }
 
-const MATERIAL_WORLD_ORIGIN = Vector3.ZERO
-const COGNITIVE_WORLD_ORIGIN = Vector3(1000.0, 0.0, 0.0)
+const WORLD_OFFSET = Vector3(0.0, 100.0, 0.0)

@@ -35,7 +35,9 @@ func _input(event: InputEvent) -> void:
 		want_interact = true
 
 	add_pressed_movement_transition()
-
+	
+	if event.is_action_pressed("jump_to_plane"):
+		animator.play("hop")
 
 func _physics_process(delta: float) -> void:
 	if want_interact:
@@ -43,7 +45,6 @@ func _physics_process(delta: float) -> void:
 	
 	if not transition_queue.is_empty() and (transition_tween == null or not transition_tween.is_running()):
 		apply_transition(transition_queue.pop_front())
-
 
 # Movement functions
 # --------------------------------------------------------------------------------------------------
@@ -80,6 +81,26 @@ func apply_transition(transition: Movement) -> void:
 	if is_transition_possible(along):
 		smooth_walk(along)
 
+func add_pressed_movement_transition() -> void:
+	
+	if Input.is_action_pressed("rotate_left"):
+		add_transition(Movement.ROTATE_LEFT)
+	elif Input.is_action_pressed("rotate_right"):
+		add_transition(Movement.ROTATE_RIGHT)
+
+	
+	var forward_axis := Input.get_axis("move_back", "move_forward")
+	var side_axis := Input.get_axis("move_left", "move_right")
+	
+	if forward_axis > 0:
+		add_transition(Movement.MOVE_FORWARD)
+	elif forward_axis < 0:
+		add_transition(Movement.MOVE_BACK)
+		
+	elif side_axis > 0:
+		add_transition(Movement.MOVE_RIGHT)
+	elif side_axis < 0:
+		add_transition(Movement.MOVE_LEFT)
 
 func is_transition_possible(along: Vector3) -> bool:
 	obstacle_ray.global_position = body.global_position
@@ -105,6 +126,26 @@ func smooth_rotate(angle: float) -> void:
 	transition_tween.tween_property(self, "global_rotation:y", new_rotation, rotation_time)
 	transition_tween.finished.connect(on_tween_transition_finished)
 
+func jump_to_plane() -> void:
+	if not can_jump_to_plane():
+		return
+	
+	var world = get_parent()
+	
+	match world.current_plane:
+		Globals.WorldPlane.MATERIAL:
+			global_position += Globals.WORLD_OFFSET
+		Globals.WorldPlane.COGNITIVE:
+			global_position -= Globals.WORLD_OFFSET
+	
+	world.invert_plane()
+
+func can_jump_to_plane() -> bool:
+	if transition_tween == null or not transition_tween.is_running():
+		return true
+		
+	return false
+
 # Interaction functions
 # --------------------------------------------------------------------------------------------------
 
@@ -120,25 +161,3 @@ func interact() -> void:
 		intersection.collider.interacted.emit(intersection.collider)
 	
 	want_interact = false
-
-
-func add_pressed_movement_transition() -> void:
-	
-	if Input.is_action_pressed("rotate_left"):
-		add_transition(Movement.ROTATE_LEFT)
-	elif Input.is_action_pressed("rotate_right"):
-		add_transition(Movement.ROTATE_RIGHT)
-
-	
-	var forward_axis := Input.get_axis("move_back", "move_forward")
-	var side_axis := Input.get_axis("move_left", "move_right")
-	
-	if forward_axis > 0:
-		add_transition(Movement.MOVE_FORWARD)
-	elif forward_axis < 0:
-		add_transition(Movement.MOVE_BACK)
-		
-	elif side_axis > 0:
-		add_transition(Movement.MOVE_RIGHT)
-	elif side_axis < 0:
-		add_transition(Movement.MOVE_LEFT)

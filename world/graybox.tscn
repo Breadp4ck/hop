@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://fmp3ti324ada"]
+[gd_scene load_steps=2 format=3 uid="uid://cesrhyvnx8yic"]
+
+[ext_resource type="PackedScene" uid="uid://bd3b3ca374ji6" path="res://player/player.tscn" id="1_1knd4"]
 
 [node name="Graybox" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 14)
@@ -24,7 +26,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, 0)
 size = Vector3(2, 2, 2)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Hub"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9979, -1, 0.0312042)
 size = Vector3(6, 2, 6)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Hub"]
@@ -350,3 +352,8 @@ size = Vector3(2, 2, 2)
 [node name="CSGBox3D2" type="CSGBox3D" parent="Dungeon3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 5)
 size = Vector3(6, 1, 4)
+
+[node name="Player" parent="." instance=ExtResource("1_1knd4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[editable path="Player"]
