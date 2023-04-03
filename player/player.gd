@@ -12,6 +12,8 @@ const INTERACT_RAY_LENGTH: float = 3.0
 @onready var obstacle_ray: RayCast3D = $Body/ObstacleDetectionRay
 @onready var animator: AnimationPlayer = $Head/Eye/AnimationPlayer
 
+var last_transition: Movement = -1
+
 enum Movement {
 	ROTATE_LEFT,
 	ROTATE_RIGHT,
@@ -34,10 +36,17 @@ func _input(event: InputEvent) -> void:
 		interact_ray_normal = interact_ray_origin + eye.project_ray_normal(event.position) * INTERACT_RAY_LENGTH
 		want_interact = true
 
-	add_pressed_movement_transition()
-	
 	if event.is_action_pressed("jump_to_plane"):
 		animator.play("hop")
+
+	var transition = get_pressed_movement_transition()
+	if transition == -1:
+		return
+	if transition == Movement.ROTATE_LEFT or transition == Movement.ROTATE_RIGHT:
+		if last_transition == Movement.ROTATE_LEFT or last_transition == Movement.ROTATE_RIGHT:
+			return
+
+	add_transition(transition)
 
 func _physics_process(delta: float) -> void:
 	if want_interact:
@@ -62,6 +71,8 @@ func add_transition(transition: Movement) -> void:
 func apply_transition(transition: Movement) -> void:
 	var along: Vector3
 
+	last_transition = transition
+
 	match transition:
 		Movement.ROTATE_LEFT:
 			smooth_rotate(90.0)
@@ -77,30 +88,33 @@ func apply_transition(transition: Movement) -> void:
 			along = head.global_transform.basis * Vector3.LEFT
 		Movement.MOVE_RIGHT:
 			along = head.global_transform.basis * Vector3.RIGHT
+		_: 
+			return
 
 	if is_transition_possible(along):
 		smooth_walk(along)
 
-func add_pressed_movement_transition() -> void:
-	
-	if Input.is_action_pressed("rotate_left"):
-		add_transition(Movement.ROTATE_LEFT)
-	elif Input.is_action_pressed("rotate_right"):
-		add_transition(Movement.ROTATE_RIGHT)
-
-	
+func get_pressed_movement_transition() -> Movement:	
+	var rotate_axis := Input.get_axis("rotate_left", "rotate_right")
 	var forward_axis := Input.get_axis("move_back", "move_forward")
 	var side_axis := Input.get_axis("move_left", "move_right")
 	
-	if forward_axis > 0:
-		add_transition(Movement.MOVE_FORWARD)
+	if rotate_axis > 0:
+		return Movement.ROTATE_RIGHT
+	elif rotate_axis < 0:
+		return Movement.ROTATE_LEFT
+	
+	elif forward_axis > 0:
+		return Movement.MOVE_FORWARD
 	elif forward_axis < 0:
-		add_transition(Movement.MOVE_BACK)
+		return Movement.MOVE_BACK
 		
 	elif side_axis > 0:
-		add_transition(Movement.MOVE_RIGHT)
+		return Movement.MOVE_RIGHT
 	elif side_axis < 0:
-		add_transition(Movement.MOVE_LEFT)
+		return Movement.MOVE_LEFT
+		
+	return -1
 
 func is_transition_possible(along: Vector3) -> bool:
 	obstacle_ray.global_position = body.global_position
@@ -109,7 +123,9 @@ func is_transition_possible(along: Vector3) -> bool:
 	return obstacle_ray.get_collider() == null
 
 func on_tween_transition_finished():
-	add_pressed_movement_transition()
+	animator.speed_scale = 1
+	var transition = get_pressed_movement_transition()
+	add_transition(transition)
 	transition_tween.finished.disconnect(on_tween_transition_finished)
 
 func smooth_walk(direction: Vector3) -> void:
@@ -153,11 +169,14 @@ func interact() -> void:
 	var space_state := get_world_3d().direct_space_state
 	var query := PhysicsRayQueryParameters3D.create(
 		interact_ray_origin,
-		interact_ray_normal
+		interact_ray_normal,
 	)
+	
+	query.collide_with_areas = true
 	
 	var intersection := space_state.intersect_ray(query)
 	if intersection.has("collider") and intersection.collider is Item and intersection.collider.interactable:
 		intersection.collider.interacted.emit(intersection.collider)
-	
+		print("hit some shit")
+		
 	want_interact = false

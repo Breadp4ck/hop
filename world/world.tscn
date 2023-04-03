@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ehfk72fm3myw"]
+[gd_scene load_steps=8 format=3 uid="uid://cfc6o2kc0v7u3"]
 
 [ext_resource type="PackedScene" uid="uid://bd3b3ca374ji6" path="res://player/player.tscn" id="1_236wh"]
 [ext_resource type="Script" path="res://world/world.gd" id="1_etobx"]
+[ext_resource type="PackedScene" uid="uid://b4d8b8lixnjpj" path="res://world/items/button.tscn" id="3_xagvy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cun0l"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -32,11 +33,8 @@ environment = SubResource("Environment_a6nqk")
 [node name="Player" parent="." instance=ExtResource("1_236wh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="Eye" parent="Player/Head" index="0"]
-transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, -1.19209e-07, 0)
-
-[node name="ObstacleDetectionRay" parent="Player/Body" index="0"]
-top_level = true
+[node name="Button" parent="." instance=ExtResource("3_xagvy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.939368, 2, -2)
 
 [node name="material_plane" type="CSGCombiner3D" parent="."]
 use_collision = true
@@ -98,5 +96,3 @@ material = SubResource("StandardMaterial3D_f7kmc")
 [node name="CSGBox3D3" type="CSGBox3D" parent="cognitive_plane"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
 size = Vector3(2, 2, 2)
-
-[editable path="Player"]

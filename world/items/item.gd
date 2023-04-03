@@ -10,6 +10,7 @@ signal interacted(plane, with) # Calls when Player interacts with Item
 			self.interacted.connect(on_interact)
 		elif interactable and not value:
 			self.interacted.disconnect(on_interact)
+		interactable = value
 	get:
 		return interactable
 
@@ -19,7 +20,6 @@ func on_interact(with: Item) -> void:
 		interact_with_item(with)
 	else:
 		interact_with_player()
-
 
 # Abstract methods
 # --------------------------------------------------------------------------------------------------

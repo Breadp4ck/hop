@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4d8b8lixnjpj"]
+
+[ext_resource type="Script" path="res://world/items/item.gd" id="1_sv4qf"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qpomp"]
+radius = 0.0942318
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ddiye"]
+albedo_color = Color(0, 0.317647, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_dw1ny"]
+
+[node name="Button" type="Area3D"]
+script = ExtResource("1_sv4qf")
+interactable = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_qpomp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.15, 0, 0, 0, 0.05, 0, 0, 0, 0.15, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ddiye")
+mesh = SubResource("CapsuleMesh_dw1ny")

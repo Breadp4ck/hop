@@ -105,8 +105,8 @@ script = ExtResource("1_khcw2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Eye" type="Camera3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0, 0)
-fov = 80.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+fov = 70.0
 far = 75.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Head/Eye"]
@@ -124,11 +124,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_hyxmp")
+radius = 1.0
 
 [node name="Body" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="ObstacleDetectionRay" type="RayCast3D" parent="Body"]
+top_level = true
 target_position = Vector3(0, 0, -2)
 
 [node name="Node" type="Node3D" parent="Body/ObstacleDetectionRay"]
