@@ -94,7 +94,6 @@ transform = Transform3D(1, 0, 0, 0, -0.000203653, 1, 0, -1, -0.000203653, 0, 1, 
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.00197482, 0.00567985, -0.00568461)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Head/Eye"]
-autoplay = "hop"
 libraries = {
 "": SubResource("AnimationLibrary_30a8x")
 }
