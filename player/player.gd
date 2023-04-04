@@ -5,6 +5,7 @@ const INTERACT_RAY_LENGTH: float = 3.0
 @export var rotation_time: float = 0.25 # sec
 @export var walk_time: float = 0.35 # sec
 @export var max_queue_transitions: int = 1 # amount
+@export var jump_check_area: Area3D
 
 @onready var eye: Camera3D = $Head/Eye
 @onready var head: Node3D = $Head
@@ -13,6 +14,7 @@ const INTERACT_RAY_LENGTH: float = 3.0
 @onready var animator: AnimationPlayer = $Head/Eye/AnimationPlayer
 @onready var effects: AnimationPlayer = $Head/Eye/EffectsPlayer
 
+var is_jumping: bool
 var last_transition: Movement = -1
 
 enum Movement {
@@ -32,12 +34,16 @@ var transition_tween: Tween
 var transition_queue: Array = []
 
 func _input(event: InputEvent) -> void:
+	if is_jumping:
+		return
+		
 	if event.is_action_pressed("interact"):
 		interact_ray_origin = eye.project_ray_origin(event.position)
 		interact_ray_normal = interact_ray_origin + eye.project_ray_normal(event.position) * INTERACT_RAY_LENGTH
 		want_interact = true
 
 	if event.is_action_pressed("jump_to_plane"):
+		
 		effects.play("hop")
 
 	var transition = get_pressed_movement_transition()
@@ -50,6 +56,7 @@ func _input(event: InputEvent) -> void:
 	add_transition(transition)
 
 func _physics_process(delta: float) -> void:
+	print(jump_check_area.get_overlapping_bodies().size())
 	if want_interact:
 		interact()
 	
@@ -143,12 +150,18 @@ func smooth_rotate(angle: float) -> void:
 	transition_tween.tween_property(self, "global_rotation:y", new_rotation, rotation_time)
 	transition_tween.finished.connect(on_tween_transition_finished)
 
+func set_is_jumping(value: bool) -> void:
+	is_jumping = value
+
+# Animator.
 func jump_to_plane() -> void:
+	jump_check_area.position = head.position
+	
 	if not can_jump_to_plane():
+		animator.stop()
 		return
 	
 	var world = get_parent()
-	
 	match world.current_plane:
 		Globals.WorldPlane.MATERIAL:
 			global_position += Globals.WORLD_OFFSET
@@ -158,10 +171,22 @@ func jump_to_plane() -> void:
 	world.invert_plane()
 
 func can_jump_to_plane() -> bool:
+	if jump_check_area.has_overlapping_bodies():
+		return false
+	
 	if transition_tween == null or not transition_tween.is_running():
 		return true
 		
 	return false
+
+# Animator.
+func move_jump_check_area():
+	var world = get_parent()
+	match world.current_plane:
+		Globals.WorldPlane.MATERIAL:
+			jump_check_area.position += Globals.WORLD_OFFSET
+		Globals.WorldPlane.COGNITIVE:
+			jump_check_area.position -= Globals.WORLD_OFFSET
 
 # Interaction functions
 # --------------------------------------------------------------------------------------------------
