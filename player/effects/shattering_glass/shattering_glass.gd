@@ -1,6 +1,6 @@
-extends ColorRect
+extends CanvasLayer
 
-@export var radius: float = 0.0
+@export var strength: float = 10000.0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -8,4 +8,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	material.set_shader_parameter("radius", radius)
+	$ColorRect.material.set_shader_parameter("strength", strength)

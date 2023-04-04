@@ -11,6 +11,7 @@ const INTERACT_RAY_LENGTH: float = 3.0
 @onready var body: Node3D = $Body
 @onready var obstacle_ray: RayCast3D = $Body/ObstacleDetectionRay
 @onready var animator: AnimationPlayer = $Head/Eye/AnimationPlayer
+@onready var effects: AnimationPlayer = $Head/Eye/EffectsPlayer
 
 var last_transition: Movement = -1
 
@@ -37,7 +38,7 @@ func _input(event: InputEvent) -> void:
 		want_interact = true
 
 	if event.is_action_pressed("jump_to_plane"):
-		animator.play("hop")
+		effects.play("hop")
 
 	var transition = get_pressed_movement_transition()
 	if transition == -1:

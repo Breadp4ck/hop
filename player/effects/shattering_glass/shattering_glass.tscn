@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvoagtuj8u6vc"]
+
+[ext_resource type="Script" path="res://player/effects/shattering_glass/shattering_glass.gd" id="1_bbx3s"]
+[ext_resource type="Shader" path="res://player/effects/shattering_glass/shattering_glass.gdshader" id="2_5niwh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a7opj"]
+shader = ExtResource("2_5niwh")
+shader_parameter/strength = 0.1
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_bbx3s")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_a7opj")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
