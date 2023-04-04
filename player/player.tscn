@@ -1,34 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bd3b3ca374ji6"]
+[gd_scene load_steps=8 format=3 uid="uid://bd3b3ca374ji6"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_khcw2"]
 [ext_resource type="PackedScene" uid="uid://dvoagtuj8u6vc" path="res://player/effects/shattering_glass/shattering_glass.tscn" id="2_63522"]
 [ext_resource type="PackedScene" uid="uid://lsdpiqbmi4y5" path="res://player/jump_check_area.tscn" id="3_7dtr0"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oliwg"]
-sky_top_color = Color(0.85098, 0, 0, 1)
-sky_horizon_color = Color(0.121569, 0.105882, 0.301961, 1)
-sky_curve = 0.0315337
-sky_cover_modulate = Color(1, 1, 1, 0)
-ground_bottom_color = Color(0.00784314, 0.00784314, 0.0196078, 1)
-ground_horizon_color = Color(0.121569, 0.105882, 0.301961, 1)
-sun_angle_max = 9.72
-sun_curve = 0.0362227
-
-[sub_resource type="Sky" id="Sky_0wco8"]
-sky_material = SubResource("ProceduralSkyMaterial_oliwg")
-
-[sub_resource type="Environment" id="Environment_m08k3"]
-background_mode = 2
-sky = SubResource("Sky_0wco8")
-ambient_light_source = 3
-ambient_light_color = Color(0.84956, 3.29696e-06, 1.54018e-06, 1)
-fog_enabled = true
-fog_light_color = Color(0.533324, 1.05888e-06, 4.33177e-07, 1)
-fog_sky_affect = 0.082
-fog_height = 1.5
-fog_height_density = 0.5882
-volumetric_fog_density = 0.0145
-volumetric_fog_anisotropy = -0.58
 
 [sub_resource type="Animation" id="Animation_x64ah"]
 resource_name = "Walk"
@@ -137,7 +111,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Eye" type="Camera3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
-environment = SubResource("Environment_m08k3")
 fov = 70.0
 far = 75.0
 

@@ -47,7 +47,6 @@ func _input(event: InputEvent) -> void:
 		want_interact = true
 
 	if event.is_action_pressed("jump_to_plane"):
-		
 		effects.play("hop")
 
 	var transition = get_pressed_movement_transition()
@@ -60,7 +59,6 @@ func _input(event: InputEvent) -> void:
 	add_transition(transition)
 
 func _physics_process(delta: float) -> void:
-	print(jump_check_area.get_overlapping_bodies().size())
 	if want_interact:
 		interact()
 	
@@ -71,8 +69,7 @@ func _physics_process(delta: float) -> void:
 # --------------------------------------------------------------------------------------------------
 
 func add_transition(transition: Movement) -> void:
-	
-	if transition_queue.size() >= max_queue_transitions:
+	if transition_queue.size() >= max_queue_transitions or is_jumping:
 		return
 	
 	if transition == Movement.ROTATE_LEFT or transition == Movement.ROTATE_RIGHT:
@@ -136,9 +133,9 @@ func is_transition_possible(along: Vector3) -> bool:
 
 func on_tween_transition_finished():
 	animator.speed_scale = 1
+	transition_tween.finished.disconnect(on_tween_transition_finished)
 	var transition = get_pressed_movement_transition()
 	add_transition(transition)
-	transition_tween.finished.disconnect(on_tween_transition_finished)
 
 func smooth_walk(direction: Vector3) -> void:
 	transition_tween = create_tween()
