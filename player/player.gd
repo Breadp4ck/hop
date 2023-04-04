@@ -5,6 +5,7 @@ const INTERACT_RAY_LENGTH: float = 3.0
 @export var rotation_time: float = 0.25 # sec
 @export var walk_time: float = 0.35 # sec
 @export var max_queue_transitions: int = 1 # amount
+@export var jump_check_area: Area3D
 
 @onready var eye: Camera3D = $Head/Eye
 @onready var head: Node3D = $Head
@@ -13,7 +14,12 @@ const INTERACT_RAY_LENGTH: float = 3.0
 @onready var animator: AnimationPlayer = $Head/Eye/AnimationPlayer
 @onready var effects: AnimationPlayer = $Head/Eye/EffectsPlayer
 
+@onready var material_env: Environment = load("res://player/material_env.tres")
+@onready var shadesmar_env: Environment = load("res://player/shadesmar_env.tres")
+
+
 var last_transition: Movement = -1
+var is_jumping: bool
 
 enum Movement {
 	ROTATE_LEFT,
@@ -32,6 +38,9 @@ var transition_tween: Tween
 var transition_queue: Array = []
 
 func _input(event: InputEvent) -> void:
+	if is_jumping:
+		return
+		
 	if event.is_action_pressed("interact"):
 		interact_ray_origin = eye.project_ray_origin(event.position)
 		interact_ray_normal = interact_ray_origin + eye.project_ray_normal(event.position) * INTERACT_RAY_LENGTH
@@ -60,8 +69,7 @@ func _physics_process(delta: float) -> void:
 # --------------------------------------------------------------------------------------------------
 
 func add_transition(transition: Movement) -> void:
-	
-	if transition_queue.size() >= max_queue_transitions:
+	if transition_queue.size() >= max_queue_transitions or is_jumping:
 		return
 	
 	if transition == Movement.ROTATE_LEFT or transition == Movement.ROTATE_RIGHT:
@@ -125,9 +133,9 @@ func is_transition_possible(along: Vector3) -> bool:
 
 func on_tween_transition_finished():
 	animator.speed_scale = 1
+	transition_tween.finished.disconnect(on_tween_transition_finished)
 	var transition = get_pressed_movement_transition()
 	add_transition(transition)
-	transition_tween.finished.disconnect(on_tween_transition_finished)
 
 func smooth_walk(direction: Vector3) -> void:
 	transition_tween = create_tween()
@@ -143,25 +151,45 @@ func smooth_rotate(angle: float) -> void:
 	transition_tween.tween_property(self, "global_rotation:y", new_rotation, rotation_time)
 	transition_tween.finished.connect(on_tween_transition_finished)
 
+func set_is_jumping(value: bool) -> void:
+	is_jumping = value
+
+# Animator.
 func jump_to_plane() -> void:
+	jump_check_area.position = head.position
+	
 	if not can_jump_to_plane():
+		animator.stop()
 		return
 	
 	var world = get_parent()
-	
 	match world.current_plane:
 		Globals.WorldPlane.MATERIAL:
 			global_position += Globals.WORLD_OFFSET
+			eye.environment = shadesmar_env
 		Globals.WorldPlane.COGNITIVE:
 			global_position -= Globals.WORLD_OFFSET
+			eye.environment = material_env
 	
 	world.invert_plane()
 
 func can_jump_to_plane() -> bool:
+	if jump_check_area.has_overlapping_bodies():
+		return false
+	
 	if transition_tween == null or not transition_tween.is_running():
 		return true
 		
 	return false
+
+# Animator.
+func move_jump_check_area():
+	var world = get_parent()
+	match world.current_plane:
+		Globals.WorldPlane.MATERIAL:
+			jump_check_area.position += Globals.WORLD_OFFSET
+		Globals.WorldPlane.COGNITIVE:
+			jump_check_area.position -= Globals.WORLD_OFFSET
 
 # Interaction functions
 # --------------------------------------------------------------------------------------------------
@@ -174,10 +202,14 @@ func interact() -> void:
 	)
 	
 	query.collide_with_areas = true
+	query.collision_mask = 1
 	
 	var intersection := space_state.intersect_ray(query)
+	
 	if intersection.has("collider") and intersection.collider is Item and intersection.collider.interactable:
-		intersection.collider.interacted.emit(intersection.collider)
+		var spell := Spell.new()
+		spell.types.append(Globals.SpellType.WIND)
+		intersection.collider.interacted.emit(spell)
 		print("hit some shit")
 		
 	want_interact = false
