@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://d1yysq0evt4kr"]
+[gd_scene load_steps=18 format=3 uid="uid://dkbvxif2dlly2"]
 
 [ext_resource type="PackedScene" uid="uid://bd3b3ca374ji6" path="res://player/player.tscn" id="1_236wh"]
 [ext_resource type="Script" path="res://world/world.gd" id="1_etobx"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bahpk53tkuqv7" path="res://assets/entities/table/c_table.glb" id="8_d5i1j"]
 [ext_resource type="PackedScene" uid="uid://d2bwq5tjfwuey" path="res://world/items/door/m_door.tscn" id="8_nqioq"]
 [ext_resource type="PackedScene" uid="uid://br3vb4msp37nh" path="res://assets/entities/book/c_book.glb" id="11_07de2"]
-[ext_resource type="PackedScene" path="res://world/items/door/door.tscn" id="13_h65vk"]
+[ext_resource type="PackedScene" uid="uid://bneymo1bc8anp" path="res://world/items/door/c_door.tscn" id="13_h65vk"]
 [ext_resource type="PackedScene" uid="uid://3fv52q54jkyl" path="res://world/damage_area/damage_area.tscn" id="14_n5cnq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b0b0v"]

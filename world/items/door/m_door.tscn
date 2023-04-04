@@ -129,7 +129,6 @@ mesh = SubResource("ArrayMesh_1u7rn")
 skeleton = NodePath("")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-speed_scale = 0.2
 libraries = {
 "": SubResource("AnimationLibrary_t2nmt")
 }
