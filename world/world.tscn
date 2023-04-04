@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://drfvxew6w1c2c"]
+[gd_scene load_steps=18 format=3 uid="uid://b5v2k8nbc7myj"]
 
 [ext_resource type="PackedScene" uid="uid://bd3b3ca374ji6" path="res://player/player.tscn" id="1_236wh"]
 [ext_resource type="Script" path="res://world/world.gd" id="1_etobx"]
@@ -10,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://dreuond0eui88" path="res://assets/entities/book/m_book.glb" id="7_fmso5"]
 [ext_resource type="PackedScene" uid="uid://bcywgljymyh1b" path="res://assets/entities/old_tree/c_old_tree.glb" id="7_jm025"]
 [ext_resource type="PackedScene" uid="uid://bahpk53tkuqv7" path="res://assets/entities/table/c_table.glb" id="8_d5i1j"]
-[ext_resource type="PackedScene" uid="uid://bre4lvdlbx7wy" path="res://assets/entities/door/m_door.glb" id="8_otsu6"]
+[ext_resource type="PackedScene" uid="uid://d2bwq5tjfwuey" path="res://world/items/door/m_door.tscn" id="8_nqioq"]
 [ext_resource type="PackedScene" uid="uid://br3vb4msp37nh" path="res://assets/entities/book/c_book.glb" id="11_07de2"]
-[ext_resource type="PackedScene" uid="uid://doahqxuh2j422" path="res://assets/entities/door/c_door.glb" id="13_y7qql"]
+[ext_resource type="PackedScene" uid="uid://bneymo1bc8anp" path="res://world/items/door/c_door.tscn" id="13_h65vk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b0b0v"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -126,25 +126,26 @@ transform = Transform3D(0.819152, 0, -0.573576, 0, 1, 0, 0.573576, 0, 0.819152, 
 [node name="m_book" parent="Material" instance=ExtResource("7_fmso5")]
 transform = Transform3D(0.826098, 0, -0.563526, 0, 1, 0, 0.563526, 0, 0.826098, -2.9, 1.641, 0.1)
 
-[node name="m_door" parent="Material" instance=ExtResource("8_otsu6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.2, 8)
+[node name="m_door" parent="Material" instance=ExtResource("8_nqioq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.67905, 1.2, 8)
 
 [node name="Cognitive" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
 
 [node name="c_hub" parent="Cognitive" instance=ExtResource("5_2c0do")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 101, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="c_table" parent="Cognitive" instance=ExtResource("8_d5i1j")]
-transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, -2.8, 101, -0.2)
+transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, -2.8, 1, -0.2)
 
 [node name="c_table2" parent="Cognitive" instance=ExtResource("8_d5i1j")]
-transform = Transform3D(0.819152, 0, -0.573576, 0, 1, 0, 0.573576, 0, 0.819152, 2.5, 101, 6)
+transform = Transform3D(0.819152, 0, -0.573576, 0, 1, 0, 0.573576, 0, 0.819152, 2.5, 1, 6)
 
 [node name="c_old_tree" parent="Cognitive" instance=ExtResource("7_jm025")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 101, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
 
 [node name="c_book" parent="Cognitive" instance=ExtResource("11_07de2")]
-transform = Transform3D(0.826098, 0, -0.563526, 0, 1, 0, 0.563526, 0, 0.826098, -2.9, 101.641, 0.1)
+transform = Transform3D(0.826098, 0, -0.563526, 0, 1, 0, 0.563526, 0, 0.826098, -2.9, 1.641, 0.1)
 
-[node name="c_door" parent="Cognitive" instance=ExtResource("13_y7qql")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 101.2, 8)
+[node name="c_door" parent="Cognitive" instance=ExtResource("13_h65vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.67905, 1.2, 8)
