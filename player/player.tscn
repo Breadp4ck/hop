@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bd3b3ca374ji6"]
+[gd_scene load_steps=10 format=3 uid="uid://bd3b3ca374ji6"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_khcw2"]
+[ext_resource type="Environment" uid="uid://biqvtjsci1ld8" path="res://player/material_env.tres" id="2_5bh7t"]
 [ext_resource type="PackedScene" uid="uid://dvoagtuj8u6vc" path="res://player/effects/shattering_glass/shattering_glass.tscn" id="2_63522"]
 [ext_resource type="PackedScene" uid="uid://lsdpiqbmi4y5" path="res://player/jump_check_area.tscn" id="3_7dtr0"]
 
@@ -102,15 +103,28 @@ _data = {
 "hop": SubResource("Animation_43igt")
 }
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2q3p1"]
+radius = 0.45
+height = 1.1
+
 [node name="Player" type="Node3D" node_paths=PackedStringArray("jump_check_area")]
 script = ExtResource("1_khcw2")
 jump_check_area = NodePath("Head/JumpCheckArea")
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Eye" type="Camera3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+environment = ExtResource("2_5bh7t")
 fov = 70.0
 far = 75.0
 
@@ -133,9 +147,15 @@ collision_layer = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="ObstacleDetectionRay" type="RayCast3D" parent="Body"]
-top_level = true
 target_position = Vector3(0, 0, -2)
 
 [node name="Node" type="Node3D" parent="Body/ObstacleDetectionRay"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Body/ObstacleDetectionRay/Node"]
+
+[node name="HitBox" type="Area3D" parent="Body"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body/HitBox"]
+shape = SubResource("CapsuleShape3D_2q3p1")

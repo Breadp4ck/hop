@@ -1,8 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://b5v2k8nbc7myj"]
+[gd_scene load_steps=18 format=3 uid="uid://d1yysq0evt4kr"]
 
 [ext_resource type="PackedScene" uid="uid://bd3b3ca374ji6" path="res://player/player.tscn" id="1_236wh"]
 [ext_resource type="Script" path="res://world/world.gd" id="1_etobx"]
-[ext_resource type="PackedScene" uid="uid://b4d8b8lixnjpj" path="res://world/items/button.tscn" id="3_xagvy"]
+[ext_resource type="PackedScene" uid="uid://de4nmvujce6r1" path="res://world/start_menu.tscn" id="2_fg7nm"]
 [ext_resource type="PackedScene" uid="uid://ceho34sq4yue4" path="res://assets/locations/hub/m_hub.glb" id="4_7vdxq"]
 [ext_resource type="PackedScene" uid="uid://bkqbcuxs5k103" path="res://assets/locations/hub/c_hub.glb" id="5_2c0do"]
 [ext_resource type="PackedScene" uid="uid://2jwacksnnurt" path="res://assets/entities/old_tree/m_old_tree.glb" id="5_ok3cq"]
@@ -12,7 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://bahpk53tkuqv7" path="res://assets/entities/table/c_table.glb" id="8_d5i1j"]
 [ext_resource type="PackedScene" uid="uid://d2bwq5tjfwuey" path="res://world/items/door/m_door.tscn" id="8_nqioq"]
 [ext_resource type="PackedScene" uid="uid://br3vb4msp37nh" path="res://assets/entities/book/c_book.glb" id="11_07de2"]
-[ext_resource type="PackedScene" uid="uid://bneymo1bc8anp" path="res://world/items/door/c_door.tscn" id="13_h65vk"]
+[ext_resource type="PackedScene" path="res://world/items/door/door.tscn" id="13_h65vk"]
+[ext_resource type="PackedScene" uid="uid://3fv52q54jkyl" path="res://world/damage_area/damage_area.tscn" id="14_n5cnq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b0b0v"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -27,11 +28,11 @@ sky = SubResource("Sky_ftkle")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7kmc"]
-albedo_color = Color(0.125911, 0.125911, 0.125911, 1)
-
 [node name="World" type="Node3D"]
 script = ExtResource("1_etobx")
+
+[node name="StartMenu" parent="." instance=ExtResource("2_fg7nm")]
+visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_d8yr2")
@@ -40,74 +41,8 @@ environment = SubResource("Environment_d8yr2")
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.75, -0.43301, 2, 15, 2)
 shadow_enabled = true
 
-[node name="Button" parent="." instance=ExtResource("3_xagvy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.939368, 2, -2)
-
-[node name="material_plane" type="CSGCombiner3D" parent="."]
-visible = false
-use_collision = true
-
-[node name="CSGBox3D" type="CSGBox3D" parent="material_plane"]
-size = Vector3(2, 2, 2)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="material_plane"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
-size = Vector3(2, 2, 2)
-material = SubResource("StandardMaterial3D_f7kmc")
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="material_plane"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
-size = Vector3(2, 2, 2)
-material = SubResource("StandardMaterial3D_f7kmc")
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="material_plane"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
-size = Vector3(2, 2, 2)
-
-[node name="cognitive_plane" type="CSGCombiner3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
-visible = false
-use_collision = true
-
-[node name="CSGBox3D" type="CSGBox3D" parent="cognitive_plane"]
-size = Vector3(2, 2, 2)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="cognitive_plane"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
-size = Vector3(2, 2, 2)
-material = SubResource("StandardMaterial3D_f7kmc")
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="cognitive_plane"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
-size = Vector3(2, 2, 2)
-material = SubResource("StandardMaterial3D_f7kmc")
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="cognitive_plane"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -2)
-size = Vector3(2, 2, 2)
-material = SubResource("StandardMaterial3D_f7kmc")
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="cognitive_plane"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, -2)
-size = Vector3(2, 2, 2)
-material = SubResource("StandardMaterial3D_f7kmc")
-
-[node name="CSGBox3D7" type="CSGBox3D" parent="cognitive_plane"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
-size = Vector3(2, 2, 2)
-material = SubResource("StandardMaterial3D_f7kmc")
-
-[node name="CSGBox3D8" type="CSGBox3D" parent="cognitive_plane"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
-size = Vector3(2, 2, 2)
-material = SubResource("StandardMaterial3D_f7kmc")
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="cognitive_plane"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
-size = Vector3(2, 2, 2)
-
 [node name="Player" parent="." instance=ExtResource("1_236wh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1, 0)
 
 [node name="Material" type="Node3D" parent="."]
 
@@ -126,7 +61,7 @@ transform = Transform3D(0.819152, 0, -0.573576, 0, 1, 0, 0.573576, 0, 0.819152, 
 [node name="m_book" parent="Material" instance=ExtResource("7_fmso5")]
 transform = Transform3D(0.826098, 0, -0.563526, 0, 1, 0, 0.563526, 0, 0.826098, -2.9, 1.641, 0.1)
 
-[node name="m_door" parent="Material" instance=ExtResource("8_nqioq")]
+[node name="door" parent="Material" instance=ExtResource("8_nqioq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.67905, 1.2, 8)
 
 [node name="Cognitive" type="Node3D" parent="."]
@@ -147,5 +82,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
 [node name="c_book" parent="Cognitive" instance=ExtResource("11_07de2")]
 transform = Transform3D(0.826098, 0, -0.563526, 0, 1, 0, 0.563526, 0, 0.826098, -2.9, 1.641, 0.1)
 
-[node name="c_door" parent="Cognitive" instance=ExtResource("13_h65vk")]
+[node name="door" parent="Cognitive" instance=ExtResource("13_h65vk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.67905, 1.2, 8)
+
+[node name="DamageArea" parent="." instance=ExtResource("14_n5cnq")]
+transform = Transform3D(0.413, 0, 0, 0, 0.413, 0, 0, 0, 0.413, 0, 2, 8)
+collision_layer = 0
+collision_mask = 4
+damage = 1

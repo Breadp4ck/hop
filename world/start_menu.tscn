@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://de4nmvujce6r1"]
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(100, 200)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -200.0
+offset_right = 100.0
+grow_vertical = 0
+
+[node name="VFlowContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="StartGameButton" type="Button" parent="CenterContainer/VFlowContainer"]
+layout_mode = 2
+text = "TEST"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VFlowContainer"]
+layout_mode = 2
+text = "TEST"
