@@ -14,8 +14,12 @@ const INTERACT_RAY_LENGTH: float = 3.0
 @onready var animator: AnimationPlayer = $Head/Eye/AnimationPlayer
 @onready var effects: AnimationPlayer = $Head/Eye/EffectsPlayer
 
-var is_jumping: bool
+@onready var material_env: Environment = load("res://player/material_env.tres")
+@onready var shadesmar_env: Environment = load("res://player/shadesmar_env.tres")
+
+
 var last_transition: Movement = -1
+var is_jumping: bool
 
 enum Movement {
 	ROTATE_LEFT,
@@ -162,8 +166,10 @@ func jump_to_plane() -> void:
 	match world.current_plane:
 		Globals.WorldPlane.MATERIAL:
 			global_position += Globals.WORLD_OFFSET
+			eye.environment = shadesmar_env
 		Globals.WorldPlane.COGNITIVE:
 			global_position -= Globals.WORLD_OFFSET
+			eye.environment = material_env
 	
 	world.invert_plane()
 

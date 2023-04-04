@@ -1,0 +1,16 @@
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://bakr4i0ixh0hq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w67gt"]
+sky_top_color = Color(0.392157, 0.639216, 0.890196, 1)
+sky_horizon_color = Color(0.14902, 0.380392, 0.631373, 1)
+ground_bottom_color = Color(0.160784, 0.121569, 0.552941, 1)
+ground_horizon_color = Color(0.150215, 0.379105, 0.632969, 1)
+sun_angle_max = 65.49
+
+[sub_resource type="Sky" id="Sky_xtbet"]
+sky_material = SubResource("ProceduralSkyMaterial_w67gt")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_xtbet")
+ambient_light_source = 3
