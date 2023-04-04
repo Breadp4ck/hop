@@ -9,4 +9,10 @@ enum WorldPlane {
 	COGNITIVE,
 }
 
+enum SpellType{
+	FIRE,
+	WATER,
+	WIND
+}
+
 const WORLD_OFFSET = Vector3(0.0, 100.0, 0.0)

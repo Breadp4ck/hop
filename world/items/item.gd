@@ -1,8 +1,7 @@
 class_name Item
 extends Node3D
 
-
-signal interacted(plane, with) # Calls when Player interacts with Item
+signal interacted(with: Spell) # Calls when Player interacts with Item
 
 @export var interactable: bool = false :
 	set(value):
@@ -14,18 +13,22 @@ signal interacted(plane, with) # Calls when Player interacts with Item
 	get:
 		return interactable
 
+@export var needed_types_to_interact: Array[Globals.SpellType] = []
 
-func on_interact(with: Item) -> void:
-	if with != null:
-		interact_with_item(with)
+func on_interact(spell: Spell) -> void:
+	if spell != null:
+		for i in spell.types:
+			if needed_types_to_interact.has(i):
+				interact_with_spell(spell)
+				break
 	else:
 		interact_with_player()
 
 # Abstract methods
 # --------------------------------------------------------------------------------------------------
 
-# Abstract method called when 2 items have interacted
-func interact_with_item(with: Item) -> void:
+# Abstract method called when spell have interacted with item
+func interact_with_spell(spell: Spell) -> void:
 	pass
 
 # Abstract method called when player has interacted with item

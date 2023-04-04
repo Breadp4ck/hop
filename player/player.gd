@@ -202,10 +202,14 @@ func interact() -> void:
 	)
 	
 	query.collide_with_areas = true
+	query.collision_mask = 1
 	
 	var intersection := space_state.intersect_ray(query)
+	
 	if intersection.has("collider") and intersection.collider is Item and intersection.collider.interactable:
-		intersection.collider.interacted.emit(intersection.collider)
+		var spell := Spell.new()
+		spell.types.append(Globals.SpellType.WIND)
+		intersection.collider.interacted.emit(spell)
 		print("hit some shit")
 		
 	want_interact = false
