@@ -1,19 +1,29 @@
-[gd_scene load_steps=8 format=3 uid="uid://cfc6o2kc0v7u3"]
+[gd_scene load_steps=18 format=3 uid="uid://drfvxew6w1c2c"]
 
 [ext_resource type="PackedScene" uid="uid://bd3b3ca374ji6" path="res://player/player.tscn" id="1_236wh"]
 [ext_resource type="Script" path="res://world/world.gd" id="1_etobx"]
 [ext_resource type="PackedScene" uid="uid://b4d8b8lixnjpj" path="res://world/items/button.tscn" id="3_xagvy"]
+[ext_resource type="PackedScene" uid="uid://ceho34sq4yue4" path="res://assets/locations/hub/m_hub.glb" id="4_7vdxq"]
+[ext_resource type="PackedScene" uid="uid://bkqbcuxs5k103" path="res://assets/locations/hub/c_hub.glb" id="5_2c0do"]
+[ext_resource type="PackedScene" uid="uid://2jwacksnnurt" path="res://assets/entities/old_tree/m_old_tree.glb" id="5_ok3cq"]
+[ext_resource type="PackedScene" uid="uid://odugmk43ag6u" path="res://assets/entities/table/m_table.glb" id="6_hif56"]
+[ext_resource type="PackedScene" uid="uid://dreuond0eui88" path="res://assets/entities/book/m_book.glb" id="7_fmso5"]
+[ext_resource type="PackedScene" uid="uid://bcywgljymyh1b" path="res://assets/entities/old_tree/c_old_tree.glb" id="7_jm025"]
+[ext_resource type="PackedScene" uid="uid://bahpk53tkuqv7" path="res://assets/entities/table/c_table.glb" id="8_d5i1j"]
+[ext_resource type="PackedScene" uid="uid://bre4lvdlbx7wy" path="res://assets/entities/door/m_door.glb" id="8_otsu6"]
+[ext_resource type="PackedScene" uid="uid://br3vb4msp37nh" path="res://assets/entities/book/c_book.glb" id="11_07de2"]
+[ext_resource type="PackedScene" uid="uid://doahqxuh2j422" path="res://assets/entities/door/c_door.glb" id="13_y7qql"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cun0l"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b0b0v"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
-[sub_resource type="Sky" id="Sky_lhlak"]
-sky_material = SubResource("ProceduralSkyMaterial_cun0l")
+[sub_resource type="Sky" id="Sky_ftkle"]
+sky_material = SubResource("ProceduralSkyMaterial_b0b0v")
 
-[sub_resource type="Environment" id="Environment_a6nqk"]
+[sub_resource type="Environment" id="Environment_d8yr2"]
 background_mode = 2
-sky = SubResource("Sky_lhlak")
+sky = SubResource("Sky_ftkle")
 tonemap_mode = 2
 glow_enabled = true
 
@@ -23,20 +33,18 @@ albedo_color = Color(0.125911, 0.125911, 0.125911, 1)
 [node name="World" type="Node3D"]
 script = ExtResource("1_etobx")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-shadow_enabled = true
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_a6nqk")
+environment = SubResource("Environment_d8yr2")
 
-[node name="Player" parent="." instance=ExtResource("1_236wh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.75, -0.43301, 2, 15, 2)
+shadow_enabled = true
 
 [node name="Button" parent="." instance=ExtResource("3_xagvy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.939368, 2, -2)
 
 [node name="material_plane" type="CSGCombiner3D" parent="."]
+visible = false
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="material_plane"]
@@ -58,6 +66,7 @@ size = Vector3(2, 2, 2)
 
 [node name="cognitive_plane" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
+visible = false
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="cognitive_plane"]
@@ -96,3 +105,46 @@ material = SubResource("StandardMaterial3D_f7kmc")
 [node name="CSGBox3D3" type="CSGBox3D" parent="cognitive_plane"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
 size = Vector3(2, 2, 2)
+
+[node name="Player" parent="." instance=ExtResource("1_236wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Material" type="Node3D" parent="."]
+
+[node name="m_hub" parent="Material" instance=ExtResource("4_7vdxq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="m_old_tree" parent="Material" instance=ExtResource("5_ok3cq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
+
+[node name="m_table" parent="Material" instance=ExtResource("6_hif56")]
+transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, -2.8, 1, -0.2)
+
+[node name="m_table2" parent="Material" instance=ExtResource("6_hif56")]
+transform = Transform3D(0.819152, 0, -0.573576, 0, 1, 0, 0.573576, 0, 0.819152, 2.5, 1, 6)
+
+[node name="m_book" parent="Material" instance=ExtResource("7_fmso5")]
+transform = Transform3D(0.826098, 0, -0.563526, 0, 1, 0, 0.563526, 0, 0.826098, -2.9, 1.641, 0.1)
+
+[node name="m_door" parent="Material" instance=ExtResource("8_otsu6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.2, 8)
+
+[node name="Cognitive" type="Node3D" parent="."]
+
+[node name="c_hub" parent="Cognitive" instance=ExtResource("5_2c0do")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 101, 0)
+
+[node name="c_table" parent="Cognitive" instance=ExtResource("8_d5i1j")]
+transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, -2.8, 101, -0.2)
+
+[node name="c_table2" parent="Cognitive" instance=ExtResource("8_d5i1j")]
+transform = Transform3D(0.819152, 0, -0.573576, 0, 1, 0, 0.573576, 0, 0.819152, 2.5, 101, 6)
+
+[node name="c_old_tree" parent="Cognitive" instance=ExtResource("7_jm025")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 101, 2)
+
+[node name="c_book" parent="Cognitive" instance=ExtResource("11_07de2")]
+transform = Transform3D(0.826098, 0, -0.563526, 0, 1, 0, 0.563526, 0, 0.826098, -2.9, 101.641, 0.1)
+
+[node name="c_door" parent="Cognitive" instance=ExtResource("13_y7qql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 101.2, 8)
