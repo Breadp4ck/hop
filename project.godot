@@ -69,3 +69,4 @@ jump_to_plane={
 [layer_names]
 
 3d_physics/layer_2="JumpCheckArea"
+3d_physics/layer_3="HitBox"

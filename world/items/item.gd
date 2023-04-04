@@ -27,10 +27,21 @@ func on_interact(spell: Spell) -> void:
 # Abstract methods
 # --------------------------------------------------------------------------------------------------
 
-# Abstract method called when spell have interacted with item
+# method called when spell have interacted with item
 func interact_with_spell(spell: Spell) -> void:
+	interact(spell)
+	get_inversed_item().interact(spell)
+
+# Abstract
+func interact(spell: Spell) -> void:
 	pass
 
-# Abstract method called when player has interacted with item
+# method called when player has interacted with item
 func interact_with_player() -> void:
 	pass
+	
+func get_inversed_item() -> Item:
+	if get_parent().name == "Material":
+		return get_node("../../Cognitive/" + name)
+	else:
+		return get_node("../../Material/" + name)

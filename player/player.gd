@@ -1,7 +1,12 @@
+class_name Player
 extends Node3D
+
+signal damage_receied(amount: int)
+signal died()
 
 const INTERACT_RAY_LENGTH: float = 3.0
 
+@export var health: int = 3 # amount
 @export var rotation_time: float = 0.25 # sec
 @export var walk_time: float = 0.35 # sec
 @export var max_queue_transitions: int = 1 # amount
@@ -17,9 +22,8 @@ const INTERACT_RAY_LENGTH: float = 3.0
 @onready var material_env: Environment = load("res://player/material_env.tres")
 @onready var shadesmar_env: Environment = load("res://player/shadesmar_env.tres")
 
-
 var last_transition: Movement = -1
-var is_jumping: bool
+var is_jumping: bool = false
 
 enum Movement {
 	ROTATE_LEFT,
@@ -36,6 +40,9 @@ var interact_ray_normal: Vector3 = Vector3.FORWARD
 var transition_tween: Tween
 
 var transition_queue: Array = []
+
+#func _ready():
+	#is_transition_possible(Vector3.FORWARD)
 
 func _input(event: InputEvent) -> void:
 	if is_jumping:
@@ -90,18 +97,18 @@ func apply_transition(transition: Movement) -> void:
 			smooth_rotate(-90.0)
 			return
 		Movement.MOVE_FORWARD:
-			along = head.global_transform.basis * Vector3.FORWARD
+			along = Vector3.FORWARD
 		Movement.MOVE_BACK:
-			along = head.global_transform.basis * Vector3.BACK
+			along = Vector3.BACK
 		Movement.MOVE_LEFT:
-			along = head.global_transform.basis * Vector3.LEFT
+			along = Vector3.LEFT
 		Movement.MOVE_RIGHT:
-			along = head.global_transform.basis * Vector3.RIGHT
+			along = Vector3.RIGHT
 		_: 
 			return
 
 	if is_transition_possible(along):
-		smooth_walk(along)
+		smooth_walk(head.global_transform.basis * along)
 
 func get_pressed_movement_transition() -> Movement:	
 	var rotate_axis := Input.get_axis("rotate_left", "rotate_right")
@@ -126,7 +133,6 @@ func get_pressed_movement_transition() -> Movement:
 	return -1
 
 func is_transition_possible(along: Vector3) -> bool:
-	obstacle_ray.global_position = body.global_position
 	obstacle_ray.target_position = along * Globals.TILE_LENGTH
 	obstacle_ray.force_raycast_update()
 	return obstacle_ray.get_collider() == null
@@ -183,13 +189,27 @@ func can_jump_to_plane() -> bool:
 	return false
 
 # Animator.
-func move_jump_check_area():
+func move_jump_check_area() -> void:
 	var world = get_parent()
 	match world.current_plane:
 		Globals.WorldPlane.MATERIAL:
 			jump_check_area.position += Globals.WORLD_OFFSET
 		Globals.WorldPlane.COGNITIVE:
 			jump_check_area.position -= Globals.WORLD_OFFSET
+
+# HP functions
+# --------------------------------------------------------------------------------------------------
+
+func receive_damage(amount: int) -> void:
+	health -= amount
+	damage_receied.emit(amount)
+	if (health <= 0):
+		die()
+	
+	print("Player damaged by " + str(amount))
+
+func die():
+	died.emit() # todo respawn.
 
 # Interaction functions
 # --------------------------------------------------------------------------------------------------
