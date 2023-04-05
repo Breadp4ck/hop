@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://bnkdd8gci3jc3"]
+
+[ext_resource type="Shader" path="res://assets/shaders/burn.gdshader" id="1_2borg"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8mrae"]
+frequency = 0.178
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jkx4x"]
+noise = SubResource("FastNoiseLite_8mrae")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_2borg")
+shader_parameter/emission_amount = 3.0
+shader_parameter/burn_size = 0.152
+shader_parameter/dissolve_texture = SubResource("NoiseTexture2D_jkx4x")
