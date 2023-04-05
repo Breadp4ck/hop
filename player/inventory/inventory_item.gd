@@ -9,5 +9,6 @@ enum Type{
 
 @export var type: Type
 
-func interact_with_player() -> void:
-	Inventory.pick_item(self)
+func interact(spell: Spell) -> void:
+	if spell == null:
+		Inventory.pick_item(self)

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdptjf5n1xaqu"]
+
+[ext_resource type="Script" path="res://spells/spell.gd" id="1_nry0b"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_huiik"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cvc8a"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_qh2nq"]
+material = SubResource("StandardMaterial3D_cvc8a")
+
+[node name="WindSpell" type="Area3D"]
+script = ExtResource("1_nry0b")
+type = 2
+length = null
+duration = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_huiik")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_qh2nq")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

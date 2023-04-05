@@ -10,4 +10,3 @@ func pick_item(inventory_item: InventoryItem):
 	items[inventory_item.type] = true
 	
 	inventory_item.queue_free()
-	inventory_item.get_inversed_item().queue_free()
