@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbtltjolwxc65"]
+
+[ext_resource type="FontFile" uid="uid://b0y85cnal68dw" path="res://assets/gui/Davida.ttf" id="1_45prj"]
+[ext_resource type="Texture2D" uid="uid://dmh75r5h3ixo1" path="res://assets/gui/pages/page3.png" id="2_goohq"]
+
+[sub_resource type="Theme" id="Theme_ojf0e"]
+default_font = ExtResource("1_45prj")
+default_font_size = 24
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y1prj"]
+texture = ExtResource("2_goohq")
+
+[node name="GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ojf0e")
+
+[node name="Death" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Book" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Book"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 454.0
+grow_vertical = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="Book/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_y1prj")
+
+[node name="MarginContainer" type="MarginContainer" parent="Book/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Book/MarginContainer/MarginContainer"]
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Header" type="Label" parent="Book/MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "CRAZY CRUSH"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Book/MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "za wurdo"
+fit_content = true
+scroll_active = false
+
+[node name="Pause" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
