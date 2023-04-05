@@ -1,8 +1,7 @@
 // Wind Waker style water - NekotoArts
 // Adapted from https://www.shadertoy.com/view/3tKBDz
-// After which I added in some fractal Brownian motion
-// as well as vertex displacement
 
+// Tombleron: Thanks, NekotoArts!
 shader_type spatial;
 
 uniform vec4 WATER_COL : source_color =  vec4(0.04, 0.38, 0.88, 1.0);
