@@ -2,5 +2,5 @@
 .godot/
 
 # Temporary audio files
-speech_recognition/kek.wav
-speech_recognition/lol.wav
+kek.wav
+lol.wav
