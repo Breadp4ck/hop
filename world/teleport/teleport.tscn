@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cigbjnel7u35e"]
+
+[ext_resource type="Script" path="res://world/teleport/teleport.gd" id="1_lmfdq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r3386"]
+size = Vector3(2, 2, 2)
+
+[node name="teleport" type="Area3D"]
+collision_layer = 4
+script = ExtResource("1_lmfdq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_r3386")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
