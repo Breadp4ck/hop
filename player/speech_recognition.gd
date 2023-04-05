@@ -12,7 +12,13 @@ func _ready() -> void:
 	effect = AudioServer.get_bus_effect(microphone_idx, 0)
 
 func _input(event):
-	if event.is_action_released("microphone"):
+	if event.is_action_pressed("microphone"):
+		effect.set_recording_active(true)
+	
+	elif event.is_action_released("microphone"):
+		if effect.is_recording_active() == false:
+			return
+		
 		effect.set_recording_active(false)
 		record = effect.get_recording()
 		record.save_to_wav("./speech_recognition/kek.wav")
@@ -22,10 +28,7 @@ func _input(event):
 		var output = []
 		OS.execute(path + "pocketsphinx/pocketsphinx", ["single", "./speech_recognition/lol.wav", "-hmm", "./speech_recognition/en-us/en-us", "-lm", "./speech_recognition/en-us/en-us.lm.bin", "-dict", "./speech_recognition/spells.dict"], output, true)
 		var json = JSON.parse_string(output[0])
-		print(json.t)
-		
-	elif event.is_action_pressed("microphone"):
-		effect.set_recording_active(true)
+		print("Recognized: " + json.t)
 
 func get_directory() -> String:
 	var platform_name = OS.get_name()
