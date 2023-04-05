@@ -1,20 +1,17 @@
-[gd_scene load_steps=19 format=3 uid="uid://dkbvxif2dlly2"]
+[gd_scene load_steps=16 format=3 uid="uid://dkbvxif2dlly2"]
 
 [ext_resource type="PackedScene" uid="uid://bd3b3ca374ji6" path="res://player/player.tscn" id="1_236wh"]
-[ext_resource type="Script" path="res://world/world.gd" id="1_etobx"]
 [ext_resource type="PackedScene" uid="uid://de4nmvujce6r1" path="res://world/start_menu.tscn" id="2_fg7nm"]
 [ext_resource type="PackedScene" uid="uid://ceho34sq4yue4" path="res://assets/locations/hub/m_hub.glb" id="4_7vdxq"]
 [ext_resource type="PackedScene" uid="uid://bkqbcuxs5k103" path="res://assets/locations/hub/c_hub.glb" id="5_2c0do"]
 [ext_resource type="PackedScene" uid="uid://2jwacksnnurt" path="res://assets/entities/old_tree/m_old_tree.glb" id="5_ok3cq"]
 [ext_resource type="PackedScene" uid="uid://odugmk43ag6u" path="res://assets/entities/table/m_table.glb" id="6_hif56"]
-[ext_resource type="PackedScene" uid="uid://dreuond0eui88" path="res://assets/entities/book/m_book.glb" id="7_fmso5"]
 [ext_resource type="PackedScene" uid="uid://bcywgljymyh1b" path="res://assets/entities/old_tree/c_old_tree.glb" id="7_jm025"]
+[ext_resource type="PackedScene" uid="uid://bnwr1wfb6ylgb" path="res://world/inventory_items/m_book.tscn" id="7_oa0ut"]
 [ext_resource type="PackedScene" uid="uid://bahpk53tkuqv7" path="res://assets/entities/table/c_table.glb" id="8_d5i1j"]
 [ext_resource type="PackedScene" uid="uid://d2bwq5tjfwuey" path="res://world/items/door/m_door.tscn" id="8_nqioq"]
-[ext_resource type="PackedScene" uid="uid://cigbjnel7u35e" path="res://world/teleport/teleport.tscn" id="10_rh6c8"]
-[ext_resource type="PackedScene" uid="uid://br3vb4msp37nh" path="res://assets/entities/book/c_book.glb" id="11_07de2"]
+[ext_resource type="PackedScene" uid="uid://dol2mhio14skj" path="res://world/inventory_items/c_book.tscn" id="12_0erdi"]
 [ext_resource type="PackedScene" uid="uid://bneymo1bc8anp" path="res://world/items/door/c_door.tscn" id="13_h65vk"]
-[ext_resource type="PackedScene" uid="uid://3fv52q54jkyl" path="res://world/damage_area/damage_area.tscn" id="14_n5cnq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b0b0v"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -30,7 +27,6 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="World" type="Node3D"]
-script = ExtResource("1_etobx")
 
 [node name="StartMenu" parent="." instance=ExtResource("2_fg7nm")]
 visible = false
@@ -59,26 +55,11 @@ transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, -2
 [node name="m_table2" parent="Material" instance=ExtResource("6_hif56")]
 transform = Transform3D(0.819152, 0, -0.573576, 0, 1, 0, 0.573576, 0, 0.819152, 2.5, 1, 6)
 
-[node name="m_book" parent="Material" instance=ExtResource("7_fmso5")]
-transform = Transform3D(0.826098, 0, -0.563526, 0, 1, 0, 0.563526, 0, 0.826098, -2.9, 1.641, 0.1)
+[node name="book" parent="Material" instance=ExtResource("7_oa0ut")]
+transform = Transform3D(0.984808, 0, 0.173648, 0, 1, 0, -0.173648, 0, 0.984808, -2.91081, 1.64648, 0.18953)
 
 [node name="door" parent="Material" instance=ExtResource("8_nqioq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.2, 8)
-
-[node name="damageArea" parent="Material" instance=ExtResource("14_n5cnq")]
-transform = Transform3D(0.413, 0, 0, 0, 0.413, 0, 0, 0, 0.413, 0, 2, 8)
-collision_layer = 0
-collision_mask = 4
-damage = 1
-
-[node name="teleport" parent="Material" node_paths=PackedStringArray("destination_node") instance=ExtResource("10_rh6c8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 8)
-collision_layer = 1
-collision_mask = 4
-destination_node = NodePath("../teleport_destination")
-
-[node name="teleport_destination" type="Node3D" parent="Material"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 12)
 
 [node name="Cognitive" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
@@ -86,17 +67,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
 [node name="c_hub" parent="Cognitive" instance=ExtResource("5_2c0do")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
+[node name="c_old_tree" parent="Cognitive" instance=ExtResource("7_jm025")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
+
 [node name="c_table" parent="Cognitive" instance=ExtResource("8_d5i1j")]
 transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, -2.8, 1, -0.2)
 
 [node name="c_table2" parent="Cognitive" instance=ExtResource("8_d5i1j")]
 transform = Transform3D(0.819152, 0, -0.573576, 0, 1, 0, 0.573576, 0, 0.819152, 2.5, 1, 6)
 
-[node name="c_old_tree" parent="Cognitive" instance=ExtResource("7_jm025")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
-
-[node name="c_book" parent="Cognitive" instance=ExtResource("11_07de2")]
-transform = Transform3D(0.826098, 0, -0.563526, 0, 1, 0, 0.563526, 0, 0.826098, -2.9, 1.641, 0.1)
+[node name="book" parent="Cognitive" instance=ExtResource("12_0erdi")]
+transform = Transform3D(0.984808, 0, 0.173648, 0, 1, 0, -0.173648, 0, 0.984808, -2.91081, 1.64648, 0.18953)
 
 [node name="door" parent="Cognitive" instance=ExtResource("13_h65vk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.2, 8)

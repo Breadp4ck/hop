@@ -168,8 +168,7 @@ func jump_to_plane() -> void:
 		animator.stop()
 		return
 	
-	var world = get_parent()
-	match world.current_plane:
+	match World.current_plane:
 		Globals.WorldPlane.MATERIAL:
 			global_position += Globals.WORLD_OFFSET
 			eye.environment = shadesmar_env
@@ -177,7 +176,7 @@ func jump_to_plane() -> void:
 			global_position -= Globals.WORLD_OFFSET
 			eye.environment = material_env
 	
-	world.invert_plane()
+	World.invert_plane()
 
 func can_jump_to_plane() -> bool:
 	if jump_check_area.has_overlapping_bodies():
@@ -190,8 +189,7 @@ func can_jump_to_plane() -> bool:
 
 # Animator.
 func move_jump_check_area() -> void:
-	var world = get_parent()
-	match world.current_plane:
+	match World.current_plane:
 		Globals.WorldPlane.MATERIAL:
 			jump_check_area.position += Globals.WORLD_OFFSET
 		Globals.WorldPlane.COGNITIVE:
@@ -229,7 +227,7 @@ func interact() -> void:
 	if intersection.has("collider") and intersection.collider is Item and intersection.collider.interactable:
 		var spell := Spell.new()
 		spell.types.append(Globals.SpellType.WIND)
-		intersection.collider.interacted.emit(spell)
+		intersection.collider.interacted.emit(null) # If emit(spell) than can open doors.
 		print("hit some shit")
 		
 	want_interact = false

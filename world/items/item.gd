@@ -36,12 +36,17 @@ func interact_with_spell(spell: Spell) -> void:
 func interact(spell: Spell) -> void:
 	pass
 
-# method called when player has interacted with item
+# Abstract method called when player has interacted with item
 func interact_with_player() -> void:
 	pass
 	
 func get_inversed_item() -> Item:
-	if get_parent().name == "Material":
+	var parent_name = get_parent().name
+		
+	if parent_name == "Material":
 		return get_node("../../Cognitive/" + name)
-	else:
+	elif parent_name == "Cognitive":
 		return get_node("../../Material/" + name)
+	
+	print("Cant find inversed item in " + parent_name)
+	return null
