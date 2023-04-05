@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://die2clnm3gt6u"]
+
+[ext_resource type="Script" path="res://spells/spell.gd" id="1_s3d0n"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_huiik"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jgjlq"]
+albedo_color = Color(0, 0.25098, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_tc66o"]
+material = SubResource("StandardMaterial3D_jgjlq")
+
+[node name="WaterSpell" type="Area3D"]
+script = ExtResource("1_s3d0n")
+type = 1
+length = null
+duration = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_huiik")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_tc66o")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

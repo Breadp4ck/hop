@@ -11,6 +11,7 @@ const INTERACT_RAY_LENGTH: float = 3.0
 @export var walk_time: float = 0.35 # sec
 @export var max_queue_transitions: int = 1 # amount
 @export var jump_check_area: Area3D
+@export var spell_caster: SpellCaster
 
 @onready var eye: Camera3D = $Head/Eye
 @onready var head: Node3D = $Head
@@ -22,8 +23,9 @@ const INTERACT_RAY_LENGTH: float = 3.0
 @onready var material_env: Environment = load("res://player/material_env.tres")
 @onready var shadesmar_env: Environment = load("res://player/shadesmar_env.tres")
 
-var last_transition: Movement = -1
-var is_jumping: bool = false
+var can_input: bool = true:
+	get:
+		return (not is_jumping) and (transition_tween == null or not transition_tween.is_running()) and (not is_spell_delay)
 
 enum Movement {
 	ROTATE_LEFT,
@@ -39,15 +41,24 @@ var interact_ray_origin: Vector3 = Vector3.ZERO
 var interact_ray_normal: Vector3 = Vector3.FORWARD
 var transition_tween: Tween
 
+var last_transition: Movement = -1
+var is_jumping: bool = false
+var is_spell_delay: bool = false
+var spell_delay_time: float = 0.5
+
 var transition_queue: Array = []
 
 #func _ready():
 	#is_transition_possible(Vector3.FORWARD)
 
 func _input(event: InputEvent) -> void:
-	if is_jumping:
+	if can_input == false:
 		return
-		
+
+	if event.is_action_pressed("cast_spell"):
+		if spell_caster.try_cast_choosen():
+			activate_spell_delay()
+
 	if event.is_action_pressed("interact"):
 		interact_ray_origin = eye.project_ray_origin(event.position)
 		interact_ray_normal = interact_ray_origin + eye.project_ray_normal(event.position) * INTERACT_RAY_LENGTH
@@ -65,7 +76,7 @@ func _input(event: InputEvent) -> void:
 
 	add_transition(transition)
 
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	if want_interact:
 		interact()
 	
@@ -225,9 +236,12 @@ func interact() -> void:
 	var intersection := space_state.intersect_ray(query)
 	
 	if intersection.has("collider") and intersection.collider is Item and intersection.collider.interactable:
-		var spell := Spell.new()
-		spell.types.append(Globals.SpellType.WIND)
-		intersection.collider.interacted.emit(null) # If emit(spell) than can open doors.
+		intersection.collider.interacted.emit(null)
 		print("hit some shit")
 		
 	want_interact = false
+
+func activate_spell_delay() -> void:
+	is_spell_delay = true
+	await get_tree().create_timer(spell_delay_time).timeout
+	is_spell_delay = false

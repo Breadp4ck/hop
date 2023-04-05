@@ -16,30 +16,21 @@ signal interacted(with: Spell) # Calls when Player interacts with Item
 @export var needed_types_to_interact: Array[Globals.SpellType] = []
 
 func on_interact(spell: Spell) -> void:
-	if spell != null:
-		for i in spell.types:
-			if needed_types_to_interact.has(i):
-				interact_with_spell(spell)
-				break
-	else:
-		interact_with_player()
+	if spell == null and needed_types_to_interact.size() == 0:
+		interact(null)
+		get_inversed_item().interact(null)
+	elif spell != null and needed_types_to_interact.has(spell.type):
+		interact(spell)
+		get_inversed_item().interact(spell)
 
 # Abstract methods
 # --------------------------------------------------------------------------------------------------
 
-# method called when spell have interacted with item
-func interact_with_spell(spell: Spell) -> void:
-	interact(spell)
-	get_inversed_item().interact(spell)
-
-# Abstract
 func interact(spell: Spell) -> void:
 	pass
 
-# Abstract method called when player has interacted with item
-func interact_with_player() -> void:
-	pass
-	
+# --------------------------------------------------------------------------------------------------
+
 func get_inversed_item() -> Item:
 	var parent_name = get_parent().name
 		
