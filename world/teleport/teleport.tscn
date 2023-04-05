@@ -6,10 +6,12 @@
 size = Vector3(2, 2, 2)
 
 [node name="teleport" type="Area3D"]
-collision_layer = 4
+collision_layer = 0
+collision_mask = 4
 script = ExtResource("1_lmfdq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_r3386")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

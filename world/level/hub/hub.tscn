@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://dksoaqgf1t4cv"]
+
+[ext_resource type="PackedScene" uid="uid://bkqbcuxs5k103" path="res://assets/locations/hub/c_hub.glb" id="1_74rv6"]
+[ext_resource type="MeshLibrary" uid="uid://ce5q65war85lh" path="res://world/level/collision_mesh_library.tres" id="2_xnqcf"]
+[ext_resource type="PackedScene" uid="uid://ceho34sq4yue4" path="res://assets/locations/hub/m_hub.glb" id="3_3hsij"]
+[ext_resource type="PackedScene" uid="uid://d2bwq5tjfwuey" path="res://world/items/door/m_door.tscn" id="4_tgndu"]
+[ext_resource type="PackedScene" uid="uid://odugmk43ag6u" path="res://assets/entities/table/m_table.glb" id="5_6i387"]
+[ext_resource type="PackedScene" uid="uid://bnwr1wfb6ylgb" path="res://world/inventory_items/m_book.tscn" id="6_8jc57"]
+[ext_resource type="PackedScene" uid="uid://bneymo1bc8anp" path="res://world/items/door/c_door.tscn" id="6_biaq7"]
+[ext_resource type="PackedScene" uid="uid://bahpk53tkuqv7" path="res://assets/entities/table/c_table.glb" id="8_5hdcg"]
+[ext_resource type="PackedScene" uid="uid://dol2mhio14skj" path="res://world/inventory_items/c_book.tscn" id="10_it3rf"]
+
+[node name="Hub" type="Node3D"]
+
+[node name="Material" type="Node3D" parent="."]
+
+[node name="Static" type="Node3D" parent="Material"]
+
+[node name="Collision" type="GridMap" parent="Material/Static"]
+visible = false
+mesh_library = ExtResource("2_xnqcf")
+cell_center_x = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(65534, 65535, 0, 65534, 0, 0, 65534, 1, 0, 65535, 1, 0, 1, 1, 0, 1, 0, 0, 1, 65535, 0, 0, 65535, 0, 65535, 65535, 0, 65534, 2, 0, 65533, 3, 0, 65534, 4, 0, 65535, 5, 0, 2, 1, 0, 3, 1, 0, 3, 2, 0, 3, 3, 0, 1, 5, 0, 3, 4, 0, 3, 5, 0, 2, 5, 0, 2, 3, 0, 1, 6, 0, 65535, 6, 0, 1, 7, 0, 0, 8, 0, 65535, 7, 0)
+}
+metadata/_editor_floor_ = Vector3(0, -1, 0)
+
+[node name="Base" parent="Material/Static" instance=ExtResource("3_3hsij")]
+
+[node name="Door" parent="Material" instance=ExtResource("4_tgndu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85006, 0.154531, 7.98578)
+
+[node name="Table1" parent="Material" instance=ExtResource("5_6i387")]
+transform = Transform3D(0.987672, 0, -0.156538, 0, 1, 0, 0.156538, 0, 0.987672, -2.85078, 0.0545614, -0.208363)
+
+[node name="Table2" parent="Material" instance=ExtResource("5_6i387")]
+transform = Transform3D(0.857158, 0, -0.515053, 0, 1, 0, 0.515053, 0, 0.857158, 2.62447, 0.0956764, 6.02)
+
+[node name="Book" parent="Material" instance=ExtResource("6_8jc57")]
+transform = Transform3D(0.824097, 0, -0.566449, 0, 1, 0, 0.566449, 0, 0.824097, -2.89977, 0.694009, 0.0123323)
+
+[node name="Cognitive" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
+
+[node name="Static" type="Node3D" parent="Cognitive"]
+
+[node name="Base" parent="Cognitive/Static" instance=ExtResource("1_74rv6")]
+
+[node name="Collision" type="GridMap" parent="Cognitive/Static"]
+visible = false
+mesh_library = ExtResource("2_xnqcf")
+cell_center_x = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(65534, 65535, 0, 65534, 0, 0, 65534, 1, 0, 65535, 1, 0, 1, 1, 0, 1, 0, 0, 1, 65535, 0, 0, 65535, 0, 65535, 65535, 0, 65534, 2, 0, 65533, 3, 0, 65534, 4, 0, 65535, 5, 0, 2, 1, 0, 3, 1, 0, 3, 2, 0, 3, 3, 0, 1, 5, 0, 3, 4, 0, 3, 5, 0, 2, 5, 0, 2, 3, 0, 1, 6, 0, 65535, 6, 0, 1, 7, 0, 0, 8, 0, 1, 8, 0, 65535, 7, 0)
+}
+metadata/_editor_floor_ = Vector3(0, 1, 0)
+
+[node name="Door" parent="Cognitive" instance=ExtResource("6_biaq7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85006, 0.154531, 7.98578)
+
+[node name="Table1" parent="Cognitive" instance=ExtResource("8_5hdcg")]
+transform = Transform3D(0.987672, 0, -0.156538, 0, 1, 0, 0.156538, 0, 0.987672, -2.85078, 0.0545614, -0.208363)
+
+[node name="Table2" parent="Cognitive" instance=ExtResource("8_5hdcg")]
+transform = Transform3D(0.857158, 0, -0.515053, 0, 1, 0, 0.515053, 0, 0.857158, 2.62447, 0.0956764, 6.02)
+
+[node name="Book" parent="Cognitive" instance=ExtResource("10_it3rf")]
+transform = Transform3D(0.824097, 0, -0.566449, 0, 1, 0, 0.566449, 0, 0.824097, -2.89977, 0.694009, 0.0123323)
