@@ -226,11 +226,12 @@ libraries = {
 [node name="JumpCheckArea" parent="Head" instance=ExtResource("3_7dtr0")]
 collision_layer = 2
 
-[node name="Microphone" type="AudioStreamPlayer" parent="Head"]
+[node name="SpeechRecognition" type="AudioStreamPlayer" parent="Head" node_paths=PackedStringArray("spell_caster")]
 stream = SubResource("AudioStreamMicrophone_1t71h")
 autoplay = true
 bus = &"Microphone"
 script = ExtResource("6_gxi0n")
+spell_caster = NodePath("../../SpellCaster")
 
 [node name="Body" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

@@ -1,11 +1,19 @@
 extends Node
 
+@export var spell_caster: SpellCaster
+@export var spells = {
+	"fire": Globals.SpellType.FIRE,
+	"death": Globals.SpellType.WATER,
+	"meat": Globals.SpellType.WIND,
+}
+
 var effect: AudioEffect
 var record: AudioStreamWAV
 
 var path: String
 
 func _ready() -> void:
+	
 	path = get_directory()
 	
 	var microphone_idx: int = AudioServer.get_bus_index("Microphone")
@@ -29,6 +37,9 @@ func _input(event):
 		OS.execute(path + "pocketsphinx/pocketsphinx", ["single", "./speech_recognition/lol.wav", "-hmm", "./speech_recognition/en-us/en-us", "-lm", "./speech_recognition/en-us/en-us.lm.bin", "-dict", "./speech_recognition/spells.dict"], output, true)
 		var json = JSON.parse_string(output[0])
 		print("Recognized: " + json.t)
+		
+		if spells.keys().has(json.t):
+			spell_caster.choose(spells[json.t])
 
 func get_directory() -> String:
 	var platform_name = OS.get_name()
