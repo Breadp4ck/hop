@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globals="*res://singletons/globals.gd"
+World="*res://singletons/world.gd"
+Inventory="*res://singletons/inventory.gd"
 
 [display]
 
