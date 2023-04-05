@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmuag7dakrrv4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_f20fo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_63omc"]
+size = Vector3(2, 2, 2)
+
+[node name="CollisionMeshLibrary" type="Node3D"]
+
+[node name="Collider" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_f20fo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Collider"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collider/StaticBody3D"]
+shape = SubResource("BoxShape3D_63omc")
