@@ -4,9 +4,11 @@ extends Node
 @export var spell_caster: SpellCaster
 @export var spells = {
 	"fire": Globals.SpellType.FIRE,
-	"death": Globals.SpellType.WATER,
-	"meat": Globals.SpellType.WIND,
-	"magic": Globals.SpellType.REPAIR
+	"water": Globals.SpellType.WATER,
+	"wind": Globals.SpellType.WIND,
+	"repair": Globals.SpellType.REPAIR,
+	"time": Globals.SpellType.TIMESTOP,
+	"teleport": Globals.SpellType.TELEPORT
 }
 
 var effect: AudioEffect

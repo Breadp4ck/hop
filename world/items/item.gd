@@ -4,6 +4,8 @@ extends Node3D
 signal interacted(with: Spell) # Calls when Player interacts with Item
 
 @onready var animator: AnimationPlayer = $AnimationPlayer
+@onready var collision: CollisionShape3D = $CollisionShape3D
+@onready var body_collision: CollisionShape3D = $StaticBody3D/CollisionShape3D
 
 @export var interactable: bool = false :
 	set(value):
@@ -29,6 +31,9 @@ func on_interact(spell: Spell) -> void:
 # --------------------------------------------------------------------------------------------------
 
 func interact(spell: Spell) -> void:
+	pass
+	
+func disable() -> void:
 	pass
 
 # --------------------------------------------------------------------------------------------------

@@ -6,11 +6,11 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_huiik"]
 radius = 0.25
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dl8c1"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ufu2g"]
 albedo_color = Color(1, 0.101961, 0, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_276k5"]
-material = SubResource("StandardMaterial3D_dl8c1")
+material = SubResource("StandardMaterial3D_ufu2g")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2salf"]
 gravity = Vector3(0, 0, 0)

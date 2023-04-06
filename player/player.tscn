@@ -1,9 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://bd3b3ca374ji6"]
+[gd_scene load_steps=27 format=3 uid="uid://bd3b3ca374ji6"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_khcw2"]
 [ext_resource type="Environment" uid="uid://biqvtjsci1ld8" path="res://player/material_env.tres" id="2_5bh7t"]
 [ext_resource type="PackedScene" uid="uid://dvoagtuj8u6vc" path="res://player/effects/shattering_glass/shattering_glass.tscn" id="2_63522"]
-[ext_resource type="PackedScene" uid="uid://bbtltjolwxc65" path="res://player/gui.tscn" id="2_jr7gb"]
+[ext_resource type="PackedScene" uid="uid://bbtltjolwxc65" path="res://player/gui/gui.tscn" id="2_jr7gb"]
 [ext_resource type="PackedScene" uid="uid://lsdpiqbmi4y5" path="res://player/jump_check_area.tscn" id="3_7dtr0"]
 [ext_resource type="AudioStream" uid="uid://cj6adiumhanwc" path="res://assets/sounds/steps/wood01.ogg" id="3_sjl3t"]
 [ext_resource type="AudioStream" uid="uid://5q7frhwshw5p" path="res://assets/sounds/steps/wood02.ogg" id="4_aix4j"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://die2clnm3gt6u" path="res://spells/water_spell.tscn" id="7_wwpun"]
 [ext_resource type="PackedScene" uid="uid://bdptjf5n1xaqu" path="res://spells/wind_spell.tscn" id="8_f7els"]
 [ext_resource type="PackedScene" uid="uid://y8o54gbbmy7x" path="res://spells/repair_spell.tscn" id="11_mvv62"]
+[ext_resource type="PackedScene" uid="uid://dpe3c4jm65lo1" path="res://spells/timestop_spell.tscn" id="16_opg8d"]
+[ext_resource type="PackedScene" uid="uid://cojugwhuyh380" path="res://spells/teleport_spell.tscn" id="17_c6sm3"]
 
 [sub_resource type="Animation" id="Animation_cepqe"]
 resource_name = "RESET"
@@ -223,7 +225,7 @@ _data = {
 radius = 0.45
 height = 1.1
 
-[node name="Player" type="Node3D" node_paths=PackedStringArray("jump_check_area", "spell_caster")]
+[node name="Player" type="Node3D" node_paths=PackedStringArray("jump_check_area", "spell_caster") groups=["Player"]]
 script = ExtResource("1_khcw2")
 jump_check_area = NodePath("Head/JumpCheckArea")
 spell_caster = NodePath("SpellCaster")
@@ -273,10 +275,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 [node name="ObstacleDetectionRay" type="RayCast3D" parent="Body"]
 target_position = Vector3(0, 0, -2)
 
-[node name="Node" type="Node3D" parent="Body/ObstacleDetectionRay"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Body/ObstacleDetectionRay/Node"]
-
 [node name="hand_with_ring" parent="Body" node_paths=PackedStringArray("spell_caster") instance=ExtResource("7_j8jkj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.2)
 spell_caster = NodePath("../../SpellCaster")
@@ -294,5 +292,7 @@ fire_spell_scene = ExtResource("6_7r8ka")
 water_spell_scene = ExtResource("7_wwpun")
 wind_spell_scene = ExtResource("8_f7els")
 repair_spell_scene = ExtResource("11_mvv62")
+timestop_spell_scene = ExtResource("16_opg8d")
+teleport_spell_scene = ExtResource("17_c6sm3")
 
 [connection signal="timeout" from="Head/SpeechRecognition/Timer" to="Head/SpeechRecognition" method="_on_timer_timeout"]

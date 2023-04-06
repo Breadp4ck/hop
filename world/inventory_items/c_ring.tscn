@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4ftr3a8r5skk"]
+[gd_scene load_steps=10 format=3 uid="uid://c4ftr3a8r5skk"]
 
 [ext_resource type="Script" path="res://player/inventory/inventory_item.gd" id="1_107vg"]
 [ext_resource type="Texture2D" uid="uid://fsrop13bjrft" path="res://assets/entities/ring/c_ring_palette-inverse.png" id="1_whwyi"]
@@ -53,6 +53,9 @@ _data = {
 [sub_resource type="SphereShape3D" id="SphereShape3D_bpoym"]
 radius = 0.05
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_tdjln"]
+radius = 0.05
+
 [node name="c_ring" type="Area3D"]
 script = ExtResource("1_107vg")
 type = 1
@@ -69,3 +72,10 @@ libraries = {
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_bpoym")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("SphereShape3D_tdjln")
