@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bb31djcios3dg"]
+[gd_scene load_steps=4 format=3 uid="uid://bb31djcios3dg"]
 
 [ext_resource type="PackedScene" uid="uid://dksoaqgf1t4cv" path="res://world/level/hub/hub.tscn" id="1_s678q"]
 [ext_resource type="PackedScene" uid="uid://dr620hhhu6sdg" path="res://world/level/room_1/room_1.tscn" id="2_j7kwd"]
-[ext_resource type="PackedScene" uid="uid://drcef7oxafw5i" path="res://world/items/portal/m_portal.tscn" id="3_hki5r"]
 [ext_resource type="PackedScene" uid="uid://cigbjnel7u35e" path="res://world/teleport/teleport.tscn" id="3_m2yko"]
-[ext_resource type="PackedScene" uid="uid://bstd3xy8rkkn7" path="res://world/items/portal/c_portal.tscn" id="6_r7yty"]
 
 [node name="Level" type="Node3D"]
 
@@ -15,11 +13,9 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 100, 0
 
 [node name="Material" type="Node3D" parent="."]
 
-[node name="PortalToRoom1" parent="Material" instance=ExtResource("3_hki5r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
-
-[node name="teleport" parent="Material/PortalToRoom1" index="16" node_paths=PackedStringArray("destination_marker")]
-destination_marker = NodePath("../../EntranceRoom1")
+[node name="PortalToRoom1" parent="Material" node_paths=PackedStringArray("destination_marker") instance=ExtResource("3_m2yko")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 4)
+destination_marker = NodePath("../EntranceRoom1")
 
 [node name="EntranceRoom1" type="Marker3D" parent="Material"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98, 0, 0)
@@ -34,11 +30,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
 [node name="Cognitive" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
 
-[node name="PortalToRoom1" parent="Cognitive" instance=ExtResource("6_r7yty")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
-
-[node name="teleport" parent="Cognitive/PortalToRoom1" index="16" node_paths=PackedStringArray("destination_marker")]
-destination_marker = NodePath("../../EntranceRoom1")
+[node name="PortalToRoom1" parent="Cognitive" node_paths=PackedStringArray("destination_marker") instance=ExtResource("3_m2yko")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 4)
+destination_marker = NodePath("../EntranceRoom1")
 
 [node name="EntranceRoom1" type="Marker3D" parent="Cognitive"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98, 0, 0)
@@ -49,8 +43,3 @@ destination_marker = NodePath("../EntranceHubFromRoom1")
 
 [node name="EntranceHubFromRoom1" type="Marker3D" parent="Cognitive"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
-
-[editable path="Material/PortalToRoom1"]
-[editable path="Material/PortalToRoom1/teleport"]
-[editable path="Cognitive/PortalToRoom1"]
-[editable path="Cognitive/PortalToRoom1/teleport"]
