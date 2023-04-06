@@ -23,7 +23,3 @@ func _on_area_entered(area) -> void:
 		area.interacted.emit(self)
 		
 	queue_free()
-
-func _on_body_entered(body):
-	print(body)
-	queue_free()

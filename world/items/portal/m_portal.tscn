@@ -1200,11 +1200,11 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_dx4fg"]
 size = Vector3(0.3, 1.5, 1.05)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_3vsmi"]
-size = Vector3(2, 2, 2)
+[sub_resource type="BoxShape3D" id="BoxShape3D_togfg"]
+size = Vector3(0.3, 2, 2)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_yqpty"]
-size = Vector3(0.35, 2, 2)
+[sub_resource type="BoxShape3D" id="BoxShape3D_8qtcm"]
+size = Vector3(0.7, 2, 2)
 
 [node name="m_portal" type="Area3D"]
 script = ExtResource("1_dfeuq")
@@ -1300,11 +1300,11 @@ shape = SubResource("BoxShape3D_dx4fg")
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
-shape = SubResource("BoxShape3D_3vsmi")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0441591, 0.7, 0)
+shape = SubResource("BoxShape3D_togfg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0.7, 0)
-shape = SubResource("BoxShape3D_yqpty")
+shape = SubResource("BoxShape3D_8qtcm")
 
 [editable path="teleport"]

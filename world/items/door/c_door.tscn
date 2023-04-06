@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bneymo1bc8anp"]
+[gd_scene load_steps=15 format=3 uid="uid://bneymo1bc8anp"]
 
 [ext_resource type="Script" path="res://world/items/door/door.gd" id="1_avo2w"]
 [ext_resource type="Texture2D" uid="uid://cj6j0voonhrup" path="res://assets/entities/door/c_door_palette-inverse.png" id="1_igufy"]
@@ -126,6 +126,9 @@ _data = {
 "RESET": SubResource("Animation_22ttl")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ws65b"]
+size = Vector3(0.265, 1.99, 1.273)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_m5ote"]
 size = Vector3(0.218134, 1.99032, 1.27285)
 
@@ -148,6 +151,12 @@ skeleton = NodePath("")
 libraries = {
 "": SubResource("AnimationLibrary_ojuc7")
 }
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019773, 1, 0)
+shape = SubResource("BoxShape3D_ws65b")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08, 1, 0)

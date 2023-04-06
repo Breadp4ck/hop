@@ -51,12 +51,11 @@ _data = {
 "M_OldTree": SubResource("Animation_wlbhy")
 }
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_cqir1"]
-size = Vector3(6, 2, 2)
+[sub_resource type="BoxShape3D" id="BoxShape3D_sv2x8"]
+size = Vector3(6, 1, 1)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1ha1t"]
-radius = 1.32043
-height = 8.76827
+[sub_resource type="BoxShape3D" id="BoxShape3D_hxp63"]
+size = Vector3(6, 1.5, 1.5)
 
 [node name="m_old_tree" type="Area3D"]
 script = ExtResource("1_7rhk1")
@@ -76,9 +75,9 @@ libraries = {
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.572003, 0)
-shape = SubResource("BoxShape3D_cqir1")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.357536, 0.638192, 0)
+shape = SubResource("BoxShape3D_sv2x8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_1ha1t")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.357536, 0.638192, 0)
+shape = SubResource("BoxShape3D_hxp63")

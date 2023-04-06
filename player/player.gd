@@ -76,7 +76,7 @@ func _input(event: InputEvent) -> void:
 
 	add_transition(transition)
 
-func _process(delta: float) -> void:
+func _process(delta: float) -> void:	
 	if want_interact:
 		interact()
 	
@@ -173,7 +173,7 @@ func set_is_jumping(value: bool) -> void:
 
 # Animator.
 func jump_to_plane() -> void:
-	jump_check_area.position = head.position
+	jump_check_area.global_position = head.global_position
 	
 	if not can_jump_to_plane():
 		animator.stop()
@@ -191,6 +191,8 @@ func jump_to_plane() -> void:
 
 func can_jump_to_plane() -> bool:
 	if jump_check_area.has_overlapping_bodies():
+		print("Cant hop")
+		jump_check_area.global_position = head.global_position
 		return false
 	
 	if transition_tween == null or not transition_tween.is_running():
