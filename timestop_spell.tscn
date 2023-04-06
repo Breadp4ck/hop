@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://duknhj8nalbdn"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_nsj3r"]
-radius = 0.25
-
-[node name="timestop_spell" type="Area3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_nsj3r")

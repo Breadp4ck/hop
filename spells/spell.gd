@@ -27,7 +27,8 @@ func _on_area_entered(area) -> void:
 
 func end() -> void:
 	transition_tween.stop()
-	animator.play("end")	
+	animator.play("end")
 
 func destroy() -> void:
+	print("Destroy spell " + Globals.SpellType.keys()[type])
 	queue_free()

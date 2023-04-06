@@ -9,6 +9,8 @@ signal choose_canceled()
 @export var water_spell_scene: PackedScene
 @export var wind_spell_scene: PackedScene
 @export var repair_spell_scene: PackedScene
+@export var timestop_spell_scene: PackedScene
+@export var teleport_spell_scene: PackedScene
 @onready var head: Node3D = $"../Head"
 
 var choosen_spell_type: Globals.SpellType = -1
@@ -59,6 +61,10 @@ func get_spell(spell_type: Globals.SpellType) -> Spell:
 			return wind_spell_scene.instantiate()
 		Globals.SpellType.REPAIR:
 			return repair_spell_scene.instantiate()
+		Globals.SpellType.TIMESTOP:
+			return timestop_spell_scene.instantiate()
+		Globals.SpellType.TELEPORT:
+			return teleport_spell_scene.instantiate()
 		_:
 			return null
 			

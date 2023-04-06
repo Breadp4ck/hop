@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://cojugwhuyh380"]
+
+[ext_resource type="Script" path="res://spells/teleport_spell.gd" id="1_dbago"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ji8dw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vtuvb"]
+albedo_color = Color(0, 1, 0.831373, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_u2ymh"]
+material = SubResource("StandardMaterial3D_vtuvb")
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o7nrx"]
+
+[node name="teleport_spell" type="Area3D"]
+script = ExtResource("1_dbago")
+type = 5
+length = 2.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_ji8dw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_u2ymh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_o7nrx")
+}
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
