@@ -219,6 +219,7 @@ func receive_damage(amount: int) -> void:
 
 func die():
 	died.emit() # todo respawn.
+	queue_free()
 
 # Interaction functions
 # --------------------------------------------------------------------------------------------------
