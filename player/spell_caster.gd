@@ -3,6 +3,7 @@ extends Node
 
 signal choosed(spell: Globals.SpellType)
 signal casted(spell: Spell)
+signal choose_canceled()
 
 @export var fire_spell_scene: PackedScene
 @export var water_spell_scene: PackedScene
@@ -23,7 +24,11 @@ func choose(spell_type: Globals.SpellType) -> void:
 	
 	print("Choose spell " + Globals.SpellType.keys()[spell_type])
 	choosed.emit(choosen_spell_type)
-	
+
+func cancel_choose() -> void:
+	choosen_spell_type = -1
+	choose_canceled.emit()
+
 func try_cast_choosen() -> bool:
 	if can_conjure() == false:
 		return false

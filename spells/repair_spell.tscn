@@ -23,4 +23,3 @@ shape = SubResource("SphereShape3D_tg254")
 mesh = SubResource("SphereMesh_kuatd")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
