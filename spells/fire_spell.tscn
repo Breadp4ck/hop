@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cnmdyd60oxgtv" path="res://assets/textures/fire.png" id="2_emtf3"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_huiik"]
+radius = 0.25
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dl8c1"]
 albedo_color = Color(1, 0.101961, 0, 1)
@@ -167,3 +168,4 @@ libraries = {
 }
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

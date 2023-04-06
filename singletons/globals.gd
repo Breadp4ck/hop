@@ -12,7 +12,8 @@ enum WorldPlane {
 enum SpellType{
 	FIRE,
 	WATER,
-	WIND
+	WIND,
+	REPAIR
 }
 
 const WORLD_OFFSET = Vector3(0.0, 100.0, 0.0)

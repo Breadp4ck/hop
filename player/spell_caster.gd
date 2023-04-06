@@ -7,27 +7,16 @@ signal casted(spell: Spell)
 @export var fire_spell_scene: PackedScene
 @export var water_spell_scene: PackedScene
 @export var wind_spell_scene: PackedScene
+@export var repair_spell_scene: PackedScene
 @onready var head: Node3D = $"../Head"
 
-var choosen_spell_type: Globals.SpellType
-
-func _process(delta) -> void: # REMOVE when add vocie spells.
-	var spell_type = -1 as Globals.SpellType
-	
-	if Input.is_key_pressed(KEY_1):
-		spell_type = (1-1) as Globals.SpellType
-	elif Input.is_key_pressed(KEY_2):
-		spell_type = (2-1) as Globals.SpellType
-	elif Input.is_key_pressed(KEY_3):
-		spell_type = (3-1) as Globals.SpellType
-	
-	if spell_type == -1:
-		return
-	
-	choose(spell_type) 
+var choosen_spell_type: Globals.SpellType = -1
 
 func choose(spell_type: Globals.SpellType) -> void:
-	if spell_type == -1 or World.current_plane == Globals.WorldPlane.MATERIAL:
+	if can_conjure() == false:
+		return
+	
+	if spell_type == -1:
 		return
 	
 	choosen_spell_type = spell_type
@@ -36,7 +25,10 @@ func choose(spell_type: Globals.SpellType) -> void:
 	choosed.emit(choosen_spell_type)
 	
 func try_cast_choosen() -> bool:
-	if choosen_spell_type == null or World.current_plane == Globals.WorldPlane.MATERIAL:
+	if can_conjure() == false:
+		return false
+	
+	if choosen_spell_type == -1:
 		return false
 	
 	var spell = get_spell(choosen_spell_type)
@@ -50,6 +42,9 @@ func try_cast_choosen() -> bool:
 	return true
 
 func get_spell(spell_type: Globals.SpellType) -> Spell:
+	if can_conjure() == false:
+		return
+	
 	match spell_type:
 		Globals.SpellType.FIRE:
 			return fire_spell_scene.instantiate()
@@ -57,5 +52,10 @@ func get_spell(spell_type: Globals.SpellType) -> Spell:
 			return water_spell_scene.instantiate()
 		Globals.SpellType.WIND:
 			return wind_spell_scene.instantiate()
+		Globals.SpellType.REPAIR:
+			return repair_spell_scene.instantiate()
 		_:
 			return null
+			
+func can_conjure() -> bool:
+	return Inventory.items[InventoryItem.Type.BOOK] == true and Inventory.items[InventoryItem.Type.RING] == true and World.current_plane == Globals.WorldPlane.COGNITIVE

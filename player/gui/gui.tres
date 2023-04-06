@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cxpgf6x1ks3yb"]
+
+[ext_resource type="FontFile" uid="uid://b0y85cnal68dw" path="res://assets/gui/Davida.ttf" id="1_yrwqw"]
+
+[resource]
+default_font = ExtResource("1_yrwqw")
+default_font_size = 24

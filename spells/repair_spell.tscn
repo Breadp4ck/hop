@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://y8o54gbbmy7x"]
+
+[ext_resource type="Script" path="res://spells/spell.gd" id="1_o34b4"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tg254"]
+radius = 0.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dl8c1"]
+albedo_color = Color(1, 0.666667, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_kuatd"]
+material = SubResource("StandardMaterial3D_dl8c1")
+
+[node name="repair_spell" type="Area3D"]
+script = ExtResource("1_o34b4")
+type = 3
+length = 2.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_tg254")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_kuatd")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
