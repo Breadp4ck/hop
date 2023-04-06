@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://player/player.gd" id="1_khcw2"]
 [ext_resource type="Environment" uid="uid://biqvtjsci1ld8" path="res://player/material_env.tres" id="2_5bh7t"]
 [ext_resource type="PackedScene" uid="uid://dvoagtuj8u6vc" path="res://player/effects/shattering_glass/shattering_glass.tscn" id="2_63522"]
-[ext_resource type="PackedScene" uid="uid://bbtltjolwxc65" path="res://player/gui.tscn" id="2_jr7gb"]
+[ext_resource type="PackedScene" uid="uid://bbtltjolwxc65" path="res://player/gui/gui.tscn" id="2_jr7gb"]
 [ext_resource type="PackedScene" uid="uid://lsdpiqbmi4y5" path="res://player/jump_check_area.tscn" id="3_7dtr0"]
 [ext_resource type="Script" path="res://player/spell_caster.gd" id="5_jpbmn"]
 [ext_resource type="PackedScene" uid="uid://cq2cbtc63fkp7" path="res://spells/fire_spell.tscn" id="6_7r8ka"]

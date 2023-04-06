@@ -5,11 +5,11 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_huiik"]
 radius = 0.25
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dl8c1"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vtuvb"]
 albedo_color = Color(1, 0.101961, 0, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_276k5"]
-material = SubResource("StandardMaterial3D_dl8c1")
+material = SubResource("StandardMaterial3D_vtuvb")
 
 [node name="FireSpell" type="Area3D"]
 script = ExtResource("1_tmxe3")
