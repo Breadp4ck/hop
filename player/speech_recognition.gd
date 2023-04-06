@@ -31,9 +31,7 @@ func _input(event):
 		record = effect.get_recording()
 		record.save_to_wav("./speech_recognition/kek.wav")
 		
-		var test = []
 		OS.execute(path + "sox/sox", ["./speech_recognition/kek.wav", "-r", "16000", "-c", "1", "-b", "16", "-e", "signed-integer", "./speech_recognition/lol.wav"], test, true)
-		print(test)
 		
 		var output = []
 		OS.execute(path + "pocketsphinx/pocketsphinx", ["single", "./speech_recognition/lol.wav", "-hmm", "./speech_recognition/en-us/en-us", "-lm", "./speech_recognition/en-us/en-us.lm.bin", "-dict", "./speech_recognition/spells.dict"], output, true)
