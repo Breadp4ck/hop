@@ -45,10 +45,10 @@ transform = Transform3D(0.857158, 0, -0.515053, 0, 1, 0, 0.515053, 0, 0.857158, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 
 [node name="Ring" parent="Material" instance=ExtResource("6_ywxpw")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.74014, 0.694008, -0.279446)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.74014, 0.661637, -0.279446)
 
 [node name="Book" parent="Material" instance=ExtResource("6_8jc57")]
-transform = Transform3D(0.824097, 0, -0.566449, 0, 1, 0, 0.566449, 0, 0.824097, -2.89977, 0.694009, 0.0123323)
+transform = Transform3D(0.824097, 0, -0.566449, 0, 1, 0, 0.566449, 0, 0.824097, -2.9, 0.694, 0)
 
 [node name="Cognitive" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
@@ -80,9 +80,9 @@ transform = Transform3D(0.857158, 0, -0.515053, 0, 1, 0, 0.515053, 0, 0.857158, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 
 [node name="Ring" parent="Cognitive" instance=ExtResource("11_7tgg0")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.74014, 0.694008, -0.279446)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.74014, 0.661637, -0.279446)
 interactable = false
 
 [node name="Book" parent="Cognitive" instance=ExtResource("10_it3rf")]
-transform = Transform3D(0.824097, 0, -0.566449, 0, 1, 0, 0.566449, 0, 0.824097, -2.89977, 0.694009, 0.0123323)
+transform = Transform3D(0.824097, 0, -0.566449, 0, 1, 0, 0.566449, 0, 0.824097, -2.9, 0.694, 0)
 interactable = false
