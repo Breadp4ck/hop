@@ -1,9 +1,15 @@
-[gd_scene load_steps=16 format=3 uid="uid://bd3b3ca374ji6"]
+[gd_scene load_steps=19 format=3 uid="uid://bd3b3ca374ji6"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_khcw2"]
 [ext_resource type="Environment" uid="uid://biqvtjsci1ld8" path="res://player/material_env.tres" id="2_5bh7t"]
 [ext_resource type="PackedScene" uid="uid://dvoagtuj8u6vc" path="res://player/effects/shattering_glass/shattering_glass.tscn" id="2_63522"]
+[ext_resource type="PackedScene" uid="uid://bbtltjolwxc65" path="res://player/gui.tscn" id="2_jr7gb"]
 [ext_resource type="PackedScene" uid="uid://lsdpiqbmi4y5" path="res://player/jump_check_area.tscn" id="3_7dtr0"]
+[ext_resource type="Script" path="res://player/spell_caster.gd" id="5_jpbmn"]
+[ext_resource type="PackedScene" uid="uid://cq2cbtc63fkp7" path="res://spells/fire_spell.tscn" id="6_7r8ka"]
+[ext_resource type="Script" path="res://player/speech_recognition.gd" id="6_gxi0n"]
+[ext_resource type="PackedScene" uid="uid://die2clnm3gt6u" path="res://spells/water_spell.tscn" id="7_wwpun"]
+[ext_resource type="PackedScene" uid="uid://bdptjf5n1xaqu" path="res://spells/wind_spell.tscn" id="8_f7els"]
 [ext_resource type="AudioStream" uid="uid://cj6adiumhanwc" path="res://assets/sounds/steps/wood01.ogg" id="3_sjl3t"]
 [ext_resource type="AudioStream" uid="uid://5q7frhwshw5p" path="res://assets/sounds/steps/wood02.ogg" id="4_aix4j"]
 [ext_resource type="AudioStream" uid="uid://dedgxk8feemta" path="res://assets/sounds/steps/wood03.ogg" id="5_cre8l"]
@@ -209,21 +215,18 @@ _data = {
 "hop": SubResource("Animation_43igt")
 }
 
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_1t71h"]
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2q3p1"]
 radius = 0.45
 height = 1.1
 
-[node name="Player" type="Node3D" node_paths=PackedStringArray("jump_check_area")]
+[node name="Player" type="Node3D" node_paths=PackedStringArray("jump_check_area", "spell_caster")]
 script = ExtResource("1_khcw2")
 jump_check_area = NodePath("Head/JumpCheckArea")
+spell_caster = NodePath("SpellCaster")
 
-[node name="GUI" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="GUI" parent="." instance=ExtResource("2_jr7gb")]
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -252,6 +255,13 @@ libraries = {
 [node name="JumpCheckArea" parent="Head" instance=ExtResource("3_7dtr0")]
 collision_layer = 2
 
+[node name="SpeechRecognition" type="AudioStreamPlayer" parent="Head" node_paths=PackedStringArray("spell_caster")]
+stream = SubResource("AudioStreamMicrophone_1t71h")
+autoplay = true
+bus = &"Microphone"
+script = ExtResource("6_gxi0n")
+spell_caster = NodePath("../../SpellCaster")
+
 [node name="Body" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
@@ -268,3 +278,9 @@ collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Body/HitBox"]
 shape = SubResource("CapsuleShape3D_2q3p1")
+
+[node name="SpellCaster" type="Node3D" parent="."]
+script = ExtResource("5_jpbmn")
+fire_spell_scene = ExtResource("6_7r8ka")
+water_spell_scene = ExtResource("7_wwpun")
+wind_spell_scene = ExtResource("8_f7els")
