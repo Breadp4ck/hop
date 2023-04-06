@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bss1m66ueglg7"]
+[gd_scene load_steps=12 format=3 uid="uid://bss1m66ueglg7"]
 
 [ext_resource type="Script" path="res://world/items/tree/tree.gd" id="1_7rhk1"]
 [ext_resource type="Texture2D" uid="uid://c4d6l22au30y" path="res://assets/entities/old_tree/m_old_tree_palette.png" id="1_v8at5"]
+[ext_resource type="Material" uid="uid://bnkdd8gci3jc3" path="res://assets/materials/burn.tres" id="3_016d1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g0p4h"]
 resource_name = "color"
@@ -43,12 +44,114 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_oru1w")
 
+[sub_resource type="Animation" id="Animation_8nlox"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("M_OldTree:material_overlay")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("M_OldTree:instance_shader_parameters/dissolve_amount")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.375e-08]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("M_OldTree:transparency")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_wlbhy"]
 resource_name = "M_OldTree"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("M_OldTree:material_overlay")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_016d1")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("M_OldTree:instance_shader_parameters/emission_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.752941, 0.0901961, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("M_OldTree:instance_shader_parameters/dissolve_amount")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.5, 2.375e-08, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("M_OldTree:transparency")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"disable_body"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_seu2c"]
 _data = {
-"M_OldTree": SubResource("Animation_wlbhy")
+"RESET": SubResource("Animation_8nlox"),
+"burn": SubResource("Animation_wlbhy")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sv2x8"]
@@ -64,6 +167,7 @@ needed_types_to_interact = Array[int]([0])
 
 [node name="M_OldTree" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.725839, 0.388621, 0.303129, -0.489387, 0.627271, -0.125725, -0.424335, -0.0586854, 0.66351, -1.55711, 0.44433, 0.746581)
+lod_bias = 0.001
 mesh = SubResource("ArrayMesh_y2f7q")
 skeleton = NodePath("")
 

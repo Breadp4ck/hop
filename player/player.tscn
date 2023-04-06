@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://dvoagtuj8u6vc" path="res://player/effects/shattering_glass/shattering_glass.tscn" id="2_63522"]
 [ext_resource type="PackedScene" uid="uid://bbtltjolwxc65" path="res://player/gui.tscn" id="2_jr7gb"]
 [ext_resource type="PackedScene" uid="uid://lsdpiqbmi4y5" path="res://player/jump_check_area.tscn" id="3_7dtr0"]
+[ext_resource type="AudioStream" uid="uid://cj6adiumhanwc" path="res://assets/sounds/steps/wood01.ogg" id="3_sjl3t"]
+[ext_resource type="AudioStream" uid="uid://5q7frhwshw5p" path="res://assets/sounds/steps/wood02.ogg" id="4_aix4j"]
+[ext_resource type="AudioStream" uid="uid://dedgxk8feemta" path="res://assets/sounds/steps/wood03.ogg" id="5_cre8l"]
 [ext_resource type="Script" path="res://player/spell_caster.gd" id="5_jpbmn"]
 [ext_resource type="PackedScene" uid="uid://cq2cbtc63fkp7" path="res://spells/fire_spell.tscn" id="6_7r8ka"]
 [ext_resource type="Script" path="res://player/speech_recognition.gd" id="6_gxi0n"]
@@ -24,6 +27,15 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, 1, 0)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_wprgs"]
+streams_count = 3
+stream_0/stream = ExtResource("3_sjl3t")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("4_aix4j")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("5_cre8l")
+stream_2/weight = 1.0
+
 [sub_resource type="Animation" id="Animation_x64ah"]
 resource_name = "Walk"
 tracks/0/type = "position_3d"
@@ -33,6 +45,21 @@ tracks/0/path = NodePath("..")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, 1, 0, 0.5, 1, 0, 0.9, 0, 1, 1, 0, 1, 0)
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_wprgs")
+}],
+"times": PackedFloat32Array(0.5)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_30a8x"]
 _data = {
@@ -224,6 +251,8 @@ visible = false
 libraries = {
 "": SubResource("AnimationLibrary_4qrgg")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Head/Eye"]
 
 [node name="JumpCheckArea" parent="Head" instance=ExtResource("3_7dtr0")]
 collision_layer = 2
