@@ -18,6 +18,7 @@ func on_tween_transition_finished() -> void:
 	queue_free()
 
 func _on_area_entered(area) -> void:
+	print(area)
 	if area is Item and area.interactable:
 		area.interacted.emit(self)
 		
