@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cq2cbtc63fkp7"]
+[gd_scene load_steps=13 format=3 uid="uid://cq2cbtc63fkp7"]
 
 [ext_resource type="Script" path="res://spells/spell.gd" id="1_tmxe3"]
+[ext_resource type="Texture2D" uid="uid://cnmdyd60oxgtv" path="res://assets/textures/fire.png" id="2_emtf3"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_huiik"]
 
@@ -10,16 +11,159 @@ albedo_color = Color(1, 0.101961, 0, 1)
 [sub_resource type="SphereMesh" id="SphereMesh_276k5"]
 material = SubResource("StandardMaterial3D_dl8c1")
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2salf"]
+gravity = Vector3(0, 0, 0)
+angular_velocity_min = -60.0
+angular_velocity_max = 60.0
+angle_min = -720.0
+angle_max = 720.0
+turbulence_noise_strength = 2.7
+turbulence_noise_scale = 10.0
+turbulence_noise_speed = Vector3(1, 1, 1)
+turbulence_influence_min = 0.0
+turbulence_influence_max = 1.0
+turbulence_initial_displacement_min = 0.1
+turbulence_initial_displacement_max = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q4723"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0.254902)
+albedo_texture = ExtResource("2_emtf3")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+proximity_fade_enabled = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_ltavn"]
+material = SubResource("StandardMaterial3D_q4723")
+
+[sub_resource type="Animation" id="Animation_6fays"]
+resource_name = "start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles3D:transparency")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles3D:draw_pass_1:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5djyp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles3D:transparency")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles3D:draw_pass_1:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_tgc8p"]
+resource_name = "end"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles3D:draw_pass_1:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(5, 5), Vector2(5, 5), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles3D:transparency")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"destroy"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2ibuw"]
+_data = {
+"RESET": SubResource("Animation_5djyp"),
+"end": SubResource("Animation_tgc8p"),
+"start": SubResource("Animation_6fays")
+}
+
 [node name="FireSpell" type="Area3D"]
 script = ExtResource("1_tmxe3")
-type = null
-length = null
-duration = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_huiik")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("SphereMesh_276k5")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 16
+lifetime = 0.1
+visibility_aabb = AABB(-2, -2, -2, 4, 4, 4)
+trail_lifetime = 0.1
+process_material = SubResource("ParticleProcessMaterial_2salf")
+draw_pass_1 = SubResource("QuadMesh_ltavn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "start"
+libraries = {
+"": SubResource("AnimationLibrary_2ibuw")
+}
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
