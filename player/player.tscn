@@ -226,12 +226,15 @@ libraries = {
 [node name="JumpCheckArea" parent="Head" instance=ExtResource("3_7dtr0")]
 collision_layer = 2
 
-[node name="SpeechRecognition" type="AudioStreamPlayer" parent="Head" node_paths=PackedStringArray("spell_caster")]
+[node name="SpeechRecognition" type="AudioStreamPlayer" parent="Head" node_paths=PackedStringArray("timer", "spell_caster")]
 stream = SubResource("AudioStreamMicrophone_1t71h")
 autoplay = true
 bus = &"Microphone"
 script = ExtResource("6_gxi0n")
+timer = NodePath("Timer")
 spell_caster = NodePath("../../SpellCaster")
+
+[node name="Timer" type="Timer" parent="Head/SpeechRecognition"]
 
 [node name="Body" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -255,3 +258,5 @@ script = ExtResource("5_jpbmn")
 fire_spell_scene = ExtResource("6_7r8ka")
 water_spell_scene = ExtResource("7_wwpun")
 wind_spell_scene = ExtResource("8_f7els")
+
+[connection signal="timeout" from="Head/SpeechRecognition/Timer" to="Head/SpeechRecognition" method="_on_timer_timeout"]
