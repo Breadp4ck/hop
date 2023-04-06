@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://pvggn55wiif8"]
+
+[node name="Room3" type="Node3D"]
+
+[node name="Material" type="Node3D" parent="."]
+
+[node name="Static" type="Node3D" parent="Material"]
+
+[node name="Cognitive" type="Node3D" parent="."]
+
+[node name="Static" type="Node3D" parent="Cognitive"]
