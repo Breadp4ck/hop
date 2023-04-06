@@ -20,7 +20,7 @@ func on_tween_transition_finished() -> void:
 	end()
 
 func _on_area_entered(area) -> void:
-	print(area)
+	print("Hit " + area.get_name() + " area.")
 	end()
 	if area is Item and area.interactable:
 		area.interacted.emit(self)
@@ -31,3 +31,4 @@ func end() -> void:
 
 func destroy() -> void:
 	queue_free()
+==== BASE ====
