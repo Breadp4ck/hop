@@ -1,6 +1,7 @@
 extends Control
 
 @onready var book: Control = $Book
+@onready var hud: Control = $HUD
 
 enum GuiState {
 	DEFAULT,

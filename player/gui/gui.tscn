@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbtltjolwxc65"]
+[gd_scene load_steps=10 format=3 uid="uid://bbtltjolwxc65"]
 
 [ext_resource type="FontFile" uid="uid://b0y85cnal68dw" path="res://assets/gui/Davida.ttf" id="1_45prj"]
 [ext_resource type="Script" path="res://player/gui/gui.gd" id="2_cnhhr"]
 [ext_resource type="Texture2D" uid="uid://dmh75r5h3ixo1" path="res://assets/gui/pages/page3.png" id="2_goohq"]
 [ext_resource type="Script" path="res://player/gui/book.gd" id="3_lgda4"]
+[ext_resource type="Texture2D" uid="uid://ba46q5dk3d1mt" path="res://icon.svg" id="5_gsdnd"]
+[ext_resource type="Script" path="res://player/gui/hud.gd" id="5_q0ini"]
+[ext_resource type="PackedScene" uid="uid://bdj8vjtlfrh77" path="res://player/gui/health_point_icon.tscn" id="7_ykuim"]
 
 [sub_resource type="Theme" id="Theme_ojf0e"]
 default_font = ExtResource("1_45prj")
@@ -110,6 +113,45 @@ flat = true
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_q0ini")
+health_icon_texture = ExtResource("5_gsdnd")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HUD"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+region_rect = Rect2(79, 50, 2, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -424.0
+offset_bottom = 128.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HealthPointContainer" type="HBoxContainer" parent="HUD/NinePatchRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="HealthIcon" parent="HUD/NinePatchRect/MarginContainer/HealthPointContainer" instance=ExtResource("7_ykuim")]
+layout_mode = 2
 
 [connection signal="pressed" from="Book/MarginContainer/VBoxContainer/HBoxContainer/PrevPageButton" to="Book" method="_on_prev_page_button_pressed"]
 [connection signal="pressed" from="Book/MarginContainer/VBoxContainer/HBoxContainer/NextPageButton" to="Book" method="_on_next_page_button_pressed"]
