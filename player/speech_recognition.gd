@@ -65,6 +65,7 @@ func get_directory() -> String:
 		"Windows", "UWP":
 			return "./speech_recognition/windows/"
 		"Linux":
+			OS.set_environment("LD_LIBRARY_PATH", "./speech_recognition/linux/lib")
 			return "./speech_recognition/linux/"
 		_:
 			return "XYZ"
