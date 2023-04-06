@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d2bwq5tjfwuey"]
+[gd_scene load_steps=14 format=3 uid="uid://d2bwq5tjfwuey"]
 
 [ext_resource type="Texture2D" uid="uid://ccngpdgpgpomb" path="res://assets/entities/door/m_door_palette.png" id="1_b0ipq"]
 [ext_resource type="Script" path="res://world/items/door/door.gd" id="1_ew2mg"]
@@ -110,8 +110,11 @@ _data = {
 "Open": SubResource("Animation_u2v01")
 }
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_u1ork"]
-size = Vector3(0.137694, 1.99032, 1.27285)
+[sub_resource type="BoxShape3D" id="BoxShape3D_0tjkx"]
+size = Vector3(0.265, 1.99, 1.273)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_encqt"]
+size = Vector3(0.218134, 1.99032, 1.27285)
 
 [node name="m_door" type="Area3D"]
 script = ExtResource("1_ew2mg")
@@ -133,6 +136,12 @@ libraries = {
 "": SubResource("AnimationLibrary_t2nmt")
 }
 
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019773, 1, 0)
+shape = SubResource("BoxShape3D_0tjkx")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08, 1, 0)
-shape = SubResource("BoxShape3D_u1ork")
+shape = SubResource("BoxShape3D_encqt")
