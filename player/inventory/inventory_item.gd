@@ -2,9 +2,9 @@ class_name InventoryItem
 extends Item
 
 enum Type{
-	Book,
-	Ring,
-	Crystal
+	BOOK,
+	RING,
+	CRYSTAL
 }
 
 @export var type: Type

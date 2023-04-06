@@ -1,2 +1,8 @@
 # Godot 4+ specific ignores
 .godot/
+
+# Temporary audio files
+kek.wav
+lol.wav
+kek.wav.import
+lol.wav.import

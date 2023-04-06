@@ -1,14 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://dksoaqgf1t4cv"]
+[gd_scene load_steps=14 format=3 uid="uid://dksoaqgf1t4cv"]
 
 [ext_resource type="PackedScene" uid="uid://bkqbcuxs5k103" path="res://assets/locations/hub/c_hub.glb" id="1_74rv6"]
 [ext_resource type="MeshLibrary" uid="uid://ce5q65war85lh" path="res://world/level/collision_mesh_library.tres" id="2_xnqcf"]
 [ext_resource type="PackedScene" uid="uid://ceho34sq4yue4" path="res://assets/locations/hub/m_hub.glb" id="3_3hsij"]
 [ext_resource type="PackedScene" uid="uid://d2bwq5tjfwuey" path="res://world/items/door/m_door.tscn" id="4_tgndu"]
 [ext_resource type="PackedScene" uid="uid://odugmk43ag6u" path="res://assets/entities/table/m_table.glb" id="5_6i387"]
+[ext_resource type="PackedScene" uid="uid://bss1m66ueglg7" path="res://world/items/tree/m_old_tree.tscn" id="5_nfwnp"]
 [ext_resource type="PackedScene" uid="uid://bnwr1wfb6ylgb" path="res://world/inventory_items/m_book.tscn" id="6_8jc57"]
 [ext_resource type="PackedScene" uid="uid://bneymo1bc8anp" path="res://world/items/door/c_door.tscn" id="6_biaq7"]
+[ext_resource type="PackedScene" uid="uid://34jjdg81mcmr" path="res://world/inventory_items/m_ring.tscn" id="6_ywxpw"]
 [ext_resource type="PackedScene" uid="uid://bahpk53tkuqv7" path="res://assets/entities/table/c_table.glb" id="8_5hdcg"]
 [ext_resource type="PackedScene" uid="uid://dol2mhio14skj" path="res://world/inventory_items/c_book.tscn" id="10_it3rf"]
+[ext_resource type="PackedScene" uid="uid://bu3yaweylom2x" path="res://world/items/tree/c_old_tree.tscn" id="10_x7qhb"]
+[ext_resource type="PackedScene" uid="uid://c4ftr3a8r5skk" path="res://world/inventory_items/c_ring.tscn" id="11_7tgg0"]
 
 [node name="Hub" type="Node3D"]
 
@@ -37,8 +41,14 @@ transform = Transform3D(0.987672, 0, -0.156538, 0, 1, 0, 0.156538, 0, 0.987672, 
 [node name="Table2" parent="Material" instance=ExtResource("5_6i387")]
 transform = Transform3D(0.857158, 0, -0.515053, 0, 1, 0, 0.515053, 0, 0.857158, 2.62447, 0.0956764, 6.02)
 
+[node name="old_tree" parent="Material" instance=ExtResource("5_nfwnp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="Ring" parent="Material" instance=ExtResource("6_ywxpw")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.74014, 0.661637, -0.279446)
+
 [node name="Book" parent="Material" instance=ExtResource("6_8jc57")]
-transform = Transform3D(0.824097, 0, -0.566449, 0, 1, 0, 0.566449, 0, 0.824097, -2.89977, 0.694009, 0.0123323)
+transform = Transform3D(0.824097, 0, -0.566449, 0, 1, 0, 0.566449, 0, 0.824097, -2.9, 0.694, 0)
 
 [node name="Cognitive" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
@@ -66,5 +76,13 @@ transform = Transform3D(0.987672, 0, -0.156538, 0, 1, 0, 0.156538, 0, 0.987672, 
 [node name="Table2" parent="Cognitive" instance=ExtResource("8_5hdcg")]
 transform = Transform3D(0.857158, 0, -0.515053, 0, 1, 0, 0.515053, 0, 0.857158, 2.62447, 0.0956764, 6.02)
 
+[node name="old_tree" parent="Cognitive" instance=ExtResource("10_x7qhb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="Ring" parent="Cognitive" instance=ExtResource("11_7tgg0")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.74014, 0.661637, -0.279446)
+interactable = false
+
 [node name="Book" parent="Cognitive" instance=ExtResource("10_it3rf")]
-transform = Transform3D(0.824097, 0, -0.566449, 0, 1, 0, 0.566449, 0, 0.824097, -2.89977, 0.694009, 0.0123323)
+transform = Transform3D(0.824097, 0, -0.566449, 0, 1, 0, 0.566449, 0, 0.824097, -2.9, 0.694, 0)
+interactable = false
