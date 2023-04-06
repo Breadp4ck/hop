@@ -31,4 +31,3 @@ func end() -> void:
 
 func destroy() -> void:
 	queue_free()
-==== BASE ====
