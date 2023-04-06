@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://spells/spell.gd" id="1_tmxe3"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_huiik"]
+radius = 0.25
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dl8c1"]
 albedo_color = Color(1, 0.101961, 0, 1)
@@ -12,9 +13,6 @@ material = SubResource("StandardMaterial3D_dl8c1")
 
 [node name="FireSpell" type="Area3D"]
 script = ExtResource("1_tmxe3")
-type = null
-length = null
-duration = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_huiik")

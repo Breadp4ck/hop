@@ -7,6 +7,7 @@ signal casted(spell: Spell)
 @export var fire_spell_scene: PackedScene
 @export var water_spell_scene: PackedScene
 @export var wind_spell_scene: PackedScene
+@export var repair_spell_scene: PackedScene
 @onready var head: Node3D = $"../Head"
 
 var choosen_spell_type: Globals.SpellType = -1
@@ -15,7 +16,7 @@ func choose(spell_type: Globals.SpellType) -> void:
 	if can_conjure() == false:
 		return
 	
-	if spell_type == -1 or World.current_plane == Globals.WorldPlane.MATERIAL:
+	if spell_type == -1:
 		return
 	
 	choosen_spell_type = spell_type
@@ -51,6 +52,8 @@ func get_spell(spell_type: Globals.SpellType) -> Spell:
 			return water_spell_scene.instantiate()
 		Globals.SpellType.WIND:
 			return wind_spell_scene.instantiate()
+		Globals.SpellType.REPAIR:
+			return repair_spell_scene.instantiate()
 		_:
 			return null
 			

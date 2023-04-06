@@ -6,6 +6,7 @@ extends Node
 	"fire": Globals.SpellType.FIRE,
 	"death": Globals.SpellType.WATER,
 	"meat": Globals.SpellType.WIND,
+	"magic": Globals.SpellType.REPAIR
 }
 
 var effect: AudioEffect
@@ -14,13 +15,14 @@ var thread: Thread
 
 var path: String
 
-var max_record_time = 5.0 # sec.
+var max_record_time: float = 5.0 # sec.
 
 func _exit_tree():
-	thread.wait_to_finish()
+	if thread != null:
+		thread.wait_to_finish()
 
 func _ready() -> void:
-	timer.wait_time = max_record_time
+	timer.set_wait_time(max_record_time) 
 	
 	path = get_directory()
 	

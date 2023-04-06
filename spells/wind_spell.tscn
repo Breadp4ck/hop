@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://spells/spell.gd" id="1_nry0b"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_huiik"]
+radius = 0.25
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cvc8a"]
 

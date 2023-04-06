@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bd3b3ca374ji6"]
+[gd_scene load_steps=20 format=3 uid="uid://bd3b3ca374ji6"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_khcw2"]
 [ext_resource type="Environment" uid="uid://biqvtjsci1ld8" path="res://player/material_env.tres" id="2_5bh7t"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://player/speech_recognition.gd" id="6_gxi0n"]
 [ext_resource type="PackedScene" uid="uid://die2clnm3gt6u" path="res://spells/water_spell.tscn" id="7_wwpun"]
 [ext_resource type="PackedScene" uid="uid://bdptjf5n1xaqu" path="res://spells/wind_spell.tscn" id="8_f7els"]
+[ext_resource type="PackedScene" uid="uid://y8o54gbbmy7x" path="res://spells/repair_spell.tscn" id="11_mvv62"]
 
 [sub_resource type="Animation" id="Animation_cepqe"]
 resource_name = "RESET"
@@ -258,5 +259,6 @@ script = ExtResource("5_jpbmn")
 fire_spell_scene = ExtResource("6_7r8ka")
 water_spell_scene = ExtResource("7_wwpun")
 wind_spell_scene = ExtResource("8_f7els")
+repair_spell_scene = ExtResource("11_mvv62")
 
 [connection signal="timeout" from="Head/SpeechRecognition/Timer" to="Head/SpeechRecognition" method="_on_timer_timeout"]
