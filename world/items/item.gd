@@ -3,6 +3,8 @@ extends Node3D
 
 signal interacted(with: Spell) # Calls when Player interacts with Item
 
+@onready var animator: AnimationPlayer = $AnimationPlayer
+
 @export var interactable: bool = false :
 	set(value):
 		if not interactable and value:
@@ -22,7 +24,6 @@ func on_interact(spell: Spell) -> void:
 	elif spell != null and needed_types_to_interact.has(spell.type):
 		interact(spell)
 		get_inversed_item().interact(spell)
-		spell.queue_free()
 
 # Abstract methods
 # --------------------------------------------------------------------------------------------------
