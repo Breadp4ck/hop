@@ -14,8 +14,6 @@ material = SubResource("StandardMaterial3D_jgjlq")
 [node name="WaterSpell" type="Area3D"]
 script = ExtResource("1_s3d0n")
 type = 1
-length = null
-duration = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_huiik")
@@ -24,3 +22,4 @@ shape = SubResource("SphereShape3D_huiik")
 mesh = SubResource("SphereMesh_tc66o")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
