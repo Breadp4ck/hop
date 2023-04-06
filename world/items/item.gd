@@ -22,6 +22,7 @@ func on_interact(spell: Spell) -> void:
 	elif spell != null and needed_types_to_interact.has(spell.type):
 		interact(spell)
 		get_inversed_item().interact(spell)
+		spell.queue_free()
 
 # Abstract methods
 # --------------------------------------------------------------------------------------------------
