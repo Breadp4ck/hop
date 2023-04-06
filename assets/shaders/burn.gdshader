@@ -6,12 +6,12 @@ uniform float emission_amount;
 
 uniform sampler2D dissolve_texture;
 uniform float burn_size : hint_range(0, 2);
-instance uniform float dissolve_amount : hint_range(0, 1);
+instance uniform float dissolve_amount : hint_range(-0.5, 0.5);
 
 void fragment() {
   ALBEDO = emission_color.rgb;
 
-  float amount = 1.0 - abs(dissolve_amount * 2.0 - 1.0);
+  float amount = 1.0 - 2.0*abs(dissolve_amount);
   float sample = texture(dissolve_texture, UV).r;
 
   float emission_value = 1.0 - smoothstep(amount, amount + burn_size, sample);

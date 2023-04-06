@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bneymo1bc8anp"]
+[gd_scene load_steps=16 format=3 uid="uid://bneymo1bc8anp"]
 
 [ext_resource type="Script" path="res://world/items/door/door.gd" id="1_avo2w"]
 [ext_resource type="Texture2D" uid="uid://cj6j0voonhrup" path="res://assets/entities/door/c_door_palette-inverse.png" id="1_igufy"]
