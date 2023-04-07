@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cewiqnc4ylli1"]
+
+[ext_resource type="PackedScene" uid="uid://d2bxt86cv24mm" path="res://assets/entities/torch/c_torch.glb" id="1_4gcce"]
+
+[node name="c_fukel" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0847241, 0, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.184298, 0.507968, 0.0427594)
+light_color = Color(1, 0.937255, 0.65098, 1)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.201749, 0.579035, 0)
+
+[node name="c_torch" parent="." instance=ExtResource("1_4gcce")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0945691, 0, 0.0369763)

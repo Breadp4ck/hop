@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://wgllat8m2r7c"]
+
+[ext_resource type="PackedScene" uid="uid://3aiqfcf2l85r" path="res://assets/entities/torch/m_torch.glb" id="1_tgv11"]
+
+[node name="m_fukel" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0847241, 0, 0)
+
+[node name="m_torch" parent="." instance=ExtResource("1_tgv11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0945691, 0, 0.0369763)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.184298, 0.507968, 0.0427594)
+light_color = Color(1, 0.937255, 0.65098, 1)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.201749, 0.579035, 0)
