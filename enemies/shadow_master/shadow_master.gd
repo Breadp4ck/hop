@@ -39,6 +39,9 @@ func update_player_position() -> void:
 
 
 func is_player_reachable(local_player_position: Vector2i) -> bool:
+	if absi(local_player_position.x - grid_size.x / 2) > grid_size.x / 2 or absi(local_player_position.y - grid_size.y / 2) > grid_size.y / 2:
+		return false
+	
 	return astar_grid.get_id_path(Vector2i.ZERO, local_player_position) == []
 
 
@@ -96,6 +99,9 @@ func calm_down() -> void:
 
 func _on_timer_timeout() -> void:
 	update_player_position()
+	
+	print(is_player_visible)
+	print(local_player_position)
 	
 	if is_player_visible:
 		attack_player()
