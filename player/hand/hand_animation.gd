@@ -23,7 +23,7 @@ func on_spell_chooosed(spell_type: Globals.SpellType) -> void:
 	match spell_type:
 		Globals.SpellType.FIRE:
 			particles.process_material.color = Color.ORANGE
-		Globals.SpellType.WATER:
+		Globals.SpellType.DESTRUCT:
 			particles.process_material.color = Color.DODGER_BLUE
 		Globals.SpellType.REPAIR:
 			particles.process_material.color = Color.SLATE_BLUE

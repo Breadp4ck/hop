@@ -178,12 +178,14 @@ transform = Transform3D(0.573577, 0, 0.819152, 0, 1, 0, -0.819152, 0, 0.573577, 
 pickable_spell_type = 0
 title = "Fire"
 text = "Say \"KATUHN\""
+interactable = false
 
 [node name="List2" parent="Cognitive" instance=ExtResource("21_vfkk7")]
 transform = Transform3D(0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, 0.34202, -2.9, 0.682251, 0)
 pickable_spell_type = 1
 title = "Repair"
 text = "Say \"PHOKES POKES\""
+interactable = false
 
 [node name="WaterPipeline" parent="Cognitive" instance=ExtResource("21_b01w8")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 8)

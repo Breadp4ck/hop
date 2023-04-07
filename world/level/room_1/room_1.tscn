@@ -191,11 +191,14 @@ transform = Transform3D(0.0400794, 0, 0.999196, 0, 1, 0, -0.999196, 0, 0.0400794
 transform = Transform3D(0.859915, 0, -0.510438, 0, 1, 0, 0.510438, 0, 0.859915, 0.0419804, 0.623596, -24.5787)
 title = "Хуй"
 text = "Яйца"
+interactable = false
 
 [node name="List2" parent="Cognitive" instance=ExtResource("8_vrwbl")]
 transform = Transform3D(-0.292372, 0, -0.956305, 0, 1, 0, 0.956305, 0, -0.292372, 6.605, 0.624, -21.833)
 title = "Пизда"
 text = "Клитор"
+interactable = false
 
 [node name="Crystal" parent="Cognitive" instance=ExtResource("9_5qxye")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 6.73041, 0.641356, -22.1346)
+interactable = false
