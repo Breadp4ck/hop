@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dirp2lv0rgtke"]
+[gd_scene load_steps=29 format=3 uid="uid://dirp2lv0rgtke"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_khcw2"]
 [ext_resource type="Environment" uid="uid://biqvtjsci1ld8" path="res://player/material_env.tres" id="2_5bh7t"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dug0lui71my67" path="res://player/hand/hand_without_ring.tscn" id="10_ykexg"]
 [ext_resource type="PackedScene" uid="uid://y8o54gbbmy7x" path="res://spells/repair_spell.tscn" id="11_mvv62"]
 [ext_resource type="PackedScene" uid="uid://die2clnm3gt6u" path="res://spells/destruct_spell.tscn" id="13_mm8ql"]
+[ext_resource type="PackedScene" uid="uid://bdptjf5n1xaqu" path="res://spells/lockpick_spell.tscn" id="15_4lq3g"]
 [ext_resource type="PackedScene" uid="uid://dpe3c4jm65lo1" path="res://spells/timestop_spell.tscn" id="16_opg8d"]
 [ext_resource type="PackedScene" uid="uid://cojugwhuyh380" path="res://spells/teleport_spell.tscn" id="17_c6sm3"]
 
@@ -361,6 +362,7 @@ shape = SubResource("CapsuleShape3D_2q3p1")
 script = ExtResource("5_jpbmn")
 fire_spell_scene = ExtResource("6_7r8ka")
 destruct_spell_scene = ExtResource("13_mm8ql")
+lockpick_spell_scene = ExtResource("15_4lq3g")
 repair_spell_scene = ExtResource("11_mvv62")
 timestop_spell_scene = ExtResource("16_opg8d")
 teleport_spell_scene = ExtResource("17_c6sm3")
