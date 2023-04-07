@@ -24,6 +24,7 @@ func _input(event: InputEvent) -> void:
 
 
 func toggle_book() -> void:
+	Sfx.play("book")
 	if state == GuiState.BOOK:
 		book.visible = false
 		state = GuiState.DEFAULT

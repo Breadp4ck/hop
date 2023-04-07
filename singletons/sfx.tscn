@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dcu4unsnrfy1f"]
+[gd_scene load_steps=23 format=3 uid="uid://dcu4unsnrfy1f"]
 
 [ext_resource type="AudioStream" uid="uid://vbb471vf6jw3" path="res://assets/sounds/inventory/itempick2.wav" id="1_6xucp"]
 [ext_resource type="Script" path="res://singletons/sfx.gd" id="1_x603n"]
@@ -8,6 +8,9 @@
 [ext_resource type="AudioStream" uid="uid://bah4gwi60qha0" path="res://assets/sounds/sfx/spell.wav" id="5_e25ha"]
 [ext_resource type="AudioStream" uid="uid://cnkf4winq8ou3" path="res://assets/sounds/sfx/crunch.wav" id="6_pt084"]
 [ext_resource type="AudioStream" uid="uid://gitqpifq7wjf" path="res://assets/sounds/sfx/button.wav" id="7_bhihh"]
+[ext_resource type="AudioStream" uid="uid://cka6pqr576fgf" path="res://assets/sounds/sfx/book2.wav" id="8_mpalr"]
+[ext_resource type="AudioStream" uid="uid://dnyw1xjb0ykpd" path="res://assets/sounds/sfx/book3.wav" id="9_kc2id"]
+[ext_resource type="AudioStream" uid="uid://cal6mq3y67otf" path="res://assets/sounds/sfx/book1.wav" id="10_0shqe"]
 
 [sub_resource type="Animation" id="Animation_h6xs0"]
 resource_name = "button_pressed"
@@ -135,8 +138,65 @@ tracks/0/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_f24d3"]
+resource_name = "book_newpage"
+length = 0.01
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [ExtResource("8_mpalr")],
+"method": &"play_sound"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_d6wyl"]
+resource_name = "book_oldpage"
+length = 0.01
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [ExtResource("9_kc2id")],
+"method": &"play_sound"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_y2nbi"]
+resource_name = "book"
+length = 0.01
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [ExtResource("10_0shqe")],
+"method": &"play_sound"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1j6c2"]
 _data = {
+"book": SubResource("Animation_y2nbi"),
+"book_newpage": SubResource("Animation_f24d3"),
+"book_oldpage": SubResource("Animation_d6wyl"),
 "button_pressed": SubResource("Animation_h6xs0"),
 "hop": SubResource("Animation_fp6ti"),
 "pick_up": SubResource("Animation_x1qrm"),

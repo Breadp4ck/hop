@@ -18,5 +18,6 @@ func interact(spell: Spell) -> void:
 			queue_free()
 			return
 	
+	Sfx.play("book_newpage")
 	book_ui.add_page(title, text)
 	queue_free()
