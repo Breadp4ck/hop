@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://player/gui/gui.gd" id="2_cnhhr"]
 [ext_resource type="Texture2D" uid="uid://dmh75r5h3ixo1" path="res://assets/gui/pages/page3.png" id="2_goohq"]
 [ext_resource type="Script" path="res://player/gui/book.gd" id="3_lgda4"]
-[ext_resource type="Texture2D" uid="uid://4ylf4r1nq21q" path="res://icon.svg" id="5_gsdnd"]
+[ext_resource type="Texture2D" uid="uid://ba46q5dk3d1mt" path="res://icon.svg" id="5_gsdnd"]
 [ext_resource type="Script" path="res://player/gui/hud.gd" id="5_q0ini"]
 [ext_resource type="PackedScene" uid="uid://bdj8vjtlfrh77" path="res://player/gui/health_point_icon.tscn" id="7_ykuim"]
 [ext_resource type="Script" path="res://player/gui/death.gd" id="8_5qwr8"]
@@ -67,7 +67,6 @@ theme_override_constants/margin_bottom = 20
 
 [node name="HealthPointContainer" type="HBoxContainer" parent="HUD/NinePatchRect/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 20
 alignment = 2
 
 [node name="HealthIcon" parent="HUD/NinePatchRect/MarginContainer/HealthPointContainer" instance=ExtResource("7_ykuim")]

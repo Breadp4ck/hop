@@ -1,6 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://bdj8vjtlfrh77"]
 
-[ext_resource type="Texture2D" uid="uid://ba46q5dk3d1mt" path="res://icon.svg" id="1_0asde"]
+[ext_resource type="Texture2D" uid="uid://d3xwgigh1leaj" path="res://assets/gui/hp64.png" id="1_r1jtn"]
 
 [node name="HealthIcon" type="TextureRect"]
-texture = ExtResource("1_0asde")
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("1_r1jtn")
+expand_mode = 2
