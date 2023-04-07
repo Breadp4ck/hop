@@ -1,6 +1,55 @@
-[gd_scene load_steps=2 format=3 uid="uid://wgllat8m2r7c"]
+[gd_scene load_steps=9 format=3 uid="uid://wgllat8m2r7c"]
 
 [ext_resource type="PackedScene" uid="uid://3aiqfcf2l85r" path="res://assets/entities/torch/m_torch.glb" id="1_tgv11"]
+
+[sub_resource type="Gradient" id="Gradient_2o42m"]
+offsets = PackedFloat32Array(0, 0.103846, 0.580769, 0.696154, 0.873077, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 0.360784, 0, 1, 1, 0.605897, 0, 1, 1, 1, 0, 1, 0.219501, 0.219501, 0.219501, 0.992157, 0.219608, 0.219608, 0.219608, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fvtjx"]
+gradient = SubResource("Gradient_2o42m")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_iqlo7"]
+emission_shape = 1
+emission_sphere_radius = 0.1
+direction = Vector3(0, 1, 0)
+spread = 35.83
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 0.1
+initial_velocity_max = 1.0
+color = Color(1, 0.996078, 0.992157, 1)
+color_ramp = SubResource("GradientTexture1D_fvtjx")
+hue_variation_max = 0.08
+
+[sub_resource type="Gradient" id="Gradient_si8s3"]
+interpolation_mode = 2
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_am5r5"]
+gradient = SubResource("Gradient_si8s3")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.517094, 0.465812)
+fill_to = Vector2(0.730769, 0.645299)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o7n4n"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("GradientTexture2D_am5r5")
+emission_enabled = true
+emission = Color(0.913725, 0.8, 0, 1)
+emission_energy_multiplier = 2.32
+emission_operator = 1
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+proximity_fade_enabled = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_364u3"]
+material = SubResource("StandardMaterial3D_o7n4n")
+size = Vector2(0.3, 0.5)
 
 [node name="m_fukel" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0847241, 0, 0)
@@ -9,8 +58,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0847241, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0945691, 0, 0.0369763)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.184298, 0.507968, 0.0427594)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.184298, 0.611654, 0.0427594)
 light_color = Color(1, 0.937255, 0.65098, 1)
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.201749, 0.579035, 0)
+lifetime = 0.4
+process_material = SubResource("ParticleProcessMaterial_iqlo7")
+draw_pass_1 = SubResource("QuadMesh_364u3")

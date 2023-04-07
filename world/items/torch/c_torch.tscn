@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://drcvd0s4mqwnp"]
+[gd_scene load_steps=22 format=3 uid="uid://drcvd0s4mqwnp"]
 
 [ext_resource type="Texture2D" uid="uid://dhtt27axekf53" path="res://assets/entities/torch_mech/c_torch_mech_palette-inverse.png" id="1_ehssp"]
 [ext_resource type="Script" path="res://world/items/torch/torch.gd" id="1_pyv5a"]
@@ -86,11 +86,115 @@ resource_name = "C_TorchMech"
 [sub_resource type="Animation" id="Animation_d3pqw"]
 resource_name = "C_TorchMechSticks"
 
+[sub_resource type="Animation" id="Animation_k177p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles3D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OmniLight3D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ofjql"]
+resource_name = "burn"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles3D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OmniLight3D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iq6du"]
 _data = {
 "C_TorchMech": SubResource("Animation_6gufj"),
-"C_TorchMechSticks": SubResource("Animation_d3pqw")
+"C_TorchMechSticks": SubResource("Animation_d3pqw"),
+"RESET": SubResource("Animation_k177p"),
+"burn": SubResource("Animation_ofjql")
 }
+
+[sub_resource type="Gradient" id="Gradient_84e6v"]
+offsets = PackedFloat32Array(0, 0.165385, 0.788462, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.614109, 0.00192003, 0.815148, 1, 0.626832, 0.490269, 0.710719, 1, 0.447059, 0.447059, 0.447059, 0.992157)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_u68bt"]
+gradient = SubResource("Gradient_84e6v")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_k16dr"]
+emission_shape = 1
+emission_sphere_radius = 0.1
+direction = Vector3(0, 1, 0)
+spread = 35.83
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 0.1
+initial_velocity_max = 1.0
+color_ramp = SubResource("GradientTexture1D_u68bt")
+hue_variation_max = 0.08
+
+[sub_resource type="Gradient" id="Gradient_8q4hi"]
+interpolation_mode = 2
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_a7fof"]
+gradient = SubResource("Gradient_8q4hi")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.517094, 0.465812)
+fill_to = Vector2(0.730769, 0.645299)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cpo7u"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("GradientTexture2D_a7fof")
+emission_enabled = true
+emission = Color(0.803922, 0.341176, 1, 1)
+emission_energy_multiplier = 1.27
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+proximity_fade_enabled = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_mdgmf"]
+material = SubResource("StandardMaterial3D_cpo7u")
+size = Vector2(0.6, 0.9)
 
 [node name="c_torch" type="Area3D"]
 script = ExtResource("1_pyv5a")
@@ -120,3 +224,16 @@ skeleton = NodePath("")
 libraries = {
 "": SubResource("AnimationLibrary_iq6du")
 }
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0933014, 0.951683, -0.0471201)
+emitting = false
+lifetime = 0.4
+process_material = SubResource("ParticleProcessMaterial_k16dr")
+draw_pass_1 = SubResource("QuadMesh_mdgmf")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.184298, 0.949524, 0.0427594)
+visible = false
+light_color = Color(0.654902, 0.109804, 0.592157, 1)
+light_specular = 0.0
