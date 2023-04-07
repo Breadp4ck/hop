@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bx4b6tf8o6yq4"]
+[gd_scene load_steps=16 format=3 uid="uid://bx4b6tf8o6yq4"]
 
 [ext_resource type="Texture2D" uid="uid://bxk1fpfxcqi1" path="res://assets/entities/bricks_cracked/m_bricks_cracked_m_bricks_texture_albedo.png" id="1_3nfjf"]
 [ext_resource type="Script" path="res://world/items/bricks_cracked/bricks.gd" id="1_jkk6n"]
@@ -86,9 +86,26 @@ tracks/2/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_fbf83"]
+resource_name = "RESET"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("M_BricksCracked:transparency")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8a2xd"]
 _data = {
 "M_BricksCracked": SubResource("Animation_7bvo6"),
+"RESET": SubResource("Animation_fbf83"),
 "cracked": SubResource("Animation_nrajk")
 }
 
@@ -125,7 +142,6 @@ needed_types_to_interact = Array[int]([1])
 
 [node name="M_BricksCracked" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.312799, -0.815469, 0.328431, -0.812828, 0.401075, 0.221696, -0.334913, -0.211777, -0.844798, 0.866911, 2.24833, 0.286641)
-transparency = 1.0
 mesh = SubResource("ArrayMesh_lro2l")
 skeleton = NodePath("")
 
