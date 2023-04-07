@@ -1,16 +1,18 @@
-[gd_scene load_steps=12 format=3 uid="uid://dr620hhhu6sdg"]
+[gd_scene load_steps=14 format=3 uid="uid://dr620hhhu6sdg"]
 
 [ext_resource type="MeshLibrary" uid="uid://cwg0lk4sttpgm" path="res://world/level/mesh_library.tres" id="1_ouxc0"]
 [ext_resource type="MeshLibrary" uid="uid://ce5q65war85lh" path="res://world/level/collision_mesh_library.tres" id="2_ip06p"]
-[ext_resource type="PackedScene" uid="uid://pm5c67rhphp" path="res://assets/entities/torch_mech/m_torch_mech.glb" id="3_wcf5y"]
-[ext_resource type="PackedScene" uid="uid://bauvss4cpk734" path="res://assets/entities/lever/m_lever.glb" id="4_rolxn"]
-[ext_resource type="PackedScene" uid="uid://cgrugtddx6d7i" path="res://assets/entities/bars/m_bars.glb" id="5_c35xy"]
-[ext_resource type="PackedScene" uid="uid://sbfm8bwrax2g" path="res://assets/entities/button/m_button.glb" id="6_j6ck7"]
+[ext_resource type="PackedScene" uid="uid://ck5i4sehkco6e" path="res://world/items/torch/m_torch.tscn" id="3_twcva"]
+[ext_resource type="PackedScene" uid="uid://bh66mcipvia11" path="res://world/mechanisms/bar/m_bar.tscn" id="4_d7qv4"]
+[ext_resource type="PackedScene" uid="uid://b7t5ap1gdb1jc" path="res://world/items/button/m_button.tscn" id="5_afp0d"]
 [ext_resource type="PackedScene" uid="uid://odugmk43ag6u" path="res://assets/entities/table/m_table.glb" id="7_b8gwl"]
-[ext_resource type="PackedScene" uid="uid://c71hj24afom7r" path="res://assets/entities/list/m_list.glb" id="8_aohpj"]
+[ext_resource type="PackedScene" uid="uid://bm7revl1frg2d" path="res://world/items/list/m_list.tscn" id="8_vrwbl"]
+[ext_resource type="PackedScene" uid="uid://ba2ci8eh1l78l" path="res://world/inventory_items/crystal.tscn" id="9_5qxye"]
 [ext_resource type="PackedScene" uid="uid://dj0m75lui45r4" path="res://assets/entities/portal_stone/d_portal_stone.glb" id="9_c0pao"]
-[ext_resource type="PackedScene" uid="uid://0a2p4pamuxsm" path="res://assets/entities/torch_mech/c_torch_mech.glb" id="10_wm1t2"]
+[ext_resource type="PackedScene" uid="uid://drcvd0s4mqwnp" path="res://world/items/torch/c_torch.tscn" id="9_e3k56"]
+[ext_resource type="PackedScene" uid="uid://0pxacylj6isr" path="res://world/mechanisms/bar/c_bar.tscn" id="10_qnbwb"]
 [ext_resource type="PackedScene" uid="uid://bahpk53tkuqv7" path="res://assets/entities/table/c_table.glb" id="11_nudxu"]
+[ext_resource type="PackedScene" uid="uid://b47ljpg53qtvc" path="res://world/items/button/c_button.tscn" id="11_wcrtb"]
 
 [node name="Room1" type="Node3D"]
 
@@ -45,35 +47,47 @@ data = {
 "cells": PackedInt32Array(1, 2, 0, 1, 1, 0, 2, 0, 0, 2, 65535, 0, 2, 65534, 0, 1, 65534, 0, 65535, 65533, 0, 65535, 65534, 0, 65535, 65535, 0, 65535, 0, 0, 65535, 1, 0, 65535, 2, 0, 3, 65533, 0, 3, 65532, 0, 2, 65531, 0, 1, 65531, 0, 65535, 65531, 0, 65535, 65532, 0, 3, 65529, 0, 2, 65530, 0, 65534, 65530, 0, 65533, 65529, 0, 65534, 65528, 0, 65535, 65527, 0, 1, 65527, 0, 2, 65528, 0, 0, 65529, 0, 1, 65524, 0, 1, 65523, 0, 0, 65523, 0, 65535, 65523, 0, 65534, 65523, 0, 65533, 65524, 0, 65533, 65525, 0, 65533, 65526, 0, 65534, 65527, 0, 4, 65525, 0, 4, 65524, 0, 3, 65523, 0, 2, 65523, 0)
 }
 
-[node name="Torch1" parent="Material" instance=ExtResource("3_wcf5y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.30494, -1.43051e-06, -5.88862)
+[node name="Torch" parent="Material" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("3_twcva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.29749, 0.0096159, -5.88109)
+activatable_mechanisms = NodePath("../Bars2")
 
-[node name="Torch2" parent="Material" instance=ExtResource("3_wcf5y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.57032, -1.43051e-06, -21.9679)
+[node name="Torch1" parent="Material" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("3_twcva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.561, 0.0096159, -21.9631)
+activatable_mechanisms = NodePath("../Bars4")
 
-[node name="Torch3" parent="Material" instance=ExtResource("3_wcf5y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.92204, -4.76837e-07, -19.5153)
+[node name="Torch2" parent="Material" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("3_twcva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.92632, 0.0096159, -19.5248)
+activatable_mechanisms = NodePath("../Bars4")
 
-[node name="Torch4" parent="Material" instance=ExtResource("3_wcf5y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.21038, -1.43051e-06, -24.5162)
+[node name="Torch3" parent="Material" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("3_twcva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20401, 0.0096159, -24.5097)
+activatable_mechanisms = NodePath("../Bars4")
 
-[node name="Lever" parent="Material" instance=ExtResource("4_rolxn")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.94793, 0, -2.79429)
+[node name="Bars" parent="Material" instance=ExtResource("4_d7qv4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -4)
 
-[node name="Bars1" parent="Material" instance=ExtResource("5_c35xy")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0103849, -2.38419e-07, -3.11107)
+[node name="Bars2" parent="Material" instance=ExtResource("4_d7qv4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -10)
 
-[node name="Bars2" parent="Material" instance=ExtResource("5_c35xy")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0103849, -2.38419e-07, -9.11179)
+[node name="Bars3" parent="Material" instance=ExtResource("4_d7qv4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -18)
+activates_needed = 2
 
-[node name="Bars3" parent="Material" instance=ExtResource("5_c35xy")]
-transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 1.13972, 7.15256e-07, -21.9539)
+[node name="Bars4" parent="Material" instance=ExtResource("4_d7qv4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -22)
+activates_needed = 3
 
-[node name="Button1" parent="Material" instance=ExtResource("6_j6ck7")]
-transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 4.97071, 0.751232, -13.9801)
+[node name="Button" parent="Material" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("5_afp0d")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2, 1, -3)
+activatable_mechanisms = NodePath("../Bars")
 
-[node name="Button2" parent="Material" instance=ExtResource("6_j6ck7")]
-transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -5.0022, 0.991463, -13.9801)
+[node name="Button1" parent="Material" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("5_afp0d")]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 5, 1, -14)
+activatable_mechanisms = NodePath("../Bars3")
+
+[node name="Button2" parent="Material" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("5_afp0d")]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -5, 1, -14)
+activatable_mechanisms = NodePath("../Bars3")
 
 [node name="Table1" parent="Material" instance=ExtResource("7_b8gwl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.63353, 0, -21.9261)
@@ -81,14 +95,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.63353, 0, -21.9261)
 [node name="Table2" parent="Material" instance=ExtResource("7_b8gwl")]
 transform = Transform3D(0.0384575, 0, 0.99926, 0, 1, 0, -0.99926, 0, 0.0384575, 0.161474, 4.76837e-07, -24.5592)
 
-[node name="List1" parent="Material" instance=ExtResource("8_aohpj")]
-transform = Transform3D(0.995276, 0, 0.0970795, 0, 1, 0, -0.0970795, 0, 0.995276, -0.0878263, 0.637666, -24.5773)
+[node name="List" parent="Material" instance=ExtResource("8_vrwbl")]
+transform = Transform3D(0.859915, 0, -0.510438, 0, 1, 0, 0.510438, 0, 0.859915, 0.0419804, 0.601899, -24.5787)
+title = "Хуй"
+text = "Яйца"
 
-[node name="List2" parent="Material" instance=ExtResource("8_aohpj")]
-transform = Transform3D(-0.298674, 0, -0.954355, 0, 1, 0, 0.954355, 0, -0.298674, 6.60488, 0.624202, -21.8326)
+[node name="List2" parent="Material" instance=ExtResource("8_vrwbl")]
+transform = Transform3D(-0.292372, 0, -0.956305, 0, 1, 0, 0.956305, 0, -0.292372, 6.605, 0.602, -21.833)
+title = "Пизда"
+text = "Клитор"
 
-[node name="PortalStone" parent="Material" instance=ExtResource("9_c0pao")]
-transform = Transform3D(0.363251, 0.931691, 0, -0.931691, 0.363251, 0, 0, 0, 1, 6.73041, 0.641356, -22.1346)
+[node name="Crystal" parent="Material" instance=ExtResource("9_5qxye")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 6.73041, 0.641356, -22.1346)
 
 [node name="Cognitive" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
@@ -122,17 +140,47 @@ data = {
 "cells": PackedInt32Array(1, 2, 0, 1, 1, 0, 2, 0, 0, 2, 65535, 0, 2, 65534, 0, 1, 65534, 0, 65535, 65533, 0, 65535, 65534, 0, 65535, 65535, 0, 65535, 0, 0, 65535, 1, 0, 65535, 2, 0, 3, 65533, 0, 3, 65532, 0, 2, 65531, 0, 1, 65531, 0, 65535, 65531, 0, 65535, 65532, 0, 3, 65529, 0, 2, 65530, 0, 65534, 65530, 0, 65533, 65529, 0, 65534, 65528, 0, 65535, 65527, 0, 1, 65527, 0, 2, 65528, 0, 0, 65529, 0, 1, 65524, 0, 1, 65523, 0, 0, 65523, 0, 65535, 65523, 0, 65534, 65523, 0, 65533, 65524, 0, 65533, 65525, 0, 65533, 65526, 0, 65534, 65527, 0, 4, 65525, 0, 4, 65524, 0, 3, 65523, 0, 2, 65523, 0)
 }
 
-[node name="Torch1" parent="Cognitive" instance=ExtResource("10_wm1t2")]
+[node name="Torch" parent="Cognitive" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("9_e3k56")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.29749, 0.0096159, -5.88109)
+activatable_mechanisms = NodePath("../Bars2")
 
-[node name="Torch2" parent="Cognitive" instance=ExtResource("10_wm1t2")]
+[node name="Torch1" parent="Cognitive" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("9_e3k56")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.561, 0.0096159, -21.9631)
+activatable_mechanisms = NodePath("../Bars4")
 
-[node name="Torch3" parent="Cognitive" instance=ExtResource("10_wm1t2")]
+[node name="Torch2" parent="Cognitive" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("9_e3k56")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.92632, 0.0096159, -19.5248)
+activatable_mechanisms = NodePath("../Bars4")
 
-[node name="Torch4" parent="Cognitive" instance=ExtResource("10_wm1t2")]
+[node name="Torch3" parent="Cognitive" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("9_e3k56")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20401, 0.0096159, -24.5097)
+activatable_mechanisms = NodePath("../Bars4")
+
+[node name="Bars" parent="Cognitive" instance=ExtResource("10_qnbwb")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -4)
+
+[node name="Bars2" parent="Cognitive" instance=ExtResource("10_qnbwb")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -10)
+
+[node name="Bars3" parent="Cognitive" instance=ExtResource("10_qnbwb")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -18)
+activates_needed = 2
+
+[node name="Bars4" parent="Cognitive" instance=ExtResource("10_qnbwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -22)
+activates_needed = 3
+
+[node name="Button" parent="Cognitive" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("11_wcrtb")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2, 1, -3)
+activatable_mechanisms = NodePath("../Bars")
+
+[node name="Button1" parent="Cognitive" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("11_wcrtb")]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 5, 1, -14)
+activatable_mechanisms = NodePath("../Bars3")
+
+[node name="Button2" parent="Cognitive" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("11_wcrtb")]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -5, 1, -14)
+activatable_mechanisms = NodePath("../Bars3")
 
 [node name="Table1" parent="Cognitive" instance=ExtResource("11_nudxu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.62426, 0.0125875, -21.9277)
@@ -142,3 +190,16 @@ transform = Transform3D(0.0400794, 0, 0.999196, 0, 1, 0, -0.999196, 0, 0.0400794
 
 [node name="PortalStone" parent="Cognitive" instance=ExtResource("9_c0pao")]
 transform = Transform3D(0.363251, 0.931691, 0, -0.931691, 0.363251, 0, 0, 0, 1, 6.73041, 0.652663, -22.1346)
+
+[node name="List" parent="Cognitive" instance=ExtResource("8_vrwbl")]
+transform = Transform3D(0.859915, 0, -0.510438, 0, 1, 0, 0.510438, 0, 0.859915, 0.0419804, 0.623596, -24.5787)
+title = "Хуй"
+text = "Яйца"
+
+[node name="List2" parent="Cognitive" instance=ExtResource("8_vrwbl")]
+transform = Transform3D(-0.292372, 0, -0.956305, 0, 1, 0, 0.956305, 0, -0.292372, 6.605, 0.624, -21.833)
+title = "Пизда"
+text = "Клитор"
+
+[node name="Crystal" parent="Cognitive" instance=ExtResource("9_5qxye")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 6.73041, 0.641356, -22.1346)

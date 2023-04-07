@@ -15,13 +15,16 @@ signal choose_canceled()
 
 var choosen_spell_type: Globals.SpellType = -1
 
+var available_spell_types: Array = []
+
+func add_spell(spell_type: Globals.SpellType) -> void:
+	available_spell_types.append(spell_type)
+
 func choose(spell_type: Globals.SpellType) -> void:
-	if can_conjure() == false:
+	if can_conjure(spell_type) == false:
 		return
-	
 	if spell_type == -1:
 		return
-	
 	choosen_spell_type = spell_type
 	
 	print("Choose spell " + Globals.SpellType.keys()[spell_type])
@@ -32,7 +35,7 @@ func cancel_choose() -> void:
 	choose_canceled.emit()
 
 func try_cast_choosen() -> bool:
-	if can_conjure() == false:
+	if can_conjure(choosen_spell_type) == false:
 		return false
 	
 	if choosen_spell_type == -1:
@@ -49,7 +52,7 @@ func try_cast_choosen() -> bool:
 	return true
 
 func get_spell(spell_type: Globals.SpellType) -> Spell:
-	if can_conjure() == false:
+	if can_conjure(spell_type) == false:
 		return
 	
 	match spell_type:
@@ -68,5 +71,15 @@ func get_spell(spell_type: Globals.SpellType) -> Spell:
 		_:
 			return null
 			
-func can_conjure() -> bool:
-	return Inventory.items[InventoryItem.Type.BOOK] == true and Inventory.items[InventoryItem.Type.RING] == true and World.current_plane == Globals.WorldPlane.COGNITIVE
+func can_conjure(spell_type: Globals.SpellType) -> bool:
+	var inventory_item_types: Array = []
+	for i in Inventory.items.size():
+		inventory_item_types.push_back(Inventory.items[i].type)
+	
+	if not inventory_item_types.has(InventoryItem.Type.BOOK) or not inventory_item_types.has(InventoryItem.Type.RING) or World.current_plane != Globals.WorldPlane.COGNITIVE:
+		return false
+		
+	if not available_spell_types.has(spell_type):
+		return false
+		
+	return true

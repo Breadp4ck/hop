@@ -191,6 +191,7 @@ func jump_to_plane() -> void:
 			eye.environment = material_env
 	
 	World.invert_plane()
+	spell_caster.cancel_choose()
 
 func can_jump_to_plane() -> bool:
 	if jump_check_area.has_overlapping_bodies():

@@ -1,0 +1,77 @@
+[gd_scene load_steps=10 format=3 uid="uid://bm7revl1frg2d"]
+
+[ext_resource type="Texture2D" uid="uid://c8gonrrrk2w51" path="res://assets/entities/list/m_list_m_list.png" id="1_minii"]
+[ext_resource type="Script" path="res://world/items/list/list.gd" id="1_n6xtw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wbaqe"]
+size = Vector3(0.3, 0.1, 0.35)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0tfd8"]
+radius = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cm2be"]
+resource_name = "m_list"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_minii")
+roughness = 0.9
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_5dxwj"]
+_surfaces = [{
+"aabb": AABB(-0.142153, 0, -0.173, 0.279153, 0.027234, 0.34601),
+"format": 4097,
+"index_count": 24,
+"index_data": PackedByteArray(9, 0, 5, 0, 4, 0, 5, 0, 8, 0, 3, 0, 5, 0, 9, 0, 8, 0, 6, 0, 5, 0, 7, 0, 6, 0, 4, 0, 5, 0, 0, 0, 7, 0, 1, 0, 0, 0, 6, 0, 7, 0, 9, 0, 2, 0, 8, 0),
+"name": "m_list",
+"primitive": 3,
+"vertex_count": 10,
+"vertex_data": PackedByteArray(186, 73, 12, 190, 0, 0, 0, 0, 233, 38, 49, 62, 186, 73, 12, 62, 0, 0, 0, 0, 233, 38, 49, 62, 18, 101, 6, 190, 221, 25, 223, 60, 103, 102, 40, 190, 186, 73, 12, 62, 0, 0, 0, 0, 233, 38, 49, 190, 186, 73, 12, 190, 24, 43, 123, 60, 109, 141, 83, 189, 186, 73, 12, 62, 24, 43, 123, 60, 109, 141, 83, 189, 111, 144, 17, 190, 208, 241, 60, 58, 44, 26, 106, 61, 135, 129, 6, 62, 228, 57, 126, 59, 7, 255, 39, 61, 98, 39, 150, 189, 0, 0, 0, 0, 233, 38, 49, 190, 186, 73, 12, 190, 241, 195, 4, 60, 51, 239, 222, 189)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_shwae"]
+resource_name = "m_list_Plane007"
+_surfaces = [{
+"aabb": AABB(-0.142153, 0, -0.173, 0.279153, 0.027234, 0.34601),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 116, 146, 179, 62, 0, 0, 0, 0, 116, 146, 179, 62, 0, 0, 128, 63, 116, 146, 179, 62, 0, 0, 128, 63, 116, 146, 179, 62, 0, 0, 0, 0, 96, 6, 37, 63, 0, 0, 0, 0, 96, 6, 37, 63, 0, 0, 128, 63, 96, 6, 37, 63, 0, 0, 128, 63, 96, 6, 37, 63, 36, 255, 109, 62, 0, 0, 0, 0, 36, 255, 109, 62, 0, 0, 0, 0, 0, 0, 0, 0, 40, 215, 61, 62, 0, 0, 0, 0, 40, 215, 61, 62),
+"format": 4119,
+"index_count": 24,
+"index_data": PackedByteArray(14, 0, 7, 0, 5, 0, 7, 0, 12, 0, 3, 0, 7, 0, 14, 0, 12, 0, 9, 0, 6, 0, 11, 0, 9, 0, 4, 0, 6, 0, 0, 0, 10, 0, 1, 0, 0, 0, 8, 0, 10, 0, 15, 0, 2, 0, 13, 0),
+"material": SubResource("StandardMaterial3D_cm2be"),
+"name": "m_list",
+"primitive": 3,
+"vertex_count": 16,
+"vertex_data": PackedByteArray(186, 73, 12, 190, 0, 0, 0, 0, 233, 38, 49, 62, 88, 127, 254, 252, 67, 255, 242, 194, 186, 73, 12, 62, 0, 0, 0, 0, 233, 38, 49, 62, 88, 127, 254, 252, 81, 255, 84, 192, 18, 101, 6, 190, 221, 25, 223, 60, 103, 102, 40, 190, 30, 163, 100, 194, 203, 218, 143, 167, 186, 73, 12, 62, 0, 0, 0, 0, 233, 38, 49, 190, 164, 113, 255, 255, 255, 255, 255, 191, 186, 73, 12, 190, 24, 43, 123, 60, 109, 141, 83, 189, 198, 127, 38, 241, 183, 255, 30, 192, 186, 73, 12, 190, 24, 43, 123, 60, 109, 141, 83, 189, 164, 113, 255, 255, 255, 255, 255, 191, 186, 73, 12, 62, 24, 43, 123, 60, 109, 141, 83, 189, 198, 127, 38, 241, 14, 255, 43, 195, 186, 73, 12, 62, 24, 43, 123, 60, 109, 141, 83, 189, 164, 113, 255, 255, 255, 255, 255, 191, 111, 144, 17, 190, 208, 241, 60, 58, 44, 26, 106, 61, 88, 127, 254, 252, 60, 255, 237, 195, 111, 144, 17, 190, 208, 241, 60, 58, 44, 26, 106, 61, 198, 127, 38, 241, 139, 255, 2, 193, 135, 129, 6, 62, 228, 57, 126, 59, 7, 255, 39, 61, 88, 127, 254, 252, 78, 255, 73, 193, 135, 129, 6, 62, 228, 57, 126, 59, 7, 255, 39, 61, 198, 127, 38, 241, 216, 254, 30, 196, 98, 39, 150, 189, 0, 0, 0, 0, 233, 38, 49, 190, 164, 113, 255, 255, 255, 255, 255, 191, 98, 39, 150, 189, 0, 0, 0, 0, 233, 38, 49, 190, 30, 163, 100, 194, 203, 218, 143, 167, 186, 73, 12, 190, 241, 195, 4, 60, 51, 239, 222, 189, 164, 113, 255, 255, 255, 255, 255, 191, 186, 73, 12, 190, 241, 195, 4, 60, 51, 239, 222, 189, 30, 163, 100, 194, 203, 218, 143, 167)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_5dxwj")
+
+[sub_resource type="Animation" id="Animation_b3cph"]
+resource_name = "M_List"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4ux0j"]
+_data = {
+"M_List": SubResource("Animation_b3cph")
+}
+
+[node name="m_list" type="Area3D"]
+script = ExtResource("1_n6xtw")
+interactable = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_wbaqe")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("SphereShape3D_0tfd8")
+
+[node name="M_List" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_shwae")
+skeleton = NodePath("")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4ux0j")
+}

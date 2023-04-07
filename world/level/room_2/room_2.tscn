@@ -1,0 +1,176 @@
+[gd_scene load_steps=11 format=3 uid="uid://c6x2gstmlw1na"]
+
+[ext_resource type="MeshLibrary" uid="uid://cwg0lk4sttpgm" path="res://world/level/mesh_library.tres" id="1_xxlmc"]
+[ext_resource type="MeshLibrary" uid="uid://ce5q65war85lh" path="res://world/level/collision_mesh_library.tres" id="2_w5hdb"]
+[ext_resource type="PackedScene" uid="uid://bd3b3ca374ji6" path="res://player/player.tscn" id="2_ycrvi"]
+[ext_resource type="PackedScene" uid="uid://34jjdg81mcmr" path="res://world/inventory_items/m_ring.tscn" id="3_746du"]
+[ext_resource type="PackedScene" uid="uid://cnf1e8uequsuk" path="res://world/pit.tscn" id="3_iwer3"]
+[ext_resource type="PackedScene" uid="uid://dp8qe5nu715dq" path="res://enemies/shadow_master/shadow_master.tscn" id="3_syris"]
+[ext_resource type="PackedScene" uid="uid://bnwr1wfb6ylgb" path="res://world/inventory_items/m_book.tscn" id="4_ds1ri"]
+[ext_resource type="PackedScene" uid="uid://cm12cwfnovun8" path="res://enemies/husk/husk.tscn" id="5_7rrjy"]
+[ext_resource type="PackedScene" uid="uid://c4ftr3a8r5skk" path="res://world/inventory_items/c_ring.tscn" id="6_y4t2i"]
+[ext_resource type="PackedScene" uid="uid://dol2mhio14skj" path="res://world/inventory_items/c_book.tscn" id="7_gqv15"]
+
+[node name="Room2" type="Node3D"]
+
+[node name="Material" type="Node3D" parent="."]
+
+[node name="Pits" type="Node3D" parent="Material"]
+
+[node name="pit" parent="Material/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, 2)
+
+[node name="pit2" parent="Material/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, 0)
+
+[node name="pit3" parent="Material/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, -2)
+
+[node name="pit4" parent="Material/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -1, 2)
+
+[node name="pit5" parent="Material/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -1, 2)
+
+[node name="pit6" parent="Material/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -1, 4)
+
+[node name="pit7" parent="Material/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -1, 6)
+
+[node name="pit8" parent="Material/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -1, 6)
+
+[node name="pit9" parent="Material/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, -1, 6)
+
+[node name="pit10" parent="Material/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, -1, 14)
+
+[node name="pit11" parent="Material/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, -1, 16)
+
+[node name="Static" type="Node3D" parent="Material"]
+
+[node name="FloorAndWalls" type="GridMap" parent="Material/Static"]
+mesh_library = ExtResource("1_xxlmc")
+cell_center_x = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(-65536, 0, 1, -65535, 0, 1, -1, 0, 1, -1, 1, 1, -2, 2, 1, -1, 2, 1, -1, 65535, 1, -1, 65534, 1, -2, 65534, 1, -3, 65534, 1, -3, 65535, 1, -3, 0, 1, -3, 1, 1, -3, 2, 1, -4, 0, 1, -5, 0, 1, -6, 0, 1, -7, 0, 1, -7, 1, 1, -7, 2, 1, -8, 2, 1, -8, 1, 1, -8, 0, 1, -9, 0, 1, -9, 1, 1, -9, 2, 1, -10, 2, 1, -10, 3, 1, -10, 4, 1, -11, 4, 1, -11, 5, 1, -10, 5, 1, -11, 6, 1, -11, 7, 1, -10, 7, 1, -10, 8, 1, -11, 8, 1, -12, 8, 1, -12, 7, 1, -8, 8, 1, -8, 7, 1, -8, 5, 1, -8, 4, 1, -7, 4, 1, -5, 4, 1, -6, 4, 1, -5, 3, 1, -5, 2, 1, 65532, 3, 1, 65532, 2, 1, 65533, 3, 1, 65534, 3, 1, 65535, 3, 1, 0, 2, 1, 0, 1, 1, 0, 3, 1, 1, 1, 1, 1, 65535, 1, 0, 65535, 1, 0, 65534, 1, 0, 65533, 1, 65535, 65533, 1, 65534, 65533, 1, 65533, 65533, 1, 65532, 65533, 1, 65532, 65534, 1, 65532, 65535, 1, 65532, 1, 1, 65531, 65535, 1, 65530, 65535, 1, 65529, 65535, 1, 65528, 65535, 1, 65527, 65535, 1, 65526, 65535, 1, 65526, 0, 1, 65526, 1, 1, 65525, 3, 1, 65525, 2, 1, 65525, 1, 1, 65532, 4, 1, 65532, 5, 1, 65531, 5, 1, 65530, 5, 1, 65529, 5, 1, 65529, 6, 1, 65529, 7, 1, 65529, 8, 1, 65529, 9, 1, 65528, 9, 1, 65527, 9, 1, 65526, 9, 1, 65525, 9, 1, 65524, 9, 1, 65523, 9, 1, 65523, 8, 1, 65523, 7, 1, 65523, 6, 1, 65524, 6, 1, 65524, 5, 1, 65524, 4, 1, 65524, 3, 1, -7, 5, 1, -7, 6, 1, -7, 7, 1, -7, 8, 1, -8, 9, 1, -9, 9, 1, -10, 9, 1, -4, 1, 1, -4, 2, 1, -65538, 1, 1, -65538, 0, 1, -65538, 65535, 1, -65545, 8, 1, -65545, 7, 1, -65545, 6, 1, -65544, 6, 1, -65546, 6, 1, -65545, 5, 1, -65545, 4, 1, -65545, 3, 1, -65544, 3, 1, -65543, 3, 1, -65542, 3, 1, -65542, 2, 1, -65542, 1, 1, -65541, 1, 1, -8, 6, 786433, -9, 6, 786433, -10, 6, 786433, -9, 5, 786433, 65528, 5, 786433, 65527, 5, 786433, 65527, 3, 786433, 65527, 4, 786433, 65527, 6, 786433, 65526, 6, 786433, -9, 3, 786433)
+}
+metadata/_editor_floor_ = Vector3(0, -1, 0)
+
+[node name="Roof" type="GridMap" parent="Material/Static"]
+mesh_library = ExtResource("1_xxlmc")
+cell_center_x = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(65537, 0, 786433, 65536, 0, 786433, 131071, 0, 786433, 131070, 0, 786433, 131071, 1, 786433, 131070, 1, 786433, 131070, 2, 786433, 131069, 2, 786433, 131069, 1, 786433, 131069, 0, 786433, 131069, 65535, 786433, 131069, 65534, 786433, 131070, 65534, 786433, 131071, 65534, 786433, 131071, 65535, 786433, 131070, 65535, 786433, 131071, 2, 786433, 131068, 0, 786433, 131067, 0, 786433, 131066, 0, 786433, 131065, 0, 786433, 131064, 0, 786433, 131063, 0, 786433, 131063, 1, 786433, 131064, 1, 786433, 131065, 1, 786433, 131066, 1, 786433, 131067, 1, 786433, 131067, 2, 786433, 131067, 3, 786433, 131066, 3, 786433, 131066, 4, 786433, 131065, 4, 786433, 131067, 4, 786433, 131066, 2, 786433, 131065, 2, 786433, 131064, 2, 786433, 131063, 2, 786433, 131062, 2, 786433, 131062, 3, 786433, 131063, 3, 786433, 131064, 3, 786433, 131065, 3, 786433, 131064, 4, 786433, 131063, 4, 786433, 131062, 4, 786433, 131061, 5, 786433, 131061, 4, 786433, 131061, 6, 786433, 131060, 6, 786433, 131060, 7, 786433, 131060, 8, 786433, 131061, 8, 786433, 131062, 8, 786433, 131063, 8, 786433, 131064, 8, 786433, 131064, 7, 786433, 131063, 7, 786433, 131062, 7, 786433, 131061, 7, 786433, 131062, 6, 786433, 131063, 6, 786433, 131062, 5, 786433, 131063, 5, 786433, 131064, 5, 786433, 131064, 6, 786433)
+}
+metadata/_editor_floor_ = Vector3(0, 1, 0)
+
+[node name="Collisions" type="GridMap" parent="Material/Static"]
+mesh_library = ExtResource("2_w5hdb")
+cell_center_x = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(65532, 65534, 0, 65532, 65533, 0, 65533, 65533, 0, 65534, 65533, 0, 65535, 65533, 0, 0, 65533, 0, 0, 65534, 0, 1, 65535, 0, 0, 65535, 0, 2, 65535, 0, 2, 0, 0, 2, 1, 0, 1, 1, 0, 0, 1, 0, 65535, 3, 0, 0, 3, 0, 0, 2, 0, 65532, 1, 0, 65533, 3, 0, 65532, 3, 0, 65532, 2, 0, 65534, 3, 0, 65531, 65535, 0, 65526, 65535, 0, 65530, 65535, 0, 65532, 65535, 0, 65529, 65535, 0, 65528, 65535, 0, 65527, 65535, 0, 65526, 0, 0, 65526, 1, 0, 65525, 1, 0, 65525, 2, 0, 65525, 3, 0, 65524, 3, 0, 65524, 4, 0, 65524, 5, 0, 65524, 6, 0, 65523, 6, 0, 65523, 7, 0, 65523, 8, 0, 65523, 9, 0, 65524, 9, 0, 65525, 9, 0, 65526, 9, 0, 65527, 9, 0, 65528, 9, 0, 65529, 9, 0, 65529, 8, 0, 65529, 7, 0, 65529, 6, 0, 65529, 5, 0, 65530, 5, 0, 65531, 5, 0, 65532, 5, 0, 65532, 4, 0, 65527, 3, 0, 65527, 4, 0, 65527, 5, 0, 65528, 5, 0, 65526, 6, 0, 65527, 6, 0)
+}
+
+[node name="Ring" parent="Material" instance=ExtResource("3_746du")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.056387, 0.43573, -0.307971)
+type = 0
+
+[node name="Book" parent="Material" instance=ExtResource("4_ds1ri")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.378456, -0.317142)
+
+[node name="Cognitive" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
+
+[node name="Pits" type="Node3D" parent="Cognitive"]
+
+[node name="pit" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, 2)
+
+[node name="pit2" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, 0)
+
+[node name="pit3" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, -2)
+
+[node name="pit4" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -1, 2)
+
+[node name="pit5" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -1, 2)
+
+[node name="pit6" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -1, 4)
+
+[node name="pit7" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -1, 6)
+
+[node name="pit8" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -1, 6)
+
+[node name="pit9" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, -1, 6)
+
+[node name="pit10" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, -1, 14)
+
+[node name="pit11" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, -1, 16)
+
+[node name="Ring" parent="Cognitive" instance=ExtResource("6_y4t2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.056387, 0.43573, -0.307971)
+type = 0
+
+[node name="Book" parent="Cognitive" instance=ExtResource("7_gqv15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.378456, -0.317142)
+
+[node name="FloorAndWalls" type="GridMap" parent="Cognitive"]
+mesh_library = ExtResource("1_xxlmc")
+cell_center_x = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(-65536, 0, 1, -65535, 0, 1, -1, 0, 1, -1, 1, 1, -2, 2, 1, -1, 2, 1, -1, 65535, 1, -1, 65534, 1, -2, 65534, 1, -3, 65534, 1, -3, 65535, 1, -3, 0, 1, -3, 1, 1, -3, 2, 1, -4, 0, 1, -5, 0, 1, -6, 0, 1, -7, 0, 1, -7, 1, 1, -7, 2, 1, -8, 2, 1, -8, 1, 1, -8, 0, 1, -9, 0, 1, -9, 1, 1, -9, 2, 1, -10, 2, 1, -10, 3, 1, -10, 4, 1, -11, 4, 1, -11, 5, 1, -10, 5, 1, -11, 6, 1, -11, 7, 1, -10, 7, 1, -10, 8, 1, -11, 8, 1, -12, 8, 1, -12, 7, 1, -8, 8, 1, -8, 7, 1, -8, 5, 1, -8, 4, 1, -7, 4, 1, -5, 4, 1, -6, 4, 1, -5, 3, 1, -5, 2, 1, 65532, 3, 1, 65532, 2, 1, 65533, 3, 1, 65534, 3, 1, 65535, 3, 1, 0, 2, 1, 0, 1, 1, 0, 3, 1, 1, 1, 1, 1, 65535, 1, 0, 65535, 1, 0, 65534, 1, 0, 65533, 1, 65535, 65533, 1, 65534, 65533, 1, 65533, 65533, 1, 65532, 65533, 1, 65532, 65534, 1, 65532, 65535, 1, 65532, 1, 1, 65531, 65535, 1, 65530, 65535, 1, 65529, 65535, 1, 65528, 65535, 1, 65527, 65535, 1, 65526, 65535, 1, 65526, 0, 1, 65526, 1, 1, 65525, 3, 1, 65525, 2, 1, 65525, 1, 1, 65532, 4, 1, 65532, 5, 1, 65531, 5, 1, 65530, 5, 1, 65529, 5, 1, 65529, 6, 1, 65529, 7, 1, 65529, 8, 1, 65529, 9, 1, 65528, 9, 1, 65527, 9, 1, 65526, 9, 1, 65525, 9, 1, 65524, 9, 1, 65523, 9, 1, 65523, 8, 1, 65523, 7, 1, 65523, 6, 1, 65524, 6, 1, 65524, 5, 1, 65524, 4, 1, 65524, 3, 1, -7, 5, 1, -7, 6, 1, -7, 7, 1, -7, 8, 1, -8, 9, 1, -9, 9, 1, -10, 9, 1, -4, 1, 1, -4, 2, 1, -65538, 1, 1, -65538, 0, 1, -65538, 65535, 1, -65545, 8, 1, -65545, 7, 1, -65545, 6, 1, -65544, 6, 1, -65546, 6, 1, -65545, 5, 1, -65545, 4, 1, -65545, 3, 1, -65544, 3, 1, -65543, 3, 1, -65542, 3, 1, -65542, 2, 1, -65542, 1, 1, -65541, 1, 1, -8, 6, 786433, -9, 6, 786433, -10, 6, 786433, -9, 5, 786433, 65528, 5, 786433, 65527, 5, 786433, 65527, 3, 786433, 65527, 4, 786433, 65527, 6, 786433, 65526, 6, 786433, -9, 3, 786433)
+}
+metadata/_editor_floor_ = Vector3(0, -1, 0)
+
+[node name="Roof" type="GridMap" parent="Cognitive"]
+mesh_library = ExtResource("1_xxlmc")
+cell_center_x = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(65537, 0, 786433, 65536, 0, 786433, 131071, 0, 786433, 131070, 0, 786433, 131071, 1, 786433, 131070, 1, 786433, 131070, 2, 786433, 131069, 2, 786433, 131069, 1, 786433, 131069, 0, 786433, 131069, 65535, 786433, 131069, 65534, 786433, 131070, 65534, 786433, 131071, 65534, 786433, 131071, 65535, 786433, 131070, 65535, 786433, 131071, 2, 786433, 131068, 0, 786433, 131067, 0, 786433, 131066, 0, 786433, 131065, 0, 786433, 131064, 0, 786433, 131063, 0, 786433, 131063, 1, 786433, 131064, 1, 786433, 131065, 1, 786433, 131066, 1, 786433, 131067, 1, 786433, 131067, 2, 786433, 131067, 3, 786433, 131066, 3, 786433, 131066, 4, 786433, 131065, 4, 786433, 131067, 4, 786433, 131066, 2, 786433, 131065, 2, 786433, 131064, 2, 786433, 131063, 2, 786433, 131062, 2, 786433, 131062, 3, 786433, 131063, 3, 786433, 131064, 3, 786433, 131065, 3, 786433, 131064, 4, 786433, 131063, 4, 786433, 131062, 4, 786433, 131061, 5, 786433, 131061, 4, 786433, 131061, 6, 786433, 131060, 6, 786433, 131060, 7, 786433, 131060, 8, 786433, 131061, 8, 786433, 131062, 8, 786433, 131063, 8, 786433, 131064, 8, 786433, 131064, 7, 786433, 131063, 7, 786433, 131062, 7, 786433, 131061, 7, 786433, 131062, 6, 786433, 131063, 6, 786433, 131062, 5, 786433, 131063, 5, 786433, 131064, 5, 786433, 131064, 6, 786433)
+}
+metadata/_editor_floor_ = Vector3(0, 1, 0)
+
+[node name="ShadowMaster" parent="Cognitive" node_paths=PackedStringArray("walls_grid") instance=ExtResource("3_syris")]
+walls_grid = NodePath("../Collisions")
+grid_size = Vector2i(48, 48)
+
+[node name="Husk" parent="Cognitive/ShadowMaster" instance=ExtResource("5_7rrjy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 6)
+
+[node name="Husk2" parent="Cognitive/ShadowMaster" instance=ExtResource("5_7rrjy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 15)
+
+[node name="Husk3" parent="Cognitive/ShadowMaster" instance=ExtResource("5_7rrjy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 4)
+
+[node name="Husk4" parent="Cognitive/ShadowMaster" instance=ExtResource("5_7rrjy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="Collisions" type="GridMap" parent="Cognitive"]
+mesh_library = ExtResource("2_w5hdb")
+cell_center_x = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(65532, 65534, 0, 65532, 65533, 0, 65533, 65533, 0, 65534, 65533, 0, 65535, 65533, 0, 0, 65533, 0, 0, 65534, 0, 1, 65535, 0, 0, 65535, 0, 2, 65535, 0, 2, 0, 0, 2, 1, 0, 1, 1, 0, 0, 1, 0, 65535, 3, 0, 0, 3, 0, 0, 2, 0, 65532, 1, 0, 65533, 3, 0, 65532, 3, 0, 65532, 2, 0, 65534, 3, 0, 65531, 65535, 0, 65526, 65535, 0, 65530, 65535, 0, 65532, 65535, 0, 65529, 65535, 0, 65528, 65535, 0, 65527, 65535, 0, 65526, 0, 0, 65526, 1, 0, 65525, 1, 0, 65525, 2, 0, 65525, 3, 0, 65524, 3, 0, 65524, 4, 0, 65524, 5, 0, 65524, 6, 0, 65523, 6, 0, 65523, 7, 0, 65523, 8, 0, 65523, 9, 0, 65524, 9, 0, 65525, 9, 0, 65526, 9, 0, 65527, 9, 0, 65528, 9, 0, 65529, 9, 0, 65529, 8, 0, 65529, 7, 0, 65529, 6, 0, 65529, 5, 0, 65530, 5, 0, 65531, 5, 0, 65532, 5, 0, 65532, 4, 0, 65527, 3, 0, 65527, 4, 0, 65527, 5, 0, 65528, 5, 0, 65526, 6, 0, 65527, 6, 0)
+}
+
+[node name="Player" parent="." instance=ExtResource("2_ycrvi")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 0, 0)

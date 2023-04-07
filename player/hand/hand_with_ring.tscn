@@ -2491,18 +2491,19 @@ advance_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dm2w2"]
 xfade_time = 0.1
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_edsmn"]
-xfade_time = 0.3
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sdlqa"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dm2w2"]
+
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_elc36"]
 switch_mode = 2
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_sqkel"]
 states/Calm/node = SubResource("AnimationNodeAnimation_e8lop")
 states/Calm/position = Vector2(375, 156)
-states/Cast2/node = SubResource("AnimationNodeAnimation_ymvjx")
-states/Cast2/position = Vector2(528.51, 366)
+states/Cast/node = SubResource("AnimationNodeAnimation_omapf")
+states/Cast/position = Vector2(688, 337)
 states/Drop/node = SubResource("AnimationNodeAnimation_pip8h")
 states/Drop/position = Vector2(688, 101)
 states/End/position = Vector2(985, 142)
@@ -2515,8 +2516,9 @@ states/PalmShaking/position = Vector2(688, 250)
 states/Shaking/node = SubResource("AnimationNodeAnimation_02uwb")
 states/Shaking/position = Vector2(549, 50)
 states/Start/position = Vector2(217, 156)
-transitions = ["Start", "Calm", SubResource("AnimationNodeStateMachineTransition_28s1e"), "Calm", "Focus", SubResource("AnimationNodeStateMachineTransition_1c2rv"), "Focus", "Shaking", SubResource("AnimationNodeStateMachineTransition_on0ju"), "Shaking", "Drop", SubResource("AnimationNodeStateMachineTransition_sdrhg"), "Drop", "Calm", SubResource("AnimationNodeStateMachineTransition_4ta65"), "Calm", "OpenPalm", SubResource("AnimationNodeStateMachineTransition_kg7ws"), "OpenPalm", "PalmShaking", SubResource("AnimationNodeStateMachineTransition_jk1tv"), "PalmShaking", "Calm", SubResource("AnimationNodeStateMachineTransition_dm2w2"), "PalmShaking", "Cast2", SubResource("AnimationNodeStateMachineTransition_edsmn"), "Cast2", "PalmShaking", SubResource("AnimationNodeStateMachineTransition_sdlqa")]
-graph_offset = Vector2(122.51, -37.2408)
+transitions = ["Start", "Calm", SubResource("AnimationNodeStateMachineTransition_28s1e"), "Calm", "Focus", SubResource("AnimationNodeStateMachineTransition_1c2rv"), "Focus", "Shaking", SubResource("AnimationNodeStateMachineTransition_on0ju"), "Shaking", "Drop", SubResource("AnimationNodeStateMachineTransition_sdrhg"), "Drop", "Calm", SubResource("AnimationNodeStateMachineTransition_4ta65"), "Calm", "OpenPalm", SubResource("AnimationNodeStateMachineTransition_kg7ws"), "OpenPalm", "PalmShaking", SubResource("AnimationNodeStateMachineTransition_jk1tv"), "PalmShaking", "Cast", SubResource("AnimationNodeStateMachineTransition_ljk1q"), "PalmShaking", "Calm", SubResource("AnimationNodeStateMachineTransition_dm2w2"), "Cast", "PalmShaking", SubResource("AnimationNodeStateMachineTransition_elc36")]
+graph_offset = Vector2(-61, 150)
+
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_gw4rh"]
 
@@ -2538,7 +2540,7 @@ bones/1/name = "Forearm"
 bones/1/parent = -1
 bones/1/rest = Transform3D(0.608348, -0.322621, 0.725141, -0.582004, 0.439853, 0.683959, -0.539614, -0.83812, 0.0798168, 0.483534, -0.376819, -0.0415892)
 bones/1/enabled = true
-bones/1/position = Vector3(0.463517, -0.368604, -0.0724375)
+bones/1/position = Vector3(0.462925, -0.368883, -0.0733082)
 bones/1/rotation = Quaternion(-0.105911, 0.844171, -0.52542, -0.00960757)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "Palm"
