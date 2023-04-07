@@ -4,6 +4,8 @@ extends Node3D
 @onready var animator: AnimationPlayer = $AnimationPlayer
 @onready var animation_tree: AnimationTree = $AnimationTree
 
+@export var needed_types_to_damage: Array[Globals.SpellType] = []
+
 @export var health: int = 1
 @export var damage: int = 1
 @export var sight_distance: int = 1
@@ -38,6 +40,23 @@ func _ready() -> void:
 	add_child(wait_timer)
 	wait_timer.timeout.connect(_on_wait_timeout)
 
+func interact_with_spell(spell: Spell) -> void:
+	if needed_types_to_damage.has(spell.type) == false:
+		return
+	
+	receive_damage(1)
+
+func receive_damage(damage: int) -> void:
+	health -= damage
+	if health <= 0:
+		die()
+
+func die() -> void:
+	sight_distance = 0.0
+	destroy() # REMOVE WHEN Animated
+
+func destroy() -> void:
+	queue_free()
 
 func _on_wait_timeout() -> void:
 	if activity_state == ActivityState.ENGAGE:

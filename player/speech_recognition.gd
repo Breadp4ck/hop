@@ -4,7 +4,7 @@ extends Node
 @export var spell_caster: SpellCaster
 @export var spells = {
 	"fire": Globals.SpellType.FIRE,
-	"water": Globals.SpellType.WATER,
+	"destruction": Globals.SpellType.DESTRUCT,
 	"wind": Globals.SpellType.WIND,
 	"repair": Globals.SpellType.REPAIR,
 	"time": Globals.SpellType.TIMESTOP,

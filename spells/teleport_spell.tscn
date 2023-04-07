@@ -13,6 +13,7 @@ material = SubResource("StandardMaterial3D_vtuvb")
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o7nrx"]
 
 [node name="teleport_spell" type="Area3D"]
+collision_layer = 0
 script = ExtResource("1_dbago")
 type = 5
 length = 2.0

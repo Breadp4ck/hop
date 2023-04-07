@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://die2clnm3gt6u"]
 
-[ext_resource type="Script" path="res://spells/spell.gd" id="1_s3d0n"]
-[ext_resource type="Texture2D" uid="uid://d4jpormvamr55" path="res://assets/textures/freeze.png" id="2_jk6kp"]
-[ext_resource type="AudioStream" uid="uid://d0gp7aeea3klo" path="res://assets/sounds/sfx/ice_collide.wav" id="3_rolr5"]
+[ext_resource type="Script" path="res://spells/spell.gd" id="1_kl1a8"]
+[ext_resource type="Texture2D" uid="uid://d4jpormvamr55" path="res://assets/textures/freeze.png" id="2_4wcrs"]
+[ext_resource type="AudioStream" uid="uid://d0gp7aeea3klo" path="res://assets/sounds/sfx/ice_collide.wav" id="3_6rkqt"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_huiik"]
 radius = 0.25
@@ -32,7 +32,7 @@ transparency = 1
 blend_mode = 1
 shading_mode = 0
 albedo_color = Color(1, 1, 1, 0.254902)
-albedo_texture = ExtResource("2_jk6kp")
+albedo_texture = ExtResource("2_4wcrs")
 billboard_mode = 3
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
@@ -119,7 +119,7 @@ tracks/3/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("3_rolr5")
+"stream": ExtResource("3_6rkqt")
 }],
 "times": PackedFloat32Array(-0.6)
 }
@@ -159,8 +159,9 @@ _data = {
 "start": SubResource("Animation_6fays")
 }
 
-[node name="WaterSpell" type="Area3D"]
-script = ExtResource("1_s3d0n")
+[node name="DestructSpell" type="Area3D"]
+collision_layer = 0
+script = ExtResource("1_kl1a8")
 type = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
