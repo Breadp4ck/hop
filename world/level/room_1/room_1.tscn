@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dr620hhhu6sdg"]
+[gd_scene load_steps=13 format=3 uid="uid://dr620hhhu6sdg"]
 
 [ext_resource type="MeshLibrary" uid="uid://cwg0lk4sttpgm" path="res://world/level/mesh_library.tres" id="1_ouxc0"]
 [ext_resource type="MeshLibrary" uid="uid://ce5q65war85lh" path="res://world/level/collision_mesh_library.tres" id="2_ip06p"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://odugmk43ag6u" path="res://assets/entities/table/m_table.glb" id="7_b8gwl"]
 [ext_resource type="PackedScene" uid="uid://bm7revl1frg2d" path="res://world/items/list/m_list.tscn" id="8_vrwbl"]
 [ext_resource type="PackedScene" uid="uid://ba2ci8eh1l78l" path="res://world/inventory_items/crystal.tscn" id="9_5qxye"]
-[ext_resource type="PackedScene" uid="uid://dj0m75lui45r4" path="res://assets/entities/portal_stone/d_portal_stone.glb" id="9_c0pao"]
 [ext_resource type="PackedScene" uid="uid://drcvd0s4mqwnp" path="res://world/items/torch/c_torch.tscn" id="9_e3k56"]
 [ext_resource type="PackedScene" uid="uid://0pxacylj6isr" path="res://world/mechanisms/bar/c_bar.tscn" id="10_qnbwb"]
 [ext_resource type="PackedScene" uid="uid://bahpk53tkuqv7" path="res://assets/entities/table/c_table.glb" id="11_nudxu"]
@@ -187,9 +186,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.62426, 0.0125875, -21.9277)
 
 [node name="Table2" parent="Cognitive" instance=ExtResource("11_nudxu")]
 transform = Transform3D(0.0400794, 0, 0.999196, 0, 1, 0, -0.999196, 0, 0.0400794, 0.168861, 0.0184336, -24.5571)
-
-[node name="PortalStone" parent="Cognitive" instance=ExtResource("9_c0pao")]
-transform = Transform3D(0.363251, 0.931691, 0, -0.931691, 0.363251, 0, 0, 0, 1, 6.73041, 0.652663, -22.1346)
 
 [node name="List" parent="Cognitive" instance=ExtResource("8_vrwbl")]
 transform = Transform3D(0.859915, 0, -0.510438, 0, 1, 0, 0.510438, 0, 0.859915, 0.0419804, 0.623596, -24.5787)
