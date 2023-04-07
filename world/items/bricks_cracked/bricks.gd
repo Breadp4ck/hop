@@ -1,7 +1,7 @@
 extends Item
 
 func interact(spell: Spell) -> void:
-	animator.play("burn") 
+	# PARTICLEs
 	interactable = false
 	
 func disable() -> void:
