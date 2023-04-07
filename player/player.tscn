@@ -290,6 +290,7 @@ height = 1.1
 
 [node name="Player" type="Node3D" node_paths=PackedStringArray("jump_check_area", "spell_caster") groups=["Player"]]
 script = ExtResource("1_khcw2")
+health = 5
 jump_check_area = NodePath("Head/JumpCheckArea")
 spell_caster = NodePath("SpellCaster")
 
@@ -304,6 +305,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="Eye" type="Camera3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 environment = ExtResource("2_5bh7t")
+current = true
 fov = 70.0
 far = 75.0
 
