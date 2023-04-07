@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dksoaqgf1t4cv"]
+[gd_scene load_steps=23 format=3 uid="uid://dksoaqgf1t4cv"]
 
 [ext_resource type="PackedScene" uid="uid://bkqbcuxs5k103" path="res://assets/locations/hub/c_hub.glb" id="1_74rv6"]
 [ext_resource type="MeshLibrary" uid="uid://ce5q65war85lh" path="res://world/level/collision_mesh_library.tres" id="2_xnqcf"]
@@ -16,9 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://bu3yaweylom2x" path="res://world/items/tree/c_old_tree.tscn" id="10_x7qhb"]
 [ext_resource type="PackedScene" uid="uid://c4ftr3a8r5skk" path="res://world/inventory_items/c_ring.tscn" id="11_7tgg0"]
 [ext_resource type="PackedScene" uid="uid://bm7revl1frg2d" path="res://world/items/list/m_list.tscn" id="11_p1g30"]
+[ext_resource type="PackedScene" uid="uid://b88m7i2xgx85h" path="res://world/items/nailed/m_nailed.tscn" id="12_3aw6n"]
 [ext_resource type="PackedScene" uid="uid://bstd3xy8rkkn7" path="res://world/items/portal/c_portal.tscn" id="15_n5m1k"]
 [ext_resource type="PackedScene" uid="uid://ba2ci8eh1l78l" path="res://world/inventory_items/crystal.tscn" id="16_ii71q"]
 [ext_resource type="PackedScene" uid="uid://5cex0apiqt55" path="res://world/items/pedestal/c_pedestal.tscn" id="17_vr55d"]
+[ext_resource type="PackedScene" uid="uid://bx8y1fj4epj4n" path="res://world/items/nailed/c_nailed.tscn" id="21_om1co"]
 [ext_resource type="PackedScene" uid="uid://2mcdaxfle6j3" path="res://world/items/list/c_list.tscn" id="21_vfkk7"]
 
 [node name="Hub" type="Node3D"]
@@ -90,6 +92,9 @@ transform = Transform3D(-0.827757, 0, -0.561087, 0, 1, 0, 0.561087, 0, -0.827757
 pickable_spell_type = 1
 title = "Repair"
 text = "Say \"PHOKES POKES\""
+
+[node name="Nailed1" parent="Material" instance=ExtResource("12_3aw6n")]
+transform = Transform3D(1.26883, 0.591666, 0, -0.591666, 1.26883, 0, 0, 0, 1.4, 3.4, 100, 4.6)
 
 [node name="Cognitive" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
@@ -163,3 +168,6 @@ pickable_spell_type = 1
 title = "Repair"
 text = "Say \"PHOKES POKES\""
 interactable = false
+
+[node name="Nailed1" parent="Cognitive" instance=ExtResource("21_om1co")]
+transform = Transform3D(1.26883, 0.591666, 0, -0.591666, 1.26883, 0, 0, 0, 1.4, 3.4, 0, 4.6)
