@@ -24,6 +24,12 @@ func _input(event: InputEvent) -> void:
 
 
 func toggle_book() -> void:
+	var inventory_item_types: Array = []
+	for i in Inventory.items.size():
+		inventory_item_types.push_back(Inventory.items[i].type)
+	if not inventory_item_types.has(InventoryItem.Type.BOOK):
+		return
+
 	if state == GuiState.BOOK:
 		book.visible = false
 		state = GuiState.DEFAULT

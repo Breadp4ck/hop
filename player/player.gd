@@ -29,7 +29,7 @@ const INTERACT_RAY_LENGTH: float = 3.0
 
 var can_input: bool = true:
 	get:
-		return (not is_jumping) and (transition_tween == null or not transition_tween.is_running()) and (not is_spell_delay)
+		return (not is_jumping) and (transition_tween == null or not transition_tween.is_running()) and (not is_spell_delay) and (not is_dead)
 
 enum Movement {
 	ROTATE_LEFT,
@@ -47,10 +47,14 @@ var transition_tween: Tween
 
 var last_transition: Movement = -1
 var is_jumping: bool = false
+var is_dead: bool = false
 var is_spell_delay: bool = false
 var spell_delay_time: float = 0.5
 
 var transition_queue: Array = []
+
+func _ready():
+	Globals.player_position = global_position
 
 func _input(event: InputEvent) -> void:
 	if can_input == false:
@@ -86,6 +90,9 @@ func _input(event: InputEvent) -> void:
 	add_transition(transition)
 
 func _process(delta: float) -> void:
+	if Input.is_key_pressed(KEY_1):
+		receive_damage(2)
+	
 	if want_interact:
 		interact()
 	
@@ -235,8 +242,12 @@ func receive_damage(amount: int) -> void:
 	print("Player damaged by " + str(amount))
 
 func die():
-	died.emit() # todo respawn.
-	queue_free()
+	Inventory.items.clear()
+	World.current_plane = Globals.WorldPlane.MATERIAL
+	global_position.y += 1000000
+	died.emit()
+	is_dead = true
+	#queue_free()
 
 # Interaction functions
 # --------------------------------------------------------------------------------------------------

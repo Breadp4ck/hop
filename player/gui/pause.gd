@@ -1,5 +1,14 @@
 extends Control
 
+var player: Player
+
+func _ready():
+	player = get_tree().get_first_node_in_group("Player")
+	player.died.connect(on_player_died)
+
+func _on_tree_exiting():
+	player.died.disconnect(on_player_died)
+
 
 func _on_resume_button_pressed() -> void:
 	resume_game()
@@ -7,6 +16,10 @@ func _on_resume_button_pressed() -> void:
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()
+
+
+func on_player_died() -> void:
+	queue_free()
 
 
 func _input(event: InputEvent) -> void:
@@ -25,3 +38,5 @@ func resume_game() -> void:
 func stop_game() -> void:
 	self.visible = true
 	get_tree().paused = true
+
+
