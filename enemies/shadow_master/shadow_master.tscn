@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp8qe5nu715dq"]
+
+[ext_resource type="Script" path="res://enemies/shadow_master/shadow_master.gd" id="1_j8yf8"]
+
+[node name="ShadowMaster" type="Node3D"]
+script = ExtResource("1_j8yf8")
+grid_size = Vector2i(32, 32)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

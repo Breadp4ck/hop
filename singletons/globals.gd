@@ -17,3 +17,5 @@ enum SpellType{
 }
 
 const WORLD_OFFSET = Vector3(0.0, 100.0, 0.0)
+
+var player_position: Vector3 = Vector3.ZERO
