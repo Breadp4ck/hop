@@ -42,7 +42,7 @@ func is_player_reachable(local_player_position: Vector2i) -> bool:
 	if absi(local_player_position.x - grid_size.x / 2) > grid_size.x / 2 or absi(local_player_position.y - grid_size.y / 2) > grid_size.y / 2:
 		return false
 	
-	return astar_grid.get_id_path(Vector2i.ZERO, local_player_position) == []
+	return astar_grid.get_id_path(Vector2i(grid_size.x / 2, grid_size.y / 2), local_player_position) != []
 
 
 func is_player_near(shadow_position: Vector3) -> bool:
