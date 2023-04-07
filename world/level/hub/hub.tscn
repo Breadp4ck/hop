@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dksoaqgf1t4cv"]
+[gd_scene load_steps=16 format=3 uid="uid://dksoaqgf1t4cv"]
 
 [ext_resource type="PackedScene" uid="uid://bkqbcuxs5k103" path="res://assets/locations/hub/c_hub.glb" id="1_74rv6"]
 [ext_resource type="MeshLibrary" uid="uid://ce5q65war85lh" path="res://world/level/collision_mesh_library.tres" id="2_xnqcf"]
@@ -10,9 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://bneymo1bc8anp" path="res://world/items/door/c_door.tscn" id="6_biaq7"]
 [ext_resource type="PackedScene" uid="uid://34jjdg81mcmr" path="res://world/inventory_items/m_ring.tscn" id="6_ywxpw"]
 [ext_resource type="PackedScene" uid="uid://bahpk53tkuqv7" path="res://assets/entities/table/c_table.glb" id="8_5hdcg"]
+[ext_resource type="PackedScene" uid="uid://drcef7oxafw5i" path="res://world/items/portal/m_portal.tscn" id="8_jflyy"]
 [ext_resource type="PackedScene" uid="uid://dol2mhio14skj" path="res://world/inventory_items/c_book.tscn" id="10_it3rf"]
 [ext_resource type="PackedScene" uid="uid://bu3yaweylom2x" path="res://world/items/tree/c_old_tree.tscn" id="10_x7qhb"]
 [ext_resource type="PackedScene" uid="uid://c4ftr3a8r5skk" path="res://world/inventory_items/c_ring.tscn" id="11_7tgg0"]
+[ext_resource type="PackedScene" uid="uid://bstd3xy8rkkn7" path="res://world/items/portal/c_portal.tscn" id="15_n5m1k"]
 
 [node name="Hub" type="Node3D"]
 
@@ -50,12 +52,13 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.740
 [node name="Book" parent="Material" instance=ExtResource("6_8jc57")]
 transform = Transform3D(0.824097, 0, -0.566449, 0, 1, 0, 0.566449, 0, 0.824097, -2.9, 0.694, 0)
 
+[node name="Portal" parent="Material" instance=ExtResource("8_jflyy")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4, 0, 6)
+
 [node name="Cognitive" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
 
 [node name="Static" type="Node3D" parent="Cognitive"]
-
-[node name="Base" parent="Cognitive/Static" instance=ExtResource("1_74rv6")]
 
 [node name="Collision" type="GridMap" parent="Cognitive/Static"]
 visible = false
@@ -66,6 +69,8 @@ data = {
 "cells": PackedInt32Array(65534, 65535, 0, 65534, 0, 0, 65534, 1, 0, 65535, 1, 0, 1, 1, 0, 1, 0, 0, 1, 65535, 0, 0, 65535, 0, 65535, 65535, 0, 65534, 2, 0, 65533, 3, 0, 65534, 4, 0, 65535, 5, 0, 2, 1, 0, 3, 1, 0, 3, 2, 0, 3, 3, 0, 1, 5, 0, 3, 4, 0, 3, 5, 0, 2, 5, 0, 2, 3, 0, 1, 6, 0, 65535, 6, 0, 1, 7, 0, 0, 8, 0, 1, 8, 0, 65535, 7, 0)
 }
 metadata/_editor_floor_ = Vector3(0, 1, 0)
+
+[node name="Base" parent="Cognitive/Static" instance=ExtResource("1_74rv6")]
 
 [node name="Door" parent="Cognitive" instance=ExtResource("6_biaq7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85006, 0.154531, 7.98578)
@@ -86,3 +91,6 @@ interactable = false
 [node name="Book" parent="Cognitive" instance=ExtResource("10_it3rf")]
 transform = Transform3D(0.824097, 0, -0.566449, 0, 1, 0, 0.566449, 0, 0.824097, -2.9, 0.694, 0)
 interactable = false
+
+[node name="Portal" parent="Cognitive" instance=ExtResource("15_n5m1k")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4, 0, 6)

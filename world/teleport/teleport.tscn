@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://world/teleport/teleport.gd" id="1_lmfdq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r3386"]
-size = Vector3(0.332831, 1.35803, 1.00171)
+size = Vector3(2, 2, 2)
 
 [node name="teleport" type="Area3D"]
 collision_layer = 0

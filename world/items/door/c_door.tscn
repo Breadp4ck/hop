@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://bneymo1bc8anp"]
+[gd_scene load_steps=16 format=3 uid="uid://bneymo1bc8anp"]
 
 [ext_resource type="Script" path="res://world/items/door/door.gd" id="1_avo2w"]
 [ext_resource type="Texture2D" uid="uid://cj6j0voonhrup" path="res://assets/entities/door/c_door_palette-inverse.png" id="1_igufy"]
+[ext_resource type="AudioStream" uid="uid://bltdhoqbj743g" path="res://assets/sounds/door/doorwood_open.wav" id="3_mlkri"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dnssc"]
 resource_name = "color-inverse"
@@ -101,6 +102,35 @@ tracks/0/path = NodePath("C_Door")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, -0.707107, 0.707107, 0.0666667, 1, 0.000626709, -0.000626709, -0.707106, 0.707107, 0.1, 1, 0.00188012, -0.00188012, -0.707104, 0.707104, 0.133333, 1, 0.0041459, -0.0041459, -0.707095, 0.707095, 0.166667, 1, 0.00771318, -0.00771318, -0.707065, 0.707065, 0.2, 1, 0.0135939, -0.0135939, -0.706976, 0.706976, 0.233333, 1, 0.0216422, -0.0216422, -0.706775, 0.706776, 0.266667, 1, 0.0321439, -0.0321439, -0.706376, 0.706376, 0.3, 1, 0.0453811, -0.0453811, -0.705649, 0.705649, 0.333333, 1, 0.0616284, -0.0616284, -0.704416, 0.704416, 0.366667, 1, 0.0853294, -0.0853294, -0.701939, 0.70194, 0.4, 1, 0.115751, -0.115751, -0.697568, 0.697569, 0.433333, 1, 0.151654, -0.151654, -0.690653, 0.690653, 0.466667, 1, 0.191735, -0.191735, -0.680616, 0.680616, 0.5, 1, 0.234641, -0.234641, -0.667041, 0.667041, 0.6, 1, 0.364383, -0.364383, -0.605991, 0.605991, 0.633333, 1, 0.402957, -0.402957, -0.581055, 0.581055, 0.666667, 1, 0.437669, -0.437669, -0.555379, 0.555379, 0.7, 1, 0.466386, -0.466386, -0.531493, 0.531493, 0.733333, 1, 0.489504, -0.489504, -0.51028, 0.51028, 0.766667, 1, 0.507299, -0.507299, -0.492593, 0.492593, 0.8, 1, 0.520406, -0.520406, -0.478724, 0.478725, 0.833333, 1, 0.529743, -0.529743, -0.468372, 0.468372, 0.866667, 1, 0.535306, -0.535306, -0.462003, 0.462004, 0.9, 1, 0.5388, -0.5388, -0.457924, 0.457924, 0.933333, 1, 0.540719, -0.540719, -0.455656, 0.455656, 0.966667, 1, 0.541528, -0.541528, -0.454695, 0.454695, 1, 1, 0.541675, -0.541675, -0.454519, 0.454519)
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_mlkri")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"disable"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_22ttl"]
 resource_name = "RESET"
@@ -161,3 +191,6 @@ shape = SubResource("BoxShape3D_ws65b")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08, 1, 0)
 shape = SubResource("BoxShape3D_m5ote")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+volume_db = 10.0

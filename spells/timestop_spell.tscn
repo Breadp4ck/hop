@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpe3c4jm65lo1"]
+
+[ext_resource type="Script" path="res://spells/timestop_spell.gd" id="1_1vidf"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nsj3r"]
+radius = 0.25
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p1djo"]
+
+[node name="timestop_spell" type="Area3D"]
+script = ExtResource("1_1vidf")
+type = 4
+length = 0.0
+duration = 1.5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_nsj3r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_p1djo")
+}

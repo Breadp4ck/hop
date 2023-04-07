@@ -12,5 +12,5 @@ noise = SubResource("FastNoiseLite_8mrae")
 render_priority = 0
 shader = ExtResource("1_2borg")
 shader_parameter/emission_amount = 3.0
-shader_parameter/burn_size = 0.152
+shader_parameter/burn_size = 0.06
 shader_parameter/dissolve_texture = SubResource("NoiseTexture2D_jkx4x")
