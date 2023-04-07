@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://d2bwq5tjfwuey"]
+[gd_scene load_steps=15 format=3 uid="uid://d2bwq5tjfwuey"]
 
 [ext_resource type="Texture2D" uid="uid://ccngpdgpgpomb" path="res://assets/entities/door/m_door_palette.png" id="1_b0ipq"]
 [ext_resource type="Script" path="res://world/items/door/door.gd" id="1_ew2mg"]
+[ext_resource type="AudioStream" uid="uid://bltdhoqbj743g" path="res://assets/sounds/door/doorwood_open.wav" id="3_1uk4t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nnbnh"]
 resource_name = "color"
@@ -116,6 +117,21 @@ tracks/1/keys = {
 "method": &"disable"
 }]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer3D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 2.6,
+"start_offset": 0.0,
+"stream": ExtResource("3_1uk4t")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t2nmt"]
 _data = {
@@ -159,3 +175,6 @@ shape = SubResource("BoxShape3D_0tjkx")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08, 1, 0)
 shape = SubResource("BoxShape3D_encqt")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+volume_db = 10.0
