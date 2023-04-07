@@ -12,3 +12,4 @@ enum Type{
 func interact(spell: Spell) -> void:
 	if spell == null:
 		Inventory.pick_item(self)
+		Sfx.play("pick_up")

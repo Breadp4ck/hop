@@ -184,6 +184,6 @@ libraries = {
 "": SubResource("AnimationLibrary_2ibuw")
 }
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="."]
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

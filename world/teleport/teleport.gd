@@ -5,6 +5,8 @@ extends Node
 
 func _on_area_entered(area: Area3D) -> void:
 	if area.owner is Player:
+		area.owner.effects.play("fade")
+		await get_tree().create_timer(0.5).timeout
 		area.owner.global_position = destination_marker.global_position
 
 

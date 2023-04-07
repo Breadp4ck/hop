@@ -33,6 +33,7 @@ func _ready() -> void:
 
 func _input(event):
 	if event.is_action_pressed("microphone"):
+		spell_caster.cancel_choose()
 		effect.set_recording_active(true)
 		timer.start()
 	
@@ -56,9 +57,13 @@ func end_record() -> void:
 	OS.execute(path + "pocketsphinx/pocketsphinx", ["single", "./speech_recognition/lol.wav", "-hmm", "./speech_recognition/en-us/en-us", "-lm", "./speech_recognition/en-us/en-us.lm.bin", "-dict", "./speech_recognition/spells.dict"], output, true)
 	var json = JSON.parse_string(output[0])
 	print("Recognized: " + json.t)
+	print(json)
 	
 	if spells.keys().has(json.t):
+		Sfx.play("spell_succ")
 		spell_caster.choose(spells[json.t])
+	else:
+		Sfx.play("spell_failed")
 
 func get_directory() -> String:
 	var platform_name = OS.get_name()
