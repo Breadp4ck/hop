@@ -54,8 +54,9 @@ size = Vector2(0.3, 0.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0847241, 0, 0)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.184298, 0.658469, 0.0427594)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.196934, 0.723736, 0.0427594)
 light_color = Color(0.635294, 0.101961, 0.576471, 1)
+light_specular = 0.0
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.201749, 0.579035, 0)

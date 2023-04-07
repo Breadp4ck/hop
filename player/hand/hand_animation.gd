@@ -24,7 +24,7 @@ func on_spell_chooosed(spell_type: Globals.SpellType) -> void:
 		Globals.SpellType.FIRE:
 			particles.process_material.color = Color.ORANGE
 		Globals.SpellType.DESTRUCT:
-			particles.process_material.color = Color.DODGER_BLUE
+			particles.process_material.color = Color.BLACK
 		Globals.SpellType.REPAIR:
 			particles.process_material.color = Color.SLATE_BLUE
 		Globals.SpellType.TELEPORT:
