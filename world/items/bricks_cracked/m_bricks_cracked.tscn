@@ -125,6 +125,7 @@ needed_types_to_interact = Array[int]([1])
 
 [node name="M_BricksCracked" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.312799, -0.815469, 0.328431, -0.812828, 0.401075, 0.221696, -0.334913, -0.211777, -0.844798, 0.866911, 2.24833, 0.286641)
+transparency = 1.0
 mesh = SubResource("ArrayMesh_lro2l")
 skeleton = NodePath("")
 
