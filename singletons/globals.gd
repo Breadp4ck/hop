@@ -12,7 +12,7 @@ enum WorldPlane {
 enum SpellType{
 	FIRE = 0,
 	DESTRUCT,
-	WIND,
+	LOCKPICK,
 	REPAIR,
 	TIMESTOP,
 	TELEPORT,

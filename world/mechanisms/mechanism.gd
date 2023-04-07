@@ -13,7 +13,7 @@ func activate() -> void:
 		return
 	
 	use()
-	get_inversed_mechanism().use
+	get_inversed_mechanism().use()
 
 func use() -> void:
 	pass
