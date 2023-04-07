@@ -304,6 +304,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="Eye" type="Camera3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 environment = ExtResource("2_5bh7t")
+current = true
 fov = 70.0
 far = 75.0
 

@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://bdj8vjtlfrh77"]
 
-[ext_resource type="Texture2D" uid="uid://dredxlhtifplr" path="res://assets/gui/hp64.png" id="1_xgk6y"]
+[ext_resource type="Texture2D" path="res://assets/gui/hp64.png" id="1_14i5t"]
 
 [node name="HealthIcon" type="TextureRect"]
-custom_minimum_size = Vector2(64, 64)
-offset_right = 64.0
-offset_bottom = 64.0
-texture = ExtResource("1_xgk6y")
+custom_minimum_size = Vector2(16, 16)
+offset_right = 40.0
+offset_bottom = 42.0
+texture = ExtResource("1_14i5t")
 expand_mode = 3
