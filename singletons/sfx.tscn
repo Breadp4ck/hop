@@ -12,6 +12,60 @@
 [ext_resource type="AudioStream" uid="uid://dnyw1xjb0ykpd" path="res://assets/sounds/sfx/book3.wav" id="9_kc2id"]
 [ext_resource type="AudioStream" uid="uid://cal6mq3y67otf" path="res://assets/sounds/sfx/book1.wav" id="10_0shqe"]
 
+[sub_resource type="Animation" id="Animation_y2nbi"]
+resource_name = "book"
+length = 0.01
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [ExtResource("10_0shqe")],
+"method": &"play_sound"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_f24d3"]
+resource_name = "book_newpage"
+length = 0.01
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [ExtResource("8_mpalr")],
+"method": &"play_sound"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_d6wyl"]
+resource_name = "book_oldpage"
+length = 0.01
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [ExtResource("9_kc2id")],
+"method": &"play_sound"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_h6xs0"]
 resource_name = "button_pressed"
 length = 0.01
@@ -134,60 +188,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [ExtResource("4_uv44h")],
-"method": &"play_sound"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_f24d3"]
-resource_name = "book_newpage"
-length = 0.01
-tracks/0/type = "method"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [ExtResource("8_mpalr")],
-"method": &"play_sound"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_d6wyl"]
-resource_name = "book_oldpage"
-length = 0.01
-tracks/0/type = "method"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [ExtResource("9_kc2id")],
-"method": &"play_sound"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_y2nbi"]
-resource_name = "book"
-length = 0.01
-tracks/0/type = "method"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [ExtResource("10_0shqe")],
 "method": &"play_sound"
 }]
 }

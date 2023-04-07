@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=3 uid="uid://nftn0h0docco"]
+
+[ext_resource type="Material" uid="uid://dw2bevecyyn8s" path="res://assets/materials/prtal.tres" id="1_3e03t"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_aybal"]
+material = ExtResource("1_3e03t")
+
+[sub_resource type="Animation" id="Animation_gghev"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:instance_shader_parameters/radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_nbq5v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ia23x"]
+_data = {
+"RESET": SubResource("Animation_nbq5v"),
+"open": SubResource("Animation_gghev")
+}
+
+[node name="Node3D" type="Node3D"]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+instance_shader_parameters/border_color = null
+instance_shader_parameters/inner_color = null
+instance_shader_parameters/radius = 1.0
+instance_shader_parameters/squash = 1.503
+instance_shader_parameters/wobble = 10.0
+mesh = SubResource("QuadMesh_aybal")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ia23x")
+}
