@@ -3,11 +3,14 @@ extends Node
 
 signal choosed(spell: Globals.SpellType)
 signal casted(spell: Spell)
+signal choose_canceled()
 
 @export var fire_spell_scene: PackedScene
 @export var water_spell_scene: PackedScene
 @export var wind_spell_scene: PackedScene
 @export var repair_spell_scene: PackedScene
+@export var timestop_spell_scene: PackedScene
+@export var teleport_spell_scene: PackedScene
 @onready var head: Node3D = $"../Head"
 
 var choosen_spell_type: Globals.SpellType = -1
@@ -23,7 +26,11 @@ func choose(spell_type: Globals.SpellType) -> void:
 	
 	print("Choose spell " + Globals.SpellType.keys()[spell_type])
 	choosed.emit(choosen_spell_type)
-	
+
+func cancel_choose() -> void:
+	choosen_spell_type = -1
+	choose_canceled.emit()
+
 func try_cast_choosen() -> bool:
 	if can_conjure() == false:
 		return false
@@ -54,6 +61,10 @@ func get_spell(spell_type: Globals.SpellType) -> Spell:
 			return wind_spell_scene.instantiate()
 		Globals.SpellType.REPAIR:
 			return repair_spell_scene.instantiate()
+		Globals.SpellType.TIMESTOP:
+			return timestop_spell_scene.instantiate()
+		Globals.SpellType.TELEPORT:
+			return teleport_spell_scene.instantiate()
 		_:
 			return null
 			

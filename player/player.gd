@@ -48,9 +48,6 @@ var spell_delay_time: float = 0.5
 
 var transition_queue: Array = []
 
-#func _ready():
-	#is_transition_possible(Vector3.FORWARD)
-
 func _input(event: InputEvent) -> void:
 	if can_input == false:
 		return
@@ -58,6 +55,9 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("cast_spell"):
 		if spell_caster.try_cast_choosen():
 			activate_spell_delay()
+
+	if event.is_action_pressed("cancel_spell"):
+		spell_caster.cancel_choose()
 
 	if event.is_action_pressed("interact"):
 		interact_ray_origin = eye.project_ray_origin(event.position)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bu3yaweylom2x"]
+[gd_scene load_steps=13 format=3 uid="uid://bu3yaweylom2x"]
 
 [ext_resource type="Texture2D" uid="uid://btje50mo7njgf" path="res://assets/entities/old_tree/c_old_tree_palette-inverse.png" id="1_3370t"]
 [ext_resource type="Script" path="res://world/items/tree/tree.gd" id="1_6274t"]
+[ext_resource type="Material" uid="uid://bnkdd8gci3jc3" path="res://assets/materials/burn.tres" id="3_j4fmf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ynmui"]
 resource_name = "color-inverse"
@@ -45,9 +46,103 @@ shadow_mesh = SubResource("ArrayMesh_jxfw3")
 [sub_resource type="Animation" id="Animation_2ufly"]
 resource_name = "C_OldTree"
 
+[sub_resource type="Animation" id="Animation_a4sgk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("C_OldTree:transparency")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("C_OldTree:material_overlay")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="Animation" id="Animation_mtr7w"]
+resource_name = "M_OldTree"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("C_OldTree:material_overlay")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_j4fmf")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("C_OldTree:instance_shader_parameters/emission_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.752941, 0.0901961, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("C_OldTree:instance_shader_parameters/dissolve_amount")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.5, 2.375e-08, 0.5]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("C_OldTree:transparency")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"disable"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_03y38"]
 _data = {
-"C_OldTree": SubResource("Animation_2ufly")
+"C_OldTree": SubResource("Animation_2ufly"),
+"RESET": SubResource("Animation_a4sgk"),
+"burn": SubResource("Animation_mtr7w")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dnl8v"]
