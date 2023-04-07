@@ -2,6 +2,7 @@ class_name Spell
 extends Node
 
 @onready var animator: AnimationPlayer = $AnimationPlayer
+@onready var collision: CollisionShape3D = $CollisionShape3D
 
 @export var type: Globals.SpellType
 @export var length: float = 3.0
@@ -24,6 +25,8 @@ func _on_area_entered(area) -> void:
 	end()
 	if area is Item and area.interactable:
 		area.interacted.emit(self)
+	elif area is Shadow:
+		area.interact_with_spell(self)
 
 func end() -> void:
 	transition_tween.stop()

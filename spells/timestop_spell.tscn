@@ -8,6 +8,7 @@ radius = 0.25
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p1djo"]
 
 [node name="timestop_spell" type="Area3D"]
+collision_layer = 0
 script = ExtResource("1_1vidf")
 type = 4
 length = 0.0

@@ -11,7 +11,7 @@ enum WorldPlane {
 
 enum SpellType{
 	FIRE = 0,
-	WATER,
+	DESTRUCT,
 	WIND,
 	REPAIR,
 	TIMESTOP,
