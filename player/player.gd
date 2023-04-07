@@ -54,6 +54,7 @@ func _input(event: InputEvent) -> void:
 
 	if event.is_action_pressed("cast_spell"):
 		if spell_caster.try_cast_choosen():
+			Sfx.play("spell")
 			activate_spell_delay()
 
 	if event.is_action_pressed("cancel_spell"):
@@ -178,6 +179,8 @@ func jump_to_plane() -> void:
 	if not can_jump_to_plane():
 		animator.stop()
 		return
+	
+	Sfx.play("hop")
 	
 	match World.current_plane:
 		Globals.WorldPlane.MATERIAL:

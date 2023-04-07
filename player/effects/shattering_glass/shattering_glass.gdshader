@@ -2,6 +2,7 @@ shader_type canvas_item;
 
 uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
 uniform float strength: hint_range(0.0, 10000.0) = 100.0;
+uniform float fade_level: hint_range(0.0, 1.0) = 0.0;
 
 vec2 random(vec2 uv) {
 	return vec2(fract(sin(dot(uv.xy,
@@ -35,5 +36,6 @@ vec2 voronoi(vec2 uv, float columns, float rows) {
 
 void fragment() {
 	vec3 voronoi = vec3(voronoi(SCREEN_UV, 10.0, 5.0).r);
-	COLOR = textureLod(screen_texture, SCREEN_UV + voronoi.rg/strength, 0.0);
+	vec4 mask = vec4(0.0, 0.0, 0.0, fade_level);
+	COLOR = mix(textureLod(screen_texture, SCREEN_UV + voronoi.rg/strength, fade_level), mask, fade_level);
 }
