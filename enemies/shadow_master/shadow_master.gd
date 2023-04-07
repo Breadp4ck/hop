@@ -100,9 +100,6 @@ func calm_down() -> void:
 func _on_timer_timeout() -> void:
 	update_player_position()
 	
-	print(is_player_visible)
-	print(local_player_position)
-	
 	if is_player_visible:
 		attack_player()
 	else:
