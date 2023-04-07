@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bx4b6tf8o6yq4"]
+[gd_scene load_steps=15 format=3 uid="uid://bx4b6tf8o6yq4"]
 
 [ext_resource type="Texture2D" uid="uid://bxk1fpfxcqi1" path="res://assets/entities/bricks_cracked/m_bricks_cracked_m_bricks_texture_albedo.png" id="1_3nfjf"]
 [ext_resource type="Script" path="res://world/items/bricks_cracked/bricks.gd" id="1_jkk6n"]
+[ext_resource type="ArrayMesh" uid="uid://c1me3x763ylm" path="res://world/items/bricks_cracked/particle.tres" id="3_litan"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mb7mt"]
 resource_name = "m_bricks"
@@ -44,9 +45,51 @@ shadow_mesh = SubResource("ArrayMesh_00wie")
 resource_name = "M_BricksCracked"
 length = 4.0
 
+[sub_resource type="Animation" id="Animation_nrajk"]
+resource_name = "cracked"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles3D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("M_BricksCracked:transparency")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"disable"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8a2xd"]
 _data = {
-"M_BricksCracked": SubResource("Animation_7bvo6")
+"M_BricksCracked": SubResource("Animation_7bvo6"),
+"cracked": SubResource("Animation_nrajk")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uhhor"]
@@ -55,6 +98,26 @@ size = Vector3(2.1, 2, 2.1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_2udbm"]
 size = Vector3(2, 2, 2)
 
+[sub_resource type="Gradient" id="Gradient_08lun"]
+offsets = PackedFloat32Array(0, 0.707692, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_apeq3"]
+gradient = SubResource("Gradient_08lun")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2gsm2"]
+emission_shape = 3
+emission_box_extents = Vector3(0.1, 1, 1)
+direction = Vector3(-1, 0.5, 0)
+spread = 50.45
+initial_velocity_min = 2.0
+initial_velocity_max = 10.0
+angle_min = -82.5
+angle_max = 165.1
+scale_min = 0.1
+scale_max = 0.3
+color_ramp = SubResource("GradientTexture1D_apeq3")
+
 [node name="m_bricks_cracked" type="Area3D"]
 script = ExtResource("1_jkk6n")
 interactable = true
@@ -62,6 +125,7 @@ needed_types_to_interact = Array[int]([1])
 
 [node name="M_BricksCracked" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.312799, -0.815469, 0.328431, -0.812828, 0.401075, 0.221696, -0.334913, -0.211777, -0.844798, 0.866911, 2.24833, 0.286641)
+transparency = 1.0
 mesh = SubResource("ArrayMesh_lro2l")
 skeleton = NodePath("")
 
@@ -79,3 +143,12 @@ shape = SubResource("BoxShape3D_uhhor")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_2udbm")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+emitting = false
+amount = 32
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_2gsm2")
+draw_pass_1 = ExtResource("3_litan")
