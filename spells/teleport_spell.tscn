@@ -14,6 +14,7 @@ material = SubResource("StandardMaterial3D_vtuvb")
 
 [node name="teleport_spell" type="Area3D"]
 collision_layer = 0
+collision_mask = 65
 script = ExtResource("1_dbago")
 type = 5
 length = 2.0
