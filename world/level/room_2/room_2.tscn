@@ -1,14 +1,54 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6x2gstmlw1na"]
+[gd_scene load_steps=11 format=3 uid="uid://c6x2gstmlw1na"]
 
 [ext_resource type="MeshLibrary" uid="uid://cwg0lk4sttpgm" path="res://world/level/mesh_library.tres" id="1_xxlmc"]
 [ext_resource type="MeshLibrary" uid="uid://ce5q65war85lh" path="res://world/level/collision_mesh_library.tres" id="2_w5hdb"]
 [ext_resource type="PackedScene" uid="uid://bd3b3ca374ji6" path="res://player/player.tscn" id="2_ycrvi"]
+[ext_resource type="PackedScene" uid="uid://34jjdg81mcmr" path="res://world/inventory_items/m_ring.tscn" id="3_746du"]
+[ext_resource type="PackedScene" uid="uid://cnf1e8uequsuk" path="res://world/pit.tscn" id="3_iwer3"]
 [ext_resource type="PackedScene" uid="uid://dp8qe5nu715dq" path="res://enemies/shadow_master/shadow_master.tscn" id="3_syris"]
+[ext_resource type="PackedScene" uid="uid://bnwr1wfb6ylgb" path="res://world/inventory_items/m_book.tscn" id="4_ds1ri"]
 [ext_resource type="PackedScene" uid="uid://cm12cwfnovun8" path="res://enemies/husk/husk.tscn" id="5_7rrjy"]
+[ext_resource type="PackedScene" uid="uid://c4ftr3a8r5skk" path="res://world/inventory_items/c_ring.tscn" id="6_y4t2i"]
+[ext_resource type="PackedScene" uid="uid://dol2mhio14skj" path="res://world/inventory_items/c_book.tscn" id="7_gqv15"]
 
 [node name="Room2" type="Node3D"]
 
 [node name="Material" type="Node3D" parent="."]
+
+[node name="Pits" type="Node3D" parent="Material"]
+
+[node name="pit" parent="Material/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, 2)
+
+[node name="pit2" parent="Material/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, 0)
+
+[node name="pit3" parent="Material/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, -2)
+
+[node name="pit4" parent="Material/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -1, 2)
+
+[node name="pit5" parent="Material/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -1, 2)
+
+[node name="pit6" parent="Material/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -1, 4)
+
+[node name="pit7" parent="Material/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -1, 6)
+
+[node name="pit8" parent="Material/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -1, 6)
+
+[node name="pit9" parent="Material/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, -1, 6)
+
+[node name="pit10" parent="Material/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, -1, 14)
+
+[node name="pit11" parent="Material/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, -1, 16)
 
 [node name="Static" type="Node3D" parent="Material"]
 
@@ -38,8 +78,57 @@ data = {
 "cells": PackedInt32Array(65532, 65534, 0, 65532, 65533, 0, 65533, 65533, 0, 65534, 65533, 0, 65535, 65533, 0, 0, 65533, 0, 0, 65534, 0, 1, 65535, 0, 0, 65535, 0, 2, 65535, 0, 2, 0, 0, 2, 1, 0, 1, 1, 0, 0, 1, 0, 65535, 3, 0, 0, 3, 0, 0, 2, 0, 65532, 1, 0, 65533, 3, 0, 65532, 3, 0, 65532, 2, 0, 65534, 3, 0, 65531, 65535, 0, 65526, 65535, 0, 65530, 65535, 0, 65532, 65535, 0, 65529, 65535, 0, 65528, 65535, 0, 65527, 65535, 0, 65526, 0, 0, 65526, 1, 0, 65525, 1, 0, 65525, 2, 0, 65525, 3, 0, 65524, 3, 0, 65524, 4, 0, 65524, 5, 0, 65524, 6, 0, 65523, 6, 0, 65523, 7, 0, 65523, 8, 0, 65523, 9, 0, 65524, 9, 0, 65525, 9, 0, 65526, 9, 0, 65527, 9, 0, 65528, 9, 0, 65529, 9, 0, 65529, 8, 0, 65529, 7, 0, 65529, 6, 0, 65529, 5, 0, 65530, 5, 0, 65531, 5, 0, 65532, 5, 0, 65532, 4, 0, 65527, 3, 0, 65527, 4, 0, 65527, 5, 0, 65528, 5, 0, 65526, 6, 0, 65527, 6, 0)
 }
 
+[node name="Ring" parent="Material" instance=ExtResource("3_746du")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.056387, 0.43573, -0.307971)
+type = 0
+
+[node name="Book" parent="Material" instance=ExtResource("4_ds1ri")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.378456, -0.317142)
+
 [node name="Cognitive" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
+
+[node name="Pits" type="Node3D" parent="Cognitive"]
+
+[node name="pit" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, 2)
+
+[node name="pit2" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, 0)
+
+[node name="pit3" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, -2)
+
+[node name="pit4" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -1, 2)
+
+[node name="pit5" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -1, 2)
+
+[node name="pit6" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -1, 4)
+
+[node name="pit7" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -1, 6)
+
+[node name="pit8" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -1, 6)
+
+[node name="pit9" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, -1, 6)
+
+[node name="pit10" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, -1, 14)
+
+[node name="pit11" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, -1, 16)
+
+[node name="Ring" parent="Cognitive" instance=ExtResource("6_y4t2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.056387, 0.43573, -0.307971)
+type = 0
+
+[node name="Book" parent="Cognitive" instance=ExtResource("7_gqv15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.378456, -0.317142)
 
 [node name="FloorAndWalls" type="GridMap" parent="Cognitive"]
 mesh_library = ExtResource("1_xxlmc")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dksoaqgf1t4cv"]
+[gd_scene load_steps=20 format=3 uid="uid://dksoaqgf1t4cv"]
 
 [ext_resource type="PackedScene" uid="uid://bkqbcuxs5k103" path="res://assets/locations/hub/c_hub.glb" id="1_74rv6"]
 [ext_resource type="MeshLibrary" uid="uid://ce5q65war85lh" path="res://world/level/collision_mesh_library.tres" id="2_xnqcf"]
@@ -11,10 +11,14 @@
 [ext_resource type="PackedScene" uid="uid://34jjdg81mcmr" path="res://world/inventory_items/m_ring.tscn" id="6_ywxpw"]
 [ext_resource type="PackedScene" uid="uid://bahpk53tkuqv7" path="res://assets/entities/table/c_table.glb" id="8_5hdcg"]
 [ext_resource type="PackedScene" uid="uid://drcef7oxafw5i" path="res://world/items/portal/m_portal.tscn" id="8_jflyy"]
+[ext_resource type="PackedScene" uid="uid://bttx6q1ion812" path="res://world/items/pedestal/m_pedestal.tscn" id="10_fjxbi"]
 [ext_resource type="PackedScene" uid="uid://dol2mhio14skj" path="res://world/inventory_items/c_book.tscn" id="10_it3rf"]
 [ext_resource type="PackedScene" uid="uid://bu3yaweylom2x" path="res://world/items/tree/c_old_tree.tscn" id="10_x7qhb"]
+[ext_resource type="PackedScene" uid="uid://ch6vjq05p54ed" path="res://spells/pickable_spell/pickable_spell.tscn" id="11_0nstg"]
 [ext_resource type="PackedScene" uid="uid://c4ftr3a8r5skk" path="res://world/inventory_items/c_ring.tscn" id="11_7tgg0"]
 [ext_resource type="PackedScene" uid="uid://bstd3xy8rkkn7" path="res://world/items/portal/c_portal.tscn" id="15_n5m1k"]
+[ext_resource type="PackedScene" uid="uid://ba2ci8eh1l78l" path="res://world/inventory_items/crystal.tscn" id="16_ii71q"]
+[ext_resource type="PackedScene" uid="uid://5cex0apiqt55" path="res://world/items/pedestal/c_pedestal.tscn" id="17_vr55d"]
 
 [node name="Hub" type="Node3D"]
 
@@ -55,6 +59,37 @@ transform = Transform3D(0.824097, 0, -0.566449, 0, 1, 0, 0.566449, 0, 0.824097, 
 [node name="Portal" parent="Material" instance=ExtResource("8_jflyy")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4, 0, 6)
 
+[node name="Pedestal" parent="Material" node_paths=PackedStringArray("portal") instance=ExtResource("10_fjxbi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 5)
+portal = NodePath("../Portal")
+
+[node name="Pedestal2" parent="Material" node_paths=PackedStringArray("portal") instance=ExtResource("10_fjxbi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.35, 0, 5.35)
+portal = NodePath("../Portal")
+
+[node name="Pedestal3" parent="Material" node_paths=PackedStringArray("portal") instance=ExtResource("10_fjxbi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.35, 0, 6.65)
+portal = NodePath("../Portal")
+
+[node name="Pedestal4" parent="Material" node_paths=PackedStringArray("portal") instance=ExtResource("10_fjxbi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 7)
+portal = NodePath("../Portal")
+
+[node name="Crystal" parent="Material" instance=ExtResource("16_ii71q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.14698, 0.517724, 6.37661)
+
+[node name="Crystal2" parent="Material" instance=ExtResource("16_ii71q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.14698, 0.517724, 6.20454)
+
+[node name="Crystal3" parent="Material" instance=ExtResource("16_ii71q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.14698, 0.517724, 6.01671)
+
+[node name="Crystal4" parent="Material" instance=ExtResource("16_ii71q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.14698, 0.517724, 5.82661)
+
+[node name="pickable_spell" parent="Material" instance=ExtResource("11_0nstg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.64191, 0.903392, -0.756907)
+
 [node name="Cognitive" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
 
@@ -94,3 +129,35 @@ interactable = false
 
 [node name="Portal" parent="Cognitive" instance=ExtResource("15_n5m1k")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4, 0, 6)
+
+[node name="Crystal" parent="Cognitive" instance=ExtResource("16_ii71q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.14698, 0.517724, 6.37661)
+
+[node name="Crystal2" parent="Cognitive" instance=ExtResource("16_ii71q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.14698, 0.517723, 6.19188)
+
+[node name="Crystal3" parent="Cognitive" instance=ExtResource("16_ii71q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.14698, 0.517723, 5.99609)
+
+[node name="Crystal4" parent="Cognitive" instance=ExtResource("16_ii71q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.14698, 0.517723, 5.81379)
+
+[node name="Pedestal" parent="Cognitive" node_paths=PackedStringArray("portal") instance=ExtResource("17_vr55d")]
+transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, -3.5, 0, 5)
+portal = NodePath("../Portal")
+
+[node name="Pedestal2" parent="Cognitive" node_paths=PackedStringArray("portal") instance=ExtResource("17_vr55d")]
+transform = Transform3D(0.766044, 0, -0.642788, 0, 1, 0, 0.642788, 0, 0.766044, -3.35, 0, 5.35)
+portal = NodePath("../Portal")
+
+[node name="Pedestal3" parent="Cognitive" node_paths=PackedStringArray("portal") instance=ExtResource("17_vr55d")]
+transform = Transform3D(-0.173648, 0, -0.984808, 0, 1, 0, 0.984808, 0, -0.173648, -3.35, 0, 6.65)
+portal = NodePath("../Portal")
+
+[node name="Pedestal4" parent="Cognitive" node_paths=PackedStringArray("portal") instance=ExtResource("17_vr55d")]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -3.5, 0, 7)
+portal = NodePath("../Portal")
+
+[node name="pickable_spell" parent="Cognitive" instance=ExtResource("11_0nstg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.64191, 0.903392, -0.756907)
+interactable = false

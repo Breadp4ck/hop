@@ -16,5 +16,5 @@ func end(successfully: bool = true) -> void:
 	
 	var player: Player = get_tree().get_nodes_in_group("Player")[0]
 	player.global_position = self.global_position
-	player.global_position.y -= player.head.position.y # Kostil` MB FIX?
+	player.global_position.y -= player.head.position.y
 	destroy()

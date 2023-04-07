@@ -1,3 +1,4 @@
+class_name BookUI
 extends Control
 
 @onready var header_label: Label = $MarginContainer/VBoxContainer/Header

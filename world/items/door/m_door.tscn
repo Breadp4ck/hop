@@ -136,7 +136,7 @@ interactable = true
 needed_types_to_interact = Array[int]([2])
 
 [node name="M_Door" type="MeshInstance3D" parent="."]
-transform = Transform3D(5.85103e-10, -0.0133856, -0.0759132, -0.0770843, -3.36946e-09, 0, -3.31827e-09, 0.0759132, -0.0133856, 0.0901221, 0, 0.497225)
+transform = Transform3D(-3.36946e-09, 0.0770843, 0, -0.0770843, -3.36946e-09, 0, 0, 0, 0.0770843, 0.0901221, 0, 0.497225)
 mesh = SubResource("ArrayMesh_lqsey")
 skeleton = NodePath("")
 

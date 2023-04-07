@@ -274,6 +274,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="ObstacleDetectionRay" type="RayCast3D" parent="Body"]
 target_position = Vector3(0, 0, -2)
+collision_mask = 65
+collide_with_areas = true
 
 [node name="hand_with_ring" parent="Body" node_paths=PackedStringArray("spell_caster") instance=ExtResource("7_j8jkj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.2)
@@ -286,7 +288,7 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Body/HitBox"]
 shape = SubResource("CapsuleShape3D_2q3p1")
 
-[node name="SpellCaster" type="Node3D" parent="."]
+[node name="SpellCaster" type="Node3D" parent="." groups=["SpellCaster"]]
 script = ExtResource("5_jpbmn")
 fire_spell_scene = ExtResource("6_7r8ka")
 water_spell_scene = ExtResource("7_wwpun")
