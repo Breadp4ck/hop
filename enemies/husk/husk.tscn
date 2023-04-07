@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cm12cwfnovun8"]
+
+[ext_resource type="Script" path="res://enemies/husk/husk.gd" id="1_3boyq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q0s0d"]
+albedo_color = Color(1, 0.0784314, 0.329412, 1)
+emission_enabled = true
+emission = Color(0.85098, 0.105882, 0.168627, 1)
+emission_energy_multiplier = 1.73
+
+[sub_resource type="SphereMesh" id="SphereMesh_mrbdb"]
+material = SubResource("StandardMaterial3D_q0s0d")
+radius = 0.25
+height = 0.5
+radial_segments = 8
+rings = 4
+
+[node name="Husk" type="Node3D"]
+script = ExtResource("1_3boyq")
+sight_distance = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("SphereMesh_mrbdb")
+skeleton = NodePath("")
