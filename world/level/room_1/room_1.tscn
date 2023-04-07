@@ -173,11 +173,6 @@ transform = Transform3D(0.733777, 0, 0.67939, 0, 1, 0, -0.67939, 0, 0.733777, 0.
 [node name="Table3" parent="Material" instance=ExtResource("7_b8gwl")]
 transform = Transform3D(0.125402, 0, 0.992106, 0, 1, 0, -0.992106, 0, 0.125402, -12.1385, 4.76837e-07, -25.4592)
 
-[node name="List" parent="Material" instance=ExtResource("8_vrwbl")]
-transform = Transform3D(0.859915, 0, -0.510438, 0, 1, 0, 0.510438, 0, 0.859915, 0.14198, 0.601899, -24.4787)
-title = "Хуй"
-text = "Яйца"
-
 [node name="List3" parent="Material" instance=ExtResource("8_vrwbl")]
 transform = Transform3D(-0.859915, 0, 0.510438, 0, 1, 0, -0.510438, 0, -0.859915, -12.458, 0.601899, -25.4787)
 title = "The Among Us"
@@ -185,8 +180,9 @@ text = "ඞඞඞඞඞ"
 
 [node name="List2" parent="Material" instance=ExtResource("8_vrwbl")]
 transform = Transform3D(-0.292372, 0, -0.956305, 0, 1, 0, 0.956305, 0, -0.292372, 6.605, 0.602, -21.833)
-title = "Пизда"
-text = "Клитор"
+pickable_spell_type = 2
+title = "Lockpick"
+text = "Say kebab"
 
 [node name="Crystal" parent="Material" instance=ExtResource("9_5qxye")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 6.73041, 0.641356, -22.1346)
@@ -353,14 +349,18 @@ transform = Transform3D(0.733777, 0, 0.67939, 0, 1, 0, -0.67939, 0, 0.733777, 0.
 [node name="Table3" parent="Cognitive" instance=ExtResource("11_nudxu")]
 transform = Transform3D(0.125402, 0, 0.992106, 0, 1, 0, -0.992106, 0, 0.125402, -12.1385, 0, -25.4592)
 
-[node name="List" parent="Cognitive" instance=ExtResource("16_3mhpu")]
-transform = Transform3D(0.859915, 0, -0.510438, 0, 1, 0, 0.510438, 0, 0.859915, 0.14198, 0.601899, -24.4787)
-
 [node name="List2" parent="Cognitive" instance=ExtResource("16_3mhpu")]
 transform = Transform3D(-0.292372, 0, -0.956305, 0, 1, 0, 0.956305, 0, -0.292372, 6.605, 0.602, -21.833)
+pickable_spell_type = 2
+title = "Lockpick"
+text = "Say kebab"
+interactable = false
 
 [node name="List3" parent="Cognitive" instance=ExtResource("16_3mhpu")]
-transform = Transform3D(-0.859915, 0, 0.510438, 0, 1, 0, -0.510438, 0, -0.859915, -12.458, 0.601899, -25.4787)
+transform = Transform3D(-0.859915, 0, 0.510438, 0, 1, 0, -0.510438, 0, -0.859915, -12.458, 0.601898, -25.4787)
+title = "The Among Us"
+text = "ඞඞඞඞඞ"
+interactable = false
 
 [node name="Crystal" parent="Cognitive" instance=ExtResource("9_5qxye")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 6.73041, 0.641356, -22.1346)
