@@ -7,7 +7,7 @@ signal choose_canceled()
 
 @export var fire_spell_scene: PackedScene
 @export var destruct_spell_scene: PackedScene
-@export var wind_spell_scene: PackedScene
+@export var lockpick_spell_scene: PackedScene
 @export var repair_spell_scene: PackedScene
 @export var timestop_spell_scene: PackedScene
 @export var teleport_spell_scene: PackedScene
@@ -63,8 +63,8 @@ func get_spell(spell_type: Globals.SpellType) -> Spell:
 			return fire_spell_scene.instantiate()
 		Globals.SpellType.DESTRUCT:
 			return destruct_spell_scene.instantiate()
-		Globals.SpellType.WIND:
-			return wind_spell_scene.instantiate()
+		Globals.SpellType.LOCKPICK:
+			return lockpick_spell_scene.instantiate()
 		Globals.SpellType.REPAIR:
 			return repair_spell_scene.instantiate()
 		Globals.SpellType.TIMESTOP:

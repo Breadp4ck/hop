@@ -24,6 +24,9 @@ const INTERACT_RAY_LENGTH: float = 3.0
 @onready var shadesmar_env: Environment = load("res://player/shadesmar_env.tres")
 @onready var gui: GUI = $GUI
 
+@onready var hand_ring: Node3D = $Body/hand_with_ring
+@onready var hand: Node3D = $Body/hand_without_ring
+
 var can_input: bool = true:
 	get:
 		return (not is_jumping) and (transition_tween == null or not transition_tween.is_running()) and (not is_spell_delay)
@@ -67,7 +70,11 @@ func _input(event: InputEvent) -> void:
 		want_interact = true
 
 	if event.is_action_pressed("jump_to_plane"):
-		effects.play("hop")
+		var inventory_item_types: Array = []
+		for i in Inventory.items.size():
+			inventory_item_types.push_back(Inventory.items[i].type)
+		if inventory_item_types.has(InventoryItem.Type.RING):
+			effects.play("hop")
 
 	var transition = get_pressed_movement_transition()
 	if transition == -1:
@@ -250,9 +257,12 @@ func interact() -> void:
 		intersection.collider.interacted.emit(null)
 		print("hit some shit")
 		
-		if intersection.collider is InventoryItem and intersection.collider.type == InventoryItem.Type.BOOK:
-			gui.toggle_book()
-		
+		if intersection.collider is InventoryItem:
+			if intersection.collider.type == InventoryItem.Type.BOOK:
+				gui.toggle_book()
+			elif intersection.collider.type == InventoryItem.Type.RING:
+				hand.visible = false
+				hand_ring.visible = true
 		
 	want_interact = false
 
