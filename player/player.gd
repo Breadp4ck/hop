@@ -1,7 +1,7 @@
 class_name Player
 extends Node3D
 
-signal damage_receied(hp: int)
+signal health_changed(hp: int)
 signal died()
 
 const INTERACT_RAY_LENGTH: float = 3.0
@@ -235,7 +235,7 @@ func move_jump_check_area() -> void:
 
 func receive_damage(amount: int) -> void:
 	health -= amount
-	damage_receied.emit(health)
+	health_changed.emit(health)
 	if (health <= 0):
 		die()
 	
