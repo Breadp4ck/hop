@@ -1,7 +1,9 @@
-[gd_scene load_steps=30 format=3 uid="uid://cm12cwfnovun8"]
+[gd_scene load_steps=37 format=3 uid="uid://cm12cwfnovun8"]
 
 [ext_resource type="Script" path="res://enemies/husk/husk.gd" id="1_3boyq"]
 [ext_resource type="Texture2D" uid="uid://bwwrck7tlwkuu" path="res://assets/enemies/husk/husk_palette-inverse.png" id="2_24mbh"]
+[ext_resource type="Material" uid="uid://bnkdd8gci3jc3" path="res://assets/materials/burn.tres" id="3_psfmc"]
+[ext_resource type="Animation" uid="uid://d0xed4thk28t1" path="res://death.res" id="4_624go"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4c75w"]
 resource_name = "color-inverse"
@@ -400,7 +402,8 @@ _data = {
 "Attack": SubResource("Animation_bwuy7"),
 "Calm": SubResource("Animation_cbbpe"),
 "Engage": SubResource("Animation_fws0s"),
-"Run": SubResource("Animation_23qe6")
+"Run": SubResource("Animation_23qe6"),
+"death": ExtResource("4_624go")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yvh87"]
@@ -411,6 +414,9 @@ animation = &"Calm"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_flahp"]
 animation = &"Run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_apffj"]
+animation = &"death"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5fjof"]
 advance_mode = 2
@@ -428,16 +434,30 @@ switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7728b"]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ws043"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pmbuh"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_iqafy"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_orfcy"]
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_n2lcg"]
 states/Attack/node = SubResource("AnimationNodeAnimation_yvh87")
-states/Attack/position = Vector2(221, 188)
+states/Attack/position = Vector2(269.071, 199)
 states/Calm/node = SubResource("AnimationNodeAnimation_bnhlq")
-states/Calm/position = Vector2(321, 99)
+states/Calm/position = Vector2(322, 99)
+states/End/position = Vector2(790, 162)
 states/Run/node = SubResource("AnimationNodeAnimation_flahp")
-states/Run/position = Vector2(462, 188)
-states/Start/position = Vector2(192, 100)
-transitions = ["Start", "Calm", SubResource("AnimationNodeStateMachineTransition_5fjof"), "Run", "Attack", SubResource("AnimationNodeStateMachineTransition_3l3r3"), "Attack", "Run", SubResource("AnimationNodeStateMachineTransition_hldsb"), "Run", "Calm", SubResource("AnimationNodeStateMachineTransition_ssgsx"), "Attack", "Calm", SubResource("AnimationNodeStateMachineTransition_spvhh"), "Calm", "Run", SubResource("AnimationNodeStateMachineTransition_7728b")]
-graph_offset = Vector2(-243, 35)
+states/Run/position = Vector2(515, 209)
+states/Start/position = Vector2(193, 99)
+states/death/node = SubResource("AnimationNodeAnimation_apffj")
+states/death/position = Vector2(571.071, 93)
+transitions = ["Start", "Calm", SubResource("AnimationNodeStateMachineTransition_5fjof"), "Run", "Attack", SubResource("AnimationNodeStateMachineTransition_3l3r3"), "Attack", "Run", SubResource("AnimationNodeStateMachineTransition_hldsb"), "Run", "Calm", SubResource("AnimationNodeStateMachineTransition_ssgsx"), "Attack", "Calm", SubResource("AnimationNodeStateMachineTransition_spvhh"), "Calm", "Run", SubResource("AnimationNodeStateMachineTransition_7728b"), "Calm", "death", SubResource("AnimationNodeStateMachineTransition_ws043"), "death", "End", SubResource("AnimationNodeStateMachineTransition_pmbuh"), "Attack", "death", SubResource("AnimationNodeStateMachineTransition_iqafy"), "Run", "death", SubResource("AnimationNodeStateMachineTransition_orfcy")]
+graph_offset = Vector2(-222.929, 35)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_h4g3o"]
 
@@ -449,22 +469,29 @@ needed_types_to_damage = Array[int]([0, 1])
 sight_distance = 4
 
 [node name="head" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.340759, 0.00153049, 0.00118266, -0.00189072, 0.307502, 0.146833, -0.000407742, -0.146837, 0.307505, -0.00333883, 1.21734, 0.349593)
+transform = Transform3D(0.340759, 0.00153339, 0.00118581, -0.0017131, 0.335773, 0.05809, -0.000907044, -0.0580951, 0.335775, -0.0025016, 1.08528, 0.0168714)
+material_overlay = ExtResource("3_psfmc")
+instance_shader_parameters/dissolve_amount = 0.0
+instance_shader_parameters/emission_color = Color(0, 0, 0, 1)
 mesh = SubResource("ArrayMesh_6mgxq")
 skeleton = NodePath("")
 
 [node name="eyer" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.132336, -0.0537061, -0.00465272, 0.0227075, 0.0667218, -0.124303, 0.0488913, 0.114379, 0.070326, -0.256405, 1.49573, 0.456847)
+transform = Transform3D(0.132294, -0.0538067, -0.00467719, 0.00862084, 0.0332526, -0.138703, 0.0533173, 0.128131, 0.0340322, -0.257247, 1.28884, 0.235047)
 mesh = SubResource("ArrayMesh_a2ya3")
 skeleton = NodePath("")
 
 [node name="eyel" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.12604, -0.0670854, -0.00568777, 0.0295395, -0.0442546, -0.132619, 0.0604998, -0.118152, 0.0529027, 0.298878, 1.49264, 0.456203)
+transform = Transform3D(-0.125978, -0.0672039, -0.00568126, 0.0120563, -0.0105965, -0.14199, 0.0663575, -0.125659, 0.015012, 0.298045, 1.28884, 0.235047)
 mesh = SubResource("ArrayMesh_4qjm3")
 skeleton = NodePath("")
 
 [node name="jaw" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.110423, -0.0958956, 0.0145469, -0.0184936, -0.0446492, -0.133194, 0.0934266, 0.104503, -0.0435588, -0.333576, 0.70131, 0.130979)
+transform = Transform3D(0.110074, -0.0962069, 0.0151581, 0.00681791, -0.0164364, -0.13987, 0.0953991, 0.11218, -0.00749365, -0.33429, 0.744177, 0.00458766)
+material_overlay = ExtResource("3_psfmc")
+transparency = 1.0
+instance_shader_parameters/dissolve_amount = 0.0
+instance_shader_parameters/emission_color = Color(0, 0, 0, 1)
 mesh = SubResource("ArrayMesh_h8qkt")
 skeleton = NodePath("")
 
@@ -482,3 +509,6 @@ parameters/playback = SubResource("AnimationNodeStateMachinePlayback_h4g3o")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.913989, 0)
 shape = SubResource("CapsuleShape3D_loyt1")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90354, 0)

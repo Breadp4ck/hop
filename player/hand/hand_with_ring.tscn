@@ -2764,8 +2764,8 @@ libraries = {
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41008, -0.227641, -0.336707)
 emitting = false
-amount = 16
-lifetime = 0.4
+amount = 32
+lifetime = 0.3
 process_material = SubResource("ParticleProcessMaterial_x7m28")
 draw_pass_1 = SubResource("QuadMesh_75nrd")
 

@@ -158,16 +158,16 @@ walls_grid = NodePath("../Collisions")
 grid_size = Vector2i(48, 48)
 
 [node name="Husk" parent="Cognitive/ShadowMaster" instance=ExtResource("5_7rrjy")]
-transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -16, 0, 6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 6)
 
 [node name="Husk2" parent="Cognitive/ShadowMaster" instance=ExtResource("5_7rrjy")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -18, 0, 15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 15)
 
 [node name="Husk3" parent="Cognitive/ShadowMaster" instance=ExtResource("5_7rrjy")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -12, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 4)
 
 [node name="Husk4" parent="Cognitive/ShadowMaster" instance=ExtResource("5_7rrjy")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
 
 [node name="Collisions" type="GridMap" parent="Cognitive"]
 mesh_library = ExtResource("2_w5hdb")
