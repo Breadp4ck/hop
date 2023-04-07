@@ -77,7 +77,7 @@ func _input(event: InputEvent) -> void:
 
 	add_transition(transition)
 
-func _process(delta: float) -> void:	
+func _process(delta: float) -> void:
 	if want_interact:
 		interact()
 	
@@ -150,6 +150,8 @@ func is_transition_possible(along: Vector3) -> bool:
 	return obstacle_ray.get_collider() == null
 
 func on_tween_transition_finished():
+	Globals.player_position = global_position
+	
 	animator.speed_scale = 1
 	transition_tween.finished.disconnect(on_tween_transition_finished)
 	var transition = get_pressed_movement_transition()
@@ -175,13 +177,13 @@ func set_is_jumping(value: bool) -> void:
 # Animator.
 func jump_to_plane() -> void:
 	jump_check_area.global_position = head.global_position
-	
+
 	if not can_jump_to_plane():
 		animator.stop()
 		return
 	
 	Sfx.play("hop")
-	
+
 	match World.current_plane:
 		Globals.WorldPlane.MATERIAL:
 			global_position += Globals.WORLD_OFFSET
@@ -192,6 +194,7 @@ func jump_to_plane() -> void:
 	
 	World.invert_plane()
 	spell_caster.cancel_choose()
+	Globals.player_position = global_position
 
 func can_jump_to_plane() -> bool:
 	if jump_check_area.has_overlapping_bodies():
