@@ -84,7 +84,7 @@ func reach_player(from: Vector3, sight_distance: int) -> Dictionary:
 
 func attack_player() -> void:
 	for child in get_children():
-		if child is Shadow:
+		if child is Shadow and !child.is_dead:
 			child.activity_state = Shadow.ActivityState.ENGAGE
 
 

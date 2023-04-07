@@ -14,6 +14,8 @@ extends Node3D
 @export var walk_time: float = 0.2
 @export var hit_time: float = 0.3
 
+var is_dead: bool = false
+
 var state_machine
 
 enum ActivityState {
@@ -53,7 +55,9 @@ func receive_damage(damage: int) -> void:
 
 func die() -> void:
 	sight_distance = 0.0
-	destroy() # REMOVE WHEN Animated
+	activity_state = ActivityState.CALM
+	is_dead = true
+	state_machine.travel("death")
 
 func destroy() -> void:
 	queue_free()

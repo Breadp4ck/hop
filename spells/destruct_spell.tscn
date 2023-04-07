@@ -121,7 +121,7 @@ tracks/3/keys = {
 "start_offset": 0.0,
 "stream": ExtResource("3_6rkqt")
 }],
-"times": PackedFloat32Array(-0.6)
+"times": PackedFloat32Array(-0.7)
 }
 tracks/3/use_blend = true
 
@@ -186,5 +186,6 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="."]
+volume_db = -10.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

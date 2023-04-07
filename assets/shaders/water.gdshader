@@ -174,8 +174,10 @@ vec3 water(vec2 uv, vec3 cdir, float iTime)
     return ret;
 }
 
+varying vec2 new_uv;
 
 void vertex(){
+	new_uv = NODE_POSITION_WORLD.xz;
 	float time = TIME * wave_speed;
 	vec2 uv = UV * wave_size;
 	float d1 = mod(uv.x + uv.y, M_2PI);
@@ -191,7 +193,7 @@ void vertex(){
 
 void fragment()
 {
-	vec2 uv = UV;
+	vec2 uv = new_uv + 2.0*UV;
 	
     ALBEDO = vec3(water(uv * tile, vec3(0,1,0), TIME * distortion_speed));
 }

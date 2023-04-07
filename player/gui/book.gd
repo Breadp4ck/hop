@@ -45,6 +45,7 @@ func next_page() -> Dictionary:
 	else:
 		current_page += 1
 	
+	Sfx.play("book_newpage")
 	return list_sequence[current_page]
 
 
@@ -54,6 +55,7 @@ func previous_page() -> Dictionary:
 	else:
 		current_page -= 1
 	
+	Sfx.play("book_oldpage")
 	return list_sequence[current_page]
 
 
