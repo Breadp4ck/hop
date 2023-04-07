@@ -85,4 +85,5 @@ func attack() -> void:
 		return
 	
 	var player = get_tree().get_first_node_in_group("Player")
-	player.receive_damage(damage)
+	if player != null and player.is_dead == false and World.current_plane == Globals.WorldPlane.COGNITIVE:
+		player.receive_damage(damage)

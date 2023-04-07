@@ -62,6 +62,13 @@ func reach_player(from: Vector3, sight_distance: int) -> Dictionary:
 	var local_shadow_position := _shadow_position_to_grid_coords(from)
 	var path := astar_grid.get_id_path(local_shadow_position, local_player_position)
 	
+	if path.size() < 2:
+		return {
+			"next_step": Vector2i.ZERO,
+			"see_player": false,
+			"reached": false
+		}
+	
 	var shadow_offset := Vector3(
 		path[1].x - local_shadow_position.x,
 		0.0,
