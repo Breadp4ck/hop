@@ -21,7 +21,7 @@ func on_spell_chooosed(spell_type: Globals.SpellType) -> void:
 	state_machine.travel("OpenPalm")
 
 func on_spell_casted(spell: Spell) -> void:
-	state_machine.travel("Cast")
+	state_machine.travel("Cast2")
 	
 func on_spell_choose_canceled() -> void:
 	state_machine.travel("Calm")
