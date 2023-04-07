@@ -224,6 +224,10 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_awevm")
 
+[sub_resource type="Animation" id="Animation_q2npp"]
+resource_name = "C_Nailed"
+length = 3.0
+
 [sub_resource type="Animation" id="Animation_tkndc"]
 resource_name = "C_Nailed001"
 length = 3.0
@@ -246,10 +250,6 @@ length = 3.0
 
 [sub_resource type="Animation" id="Animation_w3v6k"]
 resource_name = "C_Nailed007"
-length = 3.0
-
-[sub_resource type="Animation" id="Animation_q2npp"]
-resource_name = "C_Nailed"
 length = 3.0
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xxurf"]

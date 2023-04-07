@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dr620hhhu6sdg"]
+[gd_scene load_steps=13 format=3]
 
 [ext_resource type="MeshLibrary" uid="uid://cwg0lk4sttpgm" path="res://world/level/mesh_library.tres" id="1_ouxc0"]
 [ext_resource type="MeshLibrary" uid="uid://ce5q65war85lh" path="res://world/level/collision_mesh_library.tres" id="2_ip06p"]
