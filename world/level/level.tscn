@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bb31djcios3dg"]
 
 [ext_resource type="PackedScene" uid="uid://dksoaqgf1t4cv" path="res://world/level/hub/hub.tscn" id="1_s678q"]
-[ext_resource type="PackedScene" path="res://world/level/room_1/room_1.tscn" id="2_j7kwd"]
+[ext_resource type="PackedScene" uid="uid://c0njs0qv86bth" path="res://world/level/room_1/room_1.tscn" id="2_j7kwd"]
 [ext_resource type="PackedScene" uid="uid://cigbjnel7u35e" path="res://world/teleport/teleport.tscn" id="3_m2yko"]
 
 [node name="Level" type="Node3D"]

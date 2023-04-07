@@ -294,6 +294,9 @@ spell_caster = NodePath("SpellCaster")
 
 [node name="GUI" parent="." instance=ExtResource("2_jr7gb")]
 
+[node name="HUD" parent="GUI" index="0" node_paths=PackedStringArray("player")]
+player = NodePath("../..")
+
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
@@ -360,3 +363,5 @@ timestop_spell_scene = ExtResource("16_opg8d")
 teleport_spell_scene = ExtResource("17_c6sm3")
 
 [connection signal="timeout" from="Head/SpeechRecognition/Timer" to="Head/SpeechRecognition" method="_on_timer_timeout"]
+
+[editable path="GUI"]
