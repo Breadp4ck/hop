@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://enemies/husk/husk.gd" id="1_3boyq"]
 [ext_resource type="Texture2D" uid="uid://bwwrck7tlwkuu" path="res://assets/enemies/husk/husk_palette-inverse.png" id="2_24mbh"]
 [ext_resource type="Material" uid="uid://bnkdd8gci3jc3" path="res://assets/materials/burn.tres" id="3_psfmc"]
-[ext_resource type="Animation" uid="uid://d0xed4thk28t1" path="res://death.res" id="4_624go"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4c75w"]
 resource_name = "color-inverse"
@@ -397,13 +396,182 @@ tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = PackedFloat32Array(0, 1, 0.741648, -0.239357, 0.255346, 0.572246, 0.0333333, 1, 0.717648, -0.227873, 0.264253, 0.602682, 0.0666667, 1, 0.688423, -0.215537, 0.27508, 0.63557, 0.1, 1, 0.668218, -0.207404, 0.282059, 0.656438, 0.133333, 1, 0.660019, -0.204164, 0.284645, 0.664582, 0.166667, 1, 0.653413, -0.201474, 0.28664, 0.671042, 0.2, 1, 0.648698, -0.199409, 0.287953, 0.675655, 0.233333, 1, 0.645176, -0.19774, 0.288838, 0.679132, 0.266667, 1, 0.642693, -0.196431, 0.289369, 0.681635, 0.3, 1, 0.64109, -0.195446, 0.289614, 0.683321, 0.333333, 1, 0.640201, -0.194752, 0.289649, 0.684337, 0.4, 1, 0.639841, -0.194206, 0.289482, 0.6849, 0.433333, 1, 0.644526, -0.195864, 0.287809, 0.680727, 0.466667, 1, 0.656975, -0.200565, 0.2835, 0.669168, 0.5, 1, 0.678396, -0.209027, 0.276016, 0.647999, 0.533333, 1, 0.702684, -0.219799, 0.267973, 0.621381, 0.566667, 1, 0.72291, -0.229576, 0.261387, 0.59697, 0.6, 1, 0.736015, -0.236306, 0.257123, 0.579939, 0.633333, 1, 0.741648, -0.239357, 0.255346, 0.572246, 1, 1, 0.741648, -0.239357, 0.255346, 0.572246)
 
+[sub_resource type="Animation" id="Animation_fc32g"]
+resource_name = "death"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("head:transparency")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("head:instance_shader_parameters/dissolve_amount")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.5, 2.375e-08, 0.5]
+}
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("head")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -0.0025016, 1.08708, 0.0168714)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("head")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -0.0855524, 0.00154107, -0.00239054, 0.99633)
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("jaw:transparency")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("jaw:instance_shader_parameters/dissolve_amount")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.5, 2.375e-08, 0.5]
+}
+tracks/6/type = "position_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("jaw")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, -0.333576, 0.815083, 0.00458766)
+tracks/7/type = "rotation_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("jaw")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, 0.692266, -0.217629, 0.2741, 0.631091)
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("eyer:transparency")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/9/type = "position_3d"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("eyer")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = PackedFloat32Array(0, 1, -0.257247, 1.32123, 0.235047)
+tracks/10/type = "rotation_3d"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("eyer")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = PackedFloat32Array(0, 1, 0.603105, -0.13108, 0.1411, 0.774062)
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("eyel:transparency")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/12/type = "position_3d"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("eyel")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = PackedFloat32Array(0, 1, 0.298045, 1.32123, 0.235047)
+tracks/13/type = "rotation_3d"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("eyel")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = PackedFloat32Array(0, 1, 0.147894, -0.652379, 0.717778, 0.193192)
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("head:instance_shader_parameters/emission_color")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.0705882, 0, 0.152941, 1), Color(0.0705882, 0, 0.152941, 1), Color(0, 0, 0, 0)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("jaw:instance_shader_parameters/emission_color")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.0705882, 0, 0.152941, 1), Color(0.0705882, 0, 0.152941, 1), Color(0, 0, 0, 0)]
+}
+tracks/16/type = "method"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath(".")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"destroy"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_msg1a"]
 _data = {
 "Attack": SubResource("Animation_bwuy7"),
 "Calm": SubResource("Animation_cbbpe"),
 "Engage": SubResource("Animation_fws0s"),
 "Run": SubResource("Animation_23qe6"),
-"death": ExtResource("4_624go")
+"death": SubResource("Animation_fc32g")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yvh87"]
@@ -469,7 +637,7 @@ needed_types_to_damage = Array[int]([0, 1])
 sight_distance = 4
 
 [node name="head" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.340759, 0.00153339, 0.00118581, -0.0017131, 0.335773, 0.05809, -0.000907044, -0.0580951, 0.335775, -0.0025016, 1.08528, 0.0168714)
+transform = Transform3D(0.340765, 0, 0, 0, 0.340765, 0, 0, 0, 0.340765, 0, 0, 0)
 material_overlay = ExtResource("3_psfmc")
 instance_shader_parameters/dissolve_amount = 0.0
 instance_shader_parameters/emission_color = Color(0, 0, 0, 1)
@@ -477,19 +645,18 @@ mesh = SubResource("ArrayMesh_6mgxq")
 skeleton = NodePath("")
 
 [node name="eyer" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.132294, -0.0538067, -0.00467719, 0.00862084, 0.0332526, -0.138703, 0.0533173, 0.128131, 0.0340322, -0.257247, 1.28884, 0.235047)
+transform = Transform3D(0.142894, 0, 0, 0, 0.142893, 0, 0, 0, 0.142894, 0, 0, 0)
 mesh = SubResource("ArrayMesh_a2ya3")
 skeleton = NodePath("")
 
 [node name="eyel" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.125978, -0.0672039, -0.00568126, 0.0120563, -0.0105965, -0.14199, 0.0663575, -0.125659, 0.015012, 0.298045, 1.28884, 0.235047)
+transform = Transform3D(0.142896, 0, 0, 0, 0.142894, 0, 0, 0, 0.142894, 0, 0, 0)
 mesh = SubResource("ArrayMesh_4qjm3")
 skeleton = NodePath("")
 
 [node name="jaw" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.110074, -0.0962069, 0.0151581, 0.00681791, -0.0164364, -0.13987, 0.0953991, 0.11218, -0.00749365, -0.33429, 0.744177, 0.00458766)
+transform = Transform3D(0.145821, 0, 0, 0, 0.148695, 0, 0, 0, 0.140888, 0, 0, 0)
 material_overlay = ExtResource("3_psfmc")
-transparency = 1.0
 instance_shader_parameters/dissolve_amount = 0.0
 instance_shader_parameters/emission_color = Color(0, 0, 0, 1)
 mesh = SubResource("ArrayMesh_h8qkt")
