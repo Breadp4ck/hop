@@ -5,7 +5,7 @@ extends Node
 @export var spells = {
 	"fire": Globals.SpellType.FIRE,
 	"destruction": Globals.SpellType.DESTRUCT,
-	"lockpick": Globals.SpellType.LOCKPICK,
+	"lock": Globals.SpellType.LOCKPICK,
 	"repair": Globals.SpellType.REPAIR,
 	"time": Globals.SpellType.TIMESTOP,
 	"teleport": Globals.SpellType.TELEPORT
