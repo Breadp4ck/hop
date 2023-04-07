@@ -4,7 +4,11 @@ extends Spell
 func _on_area_entered(area) -> void:
 	print("Hit " + area.get_name() + " area.")
 	end(false)
-
+	
+func _on_body_entered(body):
+	print("Hit " + body.get_name() + " body.")
+	end(false)
+	
 func end(successfully: bool = true) -> void:
 	if successfully == false:
 		destroy()
