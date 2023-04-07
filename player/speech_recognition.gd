@@ -60,7 +60,6 @@ func end_record() -> void:
 	print(json)
 	
 	if spells.keys().has(json.t):
-		Sfx.play("spell_succ")
 		spell_caster.choose(spells[json.t])
 	else:
 		Sfx.play("spell_failed")
