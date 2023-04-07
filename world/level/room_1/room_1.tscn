@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://c0njs0qv86bth"]
+[gd_scene load_steps=22 format=3 uid="uid://dwwxxjqjgajyr"]
 
 [ext_resource type="MeshLibrary" uid="uid://cwg0lk4sttpgm" path="res://world/level/mesh_library.tres" id="1_ouxc0"]
 [ext_resource type="MeshLibrary" uid="uid://ce5q65war85lh" path="res://world/level/collision_mesh_library.tres" id="2_ip06p"]
+[ext_resource type="PackedScene" uid="uid://blgt5fckeffaf" path="res://assets/entities/brick_pillar/m_brick_pillar.glb" id="3_7b5la"]
 [ext_resource type="PackedScene" uid="uid://ck5i4sehkco6e" path="res://world/items/torch/m_torch.tscn" id="3_twcva"]
 [ext_resource type="PackedScene" uid="uid://bh66mcipvia11" path="res://world/mechanisms/bar/m_bar.tscn" id="4_d7qv4"]
 [ext_resource type="PackedScene" uid="uid://b7t5ap1gdb1jc" path="res://world/items/button/m_button.tscn" id="5_afp0d"]
@@ -9,9 +10,17 @@
 [ext_resource type="PackedScene" uid="uid://bm7revl1frg2d" path="res://world/items/list/m_list.tscn" id="8_vrwbl"]
 [ext_resource type="PackedScene" uid="uid://ba2ci8eh1l78l" path="res://world/inventory_items/crystal.tscn" id="9_5qxye"]
 [ext_resource type="PackedScene" uid="uid://drcvd0s4mqwnp" path="res://world/items/torch/c_torch.tscn" id="9_e3k56"]
+[ext_resource type="PackedScene" uid="uid://cnf1e8uequsuk" path="res://world/pit.tscn" id="10_mgd7p"]
 [ext_resource type="PackedScene" uid="uid://0pxacylj6isr" path="res://world/mechanisms/bar/c_bar.tscn" id="10_qnbwb"]
+[ext_resource type="PackedScene" uid="uid://b88m7i2xgx85h" path="res://world/items/nailed/m_nailed.tscn" id="11_1ecjk"]
 [ext_resource type="PackedScene" uid="uid://bahpk53tkuqv7" path="res://assets/entities/table/c_table.glb" id="11_nudxu"]
 [ext_resource type="PackedScene" uid="uid://b47ljpg53qtvc" path="res://world/items/button/c_button.tscn" id="11_wcrtb"]
+[ext_resource type="PackedScene" uid="uid://wgllat8m2r7c" path="res://world/items/fukel/m_fukel.tscn" id="12_vnoer"]
+[ext_resource type="PackedScene" uid="uid://c1bx7j6mgvkab" path="res://assets/entities/brick_pillar/c_brick_pillar.glb" id="14_yauet"]
+[ext_resource type="PackedScene" uid="uid://2mcdaxfle6j3" path="res://world/items/list/c_list.tscn" id="16_3mhpu"]
+[ext_resource type="PackedScene" uid="uid://bfu2kh5mi1qdv" path="res://assets/entities/collapse/m_collapse.glb" id="16_xjwvf"]
+[ext_resource type="PackedScene" uid="uid://bx8y1fj4epj4n" path="res://world/items/nailed/c_nailed.tscn" id="17_vnm0b"]
+[ext_resource type="PackedScene" uid="uid://cewiqnc4ylli1" path="res://world/items/fukel/c_fukel.tscn" id="18_sttg4"]
 
 [node name="Room1" type="Node3D"]
 
@@ -24,7 +33,7 @@ mesh_library = ExtResource("1_ouxc0")
 cell_center_x = false
 cell_center_z = false
 data = {
-"cells": PackedInt32Array(-65536, 65535, 0, -65536, 0, 1, -65536, 1, 1, -65535, 0, 1, -65535, 65535, 1, -65536, 65534, 0, -65536, 65533, 1, -65536, 65532, 1, -65535, 65532, 1, -65535, 65533, 0, -65534, 65533, 0, -65534, 65532, 0, -65536, 65531, 0, -65536, 65530, 0, -1, 65530, 0, -65535, 65530, 0, -65535, 65529, 0, -65535, 65528, 1, -65536, 65528, 1, -1, 65528, 1, -1, 65529, 1, -2, 65529, 0, -65534, 65529, 0, -65536, 65527, 1, -65536, 65526, 1, -1, 65526, 1, -2, 65526, 0, -2, 65525, 1, -2, 65524, 1, -1, 65524, 1, -65536, 65524, 0, -65536, 65525, 1, -1, 65525, 0, -65535, 65525, 1, -65534, 65525, 1, -65534, 65524, 0, -65533, 65524, 1, -65533, 65525, 1, -65533, 65526, 0, -65534, 65526, 1, 65535, 1, 0, 65535, 65535, 0, 65535, 65534, 1, 65535, 65533, 0, 65535, 65532, 0, 65535, 65531, 0, 1, 65531, 0, 2, 65531, 1, 2, 65530, 1, 3, 65529, 0, 2, 65528, 1, 1, 65527, 0, 1, 65526, 0, 65535, 65527, 0, 65534, 65527, 1, 1, 65524, 1, 0, 65523, 0, 65535, 65523, 0, 65534, 65523, 1, 65533, 65524, 0, 65533, 65525, 1, 65533, 65526, 1, 2, 65523, 1, 3, 65523, 1, 4, 65524, 0, 4, 65525, 1, 4, 65526, 0, 3, 65527, 1, 2, 65527, 1, 65534, 65528, 1, 65533, 65529, 0, 65534, 65530, 1, 3, 65532, 0, 3, 65533, 1, 2, 65534, 1, 1, 65534, 0, 2, 65535, 1, 2, 0, 1, 1, 1, 1, 0, 65529, 0, 65535, 2, 1, 1, 2, 1, -65536, 2, 1, 65535, 0, 1, -65536, 65529, 1, -65534, 65528, 1, -1, 65527, 1)
+"cells": PackedInt32Array(-65536, 65535, 0, -65536, 0, 1, -65536, 1, 1, -65535, 0, 1, -65535, 65535, 1, -65536, 65534, 0, -65536, 65533, 1, -65536, 65532, 1, -65535, 65532, 1, -65535, 65533, 0, -65534, 65533, 0, -65534, 65532, 0, -65536, 65531, 0, -65536, 65530, 0, -1, 65530, 0, -65535, 65530, 0, -65535, 65529, 0, -65535, 65528, 1, -65536, 65528, 1, -1, 65528, 1, -1, 65529, 1, -2, 65529, 0, -65534, 65529, 0, -65536, 65527, 1, -65536, 65526, 1, -1, 65526, 1, -2, 65526, 0, -2, 65525, 1, -2, 65524, 1, -1, 65524, 1, -65536, 65524, 0, -65536, 65525, 1, -1, 65525, 0, -65535, 65525, 1, -65534, 65525, 1, -65534, 65524, 0, -65533, 65524, 1, -65533, 65525, 1, -65533, 65526, 0, -65534, 65526, 1, 65535, 1, 0, 65535, 65535, 0, 65535, 65534, 1, 65535, 65533, 0, 65535, 65532, 0, 65535, 65531, 0, 1, 65531, 0, 2, 65531, 1, 2, 65530, 1, 3, 65529, 0, 2, 65528, 1, 1, 65527, 0, 1, 65526, 0, 65535, 65527, 0, 65534, 65527, 1, 1, 65524, 1, 65533, 65524, 0, 65533, 65525, 1, 65533, 65526, 1, 2, 65523, 1, 3, 65523, 1, 4, 65524, 0, 4, 65525, 1, 4, 65526, 0, 3, 65527, 1, 2, 65527, 1, 65534, 65528, 1, 65533, 65529, 0, 65534, 65530, 1, 3, 65532, 0, 3, 65533, 1, 2, 65534, 1, 1, 65534, 0, 2, 65535, 1, 2, 0, 1, 1, 1, 1, 0, 65529, 0, 65535, 2, 1, 1, 2, 1, -65536, 2, 1, 65535, 0, 1, -65536, 65529, 1, -65534, 65528, 1, -1, 65527, 1, 65533, 65530, 1, 1, 65523, 0, 1, 65522, 0, 1, 65521, 0, 0, 65521, 0, 65535, 65521, 0, 65534, 65521, 0, 65533, 65521, 0, 65532, 65521, 0, 65533, 65523, 0, 65532, 65523, 0, 65531, 65521, 0, 65530, 65521, 0, 65529, 65521, 0, 65529, 65522, 0, 65529, 65523, 0, 65529, 65524, 0, 65530, 65524, 0, 65531, 65524, 0, 65532, 65524, 0, -65536, 65522, 0, -1, 65522, 0, -2, 65522, 0, -2, 65521, 0, -3, 65521, 0, -3, 65522, 0, -4, 65522, 0, -5, 65522, 0, -6, 65522, 1, -6, 65523, 0, -5, 65523, 0, -7, 65521, 0, -65535, 65523, 1, -3, 65523, 1, -131072, 65523, 1, -65537, 65523, 1, -65538, 65523, 1, -65536, 65523, 1, 0, 65522, 1, 0, 65523, 1, 65533, 65522, 1)
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
@@ -33,18 +42,85 @@ mesh_library = ExtResource("1_ouxc0")
 cell_center_x = false
 cell_center_z = false
 data = {
-"cells": PackedInt32Array(65536, 2, 1, 65536, 1, 1, 65536, 0, 1, 65536, 65535, 1, 65536, 65534, 1, 65536, 65533, 1, 65536, 65532, 1, 65537, 65532, 1, 65538, 65532, 1, 65537, 65533, 1, 65538, 65533, 1, 65537, 0, 1, 65537, 65535, 1, 65536, 65531, 1, 65536, 65530, 1, 65537, 65530, 1, 65537, 65529, 1, 65537, 65528, 1, 65538, 65529, 1, 131071, 65530, 1, 131071, 65529, 1, 131071, 65528, 1, 131070, 65529, 1, 65536, 65528, 1, 65536, 65527, 1, 65536, 65526, 1, 65536, 65525, 1, 65536, 65524, 1, 131071, 65526, 1, 131070, 65526, 1, 131070, 65525, 1, 131070, 65524, 1, 131071, 65524, 1, 131071, 65525, 1, 65537, 65525, 1, 65538, 65526, 1, 65539, 65526, 1, 65539, 65525, 1, 65539, 65524, 1, 65538, 65524, 1, 65538, 65525, 1)
+"cells": PackedInt32Array(65536, 2, 1, 65536, 1, 1, 65536, 0, 1, 65536, 65535, 1, 65536, 65534, 1, 65536, 65533, 1, 65536, 65532, 1, 65537, 65532, 1, 65538, 65532, 1, 65537, 65533, 1, 65538, 65533, 1, 65537, 0, 1, 65537, 65535, 1, 65536, 65531, 1, 65536, 65530, 1, 65537, 65530, 1, 65537, 65529, 1, 65537, 65528, 1, 65538, 65529, 1, 131071, 65530, 1, 131071, 65529, 1, 131071, 65528, 1, 131070, 65529, 1, 65536, 65528, 1, 65536, 65527, 1, 65536, 65526, 1, 65536, 65525, 1, 65536, 65524, 1, 131071, 65526, 1, 131070, 65526, 1, 131070, 65525, 1, 131070, 65524, 1, 131071, 65524, 1, 131071, 65525, 1, 65537, 65525, 1, 65538, 65526, 1, 65539, 65526, 1, 65539, 65525, 1, 65539, 65524, 1, 65538, 65524, 1, 65538, 65525, 1, 65536, 65523, 1, 65536, 65522, 1, 131071, 65522, 1, 131070, 65522, 1, 131070, 65523, 1, 131071, 65523, 1, 131069, 65522, 1, 131068, 65522, 1, 131067, 65522, 1, 131066, 65522, 1, 131068, 65523, 1, 131067, 65523, 1, 131066, 65523, 1, 131065, 65523, 1, 131069, 65523, 1, 131071, 65521, 1, 131070, 65521, 1, 131069, 65521, 1, 131065, 65522, 1, 131068, 65521, 1, 131067, 65521, 1)
 }
 metadata/_editor_floor_ = Vector3(0, 1, 0)
 
 [node name="Collisions" type="GridMap" parent="Material/Static"]
-visible = false
 mesh_library = ExtResource("2_ip06p")
 cell_center_x = false
 cell_center_z = false
 data = {
-"cells": PackedInt32Array(1, 2, 0, 1, 1, 0, 2, 0, 0, 2, 65535, 0, 2, 65534, 0, 1, 65534, 0, 65535, 65533, 0, 65535, 65534, 0, 65535, 65535, 0, 65535, 0, 0, 65535, 1, 0, 65535, 2, 0, 3, 65533, 0, 3, 65532, 0, 2, 65531, 0, 1, 65531, 0, 65535, 65531, 0, 65535, 65532, 0, 3, 65529, 0, 2, 65530, 0, 65534, 65530, 0, 65533, 65529, 0, 65534, 65528, 0, 65535, 65527, 0, 1, 65527, 0, 2, 65528, 0, 0, 65529, 0, 1, 65524, 0, 1, 65523, 0, 0, 65523, 0, 65535, 65523, 0, 65534, 65523, 0, 65533, 65524, 0, 65533, 65525, 0, 65533, 65526, 0, 65534, 65527, 0, 4, 65525, 0, 4, 65524, 0, 3, 65523, 0, 2, 65523, 0)
+"cells": PackedInt32Array(1, 2, 0, 1, 1, 0, 2, 0, 0, 2, 65535, 0, 2, 65534, 0, 1, 65534, 0, 65535, 65533, 0, 65535, 65534, 0, 65535, 65535, 0, 65535, 0, 0, 65535, 1, 0, 65535, 2, 0, 3, 65533, 0, 3, 65532, 0, 2, 65531, 0, 1, 65531, 0, 65535, 65531, 0, 65535, 65532, 0, 3, 65529, 0, 2, 65530, 0, 65534, 65530, 0, 65533, 65529, 0, 65534, 65528, 0, 65535, 65527, 0, 1, 65527, 0, 2, 65528, 0, 0, 65529, 0, 1, 65524, 0, 1, 65523, 0, 0, 65523, 0, 65533, 65524, 0, 65533, 65525, 0, 65533, 65526, 0, 65534, 65527, 0, 4, 65525, 0, 4, 65524, 0, 3, 65523, 0, 2, 65523, 0, 0, 65522, 0, 0, 65521, 0, 65535, 65521, 0, 65534, 65521, 0, 65533, 65521, 0, 65532, 65521, 0, 65531, 65521, 0, 65530, 65521, 0, 65529, 65521, 0, 65529, 65522, 0, 65529, 65523, 0, 65529, 65524, 0, 65530, 65524, 0, 65531, 65524, 0, 65532, 65524, 0, 65533, 65523, 0)
 }
+
+[node name="Props" type="Node3D" parent="Material/Static"]
+
+[node name="BrickPillar1" parent="Material/Static/Props" instance=ExtResource("3_7b5la")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="BrickPillar2" parent="Material/Static/Props" instance=ExtResource("3_7b5la")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+
+[node name="BrickPillar3" parent="Material/Static/Props" instance=ExtResource("3_7b5la")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3)
+
+[node name="BrickPillar4" parent="Material/Static/Props" instance=ExtResource("3_7b5la")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3)
+
+[node name="BrickPillar5" parent="Material/Static/Props" instance=ExtResource("3_7b5la")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -5)
+
+[node name="BrickPillar6" parent="Material/Static/Props" instance=ExtResource("3_7b5la")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -5)
+
+[node name="BrickPillar7" parent="Material/Static/Props" instance=ExtResource("3_7b5la")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -7)
+
+[node name="BrickPillar8" parent="Material/Static/Props" instance=ExtResource("3_7b5la")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -9)
+
+[node name="BrickPillar10" parent="Material/Static/Props" instance=ExtResource("3_7b5la")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -11)
+
+[node name="BrickPillar11" parent="Material/Static/Props" instance=ExtResource("3_7b5la")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -11)
+
+[node name="BrickPillar12" parent="Material/Static/Props" instance=ExtResource("3_7b5la")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -17)
+
+[node name="BrickPillar13" parent="Material/Static/Props" instance=ExtResource("3_7b5la")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -17)
+
+[node name="BrickPillar14" parent="Material/Static/Props" instance=ExtResource("3_7b5la")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -19)
+
+[node name="BrickPillar15" parent="Material/Static/Props" instance=ExtResource("3_7b5la")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -19)
+
+[node name="BrickPillar16" parent="Material/Static/Props" instance=ExtResource("3_7b5la")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -21)
+
+[node name="BrickPillar17" parent="Material/Static/Props" instance=ExtResource("3_7b5la")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -23)
+
+[node name="BrickPillar18" parent="Material/Static/Props" instance=ExtResource("3_7b5la")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -23)
+
+[node name="BrickPillar19" parent="Material/Static/Props" instance=ExtResource("3_7b5la")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -21)
+
+[node name="BrickPillar9" parent="Material/Static/Props" instance=ExtResource("3_7b5la")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -9)
+
+[node name="Collapse" parent="Material/Static/Props" instance=ExtResource("16_xjwvf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -14)
+
+[node name="Collapse2" parent="Material/Static/Props" instance=ExtResource("16_xjwvf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="Collapse3" parent="Material/Static/Props" instance=ExtResource("16_xjwvf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -28)
 
 [node name="Torch" parent="Material" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("3_twcva")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.29749, 0.0096159, -5.88109)
@@ -59,21 +135,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.92632, 0.0096159, -19.5248
 activatable_mechanisms = NodePath("../Bars4")
 
 [node name="Torch3" parent="Material" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("3_twcva")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20401, 0.0096159, -24.5097)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20401, 0.0096159, -28.5097)
 activatable_mechanisms = NodePath("../Bars4")
 
 [node name="Bars" parent="Material" instance=ExtResource("4_d7qv4")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -4)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -3.1)
 
 [node name="Bars2" parent="Material" instance=ExtResource("4_d7qv4")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -10)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -9)
 
 [node name="Bars3" parent="Material" instance=ExtResource("4_d7qv4")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -18)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -17.1)
 activates_needed = 2
 
 [node name="Bars4" parent="Material" instance=ExtResource("4_d7qv4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -22)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, 0, -22)
 activates_needed = 3
 
 [node name="Button" parent="Material" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("5_afp0d")]
@@ -92,12 +168,20 @@ activatable_mechanisms = NodePath("../Bars3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.63353, 0, -21.9261)
 
 [node name="Table2" parent="Material" instance=ExtResource("7_b8gwl")]
-transform = Transform3D(0.0384575, 0, 0.99926, 0, 1, 0, -0.99926, 0, 0.0384575, 0.161474, 4.76837e-07, -24.5592)
+transform = Transform3D(0.733777, 0, 0.67939, 0, 1, 0, -0.67939, 0, 0.733777, 0.261474, 4.76837e-07, -24.2592)
+
+[node name="Table3" parent="Material" instance=ExtResource("7_b8gwl")]
+transform = Transform3D(0.125402, 0, 0.992106, 0, 1, 0, -0.992106, 0, 0.125402, -12.1385, 4.76837e-07, -25.4592)
 
 [node name="List" parent="Material" instance=ExtResource("8_vrwbl")]
-transform = Transform3D(0.859915, 0, -0.510438, 0, 1, 0, 0.510438, 0, 0.859915, 0.0419804, 0.601899, -24.5787)
+transform = Transform3D(0.859915, 0, -0.510438, 0, 1, 0, 0.510438, 0, 0.859915, 0.14198, 0.601899, -24.4787)
 title = "Хуй"
 text = "Яйца"
+
+[node name="List3" parent="Material" instance=ExtResource("8_vrwbl")]
+transform = Transform3D(-0.859915, 0, 0.510438, 0, 1, 0, -0.510438, 0, -0.859915, -12.458, 0.601899, -25.4787)
+title = "The Among Us"
+text = "ඞඞඞඞඞ"
 
 [node name="List2" parent="Material" instance=ExtResource("8_vrwbl")]
 transform = Transform3D(-0.292372, 0, -0.956305, 0, 1, 0, 0.956305, 0, -0.292372, 6.605, 0.602, -21.833)
@@ -106,6 +190,27 @@ text = "Клитор"
 
 [node name="Crystal" parent="Material" instance=ExtResource("9_5qxye")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 6.73041, 0.641356, -22.1346)
+
+[node name="Pit1" parent="Material" instance=ExtResource("10_mgd7p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -26)
+
+[node name="Pit2" parent="Material" instance=ExtResource("10_mgd7p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -26)
+
+[node name="Nailed1" parent="Material" instance=ExtResource("11_1ecjk")]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 3.1, 0, -14)
+
+[node name="Fukel1" parent="Material" instance=ExtResource("12_vnoer")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.11528, 1, -20.6)
+
+[node name="Fukel2" parent="Material" instance=ExtResource("12_vnoer")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.884724, 1, -14)
+
+[node name="Fukel3" parent="Material" instance=ExtResource("12_vnoer")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.715276, 1, -1)
+
+[node name="Fukel4" parent="Material" instance=ExtResource("12_vnoer")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.58472, 1, -25)
 
 [node name="Cognitive" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
@@ -117,27 +222,85 @@ mesh_library = ExtResource("1_ouxc0")
 cell_center_x = false
 cell_center_z = false
 data = {
-"cells": PackedInt32Array(-65536, 65535, 3, -65536, 0, 3, -65536, 1, 3, -65535, 0, 3, -65535, 65535, 2, -65536, 65534, 3, -65536, 65533, 3, -65536, 65532, 2, -65535, 65532, 3, -65535, 65533, 3, -65534, 65533, 3, -65534, 65532, 2, -65536, 65531, 3, -65536, 65530, 3, -1, 65530, 3, -65535, 65530, 3, -65535, 65529, 3, -65535, 65528, 3, -65536, 65528, 2, -1, 65528, 3, -1, 65529, 3, -2, 65529, 3, -65534, 65529, 3, -65536, 65527, 3, -65536, 65526, 3, -1, 65526, 3, -2, 65526, 3, -2, 65525, 3, -2, 65524, 3, -1, 65524, 3, -65536, 65524, 3, -65536, 65525, 3, -1, 65525, 2, -65535, 65525, 3, -65534, 65525, 2, -65534, 65524, 3, -65533, 65524, 2, -65533, 65525, 3, -65533, 65526, 3, -65534, 65526, 3, 65535, 1, 3, 65535, 65535, 3, 65535, 65534, 3, 65535, 65533, 3, 65535, 65532, 3, 65535, 65531, 2, 1, 65531, 3, 2, 65531, 3, 2, 65530, 3, 3, 65529, 3, 2, 65528, 3, 1, 65527, 2, 1, 65526, 3, 65535, 65527, 3, 65534, 65527, 3, 1, 65524, 3, 0, 65523, 2, 65535, 65523, 3, 65534, 65523, 3, 65533, 65524, 2, 65533, 65525, 3, 65533, 65526, 3, 2, 65523, 3, 3, 65523, 3, 4, 65524, 3, 4, 65525, 3, 4, 65526, 3, 3, 65527, 3, 2, 65527, 3, 65534, 65528, 3, 65533, 65529, 3, 65534, 65530, 3, 3, 65532, 2, 3, 65533, 3, 2, 65534, 3, 1, 65534, 2, 2, 65535, 3, 2, 0, 3, 1, 1, 3, 0, 65529, 2, 65535, 2, 3, 1, 2, 3, -65536, 2, 3, 65535, 0, 2, -65536, 65529, 1, -65534, 65528, 1, -1, 65527, 1, 65533, 65527, 3, -2, 65528, 3, -65534, 65530, 3, -65535, 65526, 3)
+"cells": PackedInt32Array(-65536, 65535, 2, -65536, 0, 3, -65536, 1, 3, -65535, 0, 3, -65535, 65535, 3, -65536, 65534, 3, -65536, 65533, 3, -65536, 65532, 3, -65535, 65532, 3, -65535, 65533, 3, -65534, 65533, 3, -65534, 65532, 3, -65536, 65531, 3, -65536, 65530, 3, -1, 65530, 3, -65535, 65530, 3, -65535, 65529, 3, -65535, 65528, 3, -65536, 65528, 3, -1, 65528, 3, -1, 65529, 3, -2, 65529, 3, -65534, 65529, 3, -65536, 65527, 3, -65536, 65526, 3, -1, 65526, 3, -2, 65526, 3, -2, 65525, 3, -2, 65524, 3, -1, 65524, 3, -65536, 65524, 3, -65536, 65525, 3, -1, 65525, 3, -65535, 65525, 3, -65534, 65525, 3, -65534, 65524, 3, -65533, 65524, 2, -65533, 65525, 3, -65533, 65526, 3, -65534, 65526, 3, 65535, 1, 3, 65535, 65535, 3, 65535, 65534, 3, 65535, 65533, 3, 65535, 65532, 2, 65535, 65531, 2, 1, 65531, 3, 2, 65531, 3, 2, 65530, 3, 3, 65529, 3, 2, 65528, 3, 1, 65527, 2, 1, 65526, 2, 65535, 65527, 3, 65534, 65527, 2, 1, 65524, 3, 65533, 65524, 2, 65533, 65525, 3, 65533, 65526, 3, 2, 65523, 3, 3, 65523, 3, 4, 65524, 3, 4, 65525, 2, 4, 65526, 3, 3, 65527, 3, 2, 65527, 3, 65534, 65528, 3, 65533, 65529, 3, 65534, 65530, 3, 3, 65532, 3, 3, 65533, 3, 2, 65534, 3, 1, 65534, 2, 2, 65535, 3, 2, 0, 3, 1, 1, 2, 0, 65529, 2, 65535, 2, 3, 1, 2, 2, -65536, 2, 3, 65535, 0, 3, -65536, 65529, 1, -65534, 65528, 1, -1, 65527, 1, 65533, 65530, 3, 1, 65523, 3, 1, 65522, 2, 1, 65521, 2, 0, 65521, 2, 65535, 65521, 2, 65534, 65521, 2, 65533, 65521, 2, 65532, 65521, 3, 65533, 65523, 2, 65532, 65523, 3, 65531, 65521, 3, 65530, 65521, 3, 65529, 65521, 3, 65529, 65522, 3, 65529, 65523, 3, 65529, 65524, 3, 65530, 65524, 3, 65531, 65524, 3, 65532, 65524, 3, -65536, 65522, 0, -1, 65522, 3, -2, 65522, 3, -2, 65521, 0, -3, 65521, 3, -3, 65522, 0, -4, 65522, 3, -5, 65522, 3, -6, 65522, 3, -6, 65523, 3, -5, 65523, 3, -7, 65521, 0, -65535, 65523, 1, -3, 65523, 3, -131072, 65523, 1, -65537, 65523, 3, -65538, 65523, 3, -65536, 65523, 3, 0, 65522, 2, 0, 65523, 3, 65533, 65531, 3, 65534, 65531, 3, 65533, 65528, 3, 3, 65530, 3, 3, 65528, 3, 65532, 65525, 3, 65533, 65522, 2, -1, 0, 3, -1, 1, 3, -1, 2, 3, -65535, 1, 3, -65534, 65523, 3, -65532, 65525, 3, -2, 65530, 3, -4, 65521, 3, -65539, 65523, 3, -65539, 65522, 3)
 }
-metadata/_editor_floor_ = Vector3(0, 1, 0)
+metadata/_editor_floor_ = Vector3(0, -1, 0)
 
 [node name="Roof" type="GridMap" parent="Cognitive/Static"]
 mesh_library = ExtResource("1_ouxc0")
 cell_center_x = false
 cell_center_z = false
 data = {
-"cells": PackedInt32Array(65536, 2, 3, 65536, 1, 3, 65536, 0, 3, 65536, 65535, 3, 65536, 65534, 3, 65536, 65533, 3, 65536, 65532, 3, 65537, 65532, 3, 65538, 65532, 3, 65537, 65533, 3, 65538, 65533, 3, 65537, 0, 3, 65537, 65535, 3, 65536, 65530, 3, 65537, 65530, 3, 65537, 65529, 3, 65537, 65528, 3, 65538, 65529, 3, 131071, 65530, 3, 131071, 65529, 3, 131071, 65528, 3, 131070, 65529, 3, 65536, 65528, 3, 65536, 65527, 3, 65536, 65526, 3, 65536, 65525, 3, 65536, 65524, 3, 131071, 65526, 3, 131070, 65526, 3, 131070, 65525, 3, 131070, 65524, 3, 131071, 65524, 3, 131071, 65525, 3, 65537, 65525, 3, 65538, 65526, 3, 65539, 65526, 3, 65539, 65525, 3, 65539, 65524, 3, 65538, 65524, 3, 65538, 65525, 3, 65536, 65531, 3, 65536, 65529, 3)
+"cells": PackedInt32Array(65536, 2, 3, 65536, 1, 3, 65536, 0, 3, 65536, 65535, 3, 65536, 65534, 3, 65536, 65533, 3, 65536, 65532, 3, 65537, 65532, 3, 65538, 65532, 3, 65537, 65533, 3, 65538, 65533, 2, 65537, 0, 3, 65537, 65535, 3, 65536, 65531, 2, 65536, 65530, 3, 65537, 65530, 3, 65537, 65529, 3, 65537, 65528, 3, 65538, 65529, 3, 131071, 65530, 3, 131071, 65529, 3, 131071, 65528, 3, 131070, 65529, 3, 65536, 65528, 3, 65536, 65527, 3, 65536, 65526, 3, 65536, 65525, 3, 65536, 65524, 3, 131071, 65526, 3, 131070, 65526, 3, 131070, 65525, 3, 131070, 65524, 3, 131071, 65524, 3, 131071, 65525, 3, 65537, 65525, 3, 65538, 65526, 2, 65539, 65526, 2, 65539, 65525, 3, 65539, 65524, 3, 65538, 65524, 3, 65538, 65525, 3, 65536, 65523, 3, 65536, 65522, 3, 131071, 65522, 3, 131070, 65522, 3, 131070, 65523, 3, 131071, 65523, 3, 131069, 65522, 3, 131068, 65522, 3, 131067, 65522, 3, 131066, 65522, 3, 131068, 65523, 3, 131067, 65523, 3, 131066, 65523, 3, 131065, 65523, 3, 131069, 65523, 3, 131071, 65521, 3, 131070, 65521, 3, 131069, 65521, 3, 131065, 65522, 3, 131068, 65521, 3, 131067, 65521, 3, 131071, 65531, 3, 65536, 65529, 3, 131071, 65527, 3, 131070, 65528, 3)
 }
 metadata/_editor_floor_ = Vector3(0, 1, 0)
 
 [node name="Collisions" type="GridMap" parent="Cognitive/Static"]
-visible = false
 mesh_library = ExtResource("2_ip06p")
 cell_center_x = false
 cell_center_z = false
 data = {
-"cells": PackedInt32Array(1, 2, 0, 1, 1, 0, 2, 0, 0, 2, 65535, 0, 2, 65534, 0, 1, 65534, 0, 65535, 65533, 0, 65535, 65534, 0, 65535, 65535, 0, 65535, 0, 0, 65535, 1, 0, 65535, 2, 0, 3, 65533, 0, 3, 65532, 0, 2, 65531, 0, 1, 65531, 0, 65535, 65531, 0, 65535, 65532, 0, 3, 65529, 0, 2, 65530, 0, 65534, 65530, 0, 65533, 65529, 0, 65534, 65528, 0, 65535, 65527, 0, 1, 65527, 0, 2, 65528, 0, 0, 65529, 0, 1, 65524, 0, 1, 65523, 0, 0, 65523, 0, 65535, 65523, 0, 65534, 65523, 0, 65533, 65524, 0, 65533, 65525, 0, 65533, 65526, 0, 65534, 65527, 0, 4, 65525, 0, 4, 65524, 0, 3, 65523, 0, 2, 65523, 0)
+"cells": PackedInt32Array(1, 2, 0, 1, 1, 0, 2, 0, 0, 2, 65535, 0, 2, 65534, 0, 1, 65534, 0, 65535, 65533, 0, 65535, 65534, 0, 65535, 65535, 0, 65535, 0, 0, 65535, 1, 0, 65535, 2, 0, 3, 65533, 0, 3, 65532, 0, 2, 65531, 0, 1, 65531, 0, 65535, 65531, 0, 65535, 65532, 0, 3, 65529, 0, 2, 65530, 0, 65534, 65530, 0, 65533, 65529, 0, 65534, 65528, 0, 65535, 65527, 0, 1, 65527, 0, 2, 65528, 0, 0, 65529, 0, 1, 65524, 0, 1, 65523, 0, 0, 65523, 0, 65533, 65524, 0, 65533, 65525, 0, 65533, 65526, 0, 65534, 65527, 0, 4, 65525, 0, 4, 65524, 0, 3, 65523, 0, 2, 65523, 0, 0, 65522, 0, 0, 65521, 0, 65535, 65521, 0, 65534, 65521, 0, 65533, 65521, 0, 65532, 65521, 0, 65531, 65521, 0, 65530, 65521, 0, 65529, 65521, 0, 65529, 65522, 0, 65529, 65523, 0, 65529, 65524, 0, 65530, 65524, 0, 65531, 65524, 0, 65532, 65524, 0, 65533, 65523, 0)
 }
+
+[node name="Props" type="Node3D" parent="Cognitive/Static"]
+
+[node name="BrickPillar1" parent="Cognitive/Static/Props" instance=ExtResource("14_yauet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="BrickPillar2" parent="Cognitive/Static/Props" instance=ExtResource("14_yauet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+
+[node name="BrickPillar3" parent="Cognitive/Static/Props" instance=ExtResource("14_yauet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3)
+
+[node name="BrickPillar4" parent="Cognitive/Static/Props" instance=ExtResource("14_yauet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3)
+
+[node name="BrickPillar5" parent="Cognitive/Static/Props" instance=ExtResource("14_yauet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -5)
+
+[node name="BrickPillar6" parent="Cognitive/Static/Props" instance=ExtResource("14_yauet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -5)
+
+[node name="BrickPillar7" parent="Cognitive/Static/Props" instance=ExtResource("14_yauet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -7)
+
+[node name="BrickPillar8" parent="Cognitive/Static/Props" instance=ExtResource("14_yauet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -9)
+
+[node name="BrickPillar9" parent="Cognitive/Static/Props" instance=ExtResource("14_yauet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -9)
+
+[node name="BrickPillar10" parent="Cognitive/Static/Props" instance=ExtResource("14_yauet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -11)
+
+[node name="BrickPillar11" parent="Cognitive/Static/Props" instance=ExtResource("14_yauet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -11)
+
+[node name="BrickPillar12" parent="Cognitive/Static/Props" instance=ExtResource("14_yauet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -17)
+
+[node name="BrickPillar13" parent="Cognitive/Static/Props" instance=ExtResource("14_yauet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -17)
+
+[node name="BrickPillar14" parent="Cognitive/Static/Props" instance=ExtResource("14_yauet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -19)
+
+[node name="BrickPillar15" parent="Cognitive/Static/Props" instance=ExtResource("14_yauet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -19)
+
+[node name="BrickPillar16" parent="Cognitive/Static/Props" instance=ExtResource("14_yauet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -21)
+
+[node name="BrickPillar17" parent="Cognitive/Static/Props" instance=ExtResource("14_yauet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -23)
+
+[node name="BrickPillar18" parent="Cognitive/Static/Props" instance=ExtResource("14_yauet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -23)
+
+[node name="BrickPillar19" parent="Cognitive/Static/Props" instance=ExtResource("14_yauet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -21)
 
 [node name="Torch" parent="Cognitive" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("9_e3k56")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.29749, 0.0096159, -5.88109)
@@ -152,21 +315,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.92632, 0.0096159, -19.5248
 activatable_mechanisms = NodePath("../Bars4")
 
 [node name="Torch3" parent="Cognitive" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("9_e3k56")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20401, 0.0096159, -24.5097)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20401, 0.0096159, -28.5097)
 activatable_mechanisms = NodePath("../Bars4")
 
 [node name="Bars" parent="Cognitive" instance=ExtResource("10_qnbwb")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -4)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -3.1)
 
 [node name="Bars2" parent="Cognitive" instance=ExtResource("10_qnbwb")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -10)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -9)
 
 [node name="Bars3" parent="Cognitive" instance=ExtResource("10_qnbwb")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -18)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -17.1)
 activates_needed = 2
 
 [node name="Bars4" parent="Cognitive" instance=ExtResource("10_qnbwb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -22)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, 0, -22)
 activates_needed = 3
 
 [node name="Button" parent="Cognitive" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("11_wcrtb")]
@@ -182,20 +345,43 @@ transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, 
 activatable_mechanisms = NodePath("../Bars3")
 
 [node name="Table1" parent="Cognitive" instance=ExtResource("11_nudxu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.62426, 0.0125875, -21.9277)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.63353, 0, -21.9261)
 
 [node name="Table2" parent="Cognitive" instance=ExtResource("11_nudxu")]
-transform = Transform3D(0.0400794, 0, 0.999196, 0, 1, 0, -0.999196, 0, 0.0400794, 0.168861, 0.0184336, -24.5571)
+transform = Transform3D(0.733777, 0, 0.67939, 0, 1, 0, -0.67939, 0, 0.733777, 0.261474, 0, -24.2592)
 
-[node name="List" parent="Cognitive" instance=ExtResource("8_vrwbl")]
-transform = Transform3D(0.859915, 0, -0.510438, 0, 1, 0, 0.510438, 0, 0.859915, 0.0419804, 0.623596, -24.5787)
-title = "Хуй"
-text = "Яйца"
+[node name="Table3" parent="Cognitive" instance=ExtResource("11_nudxu")]
+transform = Transform3D(0.125402, 0, 0.992106, 0, 1, 0, -0.992106, 0, 0.125402, -12.1385, 0, -25.4592)
 
-[node name="List2" parent="Cognitive" instance=ExtResource("8_vrwbl")]
-transform = Transform3D(-0.292372, 0, -0.956305, 0, 1, 0, 0.956305, 0, -0.292372, 6.605, 0.624, -21.833)
-title = "Пизда"
-text = "Клитор"
+[node name="List" parent="Cognitive" instance=ExtResource("16_3mhpu")]
+transform = Transform3D(0.859915, 0, -0.510438, 0, 1, 0, 0.510438, 0, 0.859915, 0.14198, 0.601899, -24.4787)
+
+[node name="List2" parent="Cognitive" instance=ExtResource("16_3mhpu")]
+transform = Transform3D(-0.292372, 0, -0.956305, 0, 1, 0, 0.956305, 0, -0.292372, 6.605, 0.602, -21.833)
+
+[node name="List3" parent="Cognitive" instance=ExtResource("16_3mhpu")]
+transform = Transform3D(-0.859915, 0, 0.510438, 0, 1, 0, -0.510438, 0, -0.859915, -12.458, 0.601899, -25.4787)
 
 [node name="Crystal" parent="Cognitive" instance=ExtResource("9_5qxye")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 6.73041, 0.641356, -22.1346)
+
+[node name="Pit1" parent="Cognitive" instance=ExtResource("10_mgd7p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -26)
+
+[node name="Pit2" parent="Cognitive" instance=ExtResource("10_mgd7p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -26)
+
+[node name="Nailed1" parent="Cognitive" instance=ExtResource("17_vnm0b")]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 3.1, 0, -14)
+
+[node name="Fukel1" parent="Cognitive" instance=ExtResource("18_sttg4")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.2, 1, -20.6)
+
+[node name="Fukel2" parent="Cognitive" instance=ExtResource("18_sttg4")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.8, 1, -14)
+
+[node name="Fukel3" parent="Cognitive" instance=ExtResource("18_sttg4")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.8, 1, -1)
+
+[node name="Fukel4" parent="Cognitive" instance=ExtResource("18_sttg4")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.58472, 1, -24.9153)
