@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cq2cbtc63fkp7" path="res://spells/fire_spell.tscn" id="6_7r8ka"]
 [ext_resource type="Script" path="res://player/speech_recognition.gd" id="6_gxi0n"]
 [ext_resource type="PackedScene" uid="uid://cynjrogfl7ks2" path="res://player/hand/hand_with_ring.tscn" id="7_j8jkj"]
-[ext_resource type="PackedScene" uid="uid://bdptjf5n1xaqu" path="res://spells/wind_spell.tscn" id="8_f7els"]
+[ext_resource type="PackedScene" uid="uid://dug0lui71my67" path="res://player/hand/hand_without_ring.tscn" id="10_ykexg"]
 [ext_resource type="PackedScene" uid="uid://y8o54gbbmy7x" path="res://spells/repair_spell.tscn" id="11_mvv62"]
 [ext_resource type="PackedScene" uid="uid://die2clnm3gt6u" path="res://spells/destruct_spell.tscn" id="13_mm8ql"]
 [ext_resource type="PackedScene" uid="uid://dpe3c4jm65lo1" path="res://spells/timestop_spell.tscn" id="16_opg8d"]
@@ -342,8 +342,12 @@ target_position = Vector3(0, 0, -2)
 collision_mask = 65
 collide_with_areas = true
 
+[node name="hand_without_ring" parent="Body" instance=ExtResource("10_ykexg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.2)
+
 [node name="hand_with_ring" parent="Body" node_paths=PackedStringArray("spell_caster") instance=ExtResource("7_j8jkj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.2)
+visible = false
 spell_caster = NodePath("../../SpellCaster")
 
 [node name="HitBox" type="Area3D" parent="Body"]
@@ -357,7 +361,6 @@ shape = SubResource("CapsuleShape3D_2q3p1")
 script = ExtResource("5_jpbmn")
 fire_spell_scene = ExtResource("6_7r8ka")
 destruct_spell_scene = ExtResource("13_mm8ql")
-wind_spell_scene = ExtResource("8_f7els")
 repair_spell_scene = ExtResource("11_mvv62")
 timestop_spell_scene = ExtResource("16_opg8d")
 teleport_spell_scene = ExtResource("17_c6sm3")

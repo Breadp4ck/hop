@@ -1,55 +1,33 @@
-[gd_scene load_steps=12 format=3 uid="uid://c6x2gstmlw1na"]
+[gd_scene load_steps=25 format=3 uid="uid://c6x2gstmlw1na"]
 
 [ext_resource type="MeshLibrary" uid="uid://cwg0lk4sttpgm" path="res://world/level/mesh_library.tres" id="1_xxlmc"]
 [ext_resource type="MeshLibrary" uid="uid://ce5q65war85lh" path="res://world/level/collision_mesh_library.tres" id="2_w5hdb"]
-[ext_resource type="PackedScene" uid="uid://dirp2lv0rgtke" path="res://player/player.tscn" id="2_ycrvi"]
-[ext_resource type="PackedScene" uid="uid://34jjdg81mcmr" path="res://world/inventory_items/m_ring.tscn" id="3_746du"]
-[ext_resource type="PackedScene" uid="uid://cnf1e8uequsuk" path="res://world/pit.tscn" id="3_iwer3"]
-[ext_resource type="PackedScene" uid="uid://dp8qe5nu715dq" path="res://enemies/shadow_master/shadow_master.tscn" id="3_syris"]
-[ext_resource type="PackedScene" uid="uid://bnwr1wfb6ylgb" path="res://world/inventory_items/m_book.tscn" id="4_ds1ri"]
-[ext_resource type="PackedScene" uid="uid://cm12cwfnovun8" path="res://enemies/husk/husk.tscn" id="5_7rrjy"]
-[ext_resource type="PackedScene" uid="uid://bm7revl1frg2d" path="res://world/items/list/m_list.tscn" id="6_lmcui"]
-[ext_resource type="PackedScene" uid="uid://c4ftr3a8r5skk" path="res://world/inventory_items/c_ring.tscn" id="6_y4t2i"]
-[ext_resource type="PackedScene" uid="uid://dol2mhio14skj" path="res://world/inventory_items/c_book.tscn" id="7_gqv15"]
+[ext_resource type="PackedScene" uid="uid://blgt5fckeffaf" path="res://assets/entities/brick_pillar/m_brick_pillar.glb" id="3_6y4ys"]
+[ext_resource type="PackedScene" uid="uid://wgllat8m2r7c" path="res://world/items/fukel/m_fukel.tscn" id="4_rndid"]
+[ext_resource type="PackedScene" uid="uid://b88m7i2xgx85h" path="res://world/items/nailed/m_nailed.tscn" id="5_5a8f1"]
+[ext_resource type="PackedScene" uid="uid://odugmk43ag6u" path="res://assets/entities/table/m_table.glb" id="5_da2es"]
+[ext_resource type="PackedScene" uid="uid://bh66mcipvia11" path="res://world/mechanisms/bar/m_bar.tscn" id="5_ppra1"]
+[ext_resource type="PackedScene" uid="uid://b7t5ap1gdb1jc" path="res://world/items/button/m_button.tscn" id="6_0hpqc"]
+[ext_resource type="PackedScene" uid="uid://bfu2kh5mi1qdv" path="res://assets/entities/collapse/m_collapse.glb" id="6_mg4o7"]
+[ext_resource type="PackedScene" uid="uid://ck5i4sehkco6e" path="res://world/items/torch/m_torch.tscn" id="9_dijpe"]
+[ext_resource type="PackedScene" uid="uid://bm7revl1frg2d" path="res://world/items/list/m_list.tscn" id="10_3h4dv"]
+[ext_resource type="PackedScene" uid="uid://bx4b6tf8o6yq4" path="res://world/items/bricks_cracked/m_bricks_cracked.tscn" id="11_txdic"]
+[ext_resource type="PackedScene" uid="uid://cykvdxs0gth0w" path="res://world/items/bricks_cracked/c_bricks_cracked.tscn" id="12_gucwh"]
+[ext_resource type="PackedScene" uid="uid://ba2ci8eh1l78l" path="res://world/inventory_items/crystal.tscn" id="13_7nfkq"]
+[ext_resource type="PackedScene" uid="uid://cnf1e8uequsuk" path="res://world/pit.tscn" id="14_w02vk"]
+[ext_resource type="PackedScene" uid="uid://cewiqnc4ylli1" path="res://world/items/fukel/c_fukel.tscn" id="15_4ab2f"]
+[ext_resource type="PackedScene" uid="uid://c1bx7j6mgvkab" path="res://assets/entities/brick_pillar/c_brick_pillar.glb" id="15_l8w8a"]
+[ext_resource type="PackedScene" uid="uid://dp8qe5nu715dq" path="res://enemies/shadow_master/shadow_master.tscn" id="15_ygswj"]
+[ext_resource type="PackedScene" uid="uid://cm12cwfnovun8" path="res://enemies/husk/husk.tscn" id="16_b6sli"]
+[ext_resource type="PackedScene" uid="uid://bahpk53tkuqv7" path="res://assets/entities/table/c_table.glb" id="16_h1dpu"]
+[ext_resource type="PackedScene" uid="uid://bx8y1fj4epj4n" path="res://world/items/nailed/c_nailed.tscn" id="18_80wed"]
+[ext_resource type="PackedScene" uid="uid://0pxacylj6isr" path="res://world/mechanisms/bar/c_bar.tscn" id="19_7hkdq"]
+[ext_resource type="PackedScene" uid="uid://b47ljpg53qtvc" path="res://world/items/button/c_button.tscn" id="20_p6205"]
+[ext_resource type="PackedScene" uid="uid://2mcdaxfle6j3" path="res://world/items/list/c_list.tscn" id="21_mm2dk"]
 
 [node name="Room2" type="Node3D"]
 
 [node name="Material" type="Node3D" parent="."]
-
-[node name="Pits" type="Node3D" parent="Material"]
-
-[node name="pit" parent="Material/Pits" instance=ExtResource("3_iwer3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, 2)
-
-[node name="pit2" parent="Material/Pits" instance=ExtResource("3_iwer3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, 0)
-
-[node name="pit3" parent="Material/Pits" instance=ExtResource("3_iwer3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, -2)
-
-[node name="pit4" parent="Material/Pits" instance=ExtResource("3_iwer3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -1, 2)
-
-[node name="pit5" parent="Material/Pits" instance=ExtResource("3_iwer3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -1, 2)
-
-[node name="pit6" parent="Material/Pits" instance=ExtResource("3_iwer3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -1, 4)
-
-[node name="pit7" parent="Material/Pits" instance=ExtResource("3_iwer3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -1, 6)
-
-[node name="pit8" parent="Material/Pits" instance=ExtResource("3_iwer3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -1, 6)
-
-[node name="pit9" parent="Material/Pits" instance=ExtResource("3_iwer3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, -1, 6)
-
-[node name="pit10" parent="Material/Pits" instance=ExtResource("3_iwer3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, -1, 14)
-
-[node name="pit11" parent="Material/Pits" instance=ExtResource("3_iwer3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, -1, 16)
 
 [node name="Static" type="Node3D" parent="Material"]
 
@@ -58,16 +36,16 @@ mesh_library = ExtResource("1_xxlmc")
 cell_center_x = false
 cell_center_z = false
 data = {
-"cells": PackedInt32Array(-65536, 0, 1, -65535, 0, 1, -1, 0, 1, -1, 1, 1, -2, 2, 1, -1, 2, 1, -1, 65535, 1, -1, 65534, 1, -2, 65534, 1, -3, 65534, 1, -3, 65535, 1, -3, 0, 1, -3, 1, 1, -3, 2, 1, -4, 0, 1, -5, 0, 1, -6, 0, 1, -7, 0, 1, -7, 1, 1, -7, 2, 1, -8, 2, 1, -8, 1, 1, -8, 0, 1, -9, 0, 1, -9, 1, 1, -9, 2, 1, -10, 2, 1, -10, 3, 1, -10, 4, 1, -11, 4, 1, -11, 5, 1, -10, 5, 1, -11, 6, 1, -11, 7, 1, -10, 7, 1, -10, 8, 1, -11, 8, 1, -12, 8, 1, -12, 7, 1, -8, 8, 1, -8, 7, 1, -8, 5, 1, -8, 4, 1, -7, 4, 1, -5, 4, 1, -6, 4, 1, -5, 3, 1, -5, 2, 1, 65532, 3, 1, 65532, 2, 1, 65533, 3, 1, 65534, 3, 1, 65535, 3, 1, 0, 2, 1, 0, 1, 1, 0, 3, 1, 1, 1, 1, 1, 65535, 1, 0, 65535, 1, 0, 65534, 1, 0, 65533, 1, 65535, 65533, 1, 65534, 65533, 1, 65533, 65533, 1, 65532, 65533, 1, 65532, 65534, 1, 65532, 65535, 1, 65532, 1, 1, 65531, 65535, 1, 65530, 65535, 1, 65529, 65535, 1, 65528, 65535, 1, 65527, 65535, 1, 65526, 65535, 1, 65526, 0, 1, 65526, 1, 1, 65525, 3, 1, 65525, 2, 1, 65525, 1, 1, 65532, 4, 1, 65532, 5, 1, 65531, 5, 1, 65530, 5, 1, 65529, 5, 1, 65529, 6, 1, 65529, 7, 1, 65529, 8, 1, 65529, 9, 1, 65528, 9, 1, 65527, 9, 1, 65526, 9, 1, 65525, 9, 1, 65524, 9, 1, 65523, 9, 1, 65523, 8, 1, 65523, 7, 1, 65523, 6, 1, 65524, 6, 1, 65524, 5, 1, 65524, 4, 1, 65524, 3, 1, -7, 5, 1, -7, 6, 1, -7, 7, 1, -7, 8, 1, -8, 9, 1, -9, 9, 1, -10, 9, 1, -4, 1, 1, -4, 2, 1, -65538, 1, 1, -65538, 0, 1, -65538, 65535, 1, -65545, 8, 1, -65545, 7, 1, -65545, 6, 1, -65544, 6, 1, -65546, 6, 1, -65545, 5, 1, -65545, 4, 1, -65545, 3, 1, -65544, 3, 1, -65543, 3, 1, -65542, 3, 1, -65542, 2, 1, -65542, 1, 1, -65541, 1, 1, -8, 6, 786433, -9, 6, 786433, -10, 6, 786433, -9, 5, 786433, 65528, 5, 786433, 65527, 5, 786433, 65527, 3, 786433, 65527, 4, 786433, 65527, 6, 786433, 65526, 6, 786433, -9, 3, 786433)
+"cells": PackedInt32Array(-1, 0, 1, -2, 0, 1, -65535, 65534, 1, -65531, 0, 0, -65531, 65535, 0, -65531, 65534, 0, -65532, 65534, 0, -65533, 65534, 0, -65534, 65534, 1, -65532, 65535, 0, -65530, 65535, 0, -65529, 65534, 1, -65529, 65535, 1, -65529, 0, 1, -65529, 1, 1, -65529, 2, 1, -65528, 1, 1, -65528, 2, 1, -65529, 3, 1, -65529, 4, 1, -65528, 4, 1, -65527, 4, 1, -65526, 4, 1, -65525, 5, 0, -65525, 6, 1, -65526, 6, 1, -65527, 6, 1, -65528, 6, 1, -65529, 6, 1, -65529, 5, 1, -65527, 5, 1, -65525, 3, 0, -65525, 2, 1, -65526, 2, 1, -65524, 2, 1, -65524, 1, 1, -65523, 1, 1, -65522, 1, 1, -65522, 2, 1, -65522, 3, 1, -65521, 6, 0, -65522, 7, 1, -65526, 7, 1, -65526, 8, 1, -65525, 8, 1, -65525, 9, 1, -65524, 9, 1, -65523, 9, 1, -65522, 9, 1, -65521, 9, 1, -65522, 8, 1, -65520, 9, 1, -65520, 10, 1, -65521, 11, 0, -65520, 11, 1, -65524, 5, 1, -65523, 5, 1, -65522, 5, 1, -65522, 4, 1, -65521, 5, 1, -65521, 7, 1, -65520, 6, 1, -65519, 6, 1, -65527, 65534, 1, -65527, 65535, 1, -65526, 65534, 1, -65525, 65534, 1, -65525, 65535, 1, -65525, 65533, 0, -65524, 65535, 1, -65523, 65535, 1, -65523, 0, 0, -65522, 65535, 0, -65522, 65534, 1, -65522, 65533, 1, -65521, 65533, 1, -65520, 65533, 0, -65520, 65532, 1, -65519, 65533, 1, -65519, 65534, 1, -65518, 65534, 1, -65521, 65535, 1, -65520, 65535, 0, -65520, 0, 1, -65520, 1, 1, -65520, 2, 1, -65521, 3, 1, -65520, 3, 1, -65519, 3, 1, -65518, 3, 1, -65518, 4, 1, -65519, 4, 1, -65518, 5, 0, -65518, 6, 1, -65518, 7, 1, -65517, 7, 1, -65516, 7, 1, -65517, 4, 0, -65516, 4, 1, -65516, 5, 1, -65516, 6, 1, -65515, 5, 1, -65516, 8, 1, -65516, 9, 1, -65514, 9, 1, -65513, 8, 1, -65513, 9, 0, -65513, 10, 1, -65512, 9, 0, -65512, 10, 1, -65512, 8, 1, -65533, 65532, 1, -65532, 65532, 1, -65534, 65532, 1, -65532, 65530, 1, -65533, 65530, 1, -65534, 65530, 1, -65534, 65529, 1, -65534, 65528, 1, -65533, 65528, 1, -65532, 65528, 1, -65532, 65529, 1, -65533, 65529, 0, -65535, 1, 1, -65534, 1, 0, -65532, 0, 0, -65534, 65535, 1, -65535, 65535, 1, -65536, 0, 1, -65535, 0, 1, -65534, 0, 1, -65533, 1, 1, -65532, 1, 1, -65531, 1, 1, -65525, 4, 1, 0, 65535, 0, 65535, 65535, 1, 65534, 65535, 1, 0, 1, 1, 65535, 1, 1, 65534, 1, 1, 5, 2, 1, 4, 2, 1, 3, 2, 0, 2, 2, 1, 1, 2, 1, 0, 2, 1, 6, 2, 1, 6, 1, 1, 6, 0, 1, 6, 65534, 0, 6, 65533, 1, 0, 65533, 1, 0, 65534, 1, 6, 65532, 0, 6, 65531, 1, 6, 65530, 1, 6, 65527, 1, 6, 65526, 1, 5, 65526, 1, 4, 65526, 0, 3, 65526, 1, 2, 65526, 0, 1, 65526, 1, 0, 65526, 1, 0, 65527, 1, 0, 65528, 0, 0, 65530, 1, 0, 65531, 1, 0, 65532, 0, 6, 65528, 1, 0, 65529, 1, 6, 65529, 1, 8, 0, 0, 8, 65533, 1, 7, 65533, 1, 8, 3, 0, 9, 3, 1, 10, 3, 1, 8, 5, 0, 10, 5, 0, 6, 3, 1, 6, 4, 1, 6, 5, 1, 6, 6, 1, 6, 7, 1, 7, 7, 1, 8, 7, 1, 9, 7, 1, 11, 7, 0, 12, 7, 1, 12, 6, 1, 13, 6, 1, 14, 6, 1, 13, 7, 1, 13, 8, 1, 12, 8, 1, 9, 8, 1, 9, 9, 1, 10, 9, 1, 11, 10, 1, 12, 10, 1, 13, 10, 1, 14, 10, 1, 15, 10, 0, 14, 11, 1, 14, 12, 1, 15, 12, 1, 16, 12, 1, 17, 11, 1, 17, 12, 1, 17, 10, 1, 17, 9, 1, 17, 8, 1, 16, 8, 1, 15, 8, 1, 16, 7, 1, 17, 7, 1, 18, 8, 1, 19, 8, 1, 19, 9, 1, 19, 10, 1, 20, 10, 1, 21, 10, 1, 22, 10, 1, 22, 8, 1, 22, 7, 1, 23, 7, 1, 24, 7, 1, 25, 7, 1, 25, 8, 1, 25, 9, 0, 25, 10, 1, 25, 11, 1, 24, 11, 1, 23, 11, 1, 22, 11, 1, 21, 8, 1, 21, 7, 1, 21, 6, 1, 22, 6, 1, 22, 4, 1, 21, 4, 1, 21, 3, 1, 20, 3, 1, 20, 2, 1, 19, 2, 1, 19, 3, 0, 24, 6, 1, 24, 5, 1, 24, 4, 1, 23, 3, 1, 18, 2, 1, 17, 2, 1, 15, 4, 1, 16, 4, 1, 16, 5, 1, 17, 5, 1, 13, 2, 0, 13, 3, 1, 13, 4, 1, 12, 4, 1, 12, 3, 1, 15, 2, 1, 15, 1, 1, 15, 0, 1, 14, 0, 1, 12, 0, 0, 11, 0, 1, 10, 0, 1, 9, 0, 1, 9, 1, 1, 9, 2, 1, 10, 1, 1, 11, 1, 0, 10, 65535, 1, 9, 65533, 1, 10, 65533, 1, 10, 65532, 0, 11, 65532, 0, 12, 65532, 1, 12, 65533, 1, 12, 65534, 0, 13, 65534, 1, 15, 65534, 1, 16, 65534, 1, 17, 1, 1, 17, 0, 1, 17, 65535, 1, 18, 65535, 1, 19, 65535, 1, 19, 65534, 1, 19, 65533, 1, 18, 65533, 1, 18, 65532, 1, 17, 65532, 1, 17, 65531, 1, 16, 65531, 1, 15, 65531, 1, 15, 65532, 1, 14, 65532, 1, 14, 65531, 1, 13, 65532, 1, 13, 65533, 1, 19, 5, 1, 19, 6, 1, -65514, 5, 1, -65513, 5, 1, -65513, 6, 1, -65514, 6, 1, -65513, 4, 1, -65515, 8, 1, -65515, 10, 1, -131051, 9, 1, -65528, 65533, 1, -131064, 65534, 1, -131064, 65535, 1, -65528, 0, 1, -131069, 0, 1, -131069, 65535, 1, -65530, 65533, 1, -65530, 65532, 1, -65530, 65531, 1, -65530, 65530, 1, -65530, 65529, 1, -65530, 65528, 1, -65530, 65527, 1, -65530, 65526, 1, -65531, 65526, 1, -65532, 65526, 1, -65533, 65526, 1, -65534, 65526, 1, -65535, 65526, 1, -65536, 65526, 1, -65536, 65527, 1, -65536, 65528, 1, -65536, 65529, 1, -65536, 65530, 1, -65536, 65531, 1, -65536, 65532, 1, -65536, 65533, 1, -131071, 65527, 1, -131071, 65528, 1, -131071, 65529, 1, -131071, 65530, 1, -131071, 65531, 1, -131071, 65532, 1, -131071, 65533, 1, -131070, 65533, 1, -131069, 65533, 1, -131069, 65532, 1, -131068, 65532, 1, -131067, 65532, 1, -131067, 65533, 1, -131068, 65533, 1, -131067, 65531, 1, -131068, 65531, 1, -131069, 65531, 1, -131070, 65531, 1, -131070, 65530, 1, -131069, 65530, 1, -131068, 65530, 1, -131068, 65529, 1, -131067, 65529, 1, -131067, 65528, 1, -131067, 65527, 1, -131068, 65527, 1, -131069, 65527, 1, -131070, 65527, 1, -131068, 65528, 1, -131067, 65530, 1, -3, 0, 0, -4, 0, 0, 65533, 65535, 0, 65532, 65535, 0, 65533, 1, 0, 65532, 1, 0, 131075, 0, 3, 131075, 65535, 3, 131074, 65535, 3)
 }
-metadata/_editor_floor_ = Vector3(0, -1, 0)
+metadata/_editor_floor_ = Vector3(0, 2, 0)
 
 [node name="Roof" type="GridMap" parent="Material/Static"]
 mesh_library = ExtResource("1_xxlmc")
 cell_center_x = false
 cell_center_z = false
 data = {
-"cells": PackedInt32Array(65537, 0, 786433, 65536, 0, 786433, 131071, 0, 786433, 131070, 0, 786433, 131071, 1, 786433, 131070, 1, 786433, 131070, 2, 786433, 131069, 2, 786433, 131069, 1, 786433, 131069, 0, 786433, 131069, 65535, 786433, 131069, 65534, 786433, 131070, 65534, 786433, 131071, 65534, 786433, 131071, 65535, 786433, 131070, 65535, 786433, 131071, 2, 786433, 131068, 0, 786433, 131067, 0, 786433, 131066, 0, 786433, 131065, 0, 786433, 131064, 0, 786433, 131063, 0, 786433, 131063, 1, 786433, 131064, 1, 786433, 131065, 1, 786433, 131066, 1, 786433, 131067, 1, 786433, 131067, 2, 786433, 131067, 3, 786433, 131066, 3, 786433, 131066, 4, 786433, 131065, 4, 786433, 131067, 4, 786433, 131066, 2, 786433, 131065, 2, 786433, 131064, 2, 786433, 131063, 2, 786433, 131062, 2, 786433, 131062, 3, 786433, 131063, 3, 786433, 131064, 3, 786433, 131065, 3, 786433, 131064, 4, 786433, 131063, 4, 786433, 131062, 4, 786433, 131061, 5, 786433, 131061, 4, 786433, 131061, 6, 786433, 131060, 6, 786433, 131060, 7, 786433, 131060, 8, 786433, 131061, 8, 786433, 131062, 8, 786433, 131063, 8, 786433, 131064, 8, 786433, 131064, 7, 786433, 131063, 7, 786433, 131062, 7, 786433, 131061, 7, 786433, 131062, 6, 786433, 131063, 6, 786433, 131062, 5, 786433, 131063, 5, 786433, 131064, 5, 786433, 131064, 6, 786433)
+"cells": PackedInt32Array(65536, 65535, 1, 131071, 65535, 1, 131070, 65535, 1, 131070, 0, 1, 131070, 1, 1, 131071, 1, 1, 131071, 0, 1, 65536, 0, 1, 65536, 1, 1, 65536, 2, 1, 65537, 2, 1, 65538, 2, 1, 65539, 2, 1, 65540, 2, 1, 65541, 2, 1, 65542, 2, 1, 65542, 1, 1, 65542, 0, 1, 65542, 65533, 1, 65542, 65534, 1, 65542, 65535, 1, 65542, 65532, 1, 65542, 65531, 1, 65542, 65530, 1, 65542, 65529, 1, 65542, 65528, 1, 65542, 65527, 1, 65542, 65526, 1, 65540, 65526, 1, 65539, 65526, 1, 65538, 65526, 1, 65537, 65526, 1, 65536, 65526, 1, 65536, 65527, 1, 65536, 65528, 1, 65536, 65529, 1, 65536, 65530, 1, 65536, 65531, 1, 65536, 65532, 1, 65536, 65533, 1, 65536, 65534, 1, 65541, 65526, 1, 131077, 65527, 1, 131076, 65527, 1, 131075, 65527, 1, 131074, 65527, 1, 131073, 65527, 1, 131073, 65528, 1, 131073, 65529, 1, 131073, 65530, 1, 131073, 65531, 1, 131073, 65532, 1, 131073, 65533, 1, 131073, 65534, 1, 131073, 65535, 1, 131073, 0, 1, 131073, 1, 1, 131077, 65528, 1, 131077, 65529, 1, 131077, 65530, 1, 131077, 65531, 1, 131077, 65532, 1, 131077, 65533, 1, 131077, 65534, 1, 131077, 65535, 1, 131077, 0, 1, 131076, 0, 1, 131076, 1, 1, 131075, 1, 1, 131074, 1, 1, 131074, 0, 1, 131074, 65535, 1, 131074, 65534, 1, 131074, 65533, 1, 131074, 65530, 1, 131074, 65529, 1, 131074, 65528, 1, 131075, 65528, 1, 131076, 65528, 1, 131076, 65529, 1, 131076, 65530, 1, 131076, 65531, 1, 131076, 65532, 1, 131075, 65532, 1, 131074, 65532, 1, 131074, 65531, 1, 131075, 65529, 1, 131075, 65530, 1, 131075, 65531, 1, 131075, 65533, 1, 131076, 65533, 1, 131075, 65534, 1, 131075, 65535, 1, 131076, 65535, 1, 131076, 65534, 1, 131075, 0, 1, 131077, 1, 1, 65543, 65534, 1, 65544, 65534, 1, 65545, 65534, 1, 65545, 65535, 1, 65544, 65535, 1, 65543, 65535, 1, 65543, 0, 1, 65543, 1, 1, 65544, 1, 1, 65544, 2, 1, 65543, 2, 1, 65543, 3, 1, 65543, 4, 1, 65543, 5, 1, 65543, 6, 1, 65544, 6, 1, 65545, 6, 1, 65546, 6, 1, 65547, 6, 1, 65546, 7, 1, 65546, 8, 1, 65547, 8, 1, 65548, 8, 1, 65549, 8, 1, 65549, 9, 1, 65548, 9, 1, 65547, 9, 1, 65550, 9, 1, 65551, 9, 1, 65552, 9, 1, 65552, 10, 1, 65552, 11, 1, 65551, 11, 1, 65550, 7, 1, 65550, 8, 1, 65551, 7, 1, 65551, 6, 1, 65551, 5, 1, 65550, 5, 1, 65549, 5, 1, 65548, 5, 1, 65547, 5, 1, 65546, 5, 1, 65546, 4, 1, 65547, 4, 1, 65545, 4, 1, 65544, 4, 1, 65545, 5, 1, 65544, 5, 1, 65548, 0, 1, 65549, 0, 1, 65549, 1, 1, 65548, 1, 1, 65550, 1, 1, 65550, 2, 1, 65550, 3, 1, 65550, 4, 1, 65548, 2, 1, 65547, 2, 1, 65546, 2, 1, 65547, 3, 1, 65546, 65534, 1, 65547, 65534, 1, 65547, 65533, 1, 65547, 65535, 1, 65548, 65535, 1, 65549, 65535, 1, 65550, 65535, 1, 65550, 65534, 1, 65550, 65533, 1, 65551, 65533, 1, 65552, 65532, 1, 65552, 65533, 1, 65553, 65533, 1, 65554, 65533, 1, 65554, 65534, 1, 65553, 65534, 1, 65550, 0, 1, 65551, 0, 1, 65552, 0, 1, 65552, 65535, 1, 65551, 65535, 1, 65552, 1, 1, 65552, 2, 1, 65552, 3, 1, 65551, 3, 1, 65553, 3, 1, 65553, 4, 1, 65554, 3, 1, 65554, 2, 1, 65554, 4, 1, 65555, 4, 1, 65556, 4, 1, 65552, 6, 1, 65553, 6, 1, 65554, 6, 1, 65554, 5, 1, 65553, 5, 1, 65556, 5, 1, 65556, 6, 1, 65556, 7, 1, 65555, 7, 1, 65555, 6, 1, 65554, 7, 1, 65553, 7, 1, 65555, 5, 1, 65557, 4, 1, 65558, 4, 1, 65559, 4, 1, 65559, 5, 1, 65558, 5, 1, 65557, 5, 1, 65559, 6, 1, 65556, 8, 1, 65556, 9, 1, 65557, 9, 1, 65558, 9, 1, 65558, 8, 1, 65559, 9, 1, 65559, 8, 1, 65560, 8, 1, 65560, 9, 1, 65560, 10, 1, 65559, 10, 1, 65558, 10, 1, 131069, 0, 1, 131068, 0, 1, 65541, 1, 1, 65540, 1, 1, 65540, 0, 1, 65539, 0, 1, 65538, 0, 1, 65538, 65535, 1, 65538, 65534, 1)
 }
 metadata/_editor_floor_ = Vector3(0, 1, 0)
 
@@ -76,112 +54,865 @@ mesh_library = ExtResource("2_w5hdb")
 cell_center_x = false
 cell_center_z = false
 data = {
-"cells": PackedInt32Array(65532, 65534, 0, 65532, 65533, 0, 65533, 65533, 0, 65534, 65533, 0, 65535, 65533, 0, 0, 65533, 0, 0, 65534, 0, 1, 65535, 0, 0, 65535, 0, 2, 65535, 0, 2, 0, 0, 2, 1, 0, 1, 1, 0, 0, 1, 0, 65535, 3, 0, 0, 3, 0, 0, 2, 0, 65532, 1, 0, 65533, 3, 0, 65532, 3, 0, 65532, 2, 0, 65534, 3, 0, 65531, 65535, 0, 65526, 65535, 0, 65530, 65535, 0, 65532, 65535, 0, 65529, 65535, 0, 65528, 65535, 0, 65527, 65535, 0, 65526, 0, 0, 65526, 1, 0, 65525, 1, 0, 65525, 2, 0, 65525, 3, 0, 65524, 3, 0, 65524, 4, 0, 65524, 5, 0, 65524, 6, 0, 65523, 6, 0, 65523, 7, 0, 65523, 8, 0, 65523, 9, 0, 65524, 9, 0, 65525, 9, 0, 65526, 9, 0, 65527, 9, 0, 65528, 9, 0, 65529, 9, 0, 65529, 8, 0, 65529, 7, 0, 65529, 6, 0, 65529, 5, 0, 65530, 5, 0, 65531, 5, 0, 65532, 5, 0, 65532, 4, 0, 65527, 3, 0, 65527, 4, 0, 65527, 5, 0, 65528, 5, 0, 65526, 6, 0, 65527, 6, 0)
+"cells": PackedInt32Array(65533, 65535, 0, 65533, 1, 0, 65534, 1, 0, 65535, 1, 0, 0, 1, 0, 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0, 6, 0, 0, 6, 1, 0, 6, 3, 0, 6, 4, 0, 6, 5, 0, 6, 6, 0, 6, 7, 0, 7, 7, 0, 8, 7, 0, 9, 7, 0, 8, 5, 0, 10, 5, 0, 9, 8, 0, 9, 9, 0, 10, 9, 0, 11, 10, 0, 12, 10, 0, 13, 10, 0, 14, 10, 0, 15, 10, 0, 14, 11, 0, 14, 12, 0, 15, 12, 0, 16, 12, 0, 17, 12, 0, 17, 11, 0, 17, 10, 0, 17, 9, 0, 17, 8, 0, 16, 8, 0, 15, 8, 0, 14, 6, 0, 13, 6, 0, 12, 6, 0, 12, 7, 0, 12, 8, 0, 13, 8, 0, 13, 7, 0, 18, 8, 0, 19, 8, 0, 19, 9, 0, 19, 10, 0, 20, 10, 0, 21, 10, 0, 22, 10, 0, 22, 11, 0, 23, 11, 0, 24, 11, 0, 25, 11, 0, 25, 10, 0, 25, 9, 0, 25, 8, 0, 25, 7, 0, 24, 7, 0, 24, 6, 0, 23, 7, 0, 22, 7, 0, 22, 8, 0, 21, 8, 0, 21, 7, 0, 24, 5, 0, 24, 4, 0, 23, 3, 0, 22, 4, 0, 21, 4, 0, 21, 3, 0, 20, 3, 0, 19, 3, 0, 19, 2, 0, 20, 2, 0, 19, 5, 0, 19, 6, 0, 17, 5, 0, 16, 5, 0, 16, 4, 0, 15, 4, 0, 18, 2, 0, 17, 2, 0, 17, 1, 0, 17, 0, 0, 17, 65535, 0, 18, 65535, 0, 19, 65535, 0, 19, 65534, 0, 19, 65533, 0, 18, 65532, 0, 17, 65532, 0, 17, 65531, 0, 16, 65531, 0, 15, 65531, 0, 14, 65531, 0, 14, 65532, 0, 15, 65532, 0, 13, 65532, 0, 12, 65532, 0, 11, 65532, 0, 10, 65532, 0, 10, 65533, 0, 12, 65533, 0, 12, 65534, 0, 13, 65534, 0, 13, 65533, 0, 12, 0, 0, 11, 0, 0, 10, 0, 0, 9, 0, 0, 8, 0, 0, 10, 65535, 0, 10, 1, 0, 9, 1, 0, 8, 3, 0, 9, 3, 0, 10, 3, 0, 14, 0, 0, 15, 0, 0, 15, 1, 0, 15, 2, 0, 13, 2, 0, 13, 3, 0, 13, 4, 0, 12, 4, 0, 12, 3, 0, 16, 65534, 0, 15, 65534, 0, 9, 65533, 0, 8, 65533, 0, 7, 65533, 0, 6, 65533, 0, 6, 65534, 0, 6, 65532, 0, 6, 65531, 0, 6, 65530, 0, 6, 65529, 0, 6, 65528, 0, 6, 65527, 0, 6, 65526, 0, 5, 65526, 0, 4, 65526, 0, 3, 65526, 0, 2, 65526, 0, 1, 65526, 0, 0, 65526, 0, 0, 65527, 0, 0, 65529, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 65528, 0, 11, 7, 0, 9, 2, 0, 65532, 65535, 0, 65532, 0, 0, 65532, 1, 0, 16, 7, 0, 17, 7, 0, 21, 6, 0, 22, 6, 0)
 }
 
-[node name="Ring" parent="Material" instance=ExtResource("3_746du")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.056387, 0.43573, -0.307971)
+[node name="Props" type="Node3D" parent="Material"]
 
-[node name="Book" parent="Material" instance=ExtResource("4_ds1ri")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.378456, -0.317142)
+[node name="BrickPillar" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -3)
 
-[node name="List" parent="Material" instance=ExtResource("6_lmcui")]
-transform = Transform3D(0.57319, 0, 0.819423, 0, 1, 0, -0.819423, 0, 0.57319, -0.84591, 0.660713, -0.33697)
-pickable_spell_type = 0
-title = "Fire"
-text = "Say \"KATUHN\""
+[node name="BrickPillar2" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -1)
+
+[node name="BrickPillar3" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+
+[node name="BrickPillar5" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="BrickPillar6" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+
+[node name="BrickPillar15" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -15)
+
+[node name="BrickPillar20" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -8)
+
+[node name="BrickPillar24" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -2, -8)
+
+[node name="BrickPillar21" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -8)
+
+[node name="BrickPillar22" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 2, -8)
+
+[node name="BrickPillar29" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -3, -1)
+
+[node name="BrickPillar31" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -1, -1)
+
+[node name="BrickPillar16" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -15)
+
+[node name="BrickPillar17" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 2, -15)
+
+[node name="BrickPillar26" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -2, -15)
+
+[node name="BrickPillar18" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, -15)
+
+[node name="BrickPillar25" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -2, -15)
+
+[node name="BrickPillar19" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, -8)
+
+[node name="BrickPillar23" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -2, -8)
+
+[node name="BrickPillar7" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -3)
+
+[node name="BrickPillar27" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, -3)
+
+[node name="BrickPillar63" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, -3)
+
+[node name="BrickPillar30" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, -5)
+
+[node name="BrickPillar32" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -5)
+
+[node name="BrickPillar33" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -3)
+
+[node name="BrickPillar8" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -1)
+
+[node name="BrickPillar28" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, -1, -5.7)
+
+[node name="BrickPillar9" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 7)
+
+[node name="BrickPillar42" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, -3)
+
+[node name="BrickPillar43" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 9)
+
+[node name="BrickPillar44" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 0, 9)
+
+[node name="BrickPillar45" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 0, 7)
+
+[node name="BrickPillar46" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, 7)
+
+[node name="BrickPillar51" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 33, 2, 7)
+
+[node name="BrickPillar52" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 35, 2, 7)
+
+[node name="BrickPillar53" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 37, 2, 7)
+
+[node name="BrickPillar54" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 37, 2, 9)
+
+[node name="BrickPillar56" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 33, 2, 9)
+
+[node name="BrickPillar55" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 35, 2, 9)
+
+[node name="BrickPillar57" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 35, 2, 9)
+
+[node name="BrickPillar58" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 37, 2, 9)
+
+[node name="BrickPillar59" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 37, 2, 7)
+
+[node name="BrickPillar60" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 35, 2, 7)
+
+[node name="BrickPillar61" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 35, 2, 5)
+
+[node name="BrickPillar62" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 37, 2, 5)
+
+[node name="BrickPillar47" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, 5)
+
+[node name="BrickPillar48" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 0, 5)
+
+[node name="BrickPillar49" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 5)
+
+[node name="BrickPillar50" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, 9)
+
+[node name="BrickPillar34" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 6)
+
+[node name="BrickPillar35" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 6)
+
+[node name="BrickPillar36" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 9)
+
+[node name="BrickPillar40" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 11)
+
+[node name="BrickPillar41" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 13)
+
+[node name="BrickPillar37" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 11)
+
+[node name="BrickPillar38" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 14)
+
+[node name="BrickPillar39" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 14)
+
+[node name="BrickPillar10" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 0, 9)
+
+[node name="BrickPillar11" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 0, 11)
+
+[node name="BrickPillar12" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 11)
+
+[node name="BrickPillar13" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 9)
+
+[node name="BrickPillar14" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 0, 17)
+
+[node name="BrickPillar4" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
+
+[node name="Fukel2" parent="Material/Props" instance=ExtResource("4_rndid")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 8.71528, 2.1, -8)
+
+[node name="Fukel1" parent="Material/Props" instance=ExtResource("4_rndid")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 8.71528, 2.1, -15)
+
+[node name="Fukel3" parent="Material/Props" instance=ExtResource("4_rndid")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.24015, 2.1, -8)
+
+[node name="Fukel4" parent="Material/Props" instance=ExtResource("4_rndid")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.24015, 2.1, -15)
+
+[node name="Fukel5" parent="Material/Props" instance=ExtResource("4_rndid")]
+transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 18.7402, 1.1, -2.9)
+
+[node name="Fukel6" parent="Material/Props" instance=ExtResource("4_rndid")]
+transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 17.0872, 1.1, 2.1)
+
+[node name="Fukel7" parent="Material/Props" instance=ExtResource("4_rndid")]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 34.7453, 0.8, 6.74688)
+
+[node name="Table1" parent="Material/Props" instance=ExtResource("5_da2es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 0, 4.2)
+
+[node name="Table4" parent="Material/Props" instance=ExtResource("5_da2es")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 0, -14.9)
+
+[node name="Table3" parent="Material/Props" instance=ExtResource("5_da2es")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 22.2, 0, -6.6)
+
+[node name="Table2" parent="Material/Props" instance=ExtResource("5_da2es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.5, 0, 20.2)
+
+[node name="Collapse1" parent="Material/Props" instance=ExtResource("6_mg4o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 21)
+
+[node name="Collapse2" parent="Material/Props" instance=ExtResource("6_mg4o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 7)
+
+[node name="Collapse3" parent="Material/Props" instance=ExtResource("6_mg4o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 10)
+
+[node name="Collapse4" parent="Material/Props" instance=ExtResource("6_mg4o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 16)
+
+[node name="Collapse5" parent="Material/Props" instance=ExtResource("6_mg4o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 10)
+
+[node name="Nailed1" parent="Material" instance=ExtResource("5_5a8f1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -2)
+
+[node name="Nailed2" parent="Material" instance=ExtResource("5_5a8f1")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20, 0, 13.7)
+
+[node name="Nailed3" parent="Material" instance=ExtResource("5_5a8f1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.6, 0, 10)
+
+[node name="Nailed5" parent="Material" instance=ExtResource("5_5a8f1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.6, 0, 12)
+
+[node name="Nailed4" parent="Material" instance=ExtResource("5_5a8f1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 22, 0, 6.3)
+
+[node name="Bars1" parent="Material" instance=ExtResource("5_ppra1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -2)
+
+[node name="Bars2" parent="Material" instance=ExtResource("5_ppra1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="Bars3" parent="Material" instance=ExtResource("5_ppra1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, -4)
+
+[node name="Bars5" parent="Material" instance=ExtResource("5_ppra1")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 22, 0, -3)
+activates_needed = 3
+
+[node name="Bars4" parent="Material" instance=ExtResource("5_ppra1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 0, 10)
+
+[node name="Button1" parent="Material" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("6_0hpqc")]
+transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, -1.7, 1.2, 1)
+activatable_mechanisms = NodePath("../Bars1")
+
+[node name="Button2" parent="Material" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("6_0hpqc")]
+transform = Transform3D(-4.37114e-08, 0, -1, -1.64203e-15, 1, 0, 1, 0, -4.37114e-08, 5, 1, -1)
+activatable_mechanisms = NodePath("../Bars2")
+
+[node name="Button3" parent="Material" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("6_0hpqc")]
+transform = Transform3D(-4.37114e-08, 0, -1, -1.64203e-15, 1, 0, 1, 0, -4.37114e-08, 21.2, 1, -5.7)
+activatable_mechanisms = NodePath("../Bars3")
+
+[node name="Button4" parent="Material" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("6_0hpqc")]
+transform = Transform3D(1.39091e-08, -1, -4.37114e-08, -1, -1.39091e-08, 7.10543e-15, -1.06581e-14, 4.37114e-08, -1, 34.6705, 1.48413, 8.86011)
+activatable_mechanisms = NodePath("../Bars4")
+
+[node name="Torch1" parent="Material" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("9_dijpe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.6, 0, -4)
+activatable_mechanisms = NodePath("../Bars5")
+
+[node name="Torch2" parent="Material" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("9_dijpe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.9, 0, 12.6)
+activatable_mechanisms = NodePath("../Bars5")
+
+[node name="Torch3" parent="Material" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("9_dijpe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5, 0, 22.1)
+activatable_mechanisms = NodePath("../Bars5")
+
+[node name="List1" parent="Material" instance=ExtResource("10_3h4dv")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 21.8239, 0.603381, -6.57856)
+pickable_spell_type = 5
+title = "Teleport"
+text = "Say teleportd"
+
+[node name="List2" parent="Material" instance=ExtResource("10_3h4dv")]
+transform = Transform3D(-0.428604, 0, -0.903492, 0, 1, 0, 0.903492, 0, -0.428604, 16.3826, 0.603381, 4.44101)
+pickable_spell_type = 1
+title = "Destruct"
+text = "Say kebab?"
+
+[node name="Crystal" parent="Material" instance=ExtResource("13_7nfkq")]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 6, 0.621451, -15)
+
+[node name="Pit1" parent="Material" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 18)
+
+[node name="Pit2" parent="Material" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -2)
+
+[node name="Pit3" parent="Material" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -4)
+
+[node name="Pit4" parent="Material" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -2)
+
+[node name="Pit5" parent="Material" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="Pit6" parent="Material" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -6)
+
+[node name="Pit7" parent="Material" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -6)
+
+[node name="Pit8" parent="Material" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -6)
+
+[node name="Pit9" parent="Material" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -6)
+
+[node name="Pit10" parent="Material" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -6)
+
+[node name="Pit11" parent="Material" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -8)
+
+[node name="Pit12" parent="Material" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
+
+[node name="Pit13" parent="Material" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -12)
+
+[node name="Pit14" parent="Material" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -14)
+
+[node name="Pit15" parent="Material" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -16)
+
+[node name="Pit16" parent="Material" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -18)
+
+[node name="Pit17" parent="Material" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -18)
+
+[node name="Pit18" parent="Material" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -18)
+
+[node name="Pit19" parent="Material" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -18)
+
+[node name="Pit20" parent="Material" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -18)
+
+[node name="Pit21" parent="Material" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -16)
+
+[node name="Pit22" parent="Material" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -14)
+
+[node name="Pit23" parent="Material" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -12)
+
+[node name="Pit24" parent="Material" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -10)
+
+[node name="Pit25" parent="Material" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -8)
+
+[node name="Pit26" parent="Material" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -10)
+
+[node name="Pit27" parent="Material" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -10)
+
+[node name="Pit28" parent="Material" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -10)
+
+[node name="BricksCracked1" parent="Material" instance=ExtResource("11_txdic")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 32.1, 0, 20.5)
+
+[node name="BricksCracked2" parent="Material" instance=ExtResource("11_txdic")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.1, 0, 6.5)
+
+[node name="BricksCracked3" parent="Material" instance=ExtResource("11_txdic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, -6)
+
+[node name="BricksCracked4" parent="Material" instance=ExtResource("11_txdic")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 40, 0, 16)
+
+[node name="BricksCracked5" parent="Material" instance=ExtResource("11_txdic")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 24, 0, -2)
 
 [node name="Cognitive" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
 
-[node name="Pits" type="Node3D" parent="Cognitive"]
+[node name="ShadowMaster" parent="Cognitive" node_paths=PackedStringArray("walls_grid") instance=ExtResource("15_ygswj")]
+walls_grid = NodePath("../Static/Collisions")
+grid_size = Vector2i(64, 64)
 
-[node name="pit" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, 2)
+[node name="Husk" parent="Cognitive/ShadowMaster" instance=ExtResource("16_b6sli")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10, 0, -2)
 
-[node name="pit2" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, 0)
+[node name="Husk2" parent="Cognitive/ShadowMaster" instance=ExtResource("16_b6sli")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 28, 0, 4)
 
-[node name="pit3" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, -2)
+[node name="Husk3" parent="Cognitive/ShadowMaster" instance=ExtResource("16_b6sli")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, -2)
 
-[node name="pit4" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -1, 2)
+[node name="Husk4" parent="Cognitive/ShadowMaster" instance=ExtResource("16_b6sli")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 42, 0, 10)
 
-[node name="pit5" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -1, 2)
+[node name="Husk5" parent="Cognitive/ShadowMaster" instance=ExtResource("16_b6sli")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 32, 0, 18)
 
-[node name="pit6" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -1, 4)
+[node name="Static" type="Node3D" parent="Cognitive"]
 
-[node name="pit7" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -1, 6)
-
-[node name="pit8" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -1, 6)
-
-[node name="pit9" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, -1, 6)
-
-[node name="pit10" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, -1, 14)
-
-[node name="pit11" parent="Cognitive/Pits" instance=ExtResource("3_iwer3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, -1, 16)
-
-[node name="Ring" parent="Cognitive" instance=ExtResource("6_y4t2i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.056387, 0.43573, -0.307971)
-
-[node name="Book" parent="Cognitive" instance=ExtResource("7_gqv15")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.378456, -0.317142)
-
-[node name="FloorAndWalls" type="GridMap" parent="Cognitive"]
+[node name="FloorAndWalls" type="GridMap" parent="Cognitive/Static"]
 mesh_library = ExtResource("1_xxlmc")
 cell_center_x = false
 cell_center_z = false
 data = {
-"cells": PackedInt32Array(-65536, 0, 1, -65535, 0, 1, -1, 0, 1, -1, 1, 1, -2, 2, 1, -1, 2, 1, -1, 65535, 1, -1, 65534, 1, -2, 65534, 1, -3, 65534, 1, -3, 65535, 1, -3, 0, 1, -3, 1, 1, -3, 2, 1, -4, 0, 1, -5, 0, 1, -6, 0, 1, -7, 0, 1, -7, 1, 1, -7, 2, 1, -8, 2, 1, -8, 1, 1, -8, 0, 1, -9, 0, 1, -9, 1, 1, -9, 2, 1, -10, 2, 1, -10, 3, 1, -10, 4, 1, -11, 4, 1, -11, 5, 1, -10, 5, 1, -11, 6, 1, -11, 7, 1, -10, 7, 1, -10, 8, 1, -11, 8, 1, -12, 8, 1, -12, 7, 1, -8, 8, 1, -8, 7, 1, -8, 5, 1, -8, 4, 1, -7, 4, 1, -5, 4, 1, -6, 4, 1, -5, 3, 1, -5, 2, 1, 65532, 3, 1, 65532, 2, 1, 65533, 3, 1, 65534, 3, 1, 65535, 3, 1, 0, 2, 1, 0, 1, 1, 0, 3, 1, 1, 1, 1, 1, 65535, 1, 0, 65535, 1, 0, 65534, 1, 0, 65533, 1, 65535, 65533, 1, 65534, 65533, 1, 65533, 65533, 1, 65532, 65533, 1, 65532, 65534, 1, 65532, 65535, 1, 65532, 1, 1, 65531, 65535, 1, 65530, 65535, 1, 65529, 65535, 1, 65528, 65535, 1, 65527, 65535, 1, 65526, 65535, 1, 65526, 0, 1, 65526, 1, 1, 65525, 3, 1, 65525, 2, 1, 65525, 1, 1, 65532, 4, 1, 65532, 5, 1, 65531, 5, 1, 65530, 5, 1, 65529, 5, 1, 65529, 6, 1, 65529, 7, 1, 65529, 8, 1, 65529, 9, 1, 65528, 9, 1, 65527, 9, 1, 65526, 9, 1, 65525, 9, 1, 65524, 9, 1, 65523, 9, 1, 65523, 8, 1, 65523, 7, 1, 65523, 6, 1, 65524, 6, 1, 65524, 5, 1, 65524, 4, 1, 65524, 3, 1, -7, 5, 1, -7, 6, 1, -7, 7, 1, -7, 8, 1, -8, 9, 1, -9, 9, 1, -10, 9, 1, -4, 1, 1, -4, 2, 1, -65538, 1, 1, -65538, 0, 1, -65538, 65535, 1, -65545, 8, 1, -65545, 7, 1, -65545, 6, 1, -65544, 6, 1, -65546, 6, 1, -65545, 5, 1, -65545, 4, 1, -65545, 3, 1, -65544, 3, 1, -65543, 3, 1, -65542, 3, 1, -65542, 2, 1, -65542, 1, 1, -65541, 1, 1, -8, 6, 786433, -9, 6, 786433, -10, 6, 786433, -9, 5, 786433, 65528, 5, 786433, 65527, 5, 786433, 65527, 3, 786433, 65527, 4, 786433, 65527, 6, 786433, 65526, 6, 786433, -9, 3, 786433)
+"cells": PackedInt32Array(-1, 0, 3, -2, 0, 3, -65535, 65534, 3, -65531, 0, 3, -65531, 65535, 3, -65531, 65534, 3, -65532, 65534, 3, -65533, 65534, 3, -65534, 65534, 3, -65532, 65535, 3, -65530, 65535, 3, -65529, 65534, 3, -65529, 65535, 3, -65529, 0, 3, -65529, 1, 3, -65529, 2, 3, -65528, 1, 3, -65528, 2, 3, -65529, 3, 3, -65529, 4, 3, -65528, 4, 3, -65527, 4, 3, -65526, 4, 3, -65525, 5, 3, -65525, 6, 3, -65526, 6, 3, -65527, 6, 3, -65528, 6, 3, -65529, 6, 3, -65529, 5, 3, -65527, 5, 3, -65525, 3, 3, -65525, 2, 3, -65526, 2, 3, -65524, 2, 3, -65524, 1, 3, -65523, 1, 3, -65522, 1, 3, -65522, 2, 3, -65522, 3, 3, -65521, 6, 3, -65522, 7, 3, -65526, 7, 3, -65526, 8, 3, -65525, 8, 3, -65525, 9, 3, -65524, 9, 3, -65523, 9, 3, -65522, 9, 3, -65521, 9, 3, -65522, 8, 3, -65520, 9, 3, -65520, 10, 3, -65521, 11, 3, -65520, 11, 3, -65524, 5, 3, -65523, 5, 3, -65522, 5, 3, -65522, 4, 3, -65521, 5, 3, -65521, 7, 3, -65520, 6, 3, -65519, 6, 3, -65527, 65534, 3, -65527, 65535, 3, -65526, 65534, 3, -65525, 65534, 3, -65525, 65535, 3, -65525, 65533, 3, -65524, 65535, 3, -65523, 65535, 3, -65523, 0, 3, -65522, 65535, 3, -65522, 65534, 3, -65522, 65533, 3, -65521, 65533, 3, -65520, 65533, 3, -65520, 65532, 3, -65519, 65533, 3, -65519, 65534, 3, -65518, 65534, 3, -65521, 65535, 3, -65520, 65535, 3, -65520, 0, 3, -65520, 1, 3, -65520, 2, 3, -65521, 3, 3, -65520, 3, 3, -65519, 3, 3, -65518, 3, 3, -65518, 4, 3, -65519, 4, 3, -65518, 5, 3, -65518, 6, 3, -65518, 7, 3, -65517, 7, 3, -65516, 7, 3, -65517, 4, 3, -65516, 4, 3, -65516, 5, 3, -65516, 6, 3, -65515, 5, 3, -65516, 8, 3, -65516, 9, 3, -65514, 9, 3, -65513, 8, 3, -65513, 9, 3, -65513, 10, 3, -65512, 9, 3, -65512, 10, 3, -65512, 8, 3, -65533, 65532, 3, -65532, 65532, 3, -65534, 65532, 3, -65532, 65530, 2, -65533, 65530, 3, -65534, 65530, 3, -65534, 65529, 3, -65534, 65528, 3, -65533, 65528, 3, -65532, 65528, 3, -65532, 65529, 3, -65533, 65529, 3, -65535, 1, 3, -65534, 1, 2, -65532, 0, 2, -65534, 65535, 3, -65535, 65535, 3, -65536, 0, 3, -65535, 0, 3, -65534, 0, 3, -65533, 1, 3, -65532, 1, 3, -65531, 1, 3, -65525, 4, 3, 0, 65535, 3, 65535, 65535, 3, 65534, 65535, 3, 0, 1, 3, 65535, 1, 2, 65534, 1, 3, 5, 2, 3, 4, 2, 3, 3, 2, 3, 2, 2, 3, 1, 2, 3, 0, 2, 3, 6, 2, 3, 6, 1, 3, 6, 0, 3, 6, 65534, 3, 6, 65533, 2, 0, 65533, 3, 0, 65534, 3, 6, 65532, 3, 6, 65531, 3, 6, 65530, 3, 6, 65527, 3, 6, 65526, 3, 5, 65526, 3, 4, 65526, 2, 3, 65526, 2, 2, 65526, 3, 1, 65526, 3, 0, 65526, 3, 0, 65527, 3, 0, 65528, 3, 0, 65530, 3, 0, 65531, 3, 0, 65532, 3, 6, 65528, 3, 0, 65529, 3, 6, 65529, 3, 8, 0, 3, 8, 65533, 3, 7, 65533, 3, 8, 3, 3, 9, 3, 3, 10, 3, 3, 8, 5, 2, 10, 5, 2, 6, 3, 3, 6, 4, 3, 6, 5, 3, 6, 6, 3, 6, 7, 3, 7, 7, 3, 8, 7, 3, 9, 7, 3, 11, 7, 2, 12, 7, 3, 12, 6, 3, 13, 6, 3, 14, 6, 2, 13, 7, 3, 13, 8, 3, 12, 8, 3, 9, 8, 3, 9, 9, 3, 10, 9, 3, 11, 10, 3, 12, 10, 3, 13, 10, 3, 14, 10, 3, 15, 10, 2, 14, 11, 3, 14, 12, 3, 15, 12, 3, 16, 12, 3, 17, 11, 3, 17, 12, 3, 17, 10, 3, 17, 9, 3, 17, 8, 3, 16, 8, 3, 15, 8, 3, 16, 7, 3, 17, 7, 3, 18, 8, 3, 19, 8, 3, 19, 9, 3, 19, 10, 3, 20, 10, 3, 21, 10, 3, 22, 10, 3, 22, 8, 3, 22, 7, 3, 23, 7, 3, 24, 7, 3, 25, 7, 3, 25, 8, 3, 25, 9, 3, 25, 10, 3, 25, 11, 3, 24, 11, 3, 23, 11, 3, 22, 11, 3, 21, 8, 3, 21, 7, 3, 21, 6, 3, 22, 6, 3, 22, 4, 3, 21, 4, 3, 21, 3, 3, 20, 3, 3, 20, 2, 3, 19, 2, 3, 19, 3, 3, 24, 6, 3, 24, 5, 3, 24, 4, 3, 23, 3, 3, 18, 2, 3, 17, 2, 3, 15, 4, 2, 16, 4, 3, 16, 5, 3, 17, 5, 3, 13, 2, 3, 13, 3, 3, 13, 4, 3, 12, 4, 3, 12, 3, 3, 15, 2, 2, 15, 1, 3, 15, 0, 3, 14, 0, 3, 12, 0, 3, 11, 0, 3, 10, 0, 3, 9, 0, 3, 9, 1, 3, 9, 2, 3, 10, 1, 3, 11, 1, 3, 10, 65535, 3, 9, 65533, 3, 10, 65533, 3, 10, 65532, 3, 11, 65532, 3, 12, 65532, 3, 12, 65533, 3, 12, 65534, 3, 13, 65534, 3, 15, 65534, 3, 16, 65534, 3, 17, 1, 3, 17, 0, 3, 17, 65535, 3, 18, 65535, 3, 19, 65534, 3, 19, 65533, 3, 18, 65533, 3, 18, 65532, 3, 17, 65532, 3, 17, 65531, 3, 16, 65531, 3, 15, 65531, 3, 15, 65532, 3, 14, 65532, 3, 14, 65531, 3, 13, 65532, 3, 13, 65533, 3, 19, 5, 3, 19, 6, 3, -65514, 5, 3, -65513, 5, 3, -65513, 6, 3, -65514, 6, 1, -65513, 4, 3, -65515, 8, 3, -65515, 10, 3, -131051, 9, 3, -65528, 65533, 3, -131064, 65534, 3, -131064, 65535, 3, -65528, 0, 3, -131069, 0, 1, -131069, 65535, 1, -65530, 65533, 3, -65530, 65532, 3, -65530, 65531, 3, -65530, 65530, 3, -65530, 65529, 3, -65530, 65528, 3, -65530, 65527, 3, -65530, 65526, 3, -65531, 65526, 3, -65532, 65526, 3, -65533, 65526, 3, -65534, 65526, 3, -65535, 65526, 3, -65536, 65526, 3, -65536, 65527, 3, -65536, 65528, 3, -65536, 65529, 3, -65536, 65530, 3, -65536, 65531, 3, -65536, 65532, 3, -65536, 65533, 3, -131071, 65527, 3, -131071, 65528, 3, -131071, 65529, 3, -131071, 65530, 3, -131071, 65531, 3, -131071, 65532, 3, -131071, 65533, 3, -131070, 65533, 3, -131069, 65533, 3, -131069, 65532, 1, -131068, 65532, 1, -131067, 65532, 3, -131067, 65533, 3, -131068, 65533, 3, -131067, 65531, 3, -131068, 65531, 3, -131069, 65531, 3, -131070, 65531, 3, -131070, 65530, 1, -131069, 65530, 1, -131068, 65530, 1, -131068, 65529, 1, -131067, 65529, 3, -131067, 65528, 3, -131067, 65527, 3, -131068, 65527, 3, -131069, 65527, 3, -131070, 65527, 3, -131068, 65528, 1, -131067, 65530, 3, -3, 0, 3, -4, 0, 3, 65533, 65535, 3, 65532, 65535, 3, 65533, 1, 3, 65532, 1, 3, -65535, 2, 3, -65536, 2, 3, -65534, 2, 3, -65533, 2, 3, -65532, 2, 3, -65530, 0, 3, -65530, 1, 3, -65530, 2, 3, -65530, 3, 3, -65530, 4, 3, -65530, 5, 3, -65530, 6, 3, -65528, 3, 3, -65525, 1, 3, -65526, 1, 3, -65527, 1, 3, -65524, 0, 3, -65526, 65535, 3, -65518, 65533, 3, -65523, 3, 3, -65523, 4, 3, -65521, 4, 3, -65523, 8, 3, -65526, 9, 3, -65521, 10, 3, -65513, 3, 3, -65512, 7, 3, -65513, 7, 3, -131072, 65531, 3, -131072, 65532, 3, -131072, 65530, 3, -131072, 65529, 3, -131072, 65528, 3, -131072, 65527, 3, -131071, 65526, 3, -131070, 65526, 3, 19, 65535, 3)
 }
-metadata/_editor_floor_ = Vector3(0, -1, 0)
+metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="Roof" type="GridMap" parent="Cognitive"]
+[node name="Roof" type="GridMap" parent="Cognitive/Static"]
 mesh_library = ExtResource("1_xxlmc")
 cell_center_x = false
 cell_center_z = false
 data = {
-"cells": PackedInt32Array(65537, 0, 786433, 65536, 0, 786433, 131071, 0, 786433, 131070, 0, 786433, 131071, 1, 786433, 131070, 1, 786433, 131070, 2, 786433, 131069, 2, 786433, 131069, 1, 786433, 131069, 0, 786433, 131069, 65535, 786433, 131069, 65534, 786433, 131070, 65534, 786433, 131071, 65534, 786433, 131071, 65535, 786433, 131070, 65535, 786433, 131071, 2, 786433, 131068, 0, 786433, 131067, 0, 786433, 131066, 0, 786433, 131065, 0, 786433, 131064, 0, 786433, 131063, 0, 786433, 131063, 1, 786433, 131064, 1, 786433, 131065, 1, 786433, 131066, 1, 786433, 131067, 1, 786433, 131067, 2, 786433, 131067, 3, 786433, 131066, 3, 786433, 131066, 4, 786433, 131065, 4, 786433, 131067, 4, 786433, 131066, 2, 786433, 131065, 2, 786433, 131064, 2, 786433, 131063, 2, 786433, 131062, 2, 786433, 131062, 3, 786433, 131063, 3, 786433, 131064, 3, 786433, 131065, 3, 786433, 131064, 4, 786433, 131063, 4, 786433, 131062, 4, 786433, 131061, 5, 786433, 131061, 4, 786433, 131061, 6, 786433, 131060, 6, 786433, 131060, 7, 786433, 131060, 8, 786433, 131061, 8, 786433, 131062, 8, 786433, 131063, 8, 786433, 131064, 8, 786433, 131064, 7, 786433, 131063, 7, 786433, 131062, 7, 786433, 131061, 7, 786433, 131062, 6, 786433, 131063, 6, 786433, 131062, 5, 786433, 131063, 5, 786433, 131064, 5, 786433, 131064, 6, 786433)
+"cells": PackedInt32Array(65536, 65535, 3, 131071, 65535, 3, 131070, 65535, 3, 131070, 0, 3, 131070, 1, 3, 131071, 1, 3, 131071, 0, 3, 65536, 0, 3, 65536, 1, 3, 65536, 2, 3, 65537, 2, 3, 65538, 2, 3, 65539, 2, 3, 65540, 2, 3, 65541, 2, 3, 65542, 2, 3, 65542, 1, 3, 65542, 0, 3, 65542, 65533, 3, 65542, 65534, 3, 65542, 65535, 3, 65542, 65532, 3, 65542, 65531, 3, 65542, 65530, 3, 65542, 65529, 3, 65542, 65528, 3, 65542, 65527, 3, 65542, 65526, 3, 65540, 65526, 3, 65539, 65526, 3, 65538, 65526, 3, 65537, 65526, 3, 65536, 65526, 3, 65536, 65527, 3, 65536, 65528, 3, 65536, 65529, 3, 65536, 65530, 3, 65536, 65531, 3, 65536, 65532, 3, 65536, 65533, 3, 65536, 65534, 3, 65541, 65526, 3, 131077, 65527, 3, 131076, 65527, 3, 131075, 65527, 3, 131074, 65527, 3, 131073, 65527, 3, 131073, 65528, 3, 131073, 65529, 3, 131073, 65530, 3, 131073, 65531, 3, 131073, 65532, 3, 131073, 65533, 3, 131073, 65534, 3, 131073, 65535, 3, 131073, 0, 3, 131073, 1, 3, 131077, 65528, 3, 131077, 65529, 3, 131077, 65530, 3, 131077, 65531, 3, 131077, 65532, 3, 131077, 65533, 3, 131077, 65534, 3, 131077, 65535, 3, 131077, 0, 3, 131076, 0, 3, 131076, 1, 3, 131075, 1, 3, 131074, 1, 3, 131074, 0, 3, 131074, 65535, 3, 131074, 65534, 3, 131074, 65533, 3, 131074, 65530, 3, 131074, 65529, 3, 131074, 65528, 3, 131075, 65528, 3, 131076, 65528, 3, 131076, 65529, 3, 131076, 65530, 3, 131076, 65531, 3, 131076, 65532, 3, 131075, 65532, 3, 131074, 65532, 3, 131074, 65531, 3, 131075, 65529, 3, 131075, 65530, 3, 131075, 65531, 3, 131075, 65533, 3, 131076, 65533, 3, 131075, 65534, 3, 131075, 65535, 3, 131076, 65535, 3, 131076, 65534, 3, 131075, 0, 3, 131077, 1, 3, 65543, 65534, 3, 65544, 65534, 3, 65545, 65534, 3, 65545, 65535, 3, 65544, 65535, 3, 65543, 65535, 3, 65543, 0, 3, 65543, 1, 3, 65544, 1, 3, 65544, 2, 3, 65543, 2, 3, 65543, 3, 3, 65543, 4, 3, 65543, 5, 3, 65543, 6, 3, 65544, 6, 3, 65545, 6, 3, 65546, 6, 3, 65547, 6, 3, 65546, 7, 3, 65546, 8, 3, 65547, 8, 3, 65548, 8, 3, 65549, 8, 3, 65549, 9, 3, 65548, 9, 3, 65547, 9, 3, 65550, 9, 3, 65551, 9, 3, 65552, 9, 3, 65552, 10, 3, 65552, 11, 3, 65551, 11, 3, 65550, 7, 3, 65550, 8, 3, 65551, 7, 3, 65551, 6, 3, 65551, 5, 3, 65550, 5, 3, 65549, 5, 3, 65548, 5, 3, 65547, 5, 3, 65546, 5, 3, 65546, 4, 3, 65547, 4, 3, 65545, 4, 3, 65544, 4, 3, 65545, 5, 3, 65544, 5, 3, 65548, 0, 3, 65549, 0, 3, 65549, 1, 3, 65548, 1, 3, 65550, 1, 3, 65550, 2, 3, 65550, 3, 3, 65550, 4, 3, 65548, 2, 3, 65547, 2, 3, 65546, 2, 3, 65547, 3, 3, 65546, 65534, 3, 65547, 65534, 3, 65547, 65533, 3, 65547, 65535, 3, 65548, 65535, 3, 65549, 65535, 3, 65550, 65535, 3, 65550, 65534, 3, 65550, 65533, 3, 65551, 65533, 3, 65552, 65532, 3, 65552, 65533, 3, 65553, 65533, 3, 65554, 65533, 3, 65554, 65534, 3, 65553, 65534, 3, 65550, 0, 3, 65551, 0, 3, 65552, 0, 3, 65552, 65535, 3, 65551, 65535, 3, 65552, 1, 3, 65552, 2, 3, 65552, 3, 3, 65551, 3, 3, 65553, 3, 3, 65553, 4, 3, 65554, 3, 3, 65554, 2, 3, 65554, 4, 3, 65555, 4, 3, 65556, 4, 3, 65552, 6, 3, 65553, 6, 3, 65554, 6, 3, 65554, 5, 3, 65553, 5, 3, 65556, 5, 3, 65556, 6, 3, 65556, 7, 3, 65555, 7, 3, 65555, 6, 3, 65554, 7, 3, 65553, 7, 3, 65555, 5, 3, 65557, 4, 3, 65558, 4, 3, 65559, 4, 3, 65559, 5, 3, 65558, 5, 3, 65557, 5, 3, 65559, 6, 3, 65556, 8, 3, 65556, 9, 3, 65557, 9, 3, 65558, 9, 3, 65558, 8, 3, 65559, 9, 3, 65559, 8, 3, 65560, 8, 3, 65560, 9, 3, 65560, 10, 3, 65559, 10, 3, 65558, 10, 3, 131069, 0, 3, 131068, 0, 3, 65541, 1, 1, 65540, 1, 1, 65540, 0, 1, 65539, 0, 1, 65538, 0, 1, 65538, 65535, 1, 65538, 65534, 1, 65541, 65531, 3, 65541, 65530, 3, 65541, 65529, 3, 65541, 65528, 3, 65541, 65527, 3, 65553, 65532, 3, 65549, 4, 3, 65551, 2, 3, 65553, 2, 3)
 }
 metadata/_editor_floor_ = Vector3(0, 1, 0)
 
-[node name="ShadowMaster" parent="Cognitive" node_paths=PackedStringArray("walls_grid") instance=ExtResource("3_syris")]
-walls_grid = NodePath("../Collisions")
-grid_size = Vector2i(48, 48)
-
-[node name="Husk" parent="Cognitive/ShadowMaster" instance=ExtResource("5_7rrjy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 6)
-
-[node name="Husk2" parent="Cognitive/ShadowMaster" instance=ExtResource("5_7rrjy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 15)
-
-[node name="Husk3" parent="Cognitive/ShadowMaster" instance=ExtResource("5_7rrjy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 4)
-
-[node name="Husk4" parent="Cognitive/ShadowMaster" instance=ExtResource("5_7rrjy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
-
-[node name="Collisions" type="GridMap" parent="Cognitive"]
+[node name="Collisions" type="GridMap" parent="Cognitive/Static"]
 mesh_library = ExtResource("2_w5hdb")
 cell_center_x = false
 cell_center_z = false
 data = {
-"cells": PackedInt32Array(65532, 65534, 0, 65532, 65533, 0, 65533, 65533, 0, 65534, 65533, 0, 65535, 65533, 0, 0, 65533, 0, 0, 65534, 0, 1, 65535, 0, 0, 65535, 0, 2, 65535, 0, 2, 0, 0, 2, 1, 0, 1, 1, 0, 0, 1, 0, 65535, 3, 0, 0, 3, 0, 0, 2, 0, 65532, 1, 0, 65533, 3, 0, 65532, 3, 0, 65532, 2, 0, 65534, 3, 0, 65531, 65535, 0, 65526, 65535, 0, 65530, 65535, 0, 65532, 65535, 0, 65529, 65535, 0, 65528, 65535, 0, 65527, 65535, 0, 65526, 0, 0, 65526, 1, 0, 65525, 1, 0, 65525, 2, 0, 65525, 3, 0, 65524, 3, 0, 65524, 4, 0, 65524, 5, 0, 65524, 6, 0, 65523, 6, 0, 65523, 7, 0, 65523, 8, 0, 65523, 9, 0, 65524, 9, 0, 65525, 9, 0, 65526, 9, 0, 65527, 9, 0, 65528, 9, 0, 65529, 9, 0, 65529, 8, 0, 65529, 7, 0, 65529, 6, 0, 65529, 5, 0, 65530, 5, 0, 65531, 5, 0, 65532, 5, 0, 65532, 4, 0, 65527, 3, 0, 65527, 4, 0, 65527, 5, 0, 65528, 5, 0, 65526, 6, 0, 65527, 6, 0)
+"cells": PackedInt32Array(65533, 65535, 0, 65533, 1, 0, 65534, 1, 0, 65535, 1, 0, 0, 1, 0, 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0, 6, 0, 0, 6, 1, 0, 6, 3, 0, 6, 4, 0, 6, 5, 0, 6, 6, 0, 6, 7, 0, 7, 7, 0, 8, 7, 0, 9, 7, 0, 8, 5, 0, 10, 5, 0, 9, 8, 0, 9, 9, 0, 10, 9, 0, 11, 10, 0, 12, 10, 0, 13, 10, 0, 14, 10, 0, 15, 10, 0, 14, 11, 0, 14, 12, 0, 15, 12, 0, 16, 12, 0, 17, 12, 0, 17, 11, 0, 17, 10, 0, 17, 9, 0, 17, 8, 0, 16, 8, 0, 15, 8, 0, 14, 6, 0, 13, 6, 0, 12, 6, 0, 12, 7, 0, 12, 8, 0, 13, 8, 0, 13, 7, 0, 18, 8, 0, 19, 8, 0, 19, 9, 0, 19, 10, 0, 20, 10, 0, 21, 10, 0, 22, 10, 0, 22, 11, 0, 23, 11, 0, 24, 11, 0, 25, 11, 0, 25, 10, 0, 25, 9, 0, 25, 8, 0, 25, 7, 0, 24, 7, 0, 24, 6, 0, 23, 7, 0, 22, 7, 0, 22, 8, 0, 21, 8, 0, 21, 7, 0, 24, 5, 0, 24, 4, 0, 23, 3, 0, 22, 4, 0, 21, 4, 0, 21, 3, 0, 20, 3, 0, 19, 3, 0, 19, 2, 0, 20, 2, 0, 19, 5, 0, 19, 6, 0, 17, 5, 0, 16, 5, 0, 16, 4, 0, 15, 4, 0, 18, 2, 0, 17, 2, 0, 17, 1, 0, 17, 0, 0, 17, 65535, 0, 18, 65535, 0, 19, 65535, 0, 19, 65534, 0, 19, 65533, 0, 18, 65532, 0, 17, 65532, 0, 17, 65531, 0, 16, 65531, 0, 15, 65531, 0, 14, 65531, 0, 14, 65532, 0, 15, 65532, 0, 13, 65532, 0, 12, 65532, 0, 11, 65532, 0, 10, 65532, 0, 10, 65533, 0, 12, 65533, 0, 12, 65534, 0, 13, 65534, 0, 13, 65533, 0, 12, 0, 0, 11, 0, 0, 10, 0, 0, 9, 0, 0, 8, 0, 0, 10, 65535, 0, 10, 1, 0, 9, 1, 0, 8, 3, 0, 9, 3, 0, 10, 3, 0, 14, 0, 0, 15, 0, 0, 15, 1, 0, 15, 2, 0, 13, 2, 0, 13, 3, 0, 13, 4, 0, 12, 4, 0, 12, 3, 0, 16, 65534, 0, 15, 65534, 0, 9, 65533, 0, 8, 65533, 0, 7, 65533, 0, 6, 65533, 0, 6, 65534, 0, 6, 65532, 0, 6, 65531, 0, 6, 65530, 0, 6, 65529, 0, 6, 65528, 0, 6, 65527, 0, 6, 65526, 0, 5, 65526, 0, 4, 65526, 0, 3, 65526, 0, 2, 65526, 0, 1, 65526, 0, 0, 65526, 0, 0, 65527, 0, 0, 65529, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 65528, 0, 11, 7, 0, 9, 2, 0, 65532, 65535, 0, 65532, 0, 0, 65532, 1, 0, 16, 7, 0, 17, 7, 0, 21, 6, 0, 22, 6, 0)
 }
 
-[node name="List" parent="Cognitive" instance=ExtResource("6_lmcui")]
-transform = Transform3D(0.57319, 0, 0.819423, 0, 1, 0, -0.819423, 0, 0.57319, -0.84591, 0.660713, -0.33697)
-pickable_spell_type = 0
-title = "Fire"
-text = "Say \"KATUHN\""
+[node name="Props" type="Node3D" parent="Cognitive"]
 
-[node name="Player" parent="." instance=ExtResource("2_ycrvi")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 0, 0)
+[node name="Fukel1" parent="Cognitive/Props" instance=ExtResource("15_4ab2f")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 8.8, 2.1, -8)
+
+[node name="Fukel2" parent="Cognitive/Props" instance=ExtResource("15_4ab2f")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 8.8, 2.1, -15)
+
+[node name="Fukel3" parent="Cognitive/Props" instance=ExtResource("15_4ab2f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.15543, 2.1, -8)
+
+[node name="Fukel4" parent="Cognitive/Props" instance=ExtResource("15_4ab2f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.15543, 2.1, -15)
+
+[node name="Fukel5" parent="Cognitive/Props" instance=ExtResource("15_4ab2f")]
+transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 18.8249, 1.1, -2.9)
+
+[node name="Fukel6" parent="Cognitive/Props" instance=ExtResource("15_4ab2f")]
+transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 17.172, 1.1, 2.1)
+
+[node name="Fukel7" parent="Cognitive/Props" instance=ExtResource("15_4ab2f")]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 34.7234, 0.8, 6.82872)
+
+[node name="Table1" parent="Cognitive/Props" instance=ExtResource("16_h1dpu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 0, 4.2)
+
+[node name="Table2" parent="Cognitive/Props" instance=ExtResource("16_h1dpu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.5, 0, 20.2)
+
+[node name="Table3" parent="Cognitive/Props" instance=ExtResource("16_h1dpu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 22.2, 0, -6.6)
+
+[node name="Table4" parent="Cognitive/Props" instance=ExtResource("16_h1dpu")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 0, -14.9)
+
+[node name="BrickPillar1" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
+
+[node name="BrickPillar2" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+
+[node name="BrickPillar3" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="BrickPillar4" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -3, -1)
+
+[node name="BrickPillar5" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+
+[node name="BrickPillar6" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -1, -1)
+
+[node name="BrickPillar7" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -2, -8)
+
+[node name="BrickPillar8" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -8)
+
+[node name="BrickPillar9" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 2, -8)
+
+[node name="BrickPillar10" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, -8)
+
+[node name="BrickPillar11" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -8)
+
+[node name="BrickPillar12" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -3, -8)
+
+[node name="BrickPillar13" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -2, -8)
+
+[node name="BrickPillar14" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -2, -15)
+
+[node name="BrickPillar15" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -15)
+
+[node name="BrickPillar16" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, -15)
+
+[node name="BrickPillar17" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 2, -15)
+
+[node name="BrickPillar18" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -15)
+
+[node name="BrickPillar19" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -2, -15)
+
+[node name="BrickPillar20" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -3)
+
+[node name="BrickPillar21" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -1)
+
+[node name="BrickPillar22" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -1)
+
+[node name="BrickPillar23" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -3)
+
+[node name="BrickPillar24" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -3)
+
+[node name="BrickPillar25" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, -3)
+
+[node name="BrickPillar26" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, -5)
+
+[node name="BrickPillar27" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -5)
+
+[node name="BrickPillar28" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 6)
+
+[node name="BrickPillar29" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 6)
+
+[node name="BrickPillar30" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 9)
+
+[node name="BrickPillar31" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 11)
+
+[node name="BrickPillar32" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 14)
+
+[node name="BrickPillar33" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 14)
+
+[node name="BrickPillar34" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, -3)
+
+[node name="BrickPillar57" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, -1, -5.7)
+
+[node name="BrickPillar35" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, 5)
+
+[node name="BrickPillar36" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, 7)
+
+[node name="BrickPillar37" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 7)
+
+[node name="BrickPillar38" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 9)
+
+[node name="BrickPillar58" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41, 0, 9)
+
+[node name="BrickPillar59" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41, 0, 11)
+
+[node name="BrickPillar60" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 0, 11)
+
+[node name="BrickPillar62" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 11)
+
+[node name="BrickPillar63" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 9)
+
+[node name="BrickPillar61" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 0, 9)
+
+[node name="BrickPillar39" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, 9)
+
+[node name="BrickPillar40" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 5)
+
+[node name="BrickPillar41" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 0, 5)
+
+[node name="BrickPillar42" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 0, 7)
+
+[node name="BrickPillar43" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 0, 9)
+
+[node name="BrickPillar44" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 0, 17)
+
+[node name="BrickPillar45" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 33, 2, 9)
+
+[node name="BrickPillar46" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 35, 2, 9)
+
+[node name="BrickPillar47" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 35, 2, 7)
+
+[node name="BrickPillar48" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 35, 2, 5)
+
+[node name="BrickPillar49" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 33, 2, 5)
+
+[node name="BrickPillar50" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 33, 2, 7)
+
+[node name="BrickPillar51" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 33, 2, 7)
+
+[node name="BrickPillar52" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 33, 2, 5)
+
+[node name="BrickPillar53" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 35, 2, 5)
+
+[node name="BrickPillar54" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 35, 2, 7)
+
+[node name="BrickPillar55" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 37, 2, 7)
+
+[node name="BrickPillar56" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 37, 2, 5)
+
+[node name="Nailed1" parent="Cognitive" instance=ExtResource("18_80wed")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -2)
+
+[node name="Nailed2" parent="Cognitive" instance=ExtResource("18_80wed")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20, 0, 13.7)
+
+[node name="Nailed3" parent="Cognitive" instance=ExtResource("18_80wed")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.6, 0, 10)
+
+[node name="Nailed4" parent="Cognitive" instance=ExtResource("18_80wed")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 22, 0, 6.3)
+
+[node name="Nailed5" parent="Cognitive" instance=ExtResource("18_80wed")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.6, 0, 12)
+
+[node name="Bars1" parent="Cognitive" instance=ExtResource("19_7hkdq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -2)
+
+[node name="Bars2" parent="Cognitive" instance=ExtResource("19_7hkdq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="Bars3" parent="Cognitive" instance=ExtResource("19_7hkdq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, -4)
+
+[node name="Bars4" parent="Cognitive" instance=ExtResource("19_7hkdq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 0, 10)
+
+[node name="Bars5" parent="Cognitive" instance=ExtResource("19_7hkdq")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 22, 0, -3)
+activates_needed = 3
+
+[node name="Button1" parent="Cognitive" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("20_p6205")]
+transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, -1.7, 1.2, 1)
+activatable_mechanisms = NodePath("../Bars2")
+
+[node name="Button2" parent="Cognitive" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("20_p6205")]
+transform = Transform3D(-4.37114e-08, 0, -1, -1.64203e-15, 1, 0, 1, 0, -4.37114e-08, 5, 1, -1)
+activatable_mechanisms = NodePath("../Bars1")
+
+[node name="Button3" parent="Cognitive" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("20_p6205")]
+transform = Transform3D(-4.37114e-08, 0, -1, -1.64203e-15, 1, 0, 1, 0, -4.37114e-08, 21.2, 1, -5.7)
+activatable_mechanisms = NodePath("../Bars3")
+
+[node name="Button4" parent="Cognitive" instance=ExtResource("20_p6205")]
+transform = Transform3D(1.39091e-08, -1, -4.37114e-08, -1, -1.39091e-08, 7.10543e-15, -1.06581e-14, 4.37114e-08, -1, 34.6705, 1.48413, 8.86011)
+
+[node name="Torch1" parent="Cognitive" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("9_dijpe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.6, 0, -4)
+activatable_mechanisms = NodePath("../Bars5")
+
+[node name="Torch2" parent="Cognitive" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("9_dijpe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.9, 0, 12.6)
+activatable_mechanisms = NodePath("../Bars5")
+
+[node name="Torch3" parent="Cognitive" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("9_dijpe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5, 0, 22.1)
+activatable_mechanisms = NodePath("../Bars5")
+
+[node name="List1" parent="Cognitive" instance=ExtResource("21_mm2dk")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 21.8239, 0.60338, -6.57856)
+pickable_spell_type = 5
+title = "Teleport"
+text = "Say teleport"
+interactable = false
+
+[node name="List2" parent="Cognitive" instance=ExtResource("21_mm2dk")]
+transform = Transform3D(-0.428604, 0, -0.903492, 0, 1, 0, 0.903492, 0, -0.428604, 16.3826, 0.60338, 4.44101)
+pickable_spell_type = 1
+title = "Destruct"
+text = "Say kebab?"
+interactable = false
+
+[node name="Crystal" parent="Cognitive" instance=ExtResource("13_7nfkq")]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 6, 0.621451, -15)
+
+[node name="Pit1" parent="Cognitive" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 18)
+
+[node name="Pit2" parent="Cognitive" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -2)
+
+[node name="Pit3" parent="Cognitive" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -4)
+
+[node name="Pit4" parent="Cognitive" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -2)
+
+[node name="Pit5" parent="Cognitive" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="Pit6" parent="Cognitive" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -6)
+
+[node name="Pit7" parent="Cognitive" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -6)
+
+[node name="Pit8" parent="Cognitive" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -6)
+
+[node name="Pit9" parent="Cognitive" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -6)
+
+[node name="Pit10" parent="Cognitive" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -6)
+
+[node name="Pit11" parent="Cognitive" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -8)
+
+[node name="Pit12" parent="Cognitive" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
+
+[node name="Pit13" parent="Cognitive" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -12)
+
+[node name="Pit14" parent="Cognitive" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -14)
+
+[node name="Pit15" parent="Cognitive" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -16)
+
+[node name="Pit16" parent="Cognitive" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -18)
+
+[node name="Pit17" parent="Cognitive" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -18)
+
+[node name="Pit18" parent="Cognitive" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -18)
+
+[node name="Pit19" parent="Cognitive" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -18)
+
+[node name="Pit20" parent="Cognitive" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -18)
+
+[node name="Pit21" parent="Cognitive" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -16)
+
+[node name="Pit22" parent="Cognitive" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -14)
+
+[node name="Pit23" parent="Cognitive" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -12)
+
+[node name="Pit24" parent="Cognitive" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -10)
+
+[node name="Pit25" parent="Cognitive" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -8)
+
+[node name="Pit26" parent="Cognitive" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -10)
+
+[node name="Pit27" parent="Cognitive" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -10)
+
+[node name="Pit28" parent="Cognitive" instance=ExtResource("14_w02vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -10)
+
+[node name="BricksCracked1" parent="Cognitive" instance=ExtResource("12_gucwh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 32.1, 0, 20.5)
+
+[node name="BricksCracked2" parent="Cognitive" instance=ExtResource("12_gucwh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.1, 0, 6.5)
+
+[node name="BricksCracked3" parent="Cognitive" instance=ExtResource("12_gucwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, -6)
+
+[node name="BricksCracked4" parent="Cognitive" instance=ExtResource("12_gucwh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 40, 0, 16)
+
+[node name="BricksCracked5" parent="Cognitive" instance=ExtResource("12_gucwh")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 24, 0, -2)

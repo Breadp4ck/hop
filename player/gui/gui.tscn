@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bbtltjolwxc65"]
+[gd_scene load_steps=14 format=3 uid="uid://bbtltjolwxc65"]
 
 [ext_resource type="FontFile" uid="uid://b0y85cnal68dw" path="res://assets/gui/Davida.ttf" id="1_45prj"]
 [ext_resource type="Script" path="res://player/gui/gui.gd" id="2_cnhhr"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://4ylf4r1nq21q" path="res://icon.svg" id="5_gsdnd"]
 [ext_resource type="Script" path="res://player/gui/hud.gd" id="5_q0ini"]
 [ext_resource type="PackedScene" uid="uid://bdj8vjtlfrh77" path="res://player/gui/health_point_icon.tscn" id="7_ykuim"]
+[ext_resource type="Script" path="res://player/gui/death.gd" id="8_5qwr8"]
 [ext_resource type="Script" path="res://player/gui/pause.gd" id="8_g38fo"]
 
 [sub_resource type="Theme" id="Theme_ojf0e"]
@@ -160,6 +161,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("8_5qwr8")
 
 [node name="Panel" type="Panel" parent="Death"]
 layout_mode = 1
@@ -247,5 +249,6 @@ text = "Exit"
 [connection signal="tree_exited" from="HUD" to="HUD" method="_on_tree_exited"]
 [connection signal="pressed" from="Book/MarginContainer/VBoxContainer/HBoxContainer/PrevPageButton" to="Book" method="_on_prev_page_button_pressed"]
 [connection signal="pressed" from="Book/MarginContainer/VBoxContainer/HBoxContainer/NextPageButton" to="Book" method="_on_next_page_button_pressed"]
+[connection signal="tree_exiting" from="Pause" to="Pause" method="_on_tree_exiting"]
 [connection signal="pressed" from="Pause/PauseController/CenterContainer/VBoxContainer/ResumeButton" to="Pause" method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Pause/PauseController/CenterContainer/VBoxContainer/ExitButton" to="Pause" method="_on_exit_button_pressed"]

@@ -31,7 +31,7 @@ func on_spell_chooosed(spell_type: Globals.SpellType) -> void:
 			particles.process_material.color = Color.MEDIUM_PURPLE
 		Globals.SpellType.TIMESTOP:
 			particles.process_material.color = Color.BLACK
-		Globals.SpellType.WIND:
+		Globals.SpellType.LOCKPICK:
 			particles.process_material.color = Color.LIGHT_CYAN
 			
 	state_machine.travel("OpenPalm")

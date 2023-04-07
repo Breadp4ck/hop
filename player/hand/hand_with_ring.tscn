@@ -73,7 +73,7 @@ states/Shaking/node = SubResource("AnimationNodeAnimation_02uwb")
 states/Shaking/position = Vector2(549, 50)
 states/Start/position = Vector2(216, 156)
 transitions = ["Start", "Calm", SubResource("AnimationNodeStateMachineTransition_28s1e"), "Calm", "Focus", SubResource("AnimationNodeStateMachineTransition_1c2rv"), "Focus", "Shaking", SubResource("AnimationNodeStateMachineTransition_on0ju"), "Shaking", "Drop", SubResource("AnimationNodeStateMachineTransition_sdrhg"), "Drop", "Calm", SubResource("AnimationNodeStateMachineTransition_4ta65"), "Calm", "OpenPalm", SubResource("AnimationNodeStateMachineTransition_kg7ws"), "OpenPalm", "PalmShaking", SubResource("AnimationNodeStateMachineTransition_jk1tv"), "PalmShaking", "Cast", SubResource("AnimationNodeStateMachineTransition_ljk1q"), "PalmShaking", "Calm", SubResource("AnimationNodeStateMachineTransition_dm2w2"), "Cast", "PalmShaking", SubResource("AnimationNodeStateMachineTransition_elc36")]
-graph_offset = Vector2(-65, 99.3348)
+graph_offset = Vector2(-84, 11.3348)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_gw4rh"]
 
@@ -1180,6 +1180,7 @@ tracks/22/keys = PackedFloat32Array(0, 1, 0.045988, 0.116805, -0.159748, 0.97914
 [sub_resource type="Animation" id="Animation_medp8"]
 resource_name = "Calm"
 length = 4.0
+loop_mode = 1
 tracks/0/type = "rotation_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -2768,5 +2769,3 @@ amount = 32
 lifetime = 0.3
 process_material = SubResource("ParticleProcessMaterial_x7m28")
 draw_pass_1 = SubResource("QuadMesh_75nrd")
-
-[connection signal="tree_exited" from="AnimationTree" to="AnimationTree" method="_on_tree_exited"]
