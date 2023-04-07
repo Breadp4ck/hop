@@ -22,9 +22,12 @@ func add_spell(spell_type: Globals.SpellType) -> void:
 
 func choose(spell_type: Globals.SpellType) -> void:
 	if can_conjure(spell_type) == false:
+		Sfx.play("spell_failed")
 		return
 	if spell_type == -1:
 		return
+		
+	Sfx.play("spell_succ")
 	choosen_spell_type = spell_type
 	
 	print("Choose spell " + Globals.SpellType.keys()[spell_type])
