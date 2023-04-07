@@ -23,7 +23,6 @@ func add_page(title: String, text: String):
 	list_sequence.push_back({"title": title, "text": text})
 	if show_last:
 		show_page(last_page())
-		print(current_page)
 
 
 func pages_total() -> int:

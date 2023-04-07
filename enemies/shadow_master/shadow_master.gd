@@ -42,6 +42,12 @@ func is_player_reachable(local_player_position: Vector2i) -> bool:
 	return astar_grid.get_id_path(Vector2i.ZERO, local_player_position) == []
 
 
+func is_player_near(shadow_position: Vector3) -> bool:
+	update_player_position()
+	var local_shadow_position := _shadow_position_to_grid_coords(shadow_position)
+	return astar_grid.get_id_path(local_shadow_position, local_player_position).size() <= 2
+
+
 func _shadow_position_to_grid_coords(shadow_position: Vector3) -> Vector2i:
 	var grid_shadow_position := Vector2i(
 		int(round(shadow_position.x / Globals.TILE_LENGTH)) + grid_size.x / 2,

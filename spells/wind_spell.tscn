@@ -159,6 +159,7 @@ _data = {
 }
 
 [node name="WindSpell" type="Area3D"]
+collision_layer = 0
 script = ExtResource("1_nry0b")
 type = 2
 

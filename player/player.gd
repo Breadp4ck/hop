@@ -1,7 +1,7 @@
 class_name Player
 extends Node3D
 
-signal damage_receied(amount: int)
+signal damage_receied(hp: int)
 signal died()
 
 const INTERACT_RAY_LENGTH: float = 3.0
@@ -22,6 +22,7 @@ const INTERACT_RAY_LENGTH: float = 3.0
 
 @onready var material_env: Environment = load("res://player/material_env.tres")
 @onready var shadesmar_env: Environment = load("res://player/shadesmar_env.tres")
+@onready var gui: GUI = $GUI
 
 var can_input: bool = true:
 	get:
@@ -77,7 +78,7 @@ func _input(event: InputEvent) -> void:
 
 	add_transition(transition)
 
-func _process(delta: float) -> void:	
+func _process(delta: float) -> void:
 	if want_interact:
 		interact()
 	
@@ -122,7 +123,7 @@ func apply_transition(transition: Movement) -> void:
 	if is_transition_possible(along):
 		smooth_walk(head.global_transform.basis * along)
 
-func get_pressed_movement_transition() -> Movement:	
+func get_pressed_movement_transition() -> Movement:
 	var rotate_axis := Input.get_axis("rotate_left", "rotate_right")
 	var forward_axis := Input.get_axis("move_back", "move_forward")
 	var side_axis := Input.get_axis("move_left", "move_right")
@@ -150,6 +151,8 @@ func is_transition_possible(along: Vector3) -> bool:
 	return obstacle_ray.get_collider() == null
 
 func on_tween_transition_finished():
+	Globals.player_position = global_position
+	
 	animator.speed_scale = 1
 	transition_tween.finished.disconnect(on_tween_transition_finished)
 	var transition = get_pressed_movement_transition()
@@ -175,13 +178,13 @@ func set_is_jumping(value: bool) -> void:
 # Animator.
 func jump_to_plane() -> void:
 	jump_check_area.global_position = head.global_position
-	
+
 	if not can_jump_to_plane():
 		animator.stop()
 		return
 	
 	Sfx.play("hop")
-	
+
 	match World.current_plane:
 		Globals.WorldPlane.MATERIAL:
 			global_position += Globals.WORLD_OFFSET
@@ -192,6 +195,7 @@ func jump_to_plane() -> void:
 	
 	World.invert_plane()
 	spell_caster.cancel_choose()
+	Globals.player_position = global_position
 
 func can_jump_to_plane() -> bool:
 	if jump_check_area.has_overlapping_bodies():
@@ -217,7 +221,7 @@ func move_jump_check_area() -> void:
 
 func receive_damage(amount: int) -> void:
 	health -= amount
-	damage_receied.emit(amount)
+	damage_receied.emit(health)
 	if (health <= 0):
 		die()
 	
@@ -245,6 +249,10 @@ func interact() -> void:
 	if intersection.has("collider") and intersection.collider is Item and intersection.collider.interactable:
 		intersection.collider.interacted.emit(null)
 		print("hit some shit")
+		
+		if intersection.collider is InventoryItem and intersection.collider.type == InventoryItem.Type.BOOK:
+			gui.toggle_book()
+		
 		
 	want_interact = false
 

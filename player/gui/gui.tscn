@@ -67,6 +67,7 @@ theme_override_constants/margin_bottom = 20
 [node name="HealthPointContainer" type="HBoxContainer" parent="HUD/NinePatchRect/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 20
+alignment = 2
 
 [node name="HealthIcon" parent="HUD/NinePatchRect/MarginContainer/HealthPointContainer" instance=ExtResource("7_ykuim")]
 layout_mode = 2
@@ -243,6 +244,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 36
 text = "Exit"
 
+[connection signal="tree_exited" from="HUD" to="HUD" method="_on_tree_exited"]
 [connection signal="pressed" from="Book/MarginContainer/VBoxContainer/HBoxContainer/PrevPageButton" to="Book" method="_on_prev_page_button_pressed"]
 [connection signal="pressed" from="Book/MarginContainer/VBoxContainer/HBoxContainer/NextPageButton" to="Book" method="_on_next_page_button_pressed"]
 [connection signal="pressed" from="Pause/PauseController/CenterContainer/VBoxContainer/ResumeButton" to="Pause" method="_on_resume_button_pressed"]

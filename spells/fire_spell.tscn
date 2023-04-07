@@ -175,6 +175,7 @@ _data = {
 }
 
 [node name="FireSpell" type="Area3D"]
+collision_layer = 0
 script = ExtResource("1_tmxe3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

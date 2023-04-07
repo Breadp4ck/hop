@@ -4,13 +4,16 @@ extends Control
 @onready var hp_icon: PackedScene = preload("res://player/gui/health_point_icon.tscn")
 
 @export var health_icon_texture: Texture2D
-
+@export var player: Player
 
 func _ready() -> void:
-	update_hp_count()
+	player.damage_receied.connect(update_hp_count)
+	update_hp_count(player.health)
 
+func _on_tree_exited():
+	player.damage_receied.disconnect(update_hp_count)
 
-func update_hp_count(hp: int = 3) -> void:
+func update_hp_count(hp: int) -> void:	
 	for child in hp_container.get_children():
 		child.queue_free()
 		

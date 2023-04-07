@@ -161,6 +161,7 @@ _data = {
 }
 
 [node name="repair_spell" type="Area3D"]
+collision_layer = 0
 script = ExtResource("1_o34b4")
 type = 3
 length = 2.0
