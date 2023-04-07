@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch6vjq05p54ed"]
+
+[ext_resource type="Script" path="res://spells/pickable_spell/pickable_spell.gd" id="1_wpj8o"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ss64j"]
+radius = 0.25
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bbbko"]
+radius = 0.1
+
+[sub_resource type="SphereMesh" id="SphereMesh_0bdxr"]
+
+[node name="pickable_spell" type="Area3D"]
+script = ExtResource("1_wpj8o")
+interactable = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_ss64j")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("SphereShape3D_bbbko")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("SphereMesh_0bdxr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

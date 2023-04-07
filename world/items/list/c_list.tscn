@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=3 uid="uid://2mcdaxfle6j3"]
+
+[ext_resource type="Texture2D" uid="uid://dfpahyq3cn8ai" path="res://assets/entities/list/c_list_c_list.png" id="1_4j57a"]
+[ext_resource type="Script" path="res://world/items/list/list.gd" id="1_h3n01"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iqdm2"]
+size = Vector3(0.3, 0.1, 0.35)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4hboy"]
+radius = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a8uyi"]
+resource_name = "c_list"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_4j57a")
+roughness = 0.1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_k45p4"]
+_surfaces = [{
+"aabb": AABB(-0.142153, 0, -0.173, 0.279153, 0.027234, 0.34601),
+"format": 4097,
+"index_count": 24,
+"index_data": PackedByteArray(9, 0, 5, 0, 4, 0, 5, 0, 8, 0, 3, 0, 5, 0, 9, 0, 8, 0, 6, 0, 5, 0, 7, 0, 6, 0, 4, 0, 5, 0, 0, 0, 7, 0, 1, 0, 0, 0, 6, 0, 7, 0, 9, 0, 2, 0, 8, 0),
+"name": "c_list",
+"primitive": 3,
+"vertex_count": 10,
+"vertex_data": PackedByteArray(186, 73, 12, 190, 0, 0, 0, 0, 233, 38, 49, 62, 186, 73, 12, 62, 0, 0, 0, 0, 233, 38, 49, 62, 18, 101, 6, 190, 221, 25, 223, 60, 103, 102, 40, 190, 186, 73, 12, 62, 0, 0, 0, 0, 233, 38, 49, 190, 186, 73, 12, 190, 24, 43, 123, 60, 109, 141, 83, 189, 186, 73, 12, 62, 24, 43, 123, 60, 109, 141, 83, 189, 111, 144, 17, 190, 208, 241, 60, 58, 44, 26, 106, 61, 135, 129, 6, 62, 228, 57, 126, 59, 7, 255, 39, 61, 98, 39, 150, 189, 0, 0, 0, 0, 233, 38, 49, 190, 186, 73, 12, 190, 241, 195, 4, 60, 51, 239, 222, 189)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_5gt4e"]
+resource_name = "c_list_Plane008"
+_surfaces = [{
+"aabb": AABB(-0.142153, 0, -0.173, 0.279153, 0.027234, 0.34601),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 116, 146, 179, 62, 0, 0, 0, 0, 116, 146, 179, 62, 0, 0, 128, 63, 116, 146, 179, 62, 0, 0, 128, 63, 116, 146, 179, 62, 0, 0, 0, 0, 96, 6, 37, 63, 0, 0, 0, 0, 96, 6, 37, 63, 0, 0, 128, 63, 96, 6, 37, 63, 0, 0, 128, 63, 96, 6, 37, 63, 36, 255, 109, 62, 0, 0, 0, 0, 36, 255, 109, 62, 0, 0, 0, 0, 0, 0, 0, 0, 40, 215, 61, 62, 0, 0, 0, 0, 40, 215, 61, 62),
+"format": 4119,
+"index_count": 24,
+"index_data": PackedByteArray(14, 0, 7, 0, 5, 0, 7, 0, 12, 0, 3, 0, 7, 0, 14, 0, 12, 0, 9, 0, 6, 0, 11, 0, 9, 0, 4, 0, 6, 0, 0, 0, 10, 0, 1, 0, 0, 0, 8, 0, 10, 0, 15, 0, 2, 0, 13, 0),
+"material": SubResource("StandardMaterial3D_a8uyi"),
+"name": "c_list",
+"primitive": 3,
+"vertex_count": 16,
+"vertex_data": PackedByteArray(186, 73, 12, 190, 0, 0, 0, 0, 233, 38, 49, 62, 88, 127, 254, 252, 67, 255, 242, 194, 186, 73, 12, 62, 0, 0, 0, 0, 233, 38, 49, 62, 88, 127, 254, 252, 81, 255, 84, 192, 18, 101, 6, 190, 221, 25, 223, 60, 103, 102, 40, 190, 30, 163, 100, 194, 203, 218, 143, 167, 186, 73, 12, 62, 0, 0, 0, 0, 233, 38, 49, 190, 164, 113, 255, 255, 255, 255, 255, 191, 186, 73, 12, 190, 24, 43, 123, 60, 109, 141, 83, 189, 198, 127, 38, 241, 183, 255, 30, 192, 186, 73, 12, 190, 24, 43, 123, 60, 109, 141, 83, 189, 164, 113, 255, 255, 255, 255, 255, 191, 186, 73, 12, 62, 24, 43, 123, 60, 109, 141, 83, 189, 198, 127, 38, 241, 14, 255, 43, 195, 186, 73, 12, 62, 24, 43, 123, 60, 109, 141, 83, 189, 164, 113, 255, 255, 255, 255, 255, 191, 111, 144, 17, 190, 208, 241, 60, 58, 44, 26, 106, 61, 88, 127, 254, 252, 60, 255, 237, 195, 111, 144, 17, 190, 208, 241, 60, 58, 44, 26, 106, 61, 198, 127, 38, 241, 139, 255, 2, 193, 135, 129, 6, 62, 228, 57, 126, 59, 7, 255, 39, 61, 88, 127, 254, 252, 78, 255, 73, 193, 135, 129, 6, 62, 228, 57, 126, 59, 7, 255, 39, 61, 198, 127, 38, 241, 216, 254, 30, 196, 98, 39, 150, 189, 0, 0, 0, 0, 233, 38, 49, 190, 164, 113, 255, 255, 255, 255, 255, 191, 98, 39, 150, 189, 0, 0, 0, 0, 233, 38, 49, 190, 30, 163, 100, 194, 203, 218, 143, 167, 186, 73, 12, 190, 241, 195, 4, 60, 51, 239, 222, 189, 164, 113, 255, 255, 255, 255, 255, 191, 186, 73, 12, 190, 241, 195, 4, 60, 51, 239, 222, 189, 30, 163, 100, 194, 203, 218, 143, 167)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_k45p4")
+
+[sub_resource type="Animation" id="Animation_dfagc"]
+resource_name = "C_List"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4xa54"]
+_data = {
+"C_List": SubResource("Animation_dfagc")
+}
+
+[node name="c_list" type="Area3D"]
+script = ExtResource("1_h3n01")
+interactable = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_iqdm2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("SphereShape3D_4hboy")
+
+[node name="C_List" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_5gt4e")
+skeleton = NodePath("")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4xa54")
+}
