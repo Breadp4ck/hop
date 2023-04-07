@@ -7,3 +7,4 @@ func interact(spell: Spell) -> void:
 func disable() -> void:
 	collision.disabled = true
 	body_collision.disabled = true
+	queue_free()
