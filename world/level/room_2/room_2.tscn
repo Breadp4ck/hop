@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c6x2gstmlw1na"]
+[gd_scene load_steps=12 format=3 uid="uid://c6x2gstmlw1na"]
 
 [ext_resource type="MeshLibrary" uid="uid://cwg0lk4sttpgm" path="res://world/level/mesh_library.tres" id="1_xxlmc"]
 [ext_resource type="MeshLibrary" uid="uid://ce5q65war85lh" path="res://world/level/collision_mesh_library.tres" id="2_w5hdb"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dp8qe5nu715dq" path="res://enemies/shadow_master/shadow_master.tscn" id="3_syris"]
 [ext_resource type="PackedScene" uid="uid://bnwr1wfb6ylgb" path="res://world/inventory_items/m_book.tscn" id="4_ds1ri"]
 [ext_resource type="PackedScene" uid="uid://cm12cwfnovun8" path="res://enemies/husk/husk.tscn" id="5_7rrjy"]
+[ext_resource type="PackedScene" uid="uid://bm7revl1frg2d" path="res://world/items/list/m_list.tscn" id="6_lmcui"]
 [ext_resource type="PackedScene" uid="uid://c4ftr3a8r5skk" path="res://world/inventory_items/c_ring.tscn" id="6_y4t2i"]
 [ext_resource type="PackedScene" uid="uid://dol2mhio14skj" path="res://world/inventory_items/c_book.tscn" id="7_gqv15"]
 
@@ -80,10 +81,15 @@ data = {
 
 [node name="Ring" parent="Material" instance=ExtResource("3_746du")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.056387, 0.43573, -0.307971)
-type = 0
 
 [node name="Book" parent="Material" instance=ExtResource("4_ds1ri")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.378456, -0.317142)
+
+[node name="List" parent="Material" instance=ExtResource("6_lmcui")]
+transform = Transform3D(0.57319, 0, 0.819423, 0, 1, 0, -0.819423, 0, 0.57319, -0.84591, 0.660713, -0.33697)
+pickable_spell_type = 0
+title = "Fire"
+text = "Say \"KATUHN\""
 
 [node name="Cognitive" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
@@ -125,7 +131,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, -1, 16)
 
 [node name="Ring" parent="Cognitive" instance=ExtResource("6_y4t2i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.056387, 0.43573, -0.307971)
-type = 0
 
 [node name="Book" parent="Cognitive" instance=ExtResource("7_gqv15")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.378456, -0.317142)
@@ -153,17 +158,16 @@ walls_grid = NodePath("../Collisions")
 grid_size = Vector2i(48, 48)
 
 [node name="Husk" parent="Cognitive/ShadowMaster" instance=ExtResource("5_7rrjy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 6)
+transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -16, 0, 6)
 
 [node name="Husk2" parent="Cognitive/ShadowMaster" instance=ExtResource("5_7rrjy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 15)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -18, 0, 15)
 
 [node name="Husk3" parent="Cognitive/ShadowMaster" instance=ExtResource("5_7rrjy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 4)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -12, 0, 4)
 
 [node name="Husk4" parent="Cognitive/ShadowMaster" instance=ExtResource("5_7rrjy")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 0, 0)
-sight_distance = 2
 
 [node name="Collisions" type="GridMap" parent="Cognitive"]
 mesh_library = ExtResource("2_w5hdb")
@@ -172,6 +176,12 @@ cell_center_z = false
 data = {
 "cells": PackedInt32Array(65532, 65534, 0, 65532, 65533, 0, 65533, 65533, 0, 65534, 65533, 0, 65535, 65533, 0, 0, 65533, 0, 0, 65534, 0, 1, 65535, 0, 0, 65535, 0, 2, 65535, 0, 2, 0, 0, 2, 1, 0, 1, 1, 0, 0, 1, 0, 65535, 3, 0, 0, 3, 0, 0, 2, 0, 65532, 1, 0, 65533, 3, 0, 65532, 3, 0, 65532, 2, 0, 65534, 3, 0, 65531, 65535, 0, 65526, 65535, 0, 65530, 65535, 0, 65532, 65535, 0, 65529, 65535, 0, 65528, 65535, 0, 65527, 65535, 0, 65526, 0, 0, 65526, 1, 0, 65525, 1, 0, 65525, 2, 0, 65525, 3, 0, 65524, 3, 0, 65524, 4, 0, 65524, 5, 0, 65524, 6, 0, 65523, 6, 0, 65523, 7, 0, 65523, 8, 0, 65523, 9, 0, 65524, 9, 0, 65525, 9, 0, 65526, 9, 0, 65527, 9, 0, 65528, 9, 0, 65529, 9, 0, 65529, 8, 0, 65529, 7, 0, 65529, 6, 0, 65529, 5, 0, 65530, 5, 0, 65531, 5, 0, 65532, 5, 0, 65532, 4, 0, 65527, 3, 0, 65527, 4, 0, 65527, 5, 0, 65528, 5, 0, 65526, 6, 0, 65527, 6, 0)
 }
+
+[node name="List" parent="Cognitive" instance=ExtResource("6_lmcui")]
+transform = Transform3D(0.57319, 0, 0.819423, 0, 1, 0, -0.819423, 0, 0.57319, -0.84591, 0.660713, -0.33697)
+pickable_spell_type = 0
+title = "Fire"
+text = "Say \"KATUHN\""
 
 [node name="Player" parent="." instance=ExtResource("2_ycrvi")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 0, 0)

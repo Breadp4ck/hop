@@ -13,9 +13,7 @@ func _ready() -> void:
 func _on_tree_exited():
 	player.damage_receied.disconnect(update_hp_count)
 
-func update_hp_count(hp: int) -> void:
-	hp = player.health
-	
+func update_hp_count(hp: int) -> void:	
 	for child in hp_container.get_children():
 		child.queue_free()
 		
