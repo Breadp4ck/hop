@@ -25,6 +25,7 @@ Globals="*res://singletons/globals.gd"
 World="*res://singletons/world.gd"
 Inventory="*res://singletons/inventory.gd"
 Music="*res://singletons/music.tscn"
+Sfx="*res://singletons/sfx.tscn"
 
 [display]
 

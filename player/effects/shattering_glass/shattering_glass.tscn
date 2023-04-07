@@ -5,7 +5,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a7opj"]
 shader = ExtResource("2_5niwh")
-shader_parameter/strength = 0.1
+shader_parameter/strength = 100.0
+shader_parameter/fade_level = 0.0
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_bbx3s")

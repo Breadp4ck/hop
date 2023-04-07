@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://y8o54gbbmy7x"]
+[gd_scene load_steps=14 format=3 uid="uid://y8o54gbbmy7x"]
 
 [ext_resource type="Script" path="res://spells/spell.gd" id="1_o34b4"]
 [ext_resource type="Texture2D" uid="uid://b0egos6y48385" path="res://assets/textures/repair.png" id="2_nv1ct"]
+[ext_resource type="AudioStream" uid="uid://b4nv7xonj5wwd" path="res://assets/sounds/sfx/repair.wav" id="3_1unos"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_tg254"]
 radius = 0.25
@@ -109,6 +110,21 @@ tracks/2/keys = {
 "method": &"destroy"
 }]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer3D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_1unos")
+}],
+"times": PackedFloat32Array(-0.3)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_6fays"]
 resource_name = "start"
@@ -169,5 +185,7 @@ autoplay = "start"
 libraries = {
 "": SubResource("AnimationLibrary_2ibuw")
 }
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

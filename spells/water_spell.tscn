@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://die2clnm3gt6u"]
+[gd_scene load_steps=14 format=3 uid="uid://die2clnm3gt6u"]
 
 [ext_resource type="Script" path="res://spells/spell.gd" id="1_s3d0n"]
 [ext_resource type="Texture2D" uid="uid://d4jpormvamr55" path="res://assets/textures/freeze.png" id="2_jk6kp"]
+[ext_resource type="AudioStream" uid="uid://d0gp7aeea3klo" path="res://assets/sounds/sfx/ice_collide.wav" id="3_rolr5"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_huiik"]
 radius = 0.25
@@ -108,6 +109,21 @@ tracks/2/keys = {
 "method": &"destroy"
 }]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_rolr5")
+}],
+"times": PackedFloat32Array(-0.6)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_6fays"]
 resource_name = "start"
@@ -167,5 +183,7 @@ autoplay = "start"
 libraries = {
 "": SubResource("AnimationLibrary_2ibuw")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="."]
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cq2cbtc63fkp7"]
+[gd_scene load_steps=14 format=3 uid="uid://cq2cbtc63fkp7"]
 
 [ext_resource type="Script" path="res://spells/spell.gd" id="1_tmxe3"]
 [ext_resource type="Texture2D" uid="uid://cnmdyd60oxgtv" path="res://assets/textures/fire.png" id="2_emtf3"]
+[ext_resource type="AudioStream" uid="uid://bt5oqqrbev6us" path="res://assets/sounds/sfx/explosion.wav" id="3_5oe6i"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_huiik"]
 radius = 0.25
@@ -70,6 +71,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_tgc8p"]
 resource_name = "end"
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -101,11 +103,25 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1),
+"times": PackedFloat32Array(3),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"destroy"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer3D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [1.93],
+"method": &"play"
 }]
 }
 
@@ -135,6 +151,21 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("AudioStreamPlayer3D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 1.3,
+"start_offset": 0.2974,
+"stream": ExtResource("3_5oe6i")
+}],
+"times": PackedFloat32Array(0.2)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2ibuw"]
 _data = {
@@ -166,5 +197,8 @@ autoplay = "start"
 libraries = {
 "": SubResource("AnimationLibrary_2ibuw")
 }
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_5oe6i")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
