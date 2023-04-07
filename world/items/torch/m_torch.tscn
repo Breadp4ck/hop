@@ -234,7 +234,7 @@ process_material = SubResource("ParticleProcessMaterial_ha8x7")
 draw_pass_1 = SubResource("QuadMesh_g757m")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.184298, 0.853525, 0.118466)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.108192, 0.962724, 0.118466)
 visible = false
 light_color = Color(0.984314, 0.760784, 0.0313726, 1)
 light_specular = 0.0

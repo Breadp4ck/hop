@@ -1,7 +1,9 @@
 extends Item
 
+@onready var anim: AnimationPlayer = $AnimationPlayer
+
 func interact(spell: Spell) -> void:
-	# PARTICLEs
+	anim.play("cracked")
 	interactable = false
 	
 func disable() -> void:
