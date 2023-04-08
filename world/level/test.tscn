@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://t2yosyfj6dfo"]
+
+[ext_resource type="PackedScene" uid="uid://dirp2lv0rgtke" path="res://player/player.tscn" id="1_v5vts"]
+[ext_resource type="PackedScene" uid="uid://cnf1e8uequsuk" path="res://world/pit.tscn" id="2_lg1xa"]
+[ext_resource type="PackedScene" uid="uid://bnwr1wfb6ylgb" path="res://world/inventory_items/m_book.tscn" id="3_71v2y"]
+[ext_resource type="PackedScene" uid="uid://dol2mhio14skj" path="res://world/inventory_items/c_book.tscn" id="4_63q2p"]
+[ext_resource type="PackedScene" uid="uid://34jjdg81mcmr" path="res://world/inventory_items/m_ring.tscn" id="4_e0ub1"]
+[ext_resource type="PackedScene" uid="uid://bm7revl1frg2d" path="res://world/items/list/m_list.tscn" id="5_f37lg"]
+[ext_resource type="PackedScene" uid="uid://c4ftr3a8r5skk" path="res://world/inventory_items/c_ring.tscn" id="6_yuypp"]
+[ext_resource type="PackedScene" uid="uid://2mcdaxfle6j3" path="res://world/items/list/c_list.tscn" id="8_s8nlt"]
+
+[node name="TEST" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_v5vts")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="Material" type="Node3D" parent="."]
+
+[node name="Book" parent="Material" instance=ExtResource("3_71v2y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.69928)
+
+[node name="Ring" parent="Material" instance=ExtResource("4_e0ub1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.661384)
+
+[node name="List" parent="Material" instance=ExtResource("5_f37lg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.820563, 0.697321)
+pickable_spell_type = 5
+
+[node name="pit" parent="Material" instance=ExtResource("2_lg1xa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -2)
+
+[node name="Cognitive" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
+
+[node name="Book" parent="Cognitive" instance=ExtResource("4_63q2p")]
+
+[node name="Ring" parent="Cognitive" instance=ExtResource("6_yuypp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.661384)
+
+[node name="List" parent="Cognitive" instance=ExtResource("8_s8nlt")]
+pickable_spell_type = 5
+
+[node name="pit" parent="Cognitive" instance=ExtResource("2_lg1xa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -2)
