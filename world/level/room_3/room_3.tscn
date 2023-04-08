@@ -43,6 +43,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Roof" type="GridMap" parent="Material/Static"]
+visible = false
 mesh_library = ExtResource("1_fhom7")
 cell_center_x = false
 cell_center_z = false
@@ -521,7 +522,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16, 0,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 12)
 
 [node name="Nailed6" parent="Material" instance=ExtResource("7_jlbkk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1, 0, 4)
 
 [node name="Nailed7" parent="Material" instance=ExtResource("7_jlbkk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
@@ -536,7 +537,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -4)
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 18, 0, -2)
 
 [node name="Nailed11" parent="Material" instance=ExtResource("7_jlbkk")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29, 0, 2)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 30, 0, 2)
 
 [node name="Nailed12" parent="Material" instance=ExtResource("7_jlbkk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 4)
@@ -599,145 +600,152 @@ transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 44.5, 
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12.0512, 0, -14)
 
 [node name="Pit1" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -1, 0)
 
 [node name="Pit2" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, -1, -2)
 
 [node name="Pit26" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -1, -12)
 
 [node name="Pit27" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -16)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -1, -16)
 
 [node name="Pit28" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -14)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -1, -14)
 
 [node name="Pit29" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -14)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, -14)
 
 [node name="Pit30" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1, -12)
 
 [node name="Pit31" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -16)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1, -16)
 
 [node name="Pit32" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -26)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, -1, -26)
 
 [node name="Pit33" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -26)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -1, -26)
 
 [node name="Pit34" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -28)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -1, -28)
 
 [node name="Pit35" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -28)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, -1, -28)
 
 [node name="Pit36" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -28)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, -1, -28)
 
 [node name="Pit37" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -26)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, -1, -26)
 
 [node name="Pit38" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, -26)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -1, -26)
 
 [node name="Pit39" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, -26)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -1, -26)
 
 [node name="Pit40" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, -34)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -1, -34)
 
 [node name="Pit41" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -34)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, -1, -34)
 
 [node name="Pit42" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -32)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, -1, -32)
 
 [node name="Pit43" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -32)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, -1, -32)
 
 [node name="Pit44" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -32)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -1, -32)
 
 [node name="Pit45" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -34)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -1, -34)
 
 [node name="Pit46" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -34)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, -1, -34)
 
 [node name="Pit3" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, -1, 2)
 
 [node name="Pit4" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -1, 4)
 
-[node name="Pit5" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -1)
+[node name="Pit47" parent="Material" instance=ExtResource("14_nb5w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, -1, -2)
+
+[node name="Pit48" parent="Material" instance=ExtResource("14_nb5w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -1, -4)
 
 [node name="Pit6" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, -1, 2)
 
 [node name="Pit7" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -1, -4)
 
 [node name="Pit8" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, -1, -2)
+
+[node name="Pit49" parent="Material" instance=ExtResource("14_nb5w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -1, 0)
 
 [node name="Pit9" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, -1, 2)
 
 [node name="Pit10" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -1, 4)
 
 [node name="Pit11" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, -1, 4)
 
 [node name="Pit12" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -1, -2)
 
 [node name="Pit13" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, -1, 0)
 
 [node name="Pit14" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, -1, -4)
 
 [node name="Pit15" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, -1, -4)
 
 [node name="Pit16" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, -1, 0)
 
 [node name="Pit18" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -1, 2)
 
 [node name="Pit19" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -1, -2)
 
 [node name="Pit20" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -1, 2)
 
 [node name="Pit21" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, -1, 4)
 
 [node name="Pit22" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, -1, 2)
 
 [node name="Pit23" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, -1, -2)
 
 [node name="Pit24" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, -1, 0)
 
 [node name="Pit25" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, -1, -4)
 
 [node name="Pit17" parent="Material" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, -1, 4)
 
 [node name="Cognitive" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
+visible = false
 
 [node name="ShadowMaster" parent="Cognitive" node_paths=PackedStringArray("walls_grid") instance=ExtResource("15_xe20x")]
 walls_grid = NodePath("../Static/Collision")
@@ -812,6 +820,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, -1, 0)
 
 [node name="Roof" type="GridMap" parent="Cognitive/Static"]
+visible = false
 mesh_library = ExtResource("1_fhom7")
 cell_center_x = false
 cell_center_z = false
@@ -1389,136 +1398,142 @@ transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 44.5, 
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12.0512, 0, -14)
 
 [node name="Pit1" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -1, 0)
 
 [node name="Pit2" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, -1, -2)
 
 [node name="Pit40" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -1, -12)
 
 [node name="Pit41" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -16)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -1, -16)
 
 [node name="Pit42" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -14)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -1, -14)
 
 [node name="Pit43" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -14)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, -14)
 
 [node name="Pit44" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1, -12)
 
 [node name="Pit45" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -16)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1, -16)
 
 [node name="Pit3" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, -1, 2)
 
 [node name="Pit4" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -1, 4)
 
 [node name="Pit5" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, -1, -2)
+
+[node name="Pit46" parent="Cognitive" instance=ExtResource("14_nb5w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -1, -4)
 
 [node name="Pit6" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, -1, 2)
 
 [node name="Pit7" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -1, -4)
 
 [node name="Pit8" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, -1, -2)
 
 [node name="Pit9" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, -1, 2)
+
+[node name="Pit47" parent="Cognitive" instance=ExtResource("14_nb5w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -1, 0)
 
 [node name="Pit10" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -1, 4)
 
 [node name="Pit11" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, -1, 4)
 
 [node name="Pit12" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -1, -2)
 
 [node name="Pit13" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, -1, 0)
 
 [node name="Pit14" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, -1, -4)
 
 [node name="Pit15" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, -1, -4)
 
 [node name="Pit16" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, -1, 0)
 
 [node name="Pit18" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -1, 2)
 
 [node name="Pit19" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -1, -2)
 
 [node name="Pit20" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -1, 2)
 
 [node name="Pit21" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, -1, 4)
 
 [node name="Pit22" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, -1, 2)
 
 [node name="Pit23" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, -1, -2)
 
 [node name="Pit24" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, -1, 0)
 
 [node name="Pit25" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, -1, -4)
 
 [node name="Pit17" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, -1, 4)
 
 [node name="Pit26" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -26)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, -1, -26)
 
 [node name="Pit27" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, -26)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -1, -26)
 
 [node name="Pit28" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -28)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, -1, -28)
 
 [node name="Pit29" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -28)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, -1, -28)
 
 [node name="Pit30" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -28)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -1, -28)
 
 [node name="Pit31" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -26)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -1, -26)
 
 [node name="Pit32" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -26)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, -1, -26)
 
 [node name="Pit33" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -34)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, -1, -34)
 
 [node name="Pit34" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -34)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -1, -34)
 
 [node name="Pit35" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -32)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -1, -32)
 
 [node name="Pit36" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -32)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, -1, -32)
 
 [node name="Pit37" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -34)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, -1, -34)
 
 [node name="Pit39" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, -34)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -1, -34)
 
 [node name="Pit38" parent="Cognitive" instance=ExtResource("14_nb5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -32)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, -1, -32)
