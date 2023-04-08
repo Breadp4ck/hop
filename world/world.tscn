@@ -24,7 +24,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
 
 [node name="MeshInstance3D" parent="Node3D" index="0"]
 transform = Transform3D(-1.02741e-07, 0, 1, 0, 1.90631, 0, -2.35044, 0, -4.37114e-08, -3.97171, 0.753785, 0.0299716)
-instance_shader_parameters/border_color = Color(0.0352941, 0.141176, 0.168627, 1)
 instance_shader_parameters/inner_color = Color(0.278431, 0.494118, 1, 1)
 
 [editable path="Node3D"]
