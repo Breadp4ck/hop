@@ -80,7 +80,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 7)
 portal = NodePath("../Portal")
 
 [node name="Crystal" parent="Material" instance=ExtResource("16_ii71q")]
-transform = Transform3D(0.0871558, -0.996195, 0, 0.996195, 0.0871558, 0, 0, 0, 1, 2.73533, 0.741936, 5.61216)
+transform = Transform3D(0.0871558, -0.996195, 0, 0.996195, 0.0871558, 0, 0, 0, 1, 2.71363, 0.743835, 5.61216)
 
 [node name="List" parent="Material" instance=ExtResource("11_p1g30")]
 transform = Transform3D(0.57319, 0, 0.819423, 0, 1, 0, -0.819423, 0, 0.57319, -2.93479, 0.657936, -0.0395259)
@@ -141,7 +141,7 @@ interactable = false
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4, 0, 6)
 
 [node name="Crystal" parent="Cognitive" instance=ExtResource("16_ii71q")]
-transform = Transform3D(0.0871558, -0.996195, 0, 0.996195, 0.0871558, 0, 0, 0, 1, 2.73533, 0.741936, 5.61216)
+transform = Transform3D(0.0871558, -0.996195, 0, 0.996195, 0.0871558, 0, 0, 0, 1, 2.71363, 0.743835, 5.61216)
 interactable = false
 
 [node name="Pedestal" parent="Cognitive" node_paths=PackedStringArray("portal") instance=ExtResource("17_vr55d")]
