@@ -8,13 +8,16 @@ extends Node
 @export var length: float = 3.0
 @export var duration: float = 1.0
 
+var destination_position: Vector3
 var transition_tween: Tween
 
 func move(direction: Vector3) -> void:
 	transition_tween = create_tween()
-	var new_position = self.global_position + direction * length * Globals.TILE_LENGTH
-	transition_tween.tween_property(self, "global_position", new_position, duration)
+	destination_position = self.global_position + direction * length * Globals.TILE_LENGTH
+	transition_tween.tween_property(self, "global_position", destination_position, duration)
 	transition_tween.finished.connect(on_tween_transition_finished)
+	
+	start()
 	
 func on_tween_transition_finished() -> void:
 	transition_tween.finished.disconnect(on_tween_transition_finished)
@@ -27,6 +30,9 @@ func _on_area_entered(area) -> void:
 		area.interacted.emit(self)
 	elif area is Shadow:
 		area.interact_with_spell(self)
+
+func start() -> void:
+	pass
 
 func end() -> void:
 	transition_tween.stop()

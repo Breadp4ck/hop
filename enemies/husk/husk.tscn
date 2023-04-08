@@ -639,9 +639,12 @@ switch_mode = 2
 switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ssgsx"]
+switch_mode = 2
+advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_spvhh"]
 switch_mode = 2
+advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ws043"]
 xfade_time = 0.1
@@ -660,12 +663,14 @@ advance_mode = 2
 switch_mode = 2
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_01egx"]
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_n2lcg"]
 states/Attack/node = SubResource("AnimationNodeAnimation_yvh87")
 states/Attack/position = Vector2(219.071, 221)
 states/Calm/node = SubResource("AnimationNodeAnimation_bnhlq")
 states/Calm/position = Vector2(259, 79)
-states/End/position = Vector2(790, 162)
+states/End/position = Vector2(869, 66)
 states/Engage/node = SubResource("AnimationNodeAnimation_xk0nw")
 states/Engage/position = Vector2(592.071, 121)
 states/Run/node = SubResource("AnimationNodeAnimation_flahp")
@@ -673,14 +678,12 @@ states/Run/position = Vector2(581, 244)
 states/Start/position = Vector2(48, 93)
 states/death/node = SubResource("AnimationNodeAnimation_apffj")
 states/death/position = Vector2(743.071, 66)
-transitions = ["Start", "Calm", SubResource("AnimationNodeStateMachineTransition_5fjof"), "Run", "Attack", SubResource("AnimationNodeStateMachineTransition_3l3r3"), "Attack", "Run", SubResource("AnimationNodeStateMachineTransition_hldsb"), "Run", "Calm", SubResource("AnimationNodeStateMachineTransition_ssgsx"), "Attack", "Calm", SubResource("AnimationNodeStateMachineTransition_spvhh"), "Calm", "death", SubResource("AnimationNodeStateMachineTransition_ws043"), "death", "End", SubResource("AnimationNodeStateMachineTransition_pmbuh"), "Attack", "death", SubResource("AnimationNodeStateMachineTransition_iqafy"), "Run", "death", SubResource("AnimationNodeStateMachineTransition_orfcy"), "Calm", "Engage", SubResource("AnimationNodeStateMachineTransition_nksct"), "Engage", "Run", SubResource("AnimationNodeStateMachineTransition_xnyp5")]
+transitions = ["Start", "Calm", SubResource("AnimationNodeStateMachineTransition_5fjof"), "Run", "Attack", SubResource("AnimationNodeStateMachineTransition_3l3r3"), "Attack", "Run", SubResource("AnimationNodeStateMachineTransition_hldsb"), "Run", "Calm", SubResource("AnimationNodeStateMachineTransition_ssgsx"), "Attack", "Calm", SubResource("AnimationNodeStateMachineTransition_spvhh"), "Calm", "death", SubResource("AnimationNodeStateMachineTransition_ws043"), "death", "End", SubResource("AnimationNodeStateMachineTransition_pmbuh"), "Attack", "death", SubResource("AnimationNodeStateMachineTransition_iqafy"), "Run", "death", SubResource("AnimationNodeStateMachineTransition_orfcy"), "Calm", "Engage", SubResource("AnimationNodeStateMachineTransition_nksct"), "Engage", "Run", SubResource("AnimationNodeStateMachineTransition_xnyp5"), "Calm", "Attack", SubResource("AnimationNodeStateMachineTransition_01egx")]
 graph_offset = Vector2(-155.929, 22)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_h4g3o"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_loyt1"]
-
-[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_f24al"]
 
 [sub_resource type="Gradient" id="Gradient_xxsmw"]
 offsets = PackedFloat32Array(0, 0.8, 1)
@@ -725,7 +728,7 @@ needed_types_to_damage = Array[int]([0, 1])
 sight_distance = 4
 
 [node name="head" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.340759, 0.00153339, 0.00118581, -0.0017131, 0.335773, 0.05809, -0.000907045, -0.058095, 0.335775, -0.0025016, 1.08683, 0.0168714)
+transform = Transform3D(0.340759, 0.00153339, 0.00118581, -0.0017131, 0.335773, 0.05809, -0.000907045, -0.058095, 0.335775, -0.0025016, 1.08802, 0.0168714)
 material_overlay = ExtResource("3_psfmc")
 instance_shader_parameters/dissolve_amount = 0.0
 instance_shader_parameters/emission_color = Color(0, 0, 0, 1)
@@ -733,17 +736,17 @@ mesh = SubResource("ArrayMesh_6mgxq")
 skeleton = NodePath("")
 
 [node name="eyer" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.132392, -0.0538468, -0.00468065, 0.00862724, 0.0332774, -0.138806, 0.0533569, 0.128227, 0.0340573, -0.257247, 1.29039, 0.235047)
+transform = Transform3D(0.132392, -0.0538468, -0.00468065, 0.00862725, 0.0332774, -0.138806, 0.0533569, 0.128227, 0.0340573, -0.257247, 1.29158, 0.235047)
 mesh = SubResource("ArrayMesh_a2ya3")
 skeleton = NodePath("")
 
 [node name="eyel" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.125978, -0.0672038, -0.00568127, 0.0120563, -0.0105965, -0.14199, 0.0663577, -0.125659, 0.0150121, 0.298045, 1.29039, 0.235047)
+transform = Transform3D(-0.125978, -0.0672038, -0.00568127, 0.0120563, -0.0105965, -0.14199, 0.0663577, -0.125659, 0.0150121, 0.298045, 1.29158, 0.235047)
 mesh = SubResource("ArrayMesh_4qjm3")
 skeleton = NodePath("")
 
 [node name="jaw" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.110072, -0.0962027, 0.0151962, 0.00684787, -0.0164626, -0.139865, 0.0953998, 0.11218, -0.00749362, -0.337612, 0.745422, 0.00458766)
+transform = Transform3D(0.110064, -0.0961887, 0.0153291, 0.00695226, -0.0165542, -0.13985, 0.0954019, 0.112178, -0.00749362, -0.339486, 0.746451, 0.00458766)
 material_overlay = ExtResource("3_psfmc")
 instance_shader_parameters/dissolve_amount = 0.0
 instance_shader_parameters/emission_color = Color(0, 0, 0, 1)
@@ -767,7 +770,6 @@ shape = SubResource("CapsuleShape3D_loyt1")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90354, 0)
-stream = SubResource("AudioStreamPolyphonic_f24al")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04751, -0.221191)

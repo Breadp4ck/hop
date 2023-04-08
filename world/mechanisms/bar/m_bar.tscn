@@ -129,7 +129,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k56q1"]
-size = Vector3(2, 2, 2)
+size = Vector3(0.166481, 2, 1.41293)
 
 [node name="m_bar" type="Node3D"]
 script = ExtResource("1_esupd")

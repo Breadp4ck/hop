@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cojugwhuyh380"]
+[gd_scene load_steps=9 format=3 uid="uid://cojugwhuyh380"]
 
 [ext_resource type="Script" path="res://spells/teleport_spell.gd" id="1_dbago"]
 
@@ -6,13 +6,27 @@
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o7nrx"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3y7o"]
+albedo_color = Color(0, 1, 0.94902, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_grkdh"]
+material = SubResource("StandardMaterial3D_f3y7o")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_upyq8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gbijo"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dxr3c"]
+material = SubResource("StandardMaterial3D_gbijo")
+size = Vector3(2, 2, 2)
+
 [node name="teleport_spell" type="Area3D"]
 collision_layer = 0
-collision_mask = 65
 script = ExtResource("1_dbago")
 type = 5
 length = 2.0
-duration = 0.01
+duration = 0.2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_ji8dw")
@@ -22,5 +36,22 @@ libraries = {
 "": SubResource("AnimationLibrary_o7nrx")
 }
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("SphereMesh_grkdh")
+
+[node name="PitChecker" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 64
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PitChecker"]
+shape = SubResource("SphereShape3D_upyq8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PitChecker"]
+visible = false
+mesh = SubResource("BoxMesh_dxr3c")
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="PitChecker" to="." method="_on_pit_checker_area_entered"]
+[connection signal="body_entered" from="PitChecker" to="." method="_on_pit_checker_body_entered"]

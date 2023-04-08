@@ -763,7 +763,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fusb5"]
-size = Vector3(2, 2, 2)
+size = Vector3(0.166481, 2, 1.41293)
 
 [node name="c_bar" type="Node3D"]
 script = ExtResource("1_y313u")
@@ -809,6 +809,7 @@ mesh = SubResource("ArrayMesh_7xher")
 skeleton = NodePath("")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+speed_scale = 0.5
 libraries = {
 "": SubResource("AnimationLibrary_s4hrf")
 }

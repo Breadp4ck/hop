@@ -213,6 +213,7 @@ func jump_to_plane() -> void:
 
 func can_jump_to_plane() -> bool:
 	if jump_check_area.has_overlapping_bodies():
+		print(jump_check_area.get_overlapping_bodies())
 		print("Cant hop")
 		jump_check_area.global_position = head.global_position
 		return false
