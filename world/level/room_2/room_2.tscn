@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://c6x2gstmlw1na"]
+[gd_scene load_steps=27 format=3 uid="uid://c6x2gstmlw1na"]
 
 [ext_resource type="MeshLibrary" uid="uid://cwg0lk4sttpgm" path="res://world/level/mesh_library.tres" id="1_xxlmc"]
 [ext_resource type="MeshLibrary" uid="uid://ce5q65war85lh" path="res://world/level/collision_mesh_library.tres" id="2_w5hdb"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cykvdxs0gth0w" path="res://world/items/bricks_cracked/c_bricks_cracked.tscn" id="12_gucwh"]
 [ext_resource type="PackedScene" uid="uid://ba2ci8eh1l78l" path="res://world/inventory_items/crystal.tscn" id="13_7nfkq"]
 [ext_resource type="PackedScene" uid="uid://cnf1e8uequsuk" path="res://world/pit.tscn" id="14_w02vk"]
+[ext_resource type="PackedScene" uid="uid://b76kpr010g5m3" path="res://world/water_tile.tscn" id="15_3e7v4"]
 [ext_resource type="PackedScene" uid="uid://cewiqnc4ylli1" path="res://world/items/fukel/c_fukel.tscn" id="15_4ab2f"]
 [ext_resource type="PackedScene" uid="uid://c1bx7j6mgvkab" path="res://assets/entities/brick_pillar/c_brick_pillar.glb" id="15_l8w8a"]
 [ext_resource type="PackedScene" uid="uid://dp8qe5nu715dq" path="res://enemies/shadow_master/shadow_master.tscn" id="15_ygswj"]
@@ -46,17 +47,16 @@ mesh_library = ExtResource("1_xxlmc")
 cell_center_x = false
 cell_center_z = false
 data = {
-"cells": PackedInt32Array(65536, 65535, 1, 131071, 65535, 1, 131070, 65535, 1, 131070, 0, 1, 131070, 1, 1, 131071, 1, 1, 131071, 0, 1, 65536, 0, 1, 65536, 1, 1, 65536, 2, 1, 65537, 2, 1, 65538, 2, 1, 65539, 2, 1, 65540, 2, 1, 65542, 0, 1, 65542, 65533, 1, 65542, 65534, 1, 65542, 65535, 1, 65542, 65532, 1, 65542, 65531, 1, 65542, 65530, 1, 65542, 65529, 1, 65542, 65528, 1, 65542, 65527, 1, 65542, 65526, 1, 65540, 65526, 1, 65539, 65526, 1, 65538, 65526, 1, 65537, 65526, 1, 65536, 65526, 1, 65536, 65527, 1, 65536, 65528, 1, 65536, 65529, 1, 65536, 65530, 1, 65536, 65531, 1, 65536, 65532, 1, 65536, 65533, 1, 65536, 65534, 1, 65541, 65526, 1, 131077, 65527, 1, 131076, 65527, 1, 131075, 65527, 1, 131074, 65527, 1, 131073, 65527, 1, 131073, 65528, 1, 131073, 65529, 1, 131073, 65530, 1, 131073, 65531, 1, 131073, 65532, 1, 131073, 65533, 1, 131073, 65534, 1, 131073, 0, 1, 131073, 1, 1, 131077, 65528, 1, 131077, 65529, 1, 131077, 65530, 1, 131077, 65531, 1, 131077, 65532, 1, 131077, 65533, 1, 131077, 65534, 1, 131077, 65535, 1, 131077, 0, 1, 131076, 0, 1, 131076, 1, 1, 131075, 1, 1, 131074, 1, 1, 131074, 0, 1, 131074, 65533, 1, 131074, 65530, 1, 131074, 65529, 1, 131074, 65528, 1, 131075, 65528, 1, 131076, 65528, 1, 131076, 65529, 1, 131076, 65530, 1, 131076, 65531, 1, 131076, 65532, 1, 131075, 65532, 1, 131074, 65532, 1, 131074, 65531, 1, 131075, 65529, 1, 131075, 65530, 1, 131075, 65531, 1, 131075, 65533, 1, 131076, 65533, 1, 131075, 65534, 1, 131076, 65535, 1, 131076, 65534, 1, 131077, 1, 1, 65543, 65534, 1, 65544, 65534, 1, 65545, 65534, 1, 65545, 65535, 1, 65544, 65535, 1, 65543, 65535, 1, 65543, 0, 1, 65543, 1, 1, 65544, 1, 1, 65544, 2, 1, 65543, 4, 1, 65543, 5, 1, 65543, 6, 1, 65544, 6, 1, 65545, 6, 1, 65547, 6, 1, 65546, 7, 1, 65546, 8, 1, 65547, 8, 1, 65549, 8, 1, 65548, 9, 1, 65547, 9, 1, 65550, 9, 1, 65551, 9, 1, 65552, 9, 1, 65552, 10, 1, 65552, 11, 1, 65551, 11, 1, 65550, 7, 1, 65550, 8, 1, 65551, 7, 1, 65551, 6, 1, 65551, 5, 1, 65550, 5, 1, 65549, 5, 1, 65548, 5, 1, 65547, 5, 1, 65546, 5, 1, 65546, 4, 1, 65547, 4, 1, 65544, 5, 1, 65548, 0, 1, 65549, 0, 1, 65549, 1, 1, 65548, 1, 1, 65550, 1, 1, 65550, 2, 1, 65550, 3, 1, 65550, 4, 1, 65548, 2, 1, 65547, 2, 1, 65546, 2, 1, 65547, 3, 1, 65546, 65534, 1, 65547, 65534, 1, 65547, 65533, 1, 65547, 65535, 1, 65548, 65535, 1, 65549, 65535, 1, 65550, 65535, 1, 65550, 65534, 1, 65550, 65533, 1, 65551, 65533, 1, 65552, 65532, 1, 65552, 65533, 1, 65553, 65533, 1, 65554, 65533, 1, 65554, 65534, 1, 65553, 65534, 1, 65550, 0, 1, 65551, 0, 1, 65552, 0, 1, 65552, 65535, 1, 65551, 65535, 1, 65552, 1, 1, 65552, 2, 1, 65552, 3, 1, 65551, 3, 1, 65553, 3, 1, 65553, 4, 1, 65554, 3, 1, 65554, 2, 1, 65554, 4, 1, 65555, 4, 1, 65556, 4, 1, 65552, 6, 1, 65553, 6, 1, 65554, 6, 1, 65554, 5, 1, 65553, 5, 1, 65556, 5, 1, 65556, 6, 1, 65556, 7, 1, 65555, 7, 1, 65555, 6, 1, 65554, 7, 1, 65553, 7, 1, 65555, 5, 1, 65557, 4, 1, 65558, 4, 1, 65559, 4, 1, 65559, 5, 1, 65558, 5, 1, 65557, 5, 1, 65559, 6, 1, 65556, 8, 1, 65556, 9, 1, 65557, 9, 1, 65558, 9, 1, 65558, 8, 1, 65559, 9, 1, 65559, 8, 1, 65560, 8, 1, 65560, 9, 1, 65560, 10, 1, 65559, 10, 1, 65558, 10, 1, 131069, 0, 1, 131068, 0, 1, 65543, 2, 1, 65543, 3, 1, 65544, 4, 1, 65545, 4, 1, 65545, 5, 1, 65546, 6, 1, 65542, 1, 1, 65542, 2, 1, 65541, 2, 1, 131074, 65534, 1, 131074, 65535, 1, 131073, 65535, 1, 131075, 65535, 1, 131075, 0, 1)
+"cells": PackedInt32Array(65536, 65535, 1, 131071, 65535, 1, 131070, 65535, 1, 131070, 0, 1, 131070, 1, 1, 131071, 1, 1, 131071, 0, 1, 65536, 0, 1, 65536, 1, 1, 65536, 2, 1, 65537, 2, 1, 65538, 2, 1, 65539, 2, 1, 65540, 2, 1, 65542, 0, 1, 65542, 65533, 1, 65542, 65534, 1, 65542, 65535, 1, 65542, 65532, 1, 65542, 65531, 1, 65542, 65530, 1, 65542, 65529, 1, 65542, 65528, 1, 65542, 65527, 1, 65542, 65526, 1, 65540, 65526, 1, 65539, 65526, 1, 65538, 65526, 1, 65537, 65526, 1, 65536, 65526, 1, 65536, 65527, 1, 65536, 65528, 1, 65536, 65529, 1, 65536, 65530, 1, 65536, 65531, 1, 65536, 65532, 1, 65536, 65533, 1, 65536, 65534, 1, 65541, 65526, 1, 131077, 65527, 1, 131076, 65527, 1, 131075, 65527, 1, 131074, 65527, 1, 131073, 65527, 1, 131073, 65528, 1, 131073, 65529, 1, 131073, 65530, 1, 131073, 65531, 1, 131073, 65532, 1, 131073, 65533, 1, 131073, 65534, 1, 131073, 0, 1, 131073, 1, 1, 131077, 65528, 1, 131077, 65529, 1, 131077, 65530, 1, 131077, 65531, 1, 131077, 65532, 1, 131077, 65533, 1, 131077, 65534, 1, 131077, 65535, 1, 131077, 0, 1, 131076, 0, 1, 131076, 1, 1, 131075, 1, 1, 131074, 1, 1, 131074, 0, 1, 131074, 65533, 1, 131074, 65530, 1, 131074, 65529, 1, 131074, 65528, 1, 131075, 65528, 1, 131076, 65528, 1, 131076, 65529, 1, 131076, 65530, 1, 131076, 65531, 1, 131076, 65532, 1, 131075, 65532, 1, 131074, 65532, 1, 131074, 65531, 1, 131075, 65529, 1, 131075, 65530, 1, 131075, 65531, 1, 131075, 65533, 1, 131076, 65533, 1, 131075, 65534, 1, 131076, 65535, 1, 131076, 65534, 1, 131077, 1, 1, 65543, 65534, 1, 65544, 65534, 1, 65545, 65534, 1, 65545, 65535, 1, 65544, 65535, 1, 65543, 65535, 1, 65543, 0, 1, 65543, 1, 1, 65544, 1, 1, 65544, 2, 1, 65543, 4, 1, 65543, 5, 1, 65543, 6, 1, 65544, 6, 1, 65545, 6, 1, 65547, 6, 1, 65546, 7, 1, 65546, 8, 1, 65547, 8, 1, 65549, 8, 1, 65548, 9, 1, 65547, 9, 1, 65550, 9, 1, 65551, 9, 1, 65552, 9, 1, 65552, 10, 1, 65552, 11, 1, 65551, 11, 1, 65550, 7, 1, 65550, 8, 1, 65551, 7, 1, 65551, 6, 1, 65551, 5, 1, 65550, 5, 1, 65549, 5, 1, 65548, 5, 1, 65547, 5, 1, 65546, 5, 1, 65546, 4, 1, 65547, 4, 1, 65544, 5, 1, 65548, 0, 1, 65549, 0, 1, 65549, 1, 1, 65548, 1, 1, 65550, 1, 1, 65550, 2, 1, 65550, 3, 1, 65550, 4, 1, 65548, 2, 1, 65547, 2, 1, 65546, 2, 1, 65547, 3, 1, 65546, 65534, 1, 65547, 65534, 1, 65547, 65533, 1, 65547, 65535, 1, 65548, 65535, 1, 65549, 65535, 1, 65550, 65535, 1, 65550, 65534, 1, 65550, 65533, 1, 65551, 65533, 1, 65552, 65532, 1, 65552, 65533, 1, 65553, 65533, 1, 65554, 65533, 1, 65554, 65534, 1, 65553, 65534, 1, 65550, 0, 1, 65551, 0, 1, 65552, 0, 1, 65552, 65535, 1, 65551, 65535, 1, 65552, 1, 1, 65552, 2, 1, 65552, 3, 1, 65551, 3, 1, 65553, 3, 1, 65553, 4, 1, 65554, 3, 1, 65554, 2, 1, 65554, 4, 1, 65555, 4, 1, 65556, 4, 1, 65552, 6, 1, 65553, 6, 1, 65554, 6, 1, 65554, 5, 1, 65553, 5, 1, 65556, 5, 1, 65556, 6, 1, 65556, 7, 1, 65555, 7, 1, 65555, 6, 1, 65554, 7, 1, 65553, 7, 1, 65555, 5, 1, 65557, 4, 1, 65558, 4, 1, 65559, 4, 1, 65559, 5, 1, 65558, 5, 1, 65557, 5, 1, 65559, 6, 1, 65556, 8, 1, 65556, 9, 1, 65557, 9, 1, 65558, 9, 1, 65558, 8, 1, 65559, 9, 1, 65559, 8, 1, 65560, 8, 1, 65560, 9, 1, 65560, 10, 1, 65559, 10, 1, 65558, 10, 1, 131069, 0, 1, 131068, 0, 1, 65543, 2, 1, 65543, 3, 1, 65544, 4, 1, 65545, 4, 1, 65545, 5, 1, 65546, 6, 1, 65542, 1, 1, 65542, 2, 1, 65541, 2, 1, 131074, 65534, 1, 131074, 65535, 1, 131073, 65535, 1, 131075, 65535, 1, 131075, 0, 1, 65549, 9, 1)
 }
-metadata/_editor_floor_ = Vector3(0, 2, 0)
+metadata/_editor_floor_ = Vector3(0, 1, 0)
 
 [node name="Collisions" type="GridMap" parent="Material/Static"]
-visible = false
 mesh_library = ExtResource("2_w5hdb")
 cell_center_x = false
 cell_center_z = false
 data = {
-"cells": PackedInt32Array(65533, 65535, 0, 65533, 1, 0, 65534, 1, 0, 65535, 1, 0, 0, 1, 0, 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0, 6, 0, 0, 6, 1, 0, 6, 3, 0, 6, 4, 0, 6, 5, 0, 6, 6, 0, 6, 7, 0, 7, 7, 0, 8, 7, 0, 9, 7, 0, 8, 5, 0, 10, 5, 0, 9, 8, 0, 9, 9, 0, 10, 9, 0, 11, 10, 0, 12, 10, 0, 13, 10, 0, 14, 10, 0, 15, 10, 0, 14, 11, 0, 14, 12, 0, 15, 12, 0, 16, 12, 0, 17, 12, 0, 17, 11, 0, 17, 10, 0, 17, 9, 0, 17, 8, 0, 16, 8, 0, 15, 8, 0, 14, 6, 0, 13, 6, 0, 12, 6, 0, 12, 7, 0, 12, 8, 0, 13, 8, 0, 13, 7, 0, 18, 8, 0, 19, 8, 0, 19, 9, 0, 19, 10, 0, 20, 10, 0, 21, 10, 0, 22, 10, 0, 22, 11, 0, 23, 11, 0, 24, 11, 0, 25, 11, 0, 25, 10, 0, 25, 9, 0, 25, 8, 0, 25, 7, 0, 24, 7, 0, 24, 6, 0, 23, 7, 0, 22, 7, 0, 22, 8, 0, 21, 8, 0, 21, 7, 0, 24, 5, 0, 24, 4, 0, 23, 3, 0, 22, 4, 0, 21, 4, 0, 21, 3, 0, 20, 3, 0, 19, 3, 0, 19, 2, 0, 20, 2, 0, 19, 5, 0, 19, 6, 0, 17, 5, 0, 16, 5, 0, 16, 4, 0, 15, 4, 0, 18, 2, 0, 17, 2, 0, 17, 1, 0, 17, 0, 0, 17, 65535, 0, 18, 65535, 0, 19, 65535, 0, 19, 65534, 0, 19, 65533, 0, 18, 65532, 0, 17, 65532, 0, 17, 65531, 0, 16, 65531, 0, 15, 65531, 0, 14, 65531, 0, 14, 65532, 0, 15, 65532, 0, 13, 65532, 0, 12, 65532, 0, 11, 65532, 0, 10, 65532, 0, 10, 65533, 0, 12, 65533, 0, 12, 65534, 0, 13, 65534, 0, 13, 65533, 0, 12, 0, 0, 11, 0, 0, 10, 0, 0, 9, 0, 0, 8, 0, 0, 10, 65535, 0, 10, 1, 0, 9, 1, 0, 8, 3, 0, 9, 3, 0, 10, 3, 0, 14, 0, 0, 15, 0, 0, 15, 1, 0, 15, 2, 0, 13, 2, 0, 13, 3, 0, 13, 4, 0, 12, 4, 0, 12, 3, 0, 16, 65534, 0, 15, 65534, 0, 9, 65533, 0, 8, 65533, 0, 7, 65533, 0, 6, 65533, 0, 6, 65534, 0, 6, 65532, 0, 6, 65531, 0, 6, 65530, 0, 6, 65529, 0, 6, 65528, 0, 6, 65527, 0, 6, 65526, 0, 5, 65526, 0, 4, 65526, 0, 3, 65526, 0, 2, 65526, 0, 1, 65526, 0, 0, 65526, 0, 0, 65527, 0, 0, 65529, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 65528, 0, 11, 7, 0, 9, 2, 0, 65532, 65535, 0, 65532, 0, 0, 65532, 1, 0, 16, 7, 0, 17, 7, 0, 21, 6, 0, 22, 6, 0, 65535, 65535, 0, 65534, 65535, 0)
+"cells": PackedInt32Array(65533, 65535, 0, 65533, 1, 0, 65534, 1, 0, 65535, 1, 0, 0, 1, 0, 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0, 6, 0, 0, 6, 1, 0, 6, 3, 0, 6, 4, 0, 6, 5, 0, 6, 6, 0, 6, 7, 0, 7, 7, 0, 8, 7, 0, 9, 7, 0, 8, 5, 0, 10, 5, 0, 9, 8, 0, 9, 9, 0, 10, 9, 0, 11, 10, 0, 12, 10, 0, 13, 10, 0, 14, 10, 0, 15, 10, 0, 14, 11, 0, 14, 12, 0, 15, 12, 0, 16, 12, 0, 17, 12, 0, 17, 11, 0, 17, 10, 0, 17, 9, 0, 17, 8, 0, 16, 8, 0, 15, 8, 0, 14, 6, 0, 13, 6, 0, 12, 6, 0, 12, 7, 0, 12, 8, 0, 13, 8, 0, 13, 7, 0, 18, 8, 0, 19, 8, 0, 19, 9, 0, 19, 10, 0, 20, 10, 0, 21, 10, 0, 22, 10, 0, 22, 11, 0, 23, 11, 0, 24, 11, 0, 25, 11, 0, 25, 10, 0, 25, 9, 0, 25, 8, 0, 25, 7, 0, 24, 7, 0, 24, 6, 0, 23, 7, 0, 22, 7, 0, 22, 8, 0, 21, 8, 0, 21, 7, 0, 24, 5, 0, 24, 4, 0, 23, 3, 0, 22, 4, 0, 21, 4, 0, 21, 3, 0, 20, 3, 0, 19, 3, 0, 19, 2, 0, 20, 2, 0, 19, 5, 0, 19, 6, 0, 17, 5, 0, 16, 5, 0, 16, 4, 0, 15, 4, 0, 18, 2, 0, 17, 2, 0, 17, 1, 0, 17, 0, 0, 17, 65535, 0, 18, 65535, 0, 19, 65535, 0, 19, 65534, 0, 19, 65533, 0, 18, 65532, 0, 17, 65532, 0, 17, 65531, 0, 16, 65531, 0, 15, 65531, 0, 14, 65531, 0, 14, 65532, 0, 15, 65532, 0, 13, 65532, 0, 12, 65532, 0, 11, 65532, 0, 10, 65532, 0, 10, 65533, 0, 12, 65533, 0, 12, 65534, 0, 13, 65534, 0, 13, 65533, 0, 12, 0, 0, 11, 0, 0, 10, 0, 0, 9, 0, 0, 8, 0, 0, 10, 65535, 0, 10, 1, 0, 9, 1, 0, 8, 3, 0, 9, 3, 0, 10, 3, 0, 14, 0, 0, 15, 0, 0, 15, 1, 0, 15, 2, 0, 13, 2, 0, 13, 3, 0, 13, 4, 0, 12, 4, 0, 12, 3, 0, 16, 65534, 0, 15, 65534, 0, 9, 65533, 0, 8, 65533, 0, 7, 65533, 0, 6, 65533, 0, 6, 65534, 0, 6, 65532, 0, 6, 65531, 0, 6, 65530, 0, 6, 65529, 0, 6, 65528, 0, 6, 65527, 0, 6, 65526, 0, 5, 65526, 0, 4, 65526, 0, 3, 65526, 0, 2, 65526, 0, 1, 65526, 0, 0, 65526, 0, 0, 65527, 0, 0, 65529, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 65528, 0, 11, 7, 0, 9, 2, 0, 65532, 65535, 0, 65532, 0, 0, 65532, 1, 0, 16, 7, 0, 17, 7, 0, 21, 6, 0, 22, 6, 0, 65535, 65535, 0, 65534, 65535, 0, 18, 65533, 0)
 }
 
 [node name="Props" type="Node3D" parent="Material"]
@@ -265,6 +265,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.24015, 2.1, -15)
 [node name="Fukel5" parent="Material/Props" instance=ExtResource("4_rndid")]
 transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 18.7402, 1.1, -2.9)
 
+[node name="Fukel8" parent="Material/Props" instance=ExtResource("4_rndid")]
+transform = Transform3D(1.33118e-07, 0, -1, 0, 1, 0, 1, 0, 1.33118e-07, 47.0402, 1.1, 17.24)
+
 [node name="Fukel6" parent="Material/Props" instance=ExtResource("4_rndid")]
 transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 17.0872, 1.1, 2.1)
 
@@ -301,6 +304,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 10)
 [node name="Nailed1" parent="Material" instance=ExtResource("5_5a8f1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -2)
 
+[node name="List3" parent="Material" instance=ExtResource("10_3h4dv")]
+transform = Transform3D(-0.346952, 0, -0.937883, 0, 1, 0, 0.937883, 0, -0.346952, 48.442, 0.605558, 20.4213)
+title = "Among Us"
+text = "You found the 1st ඞ from the ඞඞඞ!"
+
 [node name="Nailed2" parent="Material" instance=ExtResource("5_5a8f1")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20, 0, 13.7)
 
@@ -330,7 +338,7 @@ activates_needed = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.1, 0, 10)
 
 [node name="Button1" parent="Material" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("6_0hpqc")]
-transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, -2.3, 1.2, 1)
+transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, -1.7, 1.2, 1)
 activatable_mechanisms = NodePath("../Bars2")
 
 [node name="Button2" parent="Material" node_paths=PackedStringArray("activatable_mechanisms") instance=ExtResource("6_0hpqc")]
@@ -361,13 +369,13 @@ activatable_mechanisms = NodePath("../Bars5")
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 21.8239, 0.603381, -6.57856)
 pickable_spell_type = 5
 title = "The Blink"
-text = "Say: «Praesidium». Moving matter is considered a very difficult and dangerous spell to cast. Many wizards have died by miscalculating the distance. But don't let that scare you-you're not that stupid. Especially since, in this variation, this spell will only allow you to move a few steps forward."
+text = "Say: [rainbow freq=0.1 sat=0.8 val=0.8]✨Praesidium✨[/rainbow][p][/p]Moving matter is considered a very difficult and dangerous spell to cast. Many wizards have died by miscalculating the distance. But don't let that scare you-you're not that stupid. Especially since, in this variation, this spell will only allow you to move a few steps forward."
 
 [node name="List2" parent="Material" instance=ExtResource("10_3h4dv")]
 transform = Transform3D(-0.428604, 0, -0.903492, 0, 1, 0, 0.903492, 0, -0.428604, 16.3826, 0.603381, 4.44101)
 pickable_spell_type = 1
 title = "The Crush"
-text = "Say: «Breve» .A great spell if you want to destroy something that's almost destroyed. Physically. You can't close your bank loan or hide from your ex that way."
+text = "Say: [rainbow freq=0.1 sat=0.8 val=0.8]✨Breve✨[/rainbow][p][/p]A great spell if you want to destroy something that's almost destroyed. Physically. You can't close your bank loan or hide from your ex that way."
 
 [node name="Crystal" parent="Material" instance=ExtResource("13_7nfkq")]
 transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 6, 0.621451, -15)
@@ -471,6 +479,92 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 40, 0,
 [node name="BricksCracked5" parent="Material" instance=ExtResource("11_txdic")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 24, 0, -2)
 
+[node name="Water" type="Node3D" parent="Material"]
+
+[node name="WaterTile1" parent="Material/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, -1, 18)
+
+[node name="WaterTile2" parent="Material/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -1, -4)
+
+[node name="WaterTile3" parent="Material/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -1, -2)
+
+[node name="WaterTile4" parent="Material/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -1, -2)
+
+[node name="WaterTile5" parent="Material/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -1, 0)
+
+[node name="WaterTile6" parent="Material/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -1, -6)
+
+[node name="WaterTile8" parent="Material/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -1, -6)
+
+[node name="WaterTile9" parent="Material/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, -6)
+
+[node name="WaterTile10" parent="Material/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -1, -6)
+
+[node name="WaterTile11" parent="Material/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -1, -8)
+
+[node name="WaterTile12" parent="Material/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -1, -10)
+
+[node name="WaterTile13" parent="Material/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -1, -12)
+
+[node name="WaterTile14" parent="Material/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -1, -14)
+
+[node name="WaterTile15" parent="Material/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -1, -16)
+
+[node name="WaterTile16" parent="Material/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -1, -18)
+
+[node name="WaterTile17" parent="Material/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -1, -18)
+
+[node name="WaterTile18" parent="Material/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -1, -18)
+
+[node name="WaterTile19" parent="Material/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -1, -18)
+
+[node name="WaterTile20" parent="Material/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, -18)
+
+[node name="WaterTile21" parent="Material/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, -16)
+
+[node name="WaterTile22" parent="Material/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, -14)
+
+[node name="WaterTile23" parent="Material/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, -12)
+
+[node name="WaterTile24" parent="Material/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, -10)
+
+[node name="WaterTile26" parent="Material/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -1, -10)
+
+[node name="WaterTile27" parent="Material/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -1, -10)
+
+[node name="WaterTile28" parent="Material/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -1, -10)
+
+[node name="WaterTile25" parent="Material/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, -8)
+
+[node name="WaterTile7" parent="Material/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -1, -6)
+
 [node name="Cognitive" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
 
@@ -514,33 +608,35 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 2, 0)
 
 [node name="Collisions" type="GridMap" parent="Cognitive/Static"]
-visible = false
 mesh_library = ExtResource("2_w5hdb")
 cell_center_x = false
 cell_center_z = false
 data = {
-"cells": PackedInt32Array(65533, 65535, 0, 65533, 1, 0, 65534, 1, 0, 65535, 1, 0, 0, 1, 0, 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0, 6, 0, 0, 6, 1, 0, 6, 3, 0, 6, 4, 0, 6, 5, 0, 6, 6, 0, 6, 7, 0, 7, 7, 0, 8, 7, 0, 9, 7, 0, 8, 5, 0, 10, 5, 0, 9, 8, 0, 9, 9, 0, 10, 9, 0, 11, 10, 0, 12, 10, 0, 13, 10, 0, 14, 10, 0, 15, 10, 0, 14, 11, 0, 14, 12, 0, 15, 12, 0, 16, 12, 0, 17, 12, 0, 17, 11, 0, 17, 10, 0, 17, 9, 0, 17, 8, 0, 16, 8, 0, 15, 8, 0, 14, 6, 0, 13, 6, 0, 12, 6, 0, 12, 7, 0, 12, 8, 0, 13, 8, 0, 13, 7, 0, 18, 8, 0, 19, 8, 0, 19, 9, 0, 19, 10, 0, 20, 10, 0, 21, 10, 0, 22, 10, 0, 22, 11, 0, 23, 11, 0, 24, 11, 0, 25, 11, 0, 25, 10, 0, 25, 9, 0, 25, 8, 0, 25, 7, 0, 24, 7, 0, 24, 6, 0, 23, 7, 0, 22, 7, 0, 22, 8, 0, 21, 8, 0, 21, 7, 0, 24, 5, 0, 24, 4, 0, 23, 3, 0, 22, 4, 0, 21, 4, 0, 21, 3, 0, 20, 3, 0, 19, 3, 0, 19, 2, 0, 20, 2, 0, 19, 5, 0, 19, 6, 0, 17, 5, 0, 16, 5, 0, 16, 4, 0, 15, 4, 0, 18, 2, 0, 17, 2, 0, 17, 1, 0, 17, 0, 0, 17, 65535, 0, 18, 65535, 0, 19, 65535, 0, 19, 65534, 0, 19, 65533, 0, 18, 65532, 0, 17, 65532, 0, 17, 65531, 0, 16, 65531, 0, 15, 65531, 0, 14, 65531, 0, 14, 65532, 0, 15, 65532, 0, 13, 65532, 0, 12, 65532, 0, 11, 65532, 0, 10, 65532, 0, 10, 65533, 0, 12, 65533, 0, 12, 65534, 0, 13, 65534, 0, 13, 65533, 0, 12, 0, 0, 11, 0, 0, 10, 0, 0, 9, 0, 0, 8, 0, 0, 10, 65535, 0, 10, 1, 0, 9, 1, 0, 8, 3, 0, 9, 3, 0, 10, 3, 0, 14, 0, 0, 15, 0, 0, 15, 1, 0, 15, 2, 0, 13, 2, 0, 13, 3, 0, 13, 4, 0, 12, 4, 0, 12, 3, 0, 16, 65534, 0, 15, 65534, 0, 9, 65533, 0, 8, 65533, 0, 7, 65533, 0, 6, 65533, 0, 6, 65534, 0, 6, 65532, 0, 6, 65531, 0, 6, 65530, 0, 6, 65529, 0, 6, 65528, 0, 6, 65527, 0, 6, 65526, 0, 5, 65526, 0, 4, 65526, 0, 3, 65526, 0, 2, 65526, 0, 1, 65526, 0, 0, 65526, 0, 0, 65527, 0, 0, 65529, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 65528, 0, 11, 7, 0, 9, 2, 0, 65532, 65535, 0, 65532, 0, 0, 65532, 1, 0, 16, 7, 0, 17, 7, 0, 21, 6, 0, 22, 6, 0, 65534, 65535, 0, 65535, 65535, 0)
+"cells": PackedInt32Array(65533, 65535, 0, 65533, 1, 0, 65534, 1, 0, 65535, 1, 0, 0, 1, 0, 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0, 6, 0, 0, 6, 1, 0, 6, 3, 0, 6, 4, 0, 6, 5, 0, 6, 6, 0, 6, 7, 0, 7, 7, 0, 8, 7, 0, 9, 7, 0, 8, 5, 0, 10, 5, 0, 9, 8, 0, 9, 9, 0, 10, 9, 0, 11, 10, 0, 12, 10, 0, 13, 10, 0, 14, 10, 0, 15, 10, 0, 14, 11, 0, 14, 12, 0, 15, 12, 0, 16, 12, 0, 17, 12, 0, 17, 11, 0, 17, 10, 0, 17, 9, 0, 17, 8, 0, 16, 8, 0, 15, 8, 0, 14, 6, 0, 13, 6, 0, 12, 6, 0, 12, 7, 0, 12, 8, 0, 13, 8, 0, 13, 7, 0, 18, 8, 0, 19, 8, 0, 19, 9, 0, 19, 10, 0, 20, 10, 0, 21, 10, 0, 22, 10, 0, 22, 11, 0, 23, 11, 0, 24, 11, 0, 25, 11, 0, 25, 10, 0, 25, 9, 0, 25, 8, 0, 25, 7, 0, 24, 7, 0, 24, 6, 0, 23, 7, 0, 22, 7, 0, 22, 8, 0, 21, 8, 0, 21, 7, 0, 24, 5, 0, 24, 4, 0, 23, 3, 0, 22, 4, 0, 21, 4, 0, 21, 3, 0, 20, 3, 0, 19, 3, 0, 19, 2, 0, 20, 2, 0, 19, 5, 0, 19, 6, 0, 17, 5, 0, 16, 5, 0, 16, 4, 0, 15, 4, 0, 18, 2, 0, 17, 2, 0, 17, 1, 0, 17, 0, 0, 17, 65535, 0, 18, 65535, 0, 19, 65535, 0, 19, 65534, 0, 19, 65533, 0, 18, 65532, 0, 17, 65532, 0, 17, 65531, 0, 16, 65531, 0, 15, 65531, 0, 14, 65531, 0, 14, 65532, 0, 15, 65532, 0, 13, 65532, 0, 12, 65532, 0, 11, 65532, 0, 10, 65532, 0, 10, 65533, 0, 12, 65533, 0, 12, 65534, 0, 13, 65534, 0, 13, 65533, 0, 12, 0, 0, 11, 0, 0, 10, 0, 0, 9, 0, 0, 8, 0, 0, 10, 65535, 0, 10, 1, 0, 9, 1, 0, 8, 3, 0, 9, 3, 0, 10, 3, 0, 14, 0, 0, 15, 0, 0, 15, 1, 0, 15, 2, 0, 13, 2, 0, 13, 3, 0, 13, 4, 0, 12, 4, 0, 12, 3, 0, 16, 65534, 0, 15, 65534, 0, 9, 65533, 0, 8, 65533, 0, 7, 65533, 0, 6, 65533, 0, 6, 65534, 0, 6, 65532, 0, 6, 65531, 0, 6, 65530, 0, 6, 65529, 0, 6, 65528, 0, 6, 65527, 0, 6, 65526, 0, 5, 65526, 0, 4, 65526, 0, 3, 65526, 0, 2, 65526, 0, 1, 65526, 0, 0, 65526, 0, 0, 65527, 0, 0, 65529, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 65528, 0, 11, 7, 0, 9, 2, 0, 65532, 65535, 0, 65532, 0, 0, 65532, 1, 0, 16, 7, 0, 17, 7, 0, 21, 6, 0, 22, 6, 0, 65534, 65535, 0, 65535, 65535, 0, 18, 65533, 0)
 }
 
 [node name="Props" type="Node3D" parent="Cognitive"]
 
 [node name="Fukel1" parent="Cognitive/Props" instance=ExtResource("15_4ab2f")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 8.8, 2.1, -8)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 8.73167, 2.1, -8)
 
 [node name="Fukel2" parent="Cognitive/Props" instance=ExtResource("15_4ab2f")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 8.8, 2.1, -15)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 8.7389, 2.1, -15)
 
 [node name="Fukel3" parent="Cognitive/Props" instance=ExtResource("15_4ab2f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.15543, 2.1, -8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.24372, 2.1, -8)
 
 [node name="Fukel4" parent="Cognitive/Props" instance=ExtResource("15_4ab2f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.15543, 2.1, -15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2292, 2.1, -15)
 
 [node name="Fukel5" parent="Cognitive/Props" instance=ExtResource("15_4ab2f")]
-transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 18.8249, 1.1, -2.9)
+transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 18.7443, 1.1, -2.9)
+
+[node name="Fukel8" parent="Cognitive/Props" instance=ExtResource("15_4ab2f")]
+transform = Transform3D(1.33118e-07, 0, -1, 0, 1, 0, 1, 0, 1.33118e-07, 47.0392, 1.1, 17.2372)
 
 [node name="Fukel6" parent="Cognitive/Props" instance=ExtResource("15_4ab2f")]
-transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 17.172, 1.1, 2.1)
+transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 17.0811, 1.1, 2.1)
 
 [node name="Fukel7" parent="Cognitive/Props" instance=ExtResource("15_4ab2f")]
 transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 34.7234, 0.8, 6.82872)
@@ -812,14 +908,14 @@ activatable_mechanisms = NodePath("../Bars5")
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 21.8239, 0.60338, -6.57856)
 pickable_spell_type = 5
 title = "The Blink"
-text = "Say: «Praesidium». Moving matter is considered a very difficult and dangerous spell to cast. Many wizards have died by miscalculating the distance. But don't let that scare you-you're not that stupid. Especially since, in this variation, this spell will only allow you to move a few steps forward."
+text = "Say: [rainbow freq=0.1 sat=0.8 val=0.8]✨Praesidium✨[/rainbow][p][/p]Moving matter is considered a very difficult and dangerous spell to cast. Many wizards have died by miscalculating the distance. But don't let that scare you-you're not that stupid. Especially since, in this variation, this spell will only allow you to move a few steps forward."
 interactable = false
 
 [node name="List2" parent="Cognitive" instance=ExtResource("21_mm2dk")]
 transform = Transform3D(-0.428604, 0, -0.903492, 0, 1, 0, 0.903492, 0, -0.428604, 16.3826, 0.60338, 4.44101)
 pickable_spell_type = 1
 title = "The Crush"
-text = "Say: «Breve» .A great spell if you want to destroy something that's almost destroyed. Physically. You can't close your bank loan or hide from your ex that way."
+text = "Say: [rainbow freq=0.1 sat=0.8 val=0.8]✨Breve✨[/rainbow][p][/p]A great spell if you want to destroy something that's almost destroyed. Physically. You can't close your bank loan or hide from your ex that way."
 interactable = false
 
 [node name="Crystal" parent="Cognitive" instance=ExtResource("13_7nfkq")]
@@ -923,3 +1019,94 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 40, 0,
 
 [node name="BricksCracked5" parent="Cognitive" instance=ExtResource("12_gucwh")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 24, 0, -2)
+
+[node name="List3" parent="Cognitive" instance=ExtResource("21_mm2dk")]
+transform = Transform3D(-0.346952, 0, -0.937883, 0, 1, 0, 0.937883, 0, -0.346952, 48.442, 0.60556, 20.4213)
+title = "Among Us"
+text = "You found the 1st ඞ from the ඞඞඞ!"
+
+[node name="Water" type="Node3D" parent="Cognitive"]
+
+[node name="WaterTile1" parent="Cognitive/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, -1, 18)
+
+[node name="WaterTile2" parent="Cognitive/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -1, -4)
+
+[node name="WaterTile3" parent="Cognitive/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -1, -2)
+
+[node name="WaterTile4" parent="Cognitive/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -1, -2)
+
+[node name="WaterTile5" parent="Cognitive/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -1, 0)
+
+[node name="WaterTile6" parent="Cognitive/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -1, -6)
+
+[node name="WaterTile8" parent="Cognitive/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -1, -6)
+
+[node name="WaterTile9" parent="Cognitive/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, -6)
+
+[node name="WaterTile10" parent="Cognitive/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -1, -6)
+
+[node name="WaterTile11" parent="Cognitive/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -1, -8)
+
+[node name="WaterTile12" parent="Cognitive/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -1, -10)
+
+[node name="WaterTile13" parent="Cognitive/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -1, -12)
+
+[node name="WaterTile14" parent="Cognitive/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -1, -14)
+
+[node name="WaterTile15" parent="Cognitive/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -1, -16)
+
+[node name="WaterTile16" parent="Cognitive/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -1, -18)
+
+[node name="WaterTile17" parent="Cognitive/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -1, -18)
+
+[node name="WaterTile18" parent="Cognitive/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -1, -18)
+
+[node name="WaterTile19" parent="Cognitive/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -1, -18)
+
+[node name="WaterTile20" parent="Cognitive/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, -18)
+
+[node name="WaterTile21" parent="Cognitive/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, -16)
+
+[node name="WaterTile22" parent="Cognitive/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, -14)
+
+[node name="WaterTile23" parent="Cognitive/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, -12)
+
+[node name="WaterTile24" parent="Cognitive/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, -10)
+
+[node name="WaterTile26" parent="Cognitive/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -1, -10)
+
+[node name="WaterTile27" parent="Cognitive/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -1, -10)
+
+[node name="WaterTile28" parent="Cognitive/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -1, -10)
+
+[node name="WaterTile25" parent="Cognitive/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, -8)
+
+[node name="WaterTile7" parent="Cognitive/Water" instance=ExtResource("15_3e7v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -1, -6)

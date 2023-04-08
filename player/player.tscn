@@ -369,6 +369,13 @@ repair_spell_scene = ExtResource("11_mvv62")
 timestop_spell_scene = ExtResource("16_opg8d")
 teleport_spell_scene = ExtResource("17_c6sm3")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.361776, 0)
+light_energy = 0.4
+light_specular = 0.0
+omni_range = 1.919
+omni_attenuation = 0.329877
+
 [connection signal="timeout" from="Head/SpeechRecognition/Timer" to="Head/SpeechRecognition" method="_on_timer_timeout"]
 
 [editable path="GUI"]

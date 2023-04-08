@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://nftn0h0docco"]
+[gd_scene load_steps=6 format=3 uid="uid://b5iixu8jfpaa7"]
 
-[ext_resource type="Material" uid="uid://dw2bevecyyn8s" path="res://assets/materials/prtal.tres" id="1_3e03t"]
+[ext_resource type="Material" path="res://assets/materials/prtal.tres" id="1_3e03t"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_aybal"]
 material = ExtResource("1_3e03t")
@@ -101,7 +101,7 @@ _data = {
 "open": SubResource("Animation_gghev")
 }
 
-[node name="Node3D" type="Node3D"]
+[node name="Portal" type="Node3D"]
 visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

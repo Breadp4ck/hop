@@ -14,7 +14,7 @@ var current_page: int = 0
 func _ready() -> void:
 	add_page("The Book", "It's a magic book of magic. Here you can write down all your spells that you can think of. But it's hard to think, so it would be better if someone wrote them for you. Any spells you find will be added to this book. You may open the book with the ★TAB★ key")
 	add_page("The Planes", "The whole world consists of two planes, the material and the cognitive. They duplicate each other, but with some peculiarities. The cognitive element is populated by the spirits of objects and beings, expressing certain traits of them.")
-	add_page("The Ring", "The ring allows you to move between worlds by pressing the ★Space★ key. The ring also allows you to cast spells, but unfortunately only in cognitive reality (plane). To cast a spell, press the ★C★ key.")
+	add_page("The Ring", "The ring allows you to move between worlds by pressing the ★Space★ key. The ring also allows you to cast spells, but unfortunately only in cognitive reality (plane). To charge a spell, say the necessary words while pressing the ★C★ key. To cast the spell, press ★RMB★.")
 	
 	show_page(first_page())
 

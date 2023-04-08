@@ -108,6 +108,7 @@ grow_vertical = 0
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 250
+theme_override_constants/margin_bottom = 80
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Book/MarginContainer"]
 layout_direction = 1
@@ -124,13 +125,14 @@ text = "CRAZY CRUSH"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
 text = "za wurdo"
 fit_content = true
 scroll_active = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Book/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 6
+size_flags_vertical = 0
 alignment = 1
 
 [node name="PrevPageButton" type="Button" parent="Book/MarginContainer/VBoxContainer/HBoxContainer"]
@@ -336,7 +338,7 @@ grow_vertical = 0
 [node name="Label" type="Label" parent="EndGameScreen/CenterContainer4"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
-text = "Press ★Space★ to continue"
+text = "Press ★Space★ to exit"
 text_direction = 1
 
 [connection signal="tree_exited" from="HUD" to="HUD" method="_on_tree_exited"]

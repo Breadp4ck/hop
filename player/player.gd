@@ -60,7 +60,7 @@ func _input(event: InputEvent) -> void:
 	if can_input == false:
 		return
 
-	if event.is_action_pressed("cast_spell"):
+	if event.is_action_pressed("cast_spell") and World.current_plane == Globals.WorldPlane.COGNITIVE:
 		if spell_caster.try_cast_choosen():
 			Sfx.play("spell")
 			activate_spell_delay()

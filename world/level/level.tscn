@@ -51,8 +51,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 193, 1, 0)
 destination_marker = NodePath("../EntranceHubFromRoom2")
 
 [node name="GateFromRoom3ToHub" parent="Material" node_paths=PackedStringArray("destination_marker") instance=ExtResource("3_m2yko")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 399, 1, 0)
-destination_marker = NodePath("../EntranceHubFromRoom2")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 402, 1, -3)
+destination_marker = NodePath("../EntranceHubFromRoom3")
 
 [node name="EntranceHubFromRoom1" type="Marker3D" parent="Material"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
@@ -96,8 +96,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 193, 1, 0)
 destination_marker = NodePath("../EntranceHubFromRoom2")
 
 [node name="GateFromRoom3ToHub" parent="Cognitive" node_paths=PackedStringArray("destination_marker") instance=ExtResource("3_m2yko")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 399, 1, 0)
-destination_marker = NodePath("../EntranceHubFromRoom2")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 402, 1, -3)
+destination_marker = NodePath("../EntranceHubFromRoom3")
 
 [node name="EntranceHubFromRoom1" type="Marker3D" parent="Cognitive"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)

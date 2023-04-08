@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dirp2lv0rgtke" path="res://player/player.tscn" id="1_236wh"]
 [ext_resource type="PackedScene" uid="uid://de4nmvujce6r1" path="res://world/start_menu.tscn" id="2_fg7nm"]
 [ext_resource type="PackedScene" uid="uid://bb31djcios3dg" path="res://world/level/level.tscn" id="3_07eda"]
-[ext_resource type="PackedScene" uid="uid://nftn0h0docco" path="res://world/portal.tscn" id="4_xkx7b"]
+[ext_resource type="PackedScene" uid="uid://b5iixu8jfpaa7" path="res://world/portal.tscn" id="4_xkx7b"]
 
 [node name="World" type="Node3D"]
 
@@ -19,11 +19,11 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 
 [node name="Level" parent="." instance=ExtResource("3_07eda")]
 
-[node name="Node3D" parent="." instance=ExtResource("4_xkx7b")]
+[node name="Portal" parent="." instance=ExtResource("4_xkx7b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
 
-[node name="MeshInstance3D" parent="Node3D" index="0"]
+[node name="MeshInstance3D" parent="Portal" index="0"]
 transform = Transform3D(-1.02741e-07, 0, 1, 0, 1.90631, 0, -2.35044, 0, -4.37114e-08, -3.97171, 0.753785, 0.0299716)
 instance_shader_parameters/inner_color = Color(0.278431, 0.494118, 1, 1)
 
-[editable path="Node3D"]
+[editable path="Portal"]
