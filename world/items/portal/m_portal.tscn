@@ -1,7 +1,8 @@
-[gd_scene load_steps=49 format=3 uid="uid://drcef7oxafw5i"]
+[gd_scene load_steps=50 format=3 uid="uid://drcef7oxafw5i"]
 
 [ext_resource type="Script" path="res://world/items/portal/portal.gd" id="1_dfeuq"]
 [ext_resource type="Texture2D" uid="uid://dcavh5xuuobd4" path="res://assets/entities/portal/m_portal_palette.png" id="1_gg518"]
+[ext_resource type="PackedScene" uid="uid://clxsurscn8vcn" path="res://world/teleport/end_game_area.tscn" id="2_o01ui"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_inlfn"]
 resource_name = "color"
@@ -1221,6 +1222,9 @@ script = ExtResource("1_dfeuq")
 interactable = true
 needed_types_to_interact = Array[int]([3])
 
+[node name="EndGameArea" parent="." instance=ExtResource("2_o01ui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.777, 0)
+
 [node name="M_PortalBlock" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.177725, 0.0015476, 0.0157601, -0.00162389, 0.177997, 0.00209544, -0.00992761, -0.00141014, 0.281796, 0.0504984, 0.115246, 0.80648)
 mesh = SubResource("ArrayMesh_qu7qx")
@@ -1310,3 +1314,5 @@ shape = SubResource("BoxShape3D_togfg")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0.7, 0)
 shape = SubResource("BoxShape3D_8qtcm")
+
+[connection signal="area_entered" from="EndGameArea" to="EndGameArea" method="_on_area_entered"]

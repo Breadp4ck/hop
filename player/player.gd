@@ -90,9 +90,6 @@ func _input(event: InputEvent) -> void:
 	add_transition(transition)
 
 func _process(delta: float) -> void:
-	if Input.is_key_pressed(KEY_1):
-		receive_damage(2)
-	
 	if want_interact:
 		interact()
 	
