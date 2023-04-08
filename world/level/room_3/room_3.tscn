@@ -30,7 +30,6 @@
 [node name="Room3" type="Node3D"]
 
 [node name="Material" type="Node3D" parent="."]
-visible = false
 
 [node name="Static" type="Node3D" parent="Material"]
 
@@ -44,7 +43,6 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Roof" type="GridMap" parent="Material/Static"]
-visible = false
 mesh_library = ExtResource("1_fhom7")
 cell_center_x = false
 cell_center_z = false
@@ -739,9 +737,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, -4)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 4)
 
 [node name="Cognitive" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
 
-[node name="ShadowMaster" parent="Cognitive" instance=ExtResource("15_xe20x")]
+[node name="ShadowMaster" parent="Cognitive" node_paths=PackedStringArray("walls_grid") instance=ExtResource("15_xe20x")]
+walls_grid = NodePath("../Static/Collision")
+grid_size = Vector2i(64, 64)
 
 [node name="Husk1" parent="Cognitive/ShadowMaster" instance=ExtResource("16_y8keo")]
 transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, 14, 0, 6)
@@ -812,7 +812,6 @@ data = {
 metadata/_editor_floor_ = Vector3(0, -1, 0)
 
 [node name="Roof" type="GridMap" parent="Cognitive/Static"]
-visible = false
 mesh_library = ExtResource("1_fhom7")
 cell_center_x = false
 cell_center_z = false
@@ -822,7 +821,6 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 3, 0)
 
 [node name="Collision" type="GridMap" parent="Cognitive/Static"]
-visible = false
 mesh_library = ExtResource("2_7hryv")
 cell_center_x = false
 cell_center_z = false
