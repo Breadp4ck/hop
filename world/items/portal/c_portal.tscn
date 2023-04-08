@@ -1325,4 +1325,6 @@ instance_shader_parameters/inner_color = Color(0.470588, 0.639216, 1, 1)
 instance_shader_parameters/progress = 0.0
 instance_shader_parameters/radius = 1.0
 
+[connection signal="area_entered" from="EndGameArea" to="EndGameArea" method="_on_area_entered"]
+
 [editable path="portal"]

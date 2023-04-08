@@ -1324,4 +1324,7 @@ transform = Transform3D(-1.43858, 0, -8.74228e-08, 0, 0.967801, 0, 1.25765e-07, 
 instance_shader_parameters/inner_color = Color(0.470588, 0.639216, 1, 1)
 instance_shader_parameters/progress = 0.0
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_entered" from="EndGameArea" to="EndGameArea" method="_on_area_entered"]
+
 [editable path="portal"]
