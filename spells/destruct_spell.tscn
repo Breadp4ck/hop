@@ -19,6 +19,7 @@ angular_velocity_min = -60.0
 angular_velocity_max = 60.0
 angle_min = -720.0
 angle_max = 720.0
+color = Color(1, 1, 1, 0.333333)
 turbulence_noise_strength = 2.7
 turbulence_noise_scale = 10.0
 turbulence_noise_speed = Vector3(1, 1, 1)
@@ -29,9 +30,8 @@ turbulence_initial_displacement_max = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_swswa"]
 transparency = 1
-blend_mode = 1
 shading_mode = 0
-albedo_color = Color(1, 1, 1, 0.254902)
+vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("2_4wcrs")
 billboard_mode = 3
 particles_anim_h_frames = 1
