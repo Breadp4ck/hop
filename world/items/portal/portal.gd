@@ -1,8 +1,10 @@
 class_name Portal
 extends Item
 
-var crystals_needed: int = 4
+var crystals_needed: int = 0
 var crystals_amount: int = 0
+
+@onready var anim: AnimationPlayer = $portal/AnimationPlayer
 
 func interact(spell: Spell) -> void:
 	if (crystals_amount < crystals_needed):
@@ -14,6 +16,7 @@ func interact(spell: Spell) -> void:
 func disable() -> void: # Invoke this at and of animation
 	collision.disabled = true
 	body_collision.disabled = true
+	anim.play("open")
 	
 func add_one_crystal():
 	crystals_amount += 1

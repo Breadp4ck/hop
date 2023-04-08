@@ -1,7 +1,8 @@
-[gd_scene load_steps=49 format=3 uid="uid://bstd3xy8rkkn7"]
+[gd_scene load_steps=50 format=3 uid="uid://bstd3xy8rkkn7"]
 
 [ext_resource type="Texture2D" uid="uid://co8a3j6ejeq17" path="res://assets/entities/portal/c_portal_palette-inverse.png" id="1_7d5j8"]
 [ext_resource type="Script" path="res://world/items/portal/portal.gd" id="1_u201p"]
+[ext_resource type="PackedScene" uid="uid://nftn0h0docco" path="res://world/portal.tscn" id="3_075cd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_esyyq"]
 resource_name = "color-inverse"
@@ -1237,7 +1238,7 @@ mesh = SubResource("ArrayMesh_jf812")
 skeleton = NodePath("")
 
 [node name="C_PortalBlock018" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0038681, 0.0136193, -0.207784, 0.13135, 0.0065814, 0.00702379, 0.00625753, -0.146567, -0.0189923, -0.678894, 0.0981817, 0.0794374)
+transform = Transform3D(0.00386796, 0.0136192, -0.207784, 0.13135, 0.0065816, 0.00702358, 0.00625769, -0.146567, -0.0189921, -0.678894, 0.0981817, 0.0794374)
 mesh = SubResource("ArrayMesh_a8cl8")
 skeleton = NodePath("")
 
@@ -1277,7 +1278,7 @@ mesh = SubResource("ArrayMesh_8ssan")
 skeleton = NodePath("")
 
 [node name="C_PortalBlock026" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.104636, 0.00892526, 0.0814484, -0.00278825, 0.114058, -0.0404271, -0.0520638, -0.024046, -0.161527, 0.369402, 0.0119087, -0.250728)
+transform = Transform3D(-0.104636, 0.00892526, 0.0814483, -0.00278825, 0.114058, -0.040427, -0.0520638, -0.024046, -0.161527, 0.369402, 0.0119087, -0.250728)
 mesh = SubResource("ArrayMesh_2omma")
 skeleton = NodePath("")
 
@@ -1310,3 +1311,14 @@ shape = SubResource("BoxShape3D_iukvf")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0.7, 0)
 shape = SubResource("BoxShape3D_m1rwr")
+
+[node name="portal" parent="." instance=ExtResource("3_075cd")]
+transform = Transform3D(-5.9764e-08, 0, 1, 0, 2.55223, 0, -1.36724, 0, -4.37114e-08, -0.461168, 0.406006, 0.0663154)
+
+[node name="MeshInstance3D" parent="portal" index="0"]
+transform = Transform3D(-1.43858, 0, -8.74228e-08, 0, 0.967801, 0, 1.25765e-07, 0, -1, -1.49012e-08, 0.0755666, 0.47789)
+instance_shader_parameters/inner_color = Color(0.470588, 0.639216, 1, 1)
+instance_shader_parameters/progress = 0.0
+instance_shader_parameters/radius = 1.0
+
+[editable path="portal"]
