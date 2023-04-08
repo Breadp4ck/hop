@@ -5,6 +5,45 @@
 [sub_resource type="QuadMesh" id="QuadMesh_aybal"]
 material = ExtResource("1_3e03t")
 
+[sub_resource type="Animation" id="Animation_nbq5v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:instance_shader_parameters/border_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.996078, 0.996078, 0.996078, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshInstance3D:instance_shader_parameters/inner_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [null]
+}
+
 [sub_resource type="Animation" id="Animation_gghev"]
 resource_name = "open"
 tracks/0/type = "value"
@@ -31,20 +70,29 @@ tracks/1/keys = {
 "update": 1,
 "values": [true]
 }
-
-[sub_resource type="Animation" id="Animation_nbq5v"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshInstance3D:instance_shader_parameters/border_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Color(0.996078, 0.996078, 0.996078, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MeshInstance3D:instance_shader_parameters/inner_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [null]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ia23x"]
@@ -57,9 +105,8 @@ _data = {
 visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-instance_shader_parameters/border_color = null
-instance_shader_parameters/inner_color = null
-instance_shader_parameters/radius = 1.0
+instance_shader_parameters/border_color = Color(0.996078, 0.996078, 0.996078, 0)
+instance_shader_parameters/radius = 0.0
 instance_shader_parameters/squash = 1.503
 instance_shader_parameters/wobble = 10.0
 mesh = SubResource("QuadMesh_aybal")
