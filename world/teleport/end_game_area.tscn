@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://clxsurscn8vcn"]
+
+[ext_resource type="Script" path="res://world/teleport/endgame_area.gd" id="1_lo4ag"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j2s6e"]
+size = Vector3(1, 2, 2)
+
+[node name="EndGameArea" type="Area3D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_lo4ag")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_j2s6e")
