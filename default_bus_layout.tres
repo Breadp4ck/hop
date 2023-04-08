@@ -8,6 +8,7 @@ room_size = 0.52
 resource_name = "Record"
 
 [resource]
+bus/0/volume_db = -9.63278
 bus/1/name = &"Cognitive"
 bus/1/solo = false
 bus/1/mute = false
