@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bbtltjolwxc65"]
+[gd_scene load_steps=15 format=3 uid="uid://bbtltjolwxc65"]
 
 [ext_resource type="FontFile" uid="uid://b0y85cnal68dw" path="res://assets/gui/Davida.ttf" id="1_45prj"]
 [ext_resource type="Script" path="res://player/gui/gui.gd" id="2_cnhhr"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bdj8vjtlfrh77" path="res://player/gui/health_point_icon.tscn" id="7_ykuim"]
 [ext_resource type="Script" path="res://player/gui/death.gd" id="8_5qwr8"]
 [ext_resource type="Script" path="res://player/gui/pause.gd" id="8_g38fo"]
+[ext_resource type="Script" path="res://player/gui/end_game_screen.gd" id="10_b4kwc"]
 
 [sub_resource type="Theme" id="Theme_ojf0e"]
 default_font = ExtResource("1_45prj")
@@ -246,6 +247,97 @@ text = "Resume game"
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
 text = "Exit"
+
+[node name="EndGameScreen" type="Control" parent="." groups=["EndGameScreen"]]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_b4kwc")
+
+[node name="Panel" type="Panel" parent="EndGameScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uvegf")
+
+[node name="CenterContainer" type="CenterContainer" parent="EndGameScreen"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -694.0
+offset_top = -211.0
+offset_right = 694.0
+offset_bottom = 342.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="EndGameScreen/CenterContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Congrats you`ve beat the computer game:"
+
+[node name="CenterContainer3" type="CenterContainer" parent="EndGameScreen"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -694.0
+offset_top = -132.0
+offset_right = 694.0
+offset_bottom = 421.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="EndGameScreen/CenterContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "«HOP»"
+
+[node name="CenterContainer2" type="CenterContainer" parent="EndGameScreen"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -255.0
+offset_top = -474.0
+offset_right = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="EndGameScreen/CenterContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "
+
+DEVS: 
+breadpack
+tombleron
+Twinkle "
+text_direction = 1
+
+[node name="CenterContainer4" type="CenterContainer" parent="EndGameScreen"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -87.0
+offset_right = 700.0
+offset_bottom = 3.0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="EndGameScreen/CenterContainer4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Press ★Space★ to continue"
+text_direction = 1
 
 [connection signal="tree_exited" from="HUD" to="HUD" method="_on_tree_exited"]
 [connection signal="pressed" from="Book/MarginContainer/VBoxContainer/HBoxContainer/PrevPageButton" to="Book" method="_on_prev_page_button_pressed"]
