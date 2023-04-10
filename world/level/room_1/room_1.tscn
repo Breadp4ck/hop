@@ -66,6 +66,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
 [node name="BrickPillar3" parent="Material/Static/Props" instance=ExtResource("3_7b5la")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3)
 
+[node name="BrickPillar20" parent="Material/Static/Props" instance=ExtResource("3_7b5la")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 0.95, 1, 2.115, -3)
+
+[node name="BrickPillar21" parent="Material/Static/Props" instance=ExtResource("3_7b5la")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 0.95, 1, 2.11686, -9)
+
+[node name="BrickPillar22" parent="Material/Static/Props" instance=ExtResource("3_7b5la")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 0.95, 1, 2.11686, -17)
+
+[node name="BrickPillar23" parent="Material/Static/Props" instance=ExtResource("3_7b5la")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -0.95, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.15258e-08, 1, 2.11686, -21)
+
 [node name="BrickPillar4" parent="Material/Static/Props" instance=ExtResource("3_7b5la")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3)
 
@@ -258,6 +270,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
 
 [node name="BrickPillar3" parent="Cognitive/Static/Props" instance=ExtResource("14_yauet")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3)
+
+[node name="BrickPillar20" parent="Cognitive/Static/Props" instance=ExtResource("14_yauet")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 0.95, 1, 2.115, -3)
+
+[node name="BrickPillar21" parent="Cognitive/Static/Props" instance=ExtResource("14_yauet")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 0.95, 1, 2.115, -9)
+
+[node name="BrickPillar22" parent="Cognitive/Static/Props" instance=ExtResource("14_yauet")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 0.95, 1, 2.115, -17)
+
+[node name="BrickPillar23" parent="Cognitive/Static/Props" instance=ExtResource("14_yauet")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -0.95, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.15258e-08, 1, 2.115, -21)
 
 [node name="BrickPillar4" parent="Cognitive/Static/Props" instance=ExtResource("14_yauet")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3)

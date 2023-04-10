@@ -70,6 +70,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -1)
 [node name="BrickPillar3" parent="Material/Props" instance=ExtResource("3_6y4ys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
 
+[node name="BrickPillar64" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 0.95, 0, -1, -4.15258e-08, -1, 2.115, 1)
+
+[node name="BrickPillar65" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 0.95, 0, -1, -4.15258e-08, 11, 2.115, -1)
+
+[node name="BrickPillar66" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 0.95, 0, -1, -4.15258e-08, 21, 2.115, -3)
+
+[node name="BrickPillar67" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(-4.37114e-08, 1, 4.15258e-08, 0, -4.37114e-08, 0.95, 1, 4.37114e-08, -1.55993e-15, 21, 2.115, -3)
+
+[node name="BrickPillar68" parent="Material/Props" instance=ExtResource("3_6y4ys")]
+transform = Transform3D(-1, -8.74228e-08, 3.11985e-15, -3.67052e-22, -4.37114e-08, 0.95, -8.74228e-08, 1, 4.15258e-08, 43, 2.115, 9)
+
 [node name="BrickPillar5" parent="Material/Props" instance=ExtResource("3_6y4ys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
 
@@ -658,6 +673,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
 
 [node name="BrickPillar2" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+
+[node name="BrickPillar65" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 0.95, 0, -1, -4.15258e-08, -1, 2.115, 1)
+
+[node name="BrickPillar66" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 0.95, 0, -1, -4.15258e-08, 11, 2.115, -1)
+
+[node name="BrickPillar67" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 0.95, 0, -1, -4.15258e-08, 21, 2.115, -3)
+
+[node name="BrickPillar68" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(-4.37114e-08, 1, 4.15258e-08, 0, -4.37114e-08, 0.95, 1, 4.37114e-08, -1.55993e-15, 21, 2.115, -3)
+
+[node name="BrickPillar69" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
+transform = Transform3D(-1, -8.74228e-08, 3.11985e-15, -3.67052e-22, -4.37114e-08, 0.95, -8.74228e-08, 1, 4.15258e-08, 43, 2.115, 9)
 
 [node name="BrickPillar3" parent="Cognitive/Props" instance=ExtResource("15_l8w8a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
