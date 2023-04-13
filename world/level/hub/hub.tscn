@@ -88,12 +88,6 @@ pickable_spell_type = 0
 title = "The Fire Spit"
 text = "Say: [rainbow freq=0.1 sat=0.8 val=0.8]✨Vox✨[/rainbow][p][/p]Spitting fire is considered one of the oldest and most revered spells, originating with the clan of red-eyed dragon warriors. A very handy spell because in addition to being used in combat, you can also cook food right in your mouth."
 
-[node name="List2" parent="Material" instance=ExtResource("11_p1g30")]
-transform = Transform3D(-0.827757, 0, -0.561087, 0, 1, 0, 0.561087, 0, -0.827757, 2.6, 0.70123, 6)
-pickable_spell_type = 3
-title = "The Repair"
-text = "Say: [rainbow freq=0.1 sat=0.8 val=0.8]✨Lorem✨[/rainbow][p][/p]A spell that allows you to repair a man-made structure with a single blow. Young wizards ask their comrades to fix something, and it turns out to be something obscene."
-
 [node name="Nailed1" parent="Material" instance=ExtResource("12_3aw6n")]
 transform = Transform3D(1.26883, 0.591666, 0, -0.591666, 1.26883, 0, 0, 0, 1.4, 3.4, 0, 4.6)
 
@@ -165,13 +159,6 @@ transform = Transform3D(0.573577, 0, 0.819152, 0, 1, 0, -0.819152, 0, 0.573577, 
 pickable_spell_type = 0
 title = "The Fire Spit"
 text = "Say: [rainbow freq=0.1 sat=0.8 val=0.8]✨Vox✨[/rainbow][p][/p]Spitting fire is considered one of the oldest and most revered spells, originating with the clan of red-eyed dragon warriors. A very handy spell because in addition to being used in combat, you can also cook food right in your mouth."
-interactable = false
-
-[node name="List2" parent="Cognitive" instance=ExtResource("21_vfkk7")]
-transform = Transform3D(-0.827757, 0, -0.561087, 0, 1, 0, 0.561087, 0, -0.827757, 2.6, 0.70123, 6)
-pickable_spell_type = 3
-title = "The Repair"
-text = "Say: [rainbow freq=0.1 sat=0.8 val=0.8]✨Lorem✨[/rainbow][p][/p]A spell that allows you to repair a man-made structure with a single blow. Young wizards ask their comrades to fix something, and it turns out to be something obscene."
 interactable = false
 
 [node name="Nailed1" parent="Cognitive" instance=ExtResource("21_om1co")]
