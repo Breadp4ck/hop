@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://c4ftr3a8r5skk"]
+[gd_scene load_steps=11 format=3 uid="uid://c4ftr3a8r5skk"]
 
 [ext_resource type="Script" path="res://player/inventory/inventory_item.gd" id="1_107vg"]
 [ext_resource type="Texture2D" uid="uid://fsrop13bjrft" path="res://assets/entities/ring/c_ring_palette-inverse.png" id="1_whwyi"]
+[ext_resource type="Material" uid="uid://cluxqj0gpoi7b" path="res://assets/materials/highlight.tres" id="2_6vp6c"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dda3e"]
 resource_name = "color-inverse"
@@ -62,6 +63,7 @@ type = 1
 interactable = true
 
 [node name="C_Ring" type="MeshInstance3D" parent="."]
+material_overlay = ExtResource("2_6vp6c")
 mesh = SubResource("ArrayMesh_rrjk8")
 skeleton = NodePath("")
 

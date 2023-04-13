@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://ba2ci8eh1l78l"]
+[gd_scene load_steps=11 format=3 uid="uid://ba2ci8eh1l78l"]
 
 [ext_resource type="Texture2D" uid="uid://felegl2sxd2x" path="res://assets/entities/portal_stone/d_portal_stone_palette-inverse.png" id="1_6tg8h"]
 [ext_resource type="Script" path="res://player/inventory/inventory_item.gd" id="1_ggrr0"]
+[ext_resource type="Material" uid="uid://cluxqj0gpoi7b" path="res://assets/materials/highlight.tres" id="2_sdwn8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vj6f0"]
 resource_name = "color-inverse"
@@ -61,6 +62,7 @@ interactable = true
 
 [node name="D_PortalStone" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0283638, 0, 0, 0, 0.0445307, 0, 0, 0, 0.0306217, 0, 0, 0)
+material_overlay = ExtResource("2_sdwn8")
 mesh = SubResource("ArrayMesh_jnukn")
 skeleton = NodePath("")
 

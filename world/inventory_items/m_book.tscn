@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bnwr1wfb6ylgb"]
+[gd_scene load_steps=11 format=3 uid="uid://bnwr1wfb6ylgb"]
 
 [ext_resource type="Script" path="res://player/inventory/inventory_item.gd" id="1_75uke"]
 [ext_resource type="Texture2D" uid="uid://dqwrbo242ygxt" path="res://assets/entities/book/m_book_palette-inverse.png" id="1_ws81y"]
+[ext_resource type="Material" uid="uid://cluxqj0gpoi7b" path="res://assets/materials/highlight.tres" id="2_e0lib"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1rh8v"]
 resource_name = "color-inverse"
@@ -60,6 +61,7 @@ interactable = true
 
 [node name="M_Book" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.192939, 0, 0, 0, 0.0535241, 0, 0, 0, 0.148714, 0, 0, 0)
+material_overlay = ExtResource("2_e0lib")
 mesh = SubResource("ArrayMesh_jt8y1")
 skeleton = NodePath("")
 

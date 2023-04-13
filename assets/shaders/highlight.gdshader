@@ -3,10 +3,10 @@ render_mode unshaded, depth_draw_never;
 
 instance uniform vec4 shine_color : source_color = vec4(1.0, 1.0, 1.0, 1.0);
 
-uniform float cycle_interval : hint_range(0.5, 5.0) = 1.0;
+uniform float cycle_interval : hint_range(0.1, 5.0) = 3.0;
 
-instance uniform float shine_speed : hint_range(1.0, 5.0) = 3.0;
-instance uniform float shine_width : hint_range(1.0, 100.0) = 3.0;
+instance uniform float shine_speed : hint_range(1.0, 5.0) = 1.0;
+instance uniform float shine_width : hint_range(1.0, 100.0) = 5.0;
 instance uniform float shine_tangent : hint_range(-1.0, 1.0) = 0.0;
 
 void fragment() {

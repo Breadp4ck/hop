@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bm7revl1frg2d"]
+[gd_scene load_steps=11 format=3 uid="uid://bm7revl1frg2d"]
 
 [ext_resource type="Texture2D" uid="uid://c8gonrrrk2w51" path="res://assets/entities/list/m_list_m_list.png" id="1_minii"]
 [ext_resource type="Script" path="res://world/items/list/list.gd" id="1_n6xtw"]
+[ext_resource type="Material" uid="uid://cluxqj0gpoi7b" path="res://assets/materials/highlight.tres" id="2_0yni1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wbaqe"]
 size = Vector3(0.3, 0.1, 0.35)
@@ -68,6 +69,7 @@ shape = SubResource("BoxShape3D_wbaqe")
 shape = SubResource("SphereShape3D_0tfd8")
 
 [node name="M_List" type="MeshInstance3D" parent="."]
+material_overlay = ExtResource("2_0yni1")
 mesh = SubResource("ArrayMesh_shwae")
 skeleton = NodePath("")
 

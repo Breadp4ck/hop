@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://34jjdg81mcmr"]
+[gd_scene load_steps=11 format=3 uid="uid://34jjdg81mcmr"]
 
 [ext_resource type="Script" path="res://player/inventory/inventory_item.gd" id="1_wdmmm"]
+[ext_resource type="Material" uid="uid://cluxqj0gpoi7b" path="res://assets/materials/highlight.tres" id="2_8invs"]
 [ext_resource type="Texture2D" uid="uid://fsrop13bjrft" path="res://assets/entities/ring/c_ring_palette-inverse.png" id="2_spabb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dda3e"]
@@ -62,6 +63,7 @@ type = 1
 interactable = true
 
 [node name="C_Ring" type="MeshInstance3D" parent="."]
+material_overlay = ExtResource("2_8invs")
 mesh = SubResource("ArrayMesh_k6weg")
 skeleton = NodePath("")
 
