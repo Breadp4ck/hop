@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bbtltjolwxc65"]
+[gd_scene load_steps=16 format=3 uid="uid://bbtltjolwxc65"]
 
 [ext_resource type="FontFile" uid="uid://b0y85cnal68dw" path="res://assets/gui/Davida.ttf" id="1_45prj"]
 [ext_resource type="Script" path="res://player/gui/gui.gd" id="2_cnhhr"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ba46q5dk3d1mt" path="res://icon.svg" id="5_gsdnd"]
 [ext_resource type="Script" path="res://player/gui/hud.gd" id="5_q0ini"]
 [ext_resource type="PackedScene" uid="uid://bdj8vjtlfrh77" path="res://player/gui/health_point_icon.tscn" id="7_ykuim"]
+[ext_resource type="FontFile" uid="uid://ddvw0bn8heptg" path="res://assets/gui/Neucha-Regular.ttf" id="8_0fylf"]
 [ext_resource type="Script" path="res://player/gui/death.gd" id="8_5qwr8"]
 [ext_resource type="Script" path="res://player/gui/pause.gd" id="8_g38fo"]
 [ext_resource type="Script" path="res://player/gui/end_game_screen.gd" id="10_b4kwc"]
@@ -125,6 +126,7 @@ text = "CRAZY CRUSH"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("8_0fylf")
 bbcode_enabled = true
 text = "za wurdo"
 fit_content = true
