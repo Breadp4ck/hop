@@ -950,6 +950,7 @@ interactable = false
 
 [node name="Crystal" parent="Cognitive" instance=ExtResource("13_7nfkq")]
 transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 6, 0.621451, -15)
+interactable = false
 
 [node name="Pit1" parent="Cognitive" instance=ExtResource("14_w02vk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 18)

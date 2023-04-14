@@ -1100,7 +1100,7 @@ text = "You found the 3d ඞ from the ඞඞඞ!"
 [node name="List3" parent="Material" instance=ExtResource("16_wnuhs")]
 transform = Transform3D(0.327729, 0, -0.944772, 0, 1, 0, 0.944772, 0, 0.327729, 44.6, 0.602, -0.3)
 title = "The Portal"
-text = "No one knows where the old portal leads. But I do know that it can be repaired. All you have to do is find four portal crystals and place them on the pedestals. Without the crystals, it's just a pile of rocks.I wish this would workNo one knows where the old portal leads. But I do know that it can be repaired. All you have to do is find four portal crystals and place them on the pedestals. Without the crystals, it's just a pile of rocks.I wish this would work."
+text = "No one knows where the old portal leads. But I do know that it can be repaired. All you have to do is find four portal crystals and place them on the pedestals. Without the crystals, it's just a pile of rocks. I wish this would work."
 
 [node name="Cognitive" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
@@ -2253,5 +2253,5 @@ interactable = false
 [node name="List3" parent="Cognitive" instance=ExtResource("21_7d023")]
 transform = Transform3D(0.327729, 0, -0.944772, 0, 1, 0, 0.944772, 0, 0.327729, 44.6, 0.602425, -0.300001)
 title = "The Portal"
-text = "No one knows where the old portal leads. But I do know that it can be repaired. All you have to do is find four portal crystals and place them on the pedestals. Without the crystals, it's just a pile of rocks.I wish this would workNo one knows where the old portal leads. But I do know that it can be repaired. All you have to do is find four portal crystals and place them on the pedestals. Without the crystals, it's just a pile of rocks.I wish this would work."
+text = "No one knows where the old portal leads. But I do know that it can be repaired. All you have to do is find four portal crystals and place them on the pedestals. Without the crystals, it's just a pile of rocks. I wish this would work."
 interactable = false
