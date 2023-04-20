@@ -321,7 +321,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -2)
 
 [node name="List3" parent="Material" instance=ExtResource("10_3h4dv")]
 transform = Transform3D(-0.346952, 0, -0.937883, 0, 1, 0, 0.937883, 0, -0.346952, 48.442, 0.605558, 20.4213)
-title = "Among Us"
+title = "Among Us I"
 text = "You found the 1st ඞ from the ඞඞඞ!"
 
 [node name="Nailed2" parent="Material" instance=ExtResource("5_5a8f1")]
@@ -1053,8 +1053,9 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 24, 0,
 
 [node name="List3" parent="Cognitive" instance=ExtResource("21_mm2dk")]
 transform = Transform3D(-0.346952, 0, -0.937883, 0, 1, 0, 0.937883, 0, -0.346952, 48.442, 0.60556, 20.4213)
-title = "Among Us"
+title = "Among Us I"
 text = "You found the 1st ඞ from the ඞඞඞ!"
+interactable = false
 
 [node name="Water" type="Node3D" parent="Cognitive"]
 

@@ -188,7 +188,7 @@ transform = Transform3D(0.125402, 0, 0.992106, 0, 1, 0, -0.992106, 0, 0.125402, 
 
 [node name="List3" parent="Material" instance=ExtResource("8_vrwbl")]
 transform = Transform3D(-0.859915, 0, 0.510438, 0, 1, 0, -0.510438, 0, -0.859915, -12.458, 0.601899, -25.4787)
-title = "Among Us"
+title = "Among Us II"
 text = "You found the 2nd ඞ from the ඞඞඞ!"
 
 [node name="List2" parent="Material" instance=ExtResource("8_vrwbl")]
@@ -391,7 +391,7 @@ interactable = false
 
 [node name="List3" parent="Cognitive" instance=ExtResource("16_3mhpu")]
 transform = Transform3D(-0.859915, 0, 0.510438, 0, 1, 0, -0.510438, 0, -0.859915, -12.458, 0.601898, -25.4787)
-title = "Among Us"
+title = "Among Us II"
 text = "You found the 2nd ඞ from the ඞඞඞ!"
 interactable = false
 
