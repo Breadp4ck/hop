@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dirp2lv0rgtke"]
+[gd_scene load_steps=30 format=3 uid="uid://dirp2lv0rgtke"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_khcw2"]
 [ext_resource type="Environment" uid="uid://biqvtjsci1ld8" path="res://player/material_env.tres" id="2_5bh7t"]
@@ -288,6 +288,8 @@ _data = {
 radius = 0.45
 height = 1.1
 
+[sub_resource type="AudioStream" id="AudioStream_3qa1h"]
+
 [node name="Player" type="Node3D" node_paths=PackedStringArray("jump_check_area", "spell_caster") groups=["Player"]]
 script = ExtResource("1_khcw2")
 health = 5
@@ -375,6 +377,9 @@ light_energy = 0.4
 light_specular = 0.0
 omni_range = 1.919
 omni_attenuation = 0.329877
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStream_3qa1h")
 
 [connection signal="timeout" from="Head/SpeechRecognition/Timer" to="Head/SpeechRecognition" method="_on_timer_timeout"]
 

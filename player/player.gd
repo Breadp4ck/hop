@@ -20,12 +20,14 @@ const INTERACT_RAY_LENGTH: float = 3.0
 @onready var animator: AnimationPlayer = $Head/Eye/AnimationPlayer
 @onready var effects: AnimationPlayer = $Head/Eye/EffectsPlayer
 
+
 @onready var material_env: Environment = load("res://player/material_env.tres")
 @onready var shadesmar_env: Environment = load("res://player/shadesmar_env.tres")
 @onready var gui: GUI = $GUI
-
 @onready var hand_ring: Node3D = $Body/hand_with_ring
 @onready var hand: Node3D = $Body/hand_without_ring
+
+var hurt_sound = preload("res://assets/sounds/sfx/playerHurt.wav")
 
 var can_input: bool = true:
 	get:
@@ -56,7 +58,7 @@ var transition_queue: Array = []
 func _ready():
 	Globals.player_position = global_position
 
-func _input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:	
 	if can_input == false:
 		return
 
@@ -236,6 +238,10 @@ func receive_damage(amount: int) -> void:
 	health_changed.emit(health)
 	if (health <= 0):
 		die()
+	
+	$AudioStreamPlayer2D.stop()
+	$AudioStreamPlayer2D.stream = hurt_sound
+	$AudioStreamPlayer2D.play()
 	
 	print("Player damaged by " + str(amount))
 

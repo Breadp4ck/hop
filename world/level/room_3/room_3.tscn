@@ -678,7 +678,7 @@ transform = Transform3D(-0.6, 0, -1.50996e-07, 0, 0.75, 0, 9.05975e-08, 0, -1, 1
 transform = Transform3D(0.436315, 0, 0.899794, 0, 1, 0, -0.899794, 0, 0.436315, 11.4, 0.602425, -18.3)
 pickable_spell_type = 3
 title = "The Repair"
-text = "Say: [rainbow freq=0.1 sat=0.8 val=0.8]✨Lorem✨[/rainbow][p][/p]A spell that allows you to repair a man-made structure with a single blow. Young wizards ask their comrades to fix something, and it turns out to be something obscene."
+text = "Say: [rainbow freq=0.1 sat=0.8 val=0.8]✨Lorem✨[/rainbow] [L AO R AH M] [p][/p]A spell that allows you to repair a man-made structure with a single blow. Young wizards ask their comrades to fix something, and it turns out to be something obscene."
 
 [node name="Water" type="Node3D" parent="Material"]
 
@@ -1100,7 +1100,7 @@ text = "You found the 3d ඞ from the ඞඞඞ!"
 [node name="List3" parent="Material" instance=ExtResource("16_wnuhs")]
 transform = Transform3D(0.327729, 0, -0.944772, 0, 1, 0, 0.944772, 0, 0.327729, 44.6, 0.602, -0.3)
 title = "The Portal"
-text = "No one knows where the old portal leads. But I do know that it can be repaired. All you have to do is find four portal crystals and place them on the pedestals. Without the crystals, it's just a pile of rocks.I wish this would workNo one knows where the old portal leads. But I do know that it can be repaired. All you have to do is find four portal crystals and place them on the pedestals. Without the crystals, it's just a pile of rocks.I wish this would work."
+text = "No one knows where the old portal leads. But I do know that it can be repaired. All you have to do is find four portal crystals and place them on the pedestals. Without the crystals, it's just a pile of rocks. I wish this would work."
 
 [node name="Cognitive" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
@@ -2247,11 +2247,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, -1, -34)
 transform = Transform3D(0.436315, 0, 0.899794, 0, 1, 0, -0.899794, 0, 0.436315, 11.4, 0.602425, -18.3)
 pickable_spell_type = 3
 title = "The Repair"
-text = "Say: [rainbow freq=0.1 sat=0.8 val=0.8]✨Lorem✨[/rainbow][p][/p]A spell that allows you to repair a man-made structure with a single blow. Young wizards ask their comrades to fix something, and it turns out to be something obscene."
+text = "Say: [rainbow freq=0.1 sat=0.8 val=0.8]✨Lorem✨[/rainbow] [L AO R AH M] [p][/p]A spell that allows you to repair a man-made structure with a single blow. Young wizards ask their comrades to fix something, and it turns out to be something obscene."
 interactable = false
 
 [node name="List3" parent="Cognitive" instance=ExtResource("21_7d023")]
 transform = Transform3D(0.327729, 0, -0.944772, 0, 1, 0, 0.944772, 0, 0.327729, 44.6, 0.602425, -0.300001)
 title = "The Portal"
-text = "No one knows where the old portal leads. But I do know that it can be repaired. All you have to do is find four portal crystals and place them on the pedestals. Without the crystals, it's just a pile of rocks.I wish this would workNo one knows where the old portal leads. But I do know that it can be repaired. All you have to do is find four portal crystals and place them on the pedestals. Without the crystals, it's just a pile of rocks.I wish this would work."
+text = "No one knows where the old portal leads. But I do know that it can be repaired. All you have to do is find four portal crystals and place them on the pedestals. Without the crystals, it's just a pile of rocks. I wish this would work."
 interactable = false
