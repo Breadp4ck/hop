@@ -16,6 +16,9 @@ shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_236wh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+rotation_time = 0.25
+walk_time = 0.35
+max_queue_transitions = 1
 
 [node name="Level" parent="." instance=ExtResource("3_07eda")]
 

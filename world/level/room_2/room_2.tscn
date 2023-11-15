@@ -384,13 +384,13 @@ activatable_mechanisms = NodePath("../Bars5")
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 21.8239, 0.603381, -6.57856)
 pickable_spell_type = 5
 title = "The Blink"
-text = "Say: [rainbow freq=0.1 sat=0.8 val=0.8]✨Praesidium✨[/rainbow][p][/p]Moving matter is considered a very difficult and dangerous spell to cast. Many wizards have died by miscalculating the distance. But don't let that scare you-you're not that stupid. Especially since, in this variation, this spell will only allow you to move a few steps forward."
+text = "Say: [rainbow freq=0.1 sat=0.8 val=0.8]✨Praesidium✨[/rainbow] [P R EH S IH D IY AH M] [p][/p]Moving matter is considered a very difficult and dangerous spell to cast. Many wizards have died by miscalculating the distance. But don't let that scare you-you're not that stupid. Especially since, in this variation, this spell will only allow you to move a few steps forward."
 
 [node name="List2" parent="Material" instance=ExtResource("10_3h4dv")]
 transform = Transform3D(-0.428604, 0, -0.903492, 0, 1, 0, 0.903492, 0, -0.428604, 16.3826, 0.603381, 4.44101)
 pickable_spell_type = 1
 title = "The Crush"
-text = "Say: [rainbow freq=0.1 sat=0.8 val=0.8]✨Breve✨[/rainbow][p][/p]A great spell if you want to destroy something that's almost destroyed. Physically. You can't close your bank loan or hide from your ex that way."
+text = "Say: [rainbow freq=0.1 sat=0.8 val=0.8]✨Breve✨[/rainbow] [B R EH V IY] [p][/p]A great spell if you want to destroy something that's almost destroyed. Physically. You can't close your bank loan or hide from your ex that way."
 
 [node name="Crystal" parent="Material" instance=ExtResource("13_7nfkq")]
 transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 6, 0.621451, -15)
@@ -938,14 +938,14 @@ activatable_mechanisms = NodePath("../Bars5")
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 21.8239, 0.60338, -6.57856)
 pickable_spell_type = 5
 title = "The Blink"
-text = "Say: [rainbow freq=0.1 sat=0.8 val=0.8]✨Praesidium✨[/rainbow][p][/p]Moving matter is considered a very difficult and dangerous spell to cast. Many wizards have died by miscalculating the distance. But don't let that scare you-you're not that stupid. Especially since, in this variation, this spell will only allow you to move a few steps forward."
+text = "Say: [rainbow freq=0.1 sat=0.8 val=0.8]✨Praesidium✨[/rainbow] [P R EH S IH D IY AH M] [p][/p]Moving matter is considered a very difficult and dangerous spell to cast. Many wizards have died by miscalculating the distance. But don't let that scare you-you're not that stupid. Especially since, in this variation, this spell will only allow you to move a few steps forward."
 interactable = false
 
 [node name="List2" parent="Cognitive" instance=ExtResource("21_mm2dk")]
 transform = Transform3D(-0.428604, 0, -0.903492, 0, 1, 0, 0.903492, 0, -0.428604, 16.3826, 0.60338, 4.44101)
 pickable_spell_type = 1
 title = "The Crush"
-text = "Say: [rainbow freq=0.1 sat=0.8 val=0.8]✨Breve✨[/rainbow][p][/p]A great spell if you want to destroy something that's almost destroyed. Physically. You can't close your bank loan or hide from your ex that way."
+text = "Say: [rainbow freq=0.1 sat=0.8 val=0.8]✨Breve✨[/rainbow] [B R EH V IY] [p][/p]A great spell if you want to destroy something that's almost destroyed. Physically. You can't close your bank loan or hide from your ex that way."
 interactable = false
 
 [node name="Crystal" parent="Cognitive" instance=ExtResource("13_7nfkq")]

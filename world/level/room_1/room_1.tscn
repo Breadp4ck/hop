@@ -195,7 +195,7 @@ text = "You found the 2nd ඞ from the ඞඞඞ!"
 transform = Transform3D(-0.292372, 0, -0.956305, 0, 1, 0, 0.956305, 0, -0.292372, 6.605, 0.602, -21.833)
 pickable_spell_type = 2
 title = "The Magic Lockpick"
-text = "Say: [rainbow freq=0.1 sat=0.8 val=0.8]✨Apertus✨[/rainbow][p][/p]All powerful wizards are very inattentive to detail, so they often forget their keys. That's why they started carrying keys around their necks.Lock picker spells won't let you open doors protected by powerful spells, but you can open ordinary ones."
+text = "Say: [rainbow freq=0.1 sat=0.8 val=0.8]✨Apertus✨[/rainbow] [AE P ER T AH S] [p][/p]All powerful wizards are very inattentive to detail, so they often forget their keys. That's why they started carrying keys around their necks.Lock picker spells won't let you open doors protected by powerful spells, but you can open ordinary ones."
 
 [node name="Crystal" parent="Material" instance=ExtResource("9_5qxye")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 6.73041, 0.641356, -22.1346)
@@ -386,7 +386,7 @@ transform = Transform3D(0.125402, 0, 0.992106, 0, 1, 0, -0.992106, 0, 0.125402, 
 transform = Transform3D(-0.292372, 0, -0.956305, 0, 1, 0, 0.956305, 0, -0.292372, 6.605, 0.602, -21.833)
 pickable_spell_type = 2
 title = "The Magic Lockpick"
-text = "Say: [rainbow freq=0.1 sat=0.8 val=0.8]✨Apertus✨[/rainbow][p][/p]All powerful wizards are very inattentive to detail, so they often forget their keys. That's why they started carrying keys around their necks.Lock picker spells won't let you open doors protected by powerful spells, but you can open ordinary ones."
+text = "Say: [rainbow freq=0.1 sat=0.8 val=0.8]✨Apertus✨[/rainbow] [AE P ER T AH S] [p][/p]All powerful wizards are very inattentive to detail, so they often forget their keys. That's why they started carrying keys around their necks.Lock picker spells won't let you open doors protected by powerful spells, but you can open ordinary ones."
 interactable = false
 
 [node name="List3" parent="Cognitive" instance=ExtResource("16_3mhpu")]
