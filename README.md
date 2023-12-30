@@ -1,5 +1,6 @@
 # HoP: Hop over Planes
 
+![](img/avatar.png)
 ## Description:
 Exploring the dungeon, solving problems with magic and moving between the real and cognitive worlds. Spells must be spoken into a microphone.  
   
@@ -16,7 +17,9 @@ Exploring the dungeon, solving problems with magic and moving between the real a
 
 
 `You can only cast spells in Cognitive plane. Items (like buttons) can only be interacted with only in Material plane.` 
-  
+
+  ![](img/1.png)
+
 ## Resources
 * **Music**:  
 	King Gizzard and The Lizard Wizard - Searching...
